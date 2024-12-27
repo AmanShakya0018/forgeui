@@ -1,0 +1,29 @@
+---
+title: Checkbox
+description: A React component enabling users to toggle a selectable state, ideal for dynamic form controls.
+---
+<div className="mdx-body">
+The Checkbox component in React provides a versatile and interactive control for toggling between checked and unchecked states. It is commonly used in forms, settings, and selection interfaces to represent binary choices or multi-select options. Designed for customization, it supports labels, icons, and styles to align with various UI themes. Its responsive design ensures seamless functionality across devices, enhancing accessibility and user experience. With event handlers for real-time updates, it integrates efficiently into modern React applications, catering to diverse user requirements.
+</div>
+
+<PreviewBox>
+<CheckBox />
+</PreviewBox>
+
+```js showLineNumbers caption="You can customize the markup and modify the tags as per your preferred framework to seamlessly integrate them into your project."
+<div className="flex items-center">
+  <input
+    id="link-checkbox"
+    type="checkbox"
+    value=""
+    className="w-4 h-4 text-black bg-gray-100 border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+  />
+  <label
+    htmlFor="link-checkbox"
+    className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+  >
+    I agree with the terms and conditions.
+  </label>
+</div>
+```
+

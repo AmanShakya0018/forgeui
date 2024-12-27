@@ -1,0 +1,27 @@
+---
+title: Footer
+description: A React component for displaying essential information and links at the bottom of every page.
+---
+<div className="mdx-body">
+The Footer component in React provides a structured section at the bottom of web pages, offering users quick access to valuable information. It is ideal for displaying sitemap links, copyright notices, contact details, or social media links. Customizable in layout, style, and content, the Footer enhances the website's navigation and professionalism. Designed for responsiveness, it adapts seamlessly to various screen sizes, ensuring accessibility on all devices. This component enriches user experience by consolidating critical details in an intuitive and easily discoverable location.
+
+<PreviewBox>
+<Footer />
+</PreviewBox>
+
+```js showLineNumbers caption="You can customize the markup and modify the tags as per your preferred framework to seamlessly integrate them into your project."
+<footer className="bg-white rounded-lg shadow m-4 dark:bg-black border border-gray-200 dark:border-gray-800">
+  <div className="w-full mx-auto p-4 flex items-center justify-between">
+    <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+      © 2023 Google™ All Rights Reserved.
+    </span>
+    <ul className="flex items-center space-x-4 sm:space-x-6 text-sm font-medium text-gray-500 dark:text-gray-400">
+      <li className="hover:underline">About</li>
+      <li className="hover:underline">Privacy Policy</li>
+      <li className="hover:underline">Licensing</li>
+      <li className="hover:underline">Contact</li>
+    </ul>
+  </div>
+</footer>
+```
+</div>

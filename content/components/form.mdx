@@ -1,0 +1,68 @@
+---
+title: Form
+description: A React component for managing user inputs and handling submissions with flexibility and customization.
+---
+<div className="mdx-body">
+The Form component in React serves as a structured container for capturing and managing user inputs. It simplifies the creation of dynamic forms by supporting controlled and uncontrolled components, validation, and submission handling. Developers can customize its layout, style, and behavior to fit diverse use cases such as contact forms, login screens, or surveys. Its responsive design ensures compatibility across devices, enhancing user interaction. Built-in or integrated validation ensures data integrity, making it an essential tool for collecting and processing user data efficiently.
+
+<PreviewBox>
+<Form />
+</PreviewBox>
+
+```js showLineNumbers caption="You can customize the markup and modify the tags as per your preferred framework to seamlessly integrate them into your project."
+<form className="max-w-sm mx-auto">
+  <div className="mb-5">
+    <label
+      htmlFor="email"
+      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >
+      Email
+    </label>
+    <input
+      type="email"
+      id="email"
+      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+      placeholder="example@gmail.com"
+      required
+    />
+  </div>
+  <div className="mb-5">
+    <label
+      htmlFor="password"
+      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+    >
+      Password
+    </label>
+    <input
+      type="password"
+      id="password"
+      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+      required
+    />
+  </div>
+  <div className="flex items-start mb-5">
+    <div className="flex items-center h-5">
+      <input
+        id="remember"
+        type="checkbox"
+        value=""
+        className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-gray-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-gray-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+        required
+      />
+    </div>
+    <label
+      htmlFor="remember"
+      className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+    >
+      Remember me
+    </label>
+  </div>
+  <button
+    type="submit"
+    className="text-gray-900 bg-gray-200 hover:bg-gray-300  font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-200 dark:hover:bg-gray-300"
+  >
+    Submit
+  </button>
+</form>
+```
+</div>

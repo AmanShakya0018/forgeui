@@ -1,0 +1,29 @@
+---
+title: Input
+description: A React component for rendering form input fields, offering flexibility in user data collection.
+---
+<div className="mdx-body">
+The Input component in React creates a customizable input field for forms, allowing users to enter data. It supports various types such as text, number, password, or email, providing flexibility for different use cases. Customization options include styling, placeholder text, and validation integration, enabling seamless user experience. Its responsive design ensures compatibility across devices, adapting to varying screen sizes. This component is essential for collecting user input in forms, login screens, search bars, and any feature requiring data entry.
+
+<PreviewBox>
+<Input />
+</PreviewBox>
+
+```js showLineNumbers caption="You can customize the markup and modify the tags as per your preferred framework to seamlessly integrate them into your project."
+<div>
+  <label
+    htmlFor="first_name"
+    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+  >
+    Name
+  </label>
+  <input
+    type="text"
+    id="first_name"
+    className="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-500 focus:border-gray-500 block w-full p-2.5 dark:bg-black dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-500 dark:focus:border-gray-500"
+    placeholder="John"
+    required
+  />
+</div>
+```
+</div>
