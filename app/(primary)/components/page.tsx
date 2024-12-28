@@ -7,7 +7,7 @@ const Components = () => {
 
   useEffect(() => {
     // Redirect to /components/code-blocks
-    router.push('/components/code-blocks')
+    router.push('/components/avatar')
   }, [router])
 
   return (
