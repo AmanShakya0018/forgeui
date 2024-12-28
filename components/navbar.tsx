@@ -48,7 +48,7 @@ const Navbar = () => {
           <div className="lg:hidden flex items-center space-x-1">
             <Themetoggle />
 
-            <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-gray-800">
+            <button onClick={() => setIsOpen(!isOpen)} className="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-neutral-900">
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
@@ -57,7 +57,7 @@ const Navbar = () => {
         {isOpen && (
           <div>
             {navItems.map((item) => (
-              <a key={item.name} href={item.href} className="block px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-gray-800 rounded-lg relative">
+              <a key={item.name} href={item.href} className="block px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900 rounded-lg relative">
                 {item.name}
               </a>
             ))}
