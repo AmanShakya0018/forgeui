@@ -6,6 +6,7 @@ import type { Container, SingleOrMultiple } from "@tsparticles/engine";
 import { loadSlim } from "@tsparticles/slim";
 import { cn } from "@/lib/utils";
 import { motion, useAnimation } from "framer-motion";
+import { useTheme } from "next-themes";
 
 type ParticlesProps = {
   id?: string;
@@ -26,7 +27,6 @@ export const SparklesCore = (props: ParticlesProps) => {
     minSize,
     maxSize,
     speed,
-    particleColor,
     particleDensity,
   } = props;
   const [init, setInit] = useState(false);
@@ -51,6 +51,10 @@ export const SparklesCore = (props: ParticlesProps) => {
   };
 
   const generatedId = useId();
+
+  const { theme } = useTheme();
+  const particleColor = theme === "dark" ? "#ffffff" : "#000000";
+
   return (
     <motion.div animate={controls} className={cn("opacity-0", className)}>
       {init && (
