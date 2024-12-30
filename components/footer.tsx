@@ -24,10 +24,6 @@ const Footer = () => {
               <span className="text-2xl font-extrabold text-black dark:text-white ">Forge UI</span>
             </Link>
           </div>
-          <div>
-            A product by
-            <a target="__blank" className="dark:text-cyan-500 pl-1 text-neutral-600 font-medium" href="https://github.com/amanshakya0018">Forge</a>
-          </div>
           <div className="mt-2">
             Building in public at
             <a className="dark:text-cyan-500 pl-1 font-medium text-neutral-600" target="__blank" href="https://github.com/amanshakya0018">@amanshakya0018</a>
