@@ -1,6 +1,7 @@
 import HeroSection from './herosection'
 import FeaturesSectionDemo from './features-section'
 import OpenSourceBanner from './open-source-banner'
+import { Spotlight } from './ui/spotlight'
 
 export default function LandingPage() {
   return (
@@ -8,6 +9,10 @@ export default function LandingPage() {
       <HeroSection />
       <FeaturesSectionDemo />
       <OpenSourceBanner />
+      <Spotlight
+        className="-top-[32rem] left-4 lg:left-4 lg:-top-80"
+        fill="white"
+      />
     </div>
   )
 }

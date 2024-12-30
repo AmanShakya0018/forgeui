@@ -3,7 +3,6 @@ import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import { ArrowRight } from 'lucide-react'
 import { AnimatePresence, motion } from "framer-motion";
-import { Spotlight } from './ui/spotlight';
 import Link from 'next/link';
 
 const words = ['Upgrade', 'Enhance', '\u00A0Improve']
@@ -222,11 +221,6 @@ const HeroSection = () => {
           </div>
         </div>
       </motion.div>
-
-      <Spotlight
-        className="-top-96 left-4 lg:left-4 lg:-top-80"
-        fill="white"
-      />
     </div>
   )
 }
