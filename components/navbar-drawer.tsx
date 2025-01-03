@@ -35,7 +35,7 @@ const NavbarDrawer = () => {
             <Link href="https://twitter.com/AmanShakya0018" target="_blank">
               <p className="block px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900 rounded-lg relative">Twitter</p>
             </Link>
-            <Link href="https://www.linkedin.com/feed/" target="_blank">
+            <Link href="https://www.linkedin.com/in/amanshakya0018/" target="_blank">
               <p className="block px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900 rounded-lg relative">LinkedIn</p>
             </Link>
             <div className="border-b border-y-2 rounded-lg border-slate-300 dark:border-neutral-800 mx-2"></div>

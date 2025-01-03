@@ -45,10 +45,10 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex justify-center space-y-4 flex-col mt-4">
-            <Link href='https://x.com/AmanShakya0018 target="_blank"'>
+            <Link href='https://x.com/AmanShakya0018' target="_blank">
               <p className="hover:text-foreground/80 text-foreground/60">Twitter</p>
             </Link>
-            <Link href='https://twitter.com/'>
+            <Link href='https://www.linkedin.com/in/amanshakya0018/' target='_blank'>
               <p className="hover:text-foreground/80 text-foreground/60">LindedIn</p>
             </Link>
           </div>
