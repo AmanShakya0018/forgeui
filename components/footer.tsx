@@ -1,18 +1,9 @@
 "use client"
-import { useToast } from '@/hooks/use-toast';
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 
 const Footer = () => {
-
-  const { toast } = useToast()
-
-  const handleClick = () => {
-    toast({
-      description: 'Nothing to show in this section for now'
-    });
-  }
 
   return (
     <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-black">
@@ -53,8 +44,8 @@ const Footer = () => {
             </Link>
           </div>
           <div className="flex justify-center space-y-4 flex-col mt-4">
-            <p className="hover:text-foreground/80 text-foreground/60"><button onClick={handleClick}>Terms & Conditions</button></p>
-            <p className="hover:text-foreground/80 text-foreground/60"><button onClick={handleClick}>Privacy Policy</button></p>
+            <p className="hover:text-foreground/80 text-foreground/60"><a href='/termsofservice' target='_blank'>Terms of Service</a></p>
+            <p className="hover:text-foreground/80 text-foreground/60"><a href='/privacypolicy' target='_blank'>Privacy Policy</a></p>
           </div>
         </div>
       </div>
