@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { navItems } from '@/contants';
 import DocumentSearch from './documentsearch';
 import NavbarDrawer from './navbar-drawer';
+import AnchorNav from './anchor-nav';
 
 
 const Navbar = () => {
@@ -24,9 +25,14 @@ const Navbar = () => {
             <div
               className="hidden lg:flex items-center space-x-6">
               {navItems.map((item) => (
-                <Link key={item.name} href={item.href} className="text-sm font-medium text-zinc-400 hover:text-foreground/80 relative">
+                <AnchorNav
+                  key={item.name + item.href}
+                  activeClassName="text-black dark:text-white font-semibold"
+                  absolute
+                  href={item.href}
+                >
                   {item.name}
-                </Link>
+                </AnchorNav>
               ))}
             </div>
           </div>

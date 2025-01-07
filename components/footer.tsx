@@ -17,7 +17,7 @@ const Footer = () => {
           </div>
           <div className="mt-2">
             Building in public at
-            <a className="dark:text-cyan-500 pl-1 font-medium text-neutral-600" target="__blank" href="https://github.com/amanshakya0018">@amanshakya0018</a>
+            <a className="dark:text-emerald-500 pl-1 font-medium text-neutral-600" target="__blank" href="https://github.com/amanshakya0018">@amanshakya0018</a>
           </div>
         </div>
         <div className="grid grid-cols-3 gap-10 items-start mt-10 md:mt-0">
