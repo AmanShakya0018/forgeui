@@ -26,8 +26,8 @@ export default Page;`;
   const code = `'use client'
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Image from 'next/image'
 
 const AnimatedCarousel = () => {
   const [index, setIndex] = useState(0)
