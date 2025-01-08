@@ -2,7 +2,7 @@
 export const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Components', href: '/components/alerts' },
-  { name: 'Contact', href: '/contact' },
+  { name: 'Docs', href: '/introduction' },
 ];
 
 export const primaryItems = [
