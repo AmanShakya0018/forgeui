@@ -19,11 +19,11 @@ export default function IntroductionPage() {
         <div className="space-y-6 text-neutral-400">
           <p>
             Forge UI offers reusable components built with{" "}
-            <Link href="https://ui.aceternity.com/" className="font-medium">
+            <Link href="https://ui.aceternity.com/" target="_blank" className="font-medium">
               Aceternity UI
             </Link>{" "}
             and{" "}
-            <Link href="https://ui.shadcn.com" className="font-medium">
+            <Link href="https://ui.shadcn.com" target="_blank" className="font-medium">
               Shadcn UI,
             </Link>{" "}
             ready to copy and integrate into your apps.
@@ -83,19 +83,19 @@ export default function IntroductionPage() {
         <h2 className="text-3xl font-bold">Credits</h2>
         <p className="text-neutral-400 gap-4">
           Built with{" "}
-          <Link href="https://ui.aceternity.com/" className="font-medium mr-2">
+          <Link href="https://ui.aceternity.com/" target="_blank" className="font-medium mr-2">
             Aceternity UI,
           </Link>
           {""}
-          <Link href="https://ui.shadcn.com" className="font-medium">
+          <Link href="https://ui.shadcn.com" target="_blank" className="font-medium">
             Shadcn UI
           </Link>
           ,{" "}
-          <Link href="https://nextjs.org" className="font-medium">
+          <Link href="https://nextjs.org" target="_blank" className="font-medium">
             Next.js
           </Link>
           , and{" "}
-          <Link href="https://www.typescriptlang.org" className="font-medium">
+          <Link href="https://www.typescriptlang.org" target="_blank" className="font-medium">
             TypeScript
           </Link>
           .
