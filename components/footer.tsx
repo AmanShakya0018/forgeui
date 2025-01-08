@@ -25,7 +25,7 @@ const Footer = () => {
             <Link href='/'>
               <p className="hover:text-foreground/80 text-foreground/60">Home</p>
             </Link>
-            <Link href='/components/avatar'>
+            <Link href='/components/animated-carousel'>
               <p className="hover:text-foreground/80 text-foreground/60">Components</p>
             </Link>
             <Link href='/contact'>

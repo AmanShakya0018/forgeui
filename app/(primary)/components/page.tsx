@@ -6,7 +6,7 @@ const Components = () => {
   const router = useRouter()
 
   useEffect(() => {
-    router.push('/components/avatar')
+    router.push('/components/animated-carousel')
   }, [router])
 
   return (

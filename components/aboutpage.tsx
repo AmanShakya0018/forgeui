@@ -23,7 +23,7 @@ const AboutPage = () => {
         </div>
         <Button size="sm">
           <Link
-            href="/components/avatar"
+            href="/components/animated-carousel"
             className="px-4"
           >
             Explore Components

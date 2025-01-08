@@ -188,7 +188,7 @@ const HeroSection = () => {
           Effortlessly build accessible, high-quality web apps by copy-pasting trending React components with seamless styling.
         </p>
         <div className='flex gap-4'>
-          <Link href="/components/avatar">
+          <Link href="/components/animated-carousel">
             <Button size="sm">
               Get Started
               <ArrowRight className="ml-2 h-4 w-4" />

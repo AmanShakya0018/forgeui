@@ -1,14 +1,14 @@
 
 export const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Components', href: '/components/avatar' },
+  { name: 'Components', href: '/components/animated-carousel' },
   { name: 'Contact', href: '/contact' },
   { name: 'About', href: '/about' }
 ];
 
 export const primaryItems = [
+  { name: 'Animated Carousel', href: '/components/animated-carousel' },
   { name: 'Avatar', href: '/components/avatar' },
-  { name: 'Alerts', href: '/components/alerts' },
   { name: 'Badge', href: '/components/badge' },
   { name: 'Buttons', href: '/components/buttons' },
   { name: 'Button Group', href: '/components/buttongroup' },
