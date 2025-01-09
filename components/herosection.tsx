@@ -194,7 +194,7 @@ const HeroSection = () => {
               <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
           </Link>
-          <Link href="/about">
+          <Link href="/introduction">
             <Button size="sm" variant="ghost">
               Learn More
             </Button>

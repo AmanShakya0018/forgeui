@@ -25,12 +25,20 @@ const PrimaryItems = () => {
           Introduction
         </AnchorStart>
         <AnchorStart
-          key="installation"
+          key="install-nextjs"
           activeClassName="text-black dark:text-white font-medium"
           absolute
-          href={"/installation"}
+          href={"/install-nextjs"}
         >
-          Installation
+          Install Next.js
+        </AnchorStart>
+        <AnchorStart
+          key="install-tailwindcss"
+          activeClassName="text-black dark:text-white font-medium"
+          absolute
+          href={"/install-tailwindcss"}
+        >
+          Install Tailwind CSS
         </AnchorStart>
       </div>
       <div>

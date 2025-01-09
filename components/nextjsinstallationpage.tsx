@@ -2,7 +2,7 @@
 import { CodeBlock } from '@/components/ui/code-block';
 import React from 'react'
 
-const InstallationPage = () => {
+const NextjsInstallationPage = () => {
 
   const title = "Install Next.js";
   const description = "Install Next.js with Create Next App";
@@ -58,4 +58,4 @@ What import alias would you like configured? @/*
   )
 }
 
-export default InstallationPage
+export default NextjsInstallationPage

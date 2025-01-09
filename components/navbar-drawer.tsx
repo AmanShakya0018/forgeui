@@ -58,11 +58,18 @@ const NavbarDrawer = () => {
                 Introduction
               </a>
               <a
-                key="installation"
-                href={"/installation"}
+                key="install-nextjs"
+                href={"/install-nextjs"}
                 className="block px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900 rounded-lg relative"
               >
-                Installation
+                Install Next.js
+              </a>
+              <a
+                key="install-tailwindcss"
+                href={"/install-tailwindcss"}
+                className="block px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900 rounded-lg relative"
+              >
+                Install Tailwind CSS
               </a>
             </div>
             <div className="border-b border-y-2 rounded-lg border-slate-300 dark:border-neutral-800 mx-2 mt-2"></div>
