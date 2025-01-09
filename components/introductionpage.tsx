@@ -10,7 +10,7 @@ export default function IntroductionPage() {
   return (
     <article className="container lg:pl-8 py-6 max-w-6xl mx-auto">
       <h1 className="mb-2 text-4xl font-bold">Forge UI</h1>
-      <p className="text-lg mt-0 text-neutral-400">Elegant components crafted with Aceternity UI and Shadcn UI. Copy-paste ready, accessible, customizable, and open-source.</p>
+      <p className="text-lg mt-0 text-neutral-400">Elegant components crafted with Aceternity UI, Magic UI and Shadcn UI. Copy-paste ready, accessible, customizable, and open-source.</p>
 
       {/* Introduction Section */}
       <div className="space-y-2">
@@ -20,7 +20,10 @@ export default function IntroductionPage() {
           <p>
             Forge UI offers reusable components built with{" "}
             <Link href="https://ui.aceternity.com/" target="_blank" className="font-medium">
-              Aceternity UI
+              Aceternity UI,
+            </Link>{" "}
+            <Link href="https://magicui.design/" target="_blank" className="font-medium">
+              Magic UI
             </Link>{" "}
             and{" "}
             <Link href="https://ui.shadcn.com" target="_blank" className="font-medium">

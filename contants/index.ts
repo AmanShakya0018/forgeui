@@ -9,6 +9,8 @@ export const primaryItems = [
   { name: 'Alerts', href: '/components/alerts' },
   { name: 'Animated Carousel', href: '/components/animated-carousel' },
   { name: 'Card Hover Effect', href: '/components/card-hover-effect' },
+  { name: 'Social Card', href: '/components/social-card' },
+  { name: 'Circular Progress Bar', href: '/components/circular-progress-bar' },
   { name: 'Avatar', href: '/components/avatar' },
   { name: 'Badge', href: '/components/badge' },
   { name: 'Buttons', href: '/components/buttons' },
