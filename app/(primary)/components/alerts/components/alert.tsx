@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import { Check, X } from "lucide-react";
 import Image from "next/image";
 
@@ -42,13 +41,7 @@ export default function Alert() {
             </button>
             <button
               type="button"
-              className={cn(
-                "rounded-lg flex items-center justify-center h-8 w-8 p-0",
-                "hover:bg-emerald-50 dark:hover:bg-emerald-950/50",
-                "text-zinc-400 hover:text-emerald-600",
-                "dark:text-zinc-500 dark:hover:text-emerald-400",
-                "transition-colors"
-              )}
+              className="rounded-lg flex items-center justify-center h-8 w-8 p-0 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-zinc-400 hover:text-emerald-600 dark:text-zinc-500 dark:hover:text-emerald-400 transition-colors"
             >
               <Check className="h-4 w-4" />
             </button>

@@ -8,6 +8,7 @@ export const navItems = [
 export const primaryItems = [
   { name: 'Alerts', href: '/components/alerts' },
   { name: 'Animated Carousel', href: '/components/animated-carousel' },
+  { name: 'Card Hover Effect', href: '/components/card-hover-effect' },
   { name: 'Avatar', href: '/components/avatar' },
   { name: 'Badge', href: '/components/badge' },
   { name: 'Buttons', href: '/components/buttons' },

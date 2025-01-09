@@ -1,82 +1,131 @@
 "use client"
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
-import Alert from './components/alert';
+import CardHover from './components/card-hover-effect';
 
-const Animatedcarousel = () => {
+const CardHoverEffect = () => {
 
-  const title = "Alerts";
-  const routepoint = "alerts";
-  const description = "Customizable React alerts for notifications, warnings, or messages with flexible styling and seamless integration.";
+  const title = "Card Hover Effect";
+  const routepoint = "card-hover-effect";
+  const description = "Hover over the cards to see the effect shift smoothly to the highlighted card.";
   const [sourceCode, setSourceCode] = useState(false);
 
   const democode = `"use client";
 import React from 'react'
-import Alert from './components/alerts'
+import CardHover from './components/card-hover-effect'
 function Page() {
   return (
     <>
-      <Alert />
+      <CardHover />
     </>
   )
 }
 
 export default Page;`;
 
-  const code = `import { Check, X } from "lucide-react";
-import Image from "next/image";
+  const code = `"use client"
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import Link from "next/link";
 
-export default function Alert() {
+const CardHover = () => {
   return (
-    <div className="w-full max-w-xl mx-auto">
-      <div className="relative bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-[0_1px_6px_0_rgba(0,0,0,0.02)] rounded-xl p-4">
-        <div className="flex items-center gap-4">
-          <div className="relative h-10 w-10 flex-shrink-0">
-            <Image
-              src="/image.jpg"
-              alt="image"
-              sizes="40px"
-              fill
-              className="rounded-full object-cover"
-            />
-            <div className="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-green-500 ring-2 ring-white dark:ring-zinc-950" />
-          </div>
-
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <p className="text-xs md:text-sm font-medium text-zinc-700 dark:text-zinc-300">
-                  You’re Invited!
-                </p>
-                <p className="text-[10px] md:text-[13px] text-zinc-500 dark:text-zinc-400 mt-0.5">
-                  Be a part of Forgeui's{" "}
-                  <span className="font-medium text-zinc-700 dark:text-zinc-300">
-                    Technical Team
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="flex items-center gap-2">
-            <button
-              type="button"
-              className="rounded-lg flex items-center justify-center h-8 w-8 p-0 hover:bg-red-50 dark:hover:bg-red-950/50 text-zinc-400 hover:text-red-600 dark:text-zinc-500 dark:hover:text-red-400 transition-colors"
-            >
-              <X className="h-4 w-4" />
-            </button>
-            <button
-              type="button"
-              className="rounded-lg flex items-center justify-center h-8 w-8 p-0 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 text-zinc-400 hover:text-emerald-600 dark:text-zinc-500 dark:hover:text-emerald-400 transition-colors"
-            >
-              <Check className="h-4 w-4" />
-            </button>
-          </div>
-        </div>
-      </div>
+    <div className="w-full max-w-5xl mx-auto" >
+      <HoverEffect items={projects} />
     </div>
   );
 }
 
+export default CardHover;
+
+
+const HoverEffect = ({ items }) => {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  return (
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10">
+      {items.map((item, idx) => (
+        <Link
+          href={item.link}
+          key={item.link}
+          className="relative group block p-2 h-full w-full"
+          onMouseEnter={() => setHoveredIndex(idx)}
+          onMouseLeave={() => setHoveredIndex(null)}
+        >
+          <AnimatePresence>
+            {hoveredIndex === idx && (
+              <motion.span
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] rounded-3xl"
+                layoutId="hoverBackground"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1, transition: { duration: 0.15 } }}
+                exit={{ opacity: 0, transition: { duration: 0.15, delay: 0.2 } }}
+              />
+            )}
+          </AnimatePresence>
+          <Card>
+            <CardTitle>{item.title}</CardTitle>
+            <CardDescription>{item.description}</CardDescription>
+          </Card>
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+const Card = ({ children }) => (
+  <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+    <div className="relative z-50 p-4">{children}</div>
+  </div>
+);
+
+const CardTitle = ({ children }) => (
+  <h4 className="text-zinc-100 font-bold tracking-wide mt-4">{children}</h4>
+);
+
+const CardDescription = ({ children }) => (
+  <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">{children}</p>
+);
+
+
+export const projects = [
+  {
+    title: "Tesla",
+    description:
+      "An automotive and energy company revolutionizing transportation with electric vehicles and sustainable energy solutions.",
+    link: "https://tesla.com",
+  },
+  {
+    title: "OpenAI",
+    description:
+      "An AI research and deployment company dedicated to ensuring that artificial general intelligence benefits all of humanity.",
+    link: "https://openai.com",
+  },
+  {
+    title: "Apple",
+    description:
+      "A technology company that designs and manufactures consumer electronics, software, and online services.",
+    link: "https://apple.com",
+  },
+  {
+    title: "Spotify",
+    description:
+      "A digital music service that gives you access to millions of songs and podcasts from artists all over the world.",
+    link: "https://spotify.com",
+  },
+  {
+    title: "Airbnb",
+    description:
+      "A platform that allows individuals to rent out their properties or spare rooms to travelers seeking short-term accommodations.",
+    link: "https://airbnb.com",
+  },
+  {
+    title: "Adobe",
+    description:
+      "A software company known for its creative tools, including Photoshop, Illustrator, and Premiere Pro, empowering creators worldwide.",
+    link: "https://adobe.com",
+  },
+];
 `;
 
   return (
@@ -100,7 +149,7 @@ export default function Alert() {
       </div>
       {(!sourceCode) ?
         (<div className="border border-zinc-200 dark:border-zinc-800 px-10 py-12 mt-[2px] bg-transparent rounded-md shadow-md flex justify-center items-center space-x-2 overflow-hidden flex-wrap min-h-[22rem]">
-          <Alert />
+          <CardHover />
         </div>)
         : (<CodeBlock
           language="jsx"
@@ -113,7 +162,7 @@ export default function Alert() {
           <span className='font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200'>Install dependencies</span>
         </span>
         <span className='pl-7'>
-          <CodeBlock code={`npm install lucide-react`} language="javascript" />
+          <CodeBlock code={`npm install framer-motion`} language="javascript" />
         </span>
       </div>
       <div className="flex flex-col border-l border-neutral-300 dark:border-neutral-700 py-6 gap-5">
@@ -137,4 +186,4 @@ export default function Alert() {
   )
 }
 
-export default Animatedcarousel
+export default CardHoverEffect
