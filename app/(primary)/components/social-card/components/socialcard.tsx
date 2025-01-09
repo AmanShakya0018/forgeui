@@ -1,145 +1,86 @@
-import { cn } from "@/lib/utils";
+'use client'
 
-import {
-  Heart,
-  MessageCircle,
-  Share2,
-  Bookmark,
-  MoreHorizontal,
-} from "lucide-react";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Heart, MessageCircle, Share2, Bookmark, MoreHorizontal } from 'lucide-react';
+import Image from 'next/image';
 
-interface SocialCard {
-  author?: {
-    name?: string;
-    username?: string;
-    avatar?: string;
-    timeAgo?: string;
-  };
-  content?: {
-    text?: string;
-    link?: {
-      title?: string;
-      description?: string;
-      icon?: React.ReactNode;
-    };
-  };
-  engagement?: {
-    likes?: number;
-    comments?: number;
-    shares?: number;
-    isLiked?: boolean;
-    isBookmarked?: boolean;
-  };
-}
-
-const defaultProps: SocialCard = {
-  author: {
-    name: "John Will",
-    username: "john_will",
-    avatar: "/pfp.png",
-    timeAgo: "2h ago",
-  },
-  content: {
-    text: "Excited to announce Forge UI! Explore the docs and share your thoughts—feedback is welcome!",
-  },
-  engagement: {
-    likes: 136,
-    comments: 52,
-    shares: 37,
-    isLiked: true,
-    isBookmarked: false,
-  },
-};
-
-export default function SocialCard({
-  author = defaultProps.author,
-  content = defaultProps.content,
-  engagement = defaultProps.engagement,
-}: SocialCard) {
+export default function SocialCard() {
   return (
-    <div
-      className={cn(
-        "w-full max-w-2xl mx-auto",
-        "bg-white dark:bg-zinc-900",
-        "border border-zinc-200 dark:border-zinc-800",
-        "rounded-3xl shadow-xl"
-      )}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="w-full max-w-xl mx-auto bg-white dark:bg-zinc-900 rounded-2xl shadow-lg overflow-hidden border border-gray-200 dark:border-zinc-700"
     >
-      <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
-        <div className="p-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <img
-                src={author?.avatar}
-                alt={author?.name}
-                className="w-10 h-10 rounded-full ring-2 ring-white dark:ring-zinc-800"
+      <div className="p-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-3">
+            <div className="relative w-12 h-12">
+              <Image
+                width={190}
+                height={190}
+                src="/pfp.png"
+                alt="Emma Johnson"
+                className="rounded-full object-cover w-full h-full"
               />
-              <div>
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  {author?.name}
-                </h3>
-                <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                  @{author?.username} · {author?.timeAgo}
-                </p>
-              </div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-gray-800"></div>
             </div>
-            <button
-              type="button"
-              className="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors"
-            >
-              <MoreHorizontal className="w-5 h-5 text-zinc-400" />
-            </button>
-          </div>
-
-          <p className="text-sm sm:text-[16px] text-zinc-600 dark:text-zinc-300 mb-4">
-            {content?.text}
-          </p>
-
-
-
-          <div className="flex items-center justify-between pt-2">
-            <div className="flex items-center gap-6">
-              <button
-                type="button"
-                className={cn(
-                  "flex items-center gap-2 text-sm",
-                  engagement?.isLiked
-                    ? "text-rose-600"
-                    : "text-zinc-500 dark:text-zinc-400 hover:text-rose-600"
-                )}
-              >
-                <Heart
-                  className={cn(
-                    "w-5 h-5",
-                    engagement?.isLiked && "fill-current"
-                  )}
-                />
-                <span>{engagement?.likes}</span>
-              </button>
-              <button
-                type="button"
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-blue-500 transition-colors"
-              >
-                <MessageCircle className="w-5 h-5" />
-                <span>{engagement?.comments}</span>
-              </button>
-              <button
-                type="button"
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-green-500 transition-colors"
-              >
-                <Share2 className="w-5 h-5" />
-                <span>{engagement?.shares}</span>
-              </button>
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Emma Johnson</h3>
+              <p className="text-sm text-gray-500 dark:text-gray-400">@emma_codes · 3h ago</p>
             </div>
-            <button
-              type="button"
-              className="hidden md:block p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors text-zinc-400"
-            >
-              <Bookmark className="w-5 h-5" />
-            </button>
           </div>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-200"
+          >
+            <MoreHorizontal className="w-5 h-5" />
+          </motion.button>
+        </div>
+
+        <p className="text-gray-600 dark:text-gray-300 mb-4">
+          Just launched my new portfolio site using Next.js and Tailwind CSS! Check it out and let me know what you think. Always open to feedback and suggestions!
+        </p>
+
+        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div className="flex space-x-6">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-pink-500"
+            >
+              <Heart className="w-5 h-5" />
+              <span className="text-sm font-medium">243</span>
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-blue-500"
+            >
+              <MessageCircle className="w-5 h-5" />
+              <span className="text-sm font-medium">89</span>
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-green-500"
+            >
+              <Share2 className="w-5 h-5" />
+              <span className="text-sm font-medium">56</span>
+            </motion.button>
+          </div>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className="p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-colors duration-200"
+          >
+            <Bookmark className="w-5 h-5" />
+          </motion.button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
+

@@ -49,8 +49,8 @@ export function AnimatedCircularProgressBarDemo() {
       max={100}
       min={0}
       value={value}
-      gaugePrimaryColor="rgb(79 70 229)"
-      gaugeSecondaryColor="rgba(0, 0, 0, 0.1)"
+      gaugePrimaryColor="rgb(16 185 129)"
+      gaugeSecondaryColor="rgb(163 163 163)"
     />
   );
 }

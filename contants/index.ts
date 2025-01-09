@@ -11,4 +11,5 @@ export const primaryItems = [
   { name: 'Card Hover Effect', href: '/components/card-hover-effect' },
   { name: 'Social Card', href: '/components/social-card' },
   { name: 'Circular Progress Bar', href: '/components/circular-progress-bar' },
+  { name: 'Mouse Follower', href: '/components/mouse-follower' },
 ];

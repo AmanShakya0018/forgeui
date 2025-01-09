@@ -1,111 +1,110 @@
 "use client"
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
-import SocialCard from './components/socialcard';
+import MouseFollower from './components/page';
 
-const Socialcard = () => {
 
-  const title = "Social Card";
-  const routepoint = "social-card";
-  const description = "Interactive React social card displaying user content, profile, and actions like comments, likes, and shares.";
+const Mousefollower = () => {
+
+  const title = "Mouse Follower";
+  const routepoint = "mouse-follower";
+  const description = "The Mouse Follower Element dynamically tracks and follows the user's mouse movements for interactive engagement.";
   const [sourceCode, setSourceCode] = useState(false);
 
   const democode = `"use client";
 import React from 'react'
-import SocialCard from './components/socialcard';
+import MouseFollower from './components/MouseFollower'
 function Page() {
   return (
     <>
-      <SocialCard />
+      <MouseFollower />
     </>
   )
 }
 
 export default Page;`;
 
-  const code = `'use client'
+  const code = `'use client';
 
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Heart, MessageCircle, Share2, Bookmark, MoreHorizontal } from 'lucide-react';
-import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 
-export default function SocialCard() {
+export default function MouseFollower() {
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const cursorOuterRef = useRef<HTMLDivElement>(null);
+
+  const [isHovering, setIsHovering] = useState(false);
+
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const smoothOptions = { damping: 20, stiffness: 300, mass: 0.5 };
+  const smoothX = useSpring(mouseX, smoothOptions);
+  const smoothY = useSpring(mouseY, smoothOptions);
+
+  const outerX = useSpring(mouseX, { ...smoothOptions, damping: 15 });
+  const outerY = useSpring(mouseY, { ...smoothOptions, damping: 15 });
+
+  const scale = useTransform<number, number>(
+    [smoothX, smoothY],
+    ([latestX, latestY]) => {
+      const distance = Math.abs(latestX - mouseX.get()) + Math.abs(latestY - mouseY.get());
+      return 1 + Math.min(distance * 0.002, 0.5);
+    }
+  );
+
+  const manageMouseMove = (e: MouseEvent) => {
+    const { clientX, clientY } = e;
+    mouseX.set(clientX);
+    mouseY.set(clientY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('mousemove', manageMouseMove);
+
+    const handleMouseEnter = () => setIsHovering(true);
+    const handleMouseLeave = () => setIsHovering(false);
+
+    const interactiveElements = document.querySelectorAll('a, button, [role="button"]');
+    interactiveElements.forEach(el => {
+      el.addEventListener('mouseenter', handleMouseEnter);
+      el.addEventListener('mouseleave', handleMouseLeave);
+    });
+
+    return () => {
+      window.removeEventListener('mousemove', manageMouseMove);
+      interactiveElements.forEach(el => {
+        el.removeEventListener('mouseenter', handleMouseEnter);
+        el.removeEventListener('mouseleave', handleMouseLeave);
+      });
+    };
+  },);
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="w-full max-w-xl mx-auto bg-white dark:bg-zinc-900 rounded-2xl shadow-lg overflow-hidden border border-gray-200 dark:border-zinc-700"
-    >
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center space-x-3">
-            <div className="relative w-12 h-12">
-              <Image
-                width={190}
-                height={190}
-                src="/pfp.png"
-                alt="Emma Johnson"
-                className="rounded-full object-cover w-full h-full"
-              />
-              <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-gray-800"></div>
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Emma Johnson</h3>
-              <p className="text-sm text-gray-500 dark:text-gray-400">@emma_codes · 3h ago</p>
-            </div>
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2 text-gray-400 hover:text-gray-500 dark:hover:text-gray-300 transition-colors duration-200"
-          >
-            <MoreHorizontal className="w-5 h-5" />
-          </motion.button>
-        </div>
-
-        <p className="text-gray-600 dark:text-gray-300 mb-4">
-          Just launched my new portfolio site using Next.js and Tailwind CSS! Check it out and let me know what you think. Always open to feedback and suggestions!
-        </p>
-
-        <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
-          <div className="flex space-x-6">
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-pink-500"
-            >
-              <Heart className="w-5 h-5" />
-              <span className="text-sm font-medium">243</span>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-blue-500"
-            >
-              <MessageCircle className="w-5 h-5" />
-              <span className="text-sm font-medium">89</span>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="flex items-center space-x-2 text-gray-500 dark:text-gray-400 hover:text-green-500"
-            >
-              <Share2 className="w-5 h-5" />
-              <span className="text-sm font-medium">56</span>
-            </motion.button>
-          </div>
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-colors duration-200"
-          >
-            <Bookmark className="w-5 h-5" />
-          </motion.button>
-        </div>
-      </div>
-    </motion.div>
+    <>
+      <motion.div
+        ref={cursorRef}
+        className="pointer-events-none fixed z-50 h-4 w-4 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 mix-blend-difference"
+        style={{
+          left: smoothX,
+          top: smoothY,
+          x: '-50%',
+          y: '-50%',
+          scale: isHovering ? 2.5 : scale,
+        }}
+      />
+      <motion.div
+        ref={cursorOuterRef}
+        className="pointer-events-none fixed z-40 h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 opacity-30 blur-sm mix-blend-screen dark:mix-blend-difference"
+        style={{
+          left: outerX,
+          top: outerY,
+          x: '-50%',
+          y: '-50%',
+          scale: isHovering ? 3 : 1,
+        }}
+      />
+    </>
   );
 }
 `;
@@ -131,10 +130,11 @@ export default function SocialCard() {
       </div>
       {(!sourceCode) ?
         (<div className="border border-zinc-200 dark:border-zinc-800 px-10 py-12 mt-[2px] bg-transparent rounded-md shadow-md flex justify-center items-center space-x-2 overflow-hidden flex-wrap min-h-[22rem]">
-          <SocialCard />
+          <MouseFollower />
+          <p className='text-xs sm:text-[15px]'>Mouse Follower is activated, allowing interaction with the mouse to observe dynamic effects in real time.</p>
         </div>)
         : (<CodeBlock
-          language="jsx"
+          language="tsx"
           code={democode}
         />)}
       <h2 className="font-heading mt-12 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight first:mt-0 text-black dark:text-white">Installation</h2>
@@ -168,4 +168,4 @@ export default function SocialCard() {
   )
 }
 
-export default Socialcard
+export default Mousefollower

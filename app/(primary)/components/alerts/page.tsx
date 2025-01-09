@@ -3,7 +3,7 @@ import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
 import Alert from './components/alert';
 
-const Animatedcarousel = () => {
+const Alerts = () => {
 
   const title = "Alerts";
   const routepoint = "alerts";
@@ -23,57 +23,75 @@ function Page() {
 
 export default Page;`;
 
-  const code = `import { Check, X } from "lucide-react";
+  const code = `'use client'
+
+import { Check, X } from 'lucide-react';
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Alert() {
   return (
-    <div className="w-full max-w-xl mx-auto">
-      <div className="rounded-xl p-4 shadow-[0_1px_6px_0_rgba(0,0,0,0.02)] bg-zinc-50 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 relative">
+    <div className="w-full max-w-md mx-auto p-3">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="rounded-lg p-4 shadow-md bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-800 dark:to-zinc-900 border border-zinc-200 dark:border-zinc-700 relative overflow-hidden"
+      >
         <div className="flex items-center gap-4">
-          <div className="relative flex-shrink-0 w-10 h-10">
+          <div className="relative flex-shrink-0 w-12 h-12">
             <Image
               src="/pfp.png"
-              alt="image"
-              sizes="40px"
+              alt="Profile picture"
+              sizes="48px"
               fill
-              className="object-cover rounded-full"
+              className="object-cover rounded-full ring-2 ring-white dark:ring-zinc-800"
             />
-            <div className="absolute right-0 bottom-0 w-2.5 h-2.5 rounded-full bg-green-500 ring-2 ring-white dark:ring-zinc-950" />
+            <motion.div
+              animate={{ scale: [1, 1.2, 1] }}
+              transition={{ repeat: Infinity, duration: 2 }}
+              className="absolute right-0 bottom-0 w-3 h-3 rounded-full bg-green-500 ring-1 ring-white dark:ring-zinc-800"
+            />
           </div>
 
           <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-4 justify-between">
-              <div>
-                <p className="font-medium text-xs md:text-sm text-zinc-700 dark:text-zinc-300">
-                  You’re Invited!
-                </p>
-                <p className="text-[10px] md:text-[13px] mt-0.5 text-zinc-500 dark:text-zinc-400">
-                  Be a part of Forgeui&apos;s{" "}
-                  <span className="font-medium text-zinc-700 dark:text-zinc-300">
-                    Technical Team
-                  </span>
-                </p>
-              </div>
-            </div>
+            <h2 className="font-bold text-base text-zinc-800 dark:text-zinc-100 mb-0.5">
+              You're Invited!
+            </h2>
+            <p className="text-xs text-zinc-600 dark:text-zinc-300">
+              Join Forgeui's{" "}
+              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+                Technical Team
+              </span>
+            </p>
           </div>
 
           <div className="flex gap-2 items-center">
-            <button
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               type="button"
-              className="h-8 w-8 p-0 rounded-lg flex items-center justify-center text-zinc-400 hover:text-red-600 dark:text-zinc-500 hover:bg-red-50 dark:hover:bg-red-950/50 dark:hover:text-red-400 transition-colors"
+              className="h-8 w-8 rounded-full flex items-center justify-center text-zinc-500 hover:text-red-600 dark:text-zinc-400 hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors"
             >
               <X className="h-4 w-4" />
-            </button>
-            <button
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
               type="button"
-              className="h-8 w-8 p-0 rounded-lg flex items-center justify-center text-zinc-400 hover:text-emerald-600 dark:text-zinc-500 hover:bg-emerald-50 dark:hover:bg-emerald-950/50 dark:hover:text-emerald-400 transition-colors"
+              className="h-8 w-8 rounded-full flex items-center justify-center text-emerald-600 bg-emerald-100 hover:bg-emerald-200 dark:bg-emerald-900/30 dark:hover:bg-emerald-800/50 transition-colors"
             >
-              <Check className="h-4 w-4" />
-            </button>
+              <motion.div
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <Check className="h-4 w-4" />
+              </motion.div>
+            </motion.button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
@@ -137,4 +155,4 @@ export default function Alert() {
   )
 }
 
-export default Animatedcarousel
+export default Alerts
