@@ -4,6 +4,9 @@ import React, { useState } from 'react'
 import PaymentCard from './components/paymentcard';
 import Dependencies from '@/components/dependencies';
 import { code, democode, title, description, routepoint } from './components/show-code';
+import ContentNavigation from '@/components/content-navigation';
+import SourceCode from '@/components/sourcecode';
+import RoutePlaceHolder from '@/components/route-place';
 
 const Paymentcard = () => {
 
@@ -11,11 +14,7 @@ const Paymentcard = () => {
 
   return (
     <article className="container lg:pl-8 py-6 max-w-6xl mx-auto">
-      <div className="mb-4 flex items-center space-x-1 text-sm leading-none text-neutral-400">
-        <div className="truncate">Components</div>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-right h-3.5 w-3.5"><path d="m9 18 6-6-6-6"></path></svg>
-        <div className="text-foreground">{title}</div>
-      </div>
+      <ContentNavigation>{title}</ContentNavigation>
       <h1 className="mb-2 text-4xl font-bold">{title}</h1>
       <p className="text-lg mt-0 text-neutral-400">{description}</p>
       <div className="buttons flex flex-row gap-2 mt-12">
@@ -63,18 +62,8 @@ export function cn(...inputs: ClassValue[]) {
         </span>
       </div>
       <div className="flex flex-col border-l border-neutral-300 dark:border-neutral-700 py-6 gap-5">
-        <span className='flex h-8 items-center gap-6'>
-          <span className='bg-neutral-300 dark:bg-neutral-700 w-[6px] h-full rounded-tr-full rounded-br-full'></span>
-          <span className='font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200'>Copy the source code</span>
-        </span>
-        <div
-          className='bg-zinc-100 dark:bg-zinc-800 rounded ml-7 inline-flex max-w-max'>
-          <span
-            className='text-[0.8rem] font-normal tracking-wider px-[0.3rem] py-[0.2rem] text-neutral-800 dark:text-neutral-300'>
-            components/ui/{routepoint}.tsx
-          </span>
-        </div>
-
+        <SourceCode />
+        <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
         <span className='pl-7'>
           <CodeBlock code={code} language="javascript" />
         </span>
