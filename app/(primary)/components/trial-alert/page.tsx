@@ -2,6 +2,7 @@
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
 import TrialAlert from './components/trialalert';
+import Dependencies from '@/components/dependencies';
 
 const Trialalert = () => {
 
@@ -103,15 +104,8 @@ export default function TrialAlert() {
           code={democode}
         />)}
       <h2 className="font-heading mt-12 scroll-m-20 pb-2 text-2xl font-semibold tracking-tight first:mt-0 text-black dark:text-white">Installation</h2>
-      <div className="flex flex-col border-l border-neutral-300 dark:border-neutral-700 gap-5 mt-6">
-        <span className='flex h-8 items-center gap-6'>
-          <span className='bg-neutral-300 dark:bg-neutral-700 w-[6px] h-full rounded-tr-full rounded-br-full'></span>
-          <span className='font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200'>Install dependencies</span>
-        </span>
-        <span className='pl-7'>
-          <CodeBlock code={`npm install framer-motion`} language="javascript" />
-        </span>
-      </div>
+
+      <Dependencies><CodeBlock code={`npm install framer-motion`} language="javascript" /></Dependencies>
       <div className="flex flex-col border-l border-neutral-300 dark:border-neutral-700 py-6 gap-5">
         <span className='flex h-8 items-center gap-6'>
           <span className='bg-neutral-300 dark:bg-neutral-700 w-[6px] h-full rounded-tr-full rounded-br-full'></span>
