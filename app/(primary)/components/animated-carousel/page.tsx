@@ -12,7 +12,7 @@ const Animatedcarousel = () => {
 
   const democode = `"use client";
 import React from 'react'
-import AnimatedCarousel from './components/AnimatedCarousel'
+import AnimatedCarousel from './components/ui/animated-carousel'
 function Page() {
   return (
     <>

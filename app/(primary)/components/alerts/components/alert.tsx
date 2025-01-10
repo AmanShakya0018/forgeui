@@ -18,8 +18,8 @@ export default function BeautifulAlert() {
             <Image
               src="/pfp.png"
               alt="Profile picture"
-              sizes="48px"
-              fill
+              width={190}
+              height={190}
               className="object-cover rounded-full ring-2 ring-white dark:ring-zinc-800"
             />
             <motion.div
@@ -41,7 +41,7 @@ export default function BeautifulAlert() {
             </p>
           </div>
 
-          <div className="flex gap-2 items-center">
+          <div className="block sm:flex gap-2 items-center">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

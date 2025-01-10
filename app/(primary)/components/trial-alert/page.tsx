@@ -1,99 +1,77 @@
 "use client"
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
-import Alert from './components/alert';
+import TrialAlert from './components/trialalert';
 
-const Alerts = () => {
+const Trialalert = () => {
 
-  const title = "Alerts";
-  const routepoint = "alerts";
-  const description = "Customizable React alerts for notifications, warnings, or messages with flexible styling and seamless integration.";
+  const title = "Trial Alert";
+  const routepoint = "trial-alert";
+  const description = "A sleek notification component prompting users to upgrade their plan for enhanced features and uninterrupted access.";
   const [sourceCode, setSourceCode] = useState(false);
 
   const democode = `"use client";
 import React from 'react'
-import Alert from './components/ui/alerts'
+import TrialAlert from './components/ui/trial-alert';
 function Page() {
   return (
     <>
-      <Alert />
+      <TrialAlert />
     </>
   )
 }
 
 export default Page;`;
 
-  const code = `'use client'
+  const code = `"use client"
 
-import { Check, X } from 'lucide-react';
-import Image from "next/image";
-import { motion } from "framer-motion";
+import { useState } from 'react'
+import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion"
+import { LockIcon } from 'lucide-react'
 
-export default function Alert() {
+export default function TrialAlert() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
-    <div className="w-full max-w-md mx-auto p-3">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="rounded-lg p-4 shadow-md bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-800 dark:to-zinc-900 border border-zinc-200 dark:border-zinc-700 relative overflow-hidden"
-      >
-        <div className="flex items-center gap-4">
-          <div className="relative flex-shrink-0 w-12 h-12">
-            <Image
-              src="/pfp.png"
-              alt="Profile picture"
-              sizes="48px"
-              fill
-              className="object-cover rounded-full ring-2 ring-white dark:ring-zinc-800"
-            />
-            <motion.div
-              animate={{ scale: [1, 1.2, 1] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="absolute right-0 bottom-0 w-3 h-3 rounded-full bg-green-500 ring-1 ring-white dark:ring-zinc-800"
-            />
-          </div>
-
-          <div className="flex-1 min-w-0">
-            <h2 className="font-bold text-base text-zinc-800 dark:text-zinc-100 mb-0.5">
-              You're Invited!
-            </h2>
-            <p className="text-xs text-zinc-600 dark:text-zinc-300">
-              Join Forgeui's{" "}
-              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
-                Technical Team
-              </span>
-            </p>
-          </div>
-
-          <div className="block sm:flex gap-2 items-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              type="button"
-              className="h-8 w-8 rounded-full flex items-center justify-center text-zinc-500 hover:text-red-600 dark:text-zinc-400 hover:bg-red-50 dark:hover:bg-red-900/30 transition-colors"
-            >
-              <X className="h-4 w-4" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              type="button"
-              className="h-8 w-8 rounded-full flex items-center justify-center text-emerald-600 bg-emerald-100 hover:bg-emerald-200 dark:bg-emerald-900/30 dark:hover:bg-emerald-800/50 transition-colors"
-            >
-              <motion.div
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Check className="h-4 w-4" />
-              </motion.div>
-            </motion.button>
-          </div>
-        </div>
-      </motion.div>
-    </div>
-  );
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      className="max-w-sm mx-auto"
+    >
+      <div className="bg-white dark:bg-zinc-900/95 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center gap-4 p-8 shadow-lg border border-gray-200 dark:border-zinc-700">
+        <motion.div
+          animate={{ rotate: isHovered ? [0, -5, 5, -5, 5, 0] : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <LockIcon className="w-12 h-12 text-yellow-500 dark:text-yellow-400" />
+        </motion.div>
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mt-2">
+          ACCESS LIMITED
+        </h2>
+        <p className="text-center text-base text-gray-600 dark:text-gray-300 mb-4">
+          Upgrade your plan today to unlock all features and enjoy uninterrupted access.
+        </p>
+        <Button
+          type="button"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
+          className="relative group overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50"
+        >
+          <span className="relative z-10 text-sm">
+            Upgrade Now
+          </span>
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-500"
+            initial={{ x: "100%" }}
+            animate={{ x: isHovered ? "0%" : "100%" }}
+            transition={{ duration: 0.5 }}
+          />
+        </Button>
+      </div>
+    </motion.div>
+  )
 }
 `;
 
@@ -118,7 +96,7 @@ export default function Alert() {
       </div>
       {(!sourceCode) ?
         (<div className="border border-zinc-200 dark:border-zinc-800 px-10 py-12 mt-[2px] bg-transparent rounded-md shadow-md flex justify-center items-center space-x-2 overflow-hidden flex-wrap min-h-[22rem]">
-          <Alert />
+          <TrialAlert />
         </div>)
         : (<CodeBlock
           language="jsx"
@@ -143,7 +121,7 @@ export default function Alert() {
           className='bg-zinc-100 dark:bg-zinc-800 rounded ml-7 inline-flex max-w-max'>
           <span
             className='text-[0.8rem] font-normal tracking-wider px-[0.3rem] py-[0.2rem] text-neutral-800 dark:text-neutral-300'>
-            components/{routepoint}.jsx
+            components/ui/{routepoint}.tsx
           </span>
         </div>
 
@@ -155,4 +133,4 @@ export default function Alert() {
   )
 }
 
-export default Alerts
+export default Trialalert

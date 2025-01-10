@@ -12,7 +12,7 @@ const CardHoverEffect = () => {
 
   const democode = `"use client";
 import React from 'react'
-import CardHover from './components/card-hover-effect'
+import CardHover from './components/ui/card-hover-effect'
 function Page() {
   return (
     <>

@@ -12,4 +12,8 @@ export const primaryItems = [
   { name: 'Social Card', href: '/components/social-card' },
   { name: 'Circular Progress Bar', href: '/components/circular-progress-bar' },
   { name: 'Mouse Follower', href: '/components/mouse-follower' },
+  { name: 'Payment Card', href: '/components/payment-card' },
+  { name: 'Trial Alert', href: '/components/trial-alert' },
+  { name: 'Share Panel', href: '/components/share-panel' },
+  { name: 'Skill Card', href: '/components/skill-card' },
 ];

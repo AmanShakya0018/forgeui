@@ -13,7 +13,7 @@ const Mousefollower = () => {
 
   const democode = `"use client";
 import React from 'react'
-import MouseFollower from './components/MouseFollower'
+import MouseFollower from './components/ui/mouse-follower'
 function Page() {
   return (
     <>

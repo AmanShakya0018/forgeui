@@ -12,7 +12,7 @@ const Socialcard = () => {
 
   const democode = `"use client";
 import React from 'react'
-import SocialCard from './components/socialcard';
+import SocialCard from './components/ui/social-card';
 function Page() {
   return (
     <>
@@ -99,7 +99,7 @@ export default function SocialCard() {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-colors duration-200"
+            className="hidden sm:block p-2 rounded-full text-gray-400 hover:text-yellow-500 hover:bg-yellow-100 dark:hover:bg-yellow-900 transition-colors duration-200"
           >
             <Bookmark className="w-5 h-5" />
           </motion.button>
