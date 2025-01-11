@@ -103,44 +103,43 @@ export default function TeamRoster({
         </div>
 
         <div className="divide-y divide-zinc-200 dark:divide-zinc-800">
-          {collaborators.map((participant) => (
+          {collaborators.map((person) => (
             <div
-              key={participant.userId}
+              key={person.userId}
               className="flex items-center justify-between p-6 bg-white dark:bg-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition-colors duration-200"
             >
               <div className="flex-1 min-w-0 mr-4">
                 <div className="flex items-center gap-3">
                   <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
-                    {participant.name}
+                    {person.name}
                   </h3>
                   <Badge
                     variant="secondary"
-                    className={\`px-2 py-0.5 text-xs font-medium rounded-full \${participant.status === "online"
+                    className={\`px-2 py-0.5 text-xs font-medium rounded-full \${person.status === "online"
                       ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-400"
                       : "bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400"
                       }\`}
                   >
-                    {participant.status}
+                    {person.status}
                   </Badge>
                 </div>
                 <div className="flex items-center gap-4 mt-2">
                   <p className="text-sm text-zinc-600 dark:text-zinc-400">
-                    {participant.position}
+                    {person.position}
                   </p>
                   <TooltipProvider>
                     <Tooltip>
                       <TooltipTrigger asChild>
-                        <a
-                          href={\`\${participant.email}\`}
+                        <button
                           className="text-sm text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors duration-200 flex items-center gap-1.5"
                         >
                           <Mail className="w-4 h-4" />
-                          <span className="sr-only">{participant.email}</span>
+                          <span className="sr-only">{person.email}</span>
                           Email
-                        </a>
+                        </button>
                       </TooltipTrigger>
                       <TooltipContent className="bg-zinc-200 dark:bg-zinc-800 border-none text-black dark:text-white">
-                        <p >{participant.email}</p>
+                        <p >{person.email}</p>
                       </TooltipContent>
                     </Tooltip>
                   </TooltipProvider>
@@ -149,14 +148,14 @@ export default function TeamRoster({
               <div className="hidden sm:flex items-center gap-3">
                 <Badge
                   variant="outline"
-                  className={\`px-2 py-1 text-xs font-semibold rounded-full \${participant.access === "owner"
+                  className={\`px-2 py-1 text-xs font-semibold rounded-full \${person.access === "owner"
                     ? "border-emerald-300 bg-emerald-100 text-emerald-800 dark:border-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300"
-                    : participant.access === "contributor"
+                    : person.access === "contributor"
                       ? "border-blue-300 bg-blue-100 text-blue-800 dark:border-blue-700 dark:bg-blue-900/30 dark:text-blue-300"
                       : "border-zinc-300 bg-zinc-100 text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800 dark:text-zinc-300"
                     }\`}
                 >
-                  {participant.access}
+                  {person.access}
                 </Badge>
                 <Button variant="ghost" size="icon" className="text-zinc-500 hover:text-zinc-700 dark:text-zinc-400 dark:hover:text-zinc-200 ">
                   <MoreHorizontal className="w-5 h-5" />
