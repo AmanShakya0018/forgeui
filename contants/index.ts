@@ -14,7 +14,6 @@ export const primaryItems = [
   { name: 'Mouse Follower', href: '/components/mouse-follower' },
   { name: 'Payment Card', href: '/components/payment-card' },
   { name: 'Trial Alert', href: '/components/trial-alert' },
-  { name: 'Share Panel', href: '/components/share-panel' },
   { name: 'Skill Card', href: '/components/skill-card' },
   { name: 'Transactions', href: '/components/transactions' },
   { name: 'Todos', href: '/components/todos' },
