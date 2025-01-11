@@ -16,4 +16,8 @@ export const primaryItems = [
   { name: 'Trial Alert', href: '/components/trial-alert' },
   { name: 'Share Panel', href: '/components/share-panel' },
   { name: 'Skill Card', href: '/components/skill-card' },
+  { name: 'Transactions', href: '/components/transactions' },
+  { name: 'Todos', href: '/components/todos' },
+  { name: 'Team Roster', href: '/components/team-roster' },
+  { name: 'Text Rendering Effect', href: '/components/text-rendering-effect' },
 ];

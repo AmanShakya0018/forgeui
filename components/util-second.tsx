@@ -18,12 +18,12 @@ const UtilSecond = () => {
 
       <span className='pl-7'>
         <CodeBlock code={`import { ClassValue, clsx } from "clsx";
-    import { twMerge } from "tailwind-merge";
-    
-    export function cn(...inputs: ClassValue[]) {
-      return twMerge(clsx(inputs));
-    }
-    `} language="javascript" />
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+`} language="javascript" />
       </span>
     </div>
   )
