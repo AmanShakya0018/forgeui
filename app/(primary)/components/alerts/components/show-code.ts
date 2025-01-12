@@ -49,10 +49,10 @@ export default function Alert() {
 
           <div className="flex-1 min-w-0">
             <h2 className="font-bold text-base text-zinc-800 dark:text-zinc-100 mb-0.5">
-              You&apos;re Invited!
+              You're Invited!
             </h2>
             <p className="text-xs text-zinc-600 dark:text-zinc-300">
-              Join Forgeui&apos;s{" "}
+              Join Forgeui's{" "}
               <span className="font-semibold text-indigo-600 dark:text-indigo-400">
                 Technical Team
               </span>
