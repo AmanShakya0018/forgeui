@@ -34,7 +34,7 @@ const Alerts = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm install framer-motion`} language="javascript" /></Dependencies>
+      <Dependencies><CodeBlock code={`npm install lucide-react framer-motion`} language="javascript" /></Dependencies>
       <VerticalContainer>
         <SourceCode />
         <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>

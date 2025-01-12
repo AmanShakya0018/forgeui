@@ -35,7 +35,7 @@ const Todo = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm install framer-motion clsx tailwind-merge`} language="javascript" /></Dependencies>
+      <Dependencies><CodeBlock code={`npm install lucide-react framer-motion clsx tailwind-merge`} language="javascript" /></Dependencies>
       <UtilSecond />
       <VerticalContainer>
         <SourceCode />

@@ -1,8 +1,7 @@
 "use client"
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
-import TrialAlert from './components/trialalert';
-import Dependencies from '@/components/dependencies';
+import FileUpload from './components/file-upload';
 import { code, democode, title, description, routepoint } from './components/show-code';
 import ContentNavigation from '@/components/content-navigation';
 import SourceCode from '@/components/sourcecode';
@@ -14,11 +13,12 @@ import PreviewComponentContainer from '@/components/previewcomponentcontainer';
 import StepsInstallation from '@/components/steps-installation';
 import VerticalContainer from '@/components/verticalcontainer';
 import MainContentContainer from '@/components/maincontentcontainer';
+import UtilSecond from '@/components/util-second';
+import Dependencies from '@/components/dependencies';
 
-const Trialalert = () => {
+const Fileupload = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
-
 
   return (
     <MainContentContainer>
@@ -28,14 +28,15 @@ const Trialalert = () => {
       <ToggleButtonGroup sourceCode={sourceCode} setSourceCode={setSourceCode} />
       {(!sourceCode) ?
         (<PreviewComponentContainer>
-          <TrialAlert />
+          <FileUpload />
         </PreviewComponentContainer>)
         : (<CodeBlock
           language="jsx"
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm install lucide-react framer-motion`} language="javascript" /></Dependencies>
+      <Dependencies><CodeBlock code={`npm i framer-motion clsx tailwind-merge lucide-react react-dropzone`} language="javascript" /></Dependencies>
+      <UtilSecond />
       <VerticalContainer>
         <SourceCode />
         <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
@@ -47,4 +48,4 @@ const Trialalert = () => {
   )
 }
 
-export default Trialalert
+export default Fileupload
