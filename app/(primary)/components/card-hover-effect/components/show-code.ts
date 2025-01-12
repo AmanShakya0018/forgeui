@@ -18,8 +18,8 @@ export default Page;`;
 
 export const code = `"use client"
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
 import Link from "next/link";
+import { useState } from "react";
 
 const CardHover = () => {
   return (
@@ -32,8 +32,17 @@ const CardHover = () => {
 export default CardHover;
 
 
-const HoverEffect = ({ items }) => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
+const HoverEffect = ({
+  items,
+}: {
+  items: {
+    title: string;
+    description: string;
+    link: string;
+  }[];
+
+}) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10">
@@ -66,18 +75,39 @@ const HoverEffect = ({ items }) => {
   );
 };
 
-const Card = ({ children }) => (
-  <div className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20">
+const Card = ({
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <div
+    className="rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20"
+  >
     <div className="relative z-50 p-4">{children}</div>
   </div>
 );
 
-const CardTitle = ({ children }) => (
-  <h4 className="text-zinc-100 font-bold tracking-wide mt-4">{children}</h4>
+const CardTitle = ({
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <h4 className="text-zinc-100 font-bold tracking-wide mt-4">
+    {children}
+  </h4>
 );
 
-const CardDescription = ({ children }) => (
-  <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">{children}</p>
+const CardDescription = ({
+  children,
+}: {
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <p className="mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm">
+    {children}
+  </p>
 );
 
 
@@ -119,4 +149,4 @@ export const projects = [
     link: "https://adobe.com",
   },
 ];
-`;
+`

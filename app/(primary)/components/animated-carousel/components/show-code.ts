@@ -18,8 +18,8 @@ export default Page;`;
 export const code = `'use client'
 import { useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 const AnimatedCarousel = () => {
   const [index, setIndex] = useState(0)
@@ -27,11 +27,11 @@ const AnimatedCarousel = () => {
 
   const items = [
     {
-      img: '/image.jpg', title: 'Spectacular Nights', topic: 'Fireworks Display', description: 'Experience the magic of nighttime celebrations with stunning fireworks over the waterfront.'
+      img: '/photo1.jpg', title: 'Spectacular Nights', topic: 'Fireworks Display', description: 'Experience the magic of nighttime celebrations with stunning fireworks over the waterfront.'
     },
-    { img: '/image.jpg', title: 'Interactive Design', topic: 'User Experience', description: 'Engage your audience with intuitive and responsive interfaces.' },
-    { img: '/image.jpg', title: 'Modern Aesthetics', topic: 'Visual Appeal', description: 'Captivate users with sleek, contemporary design elements.' },
-    { img: '/image.jpg', title: 'Performance Optimized', topic: 'Speed & Efficiency', description: 'Deliver smooth experiences with optimized performance.' },
+    { img: '/photo2.jpg', title: 'Interactive Design', topic: 'User Experience', description: 'Engage your audience with intuitive and responsive interfaces.' },
+    { img: '/photo1.jpg', title: 'Modern Aesthetics', topic: 'Visual Appeal', description: 'Captivate users with sleek, contemporary design elements.' },
+    { img: '/photo2.jpg', title: 'Performance Optimized', topic: 'Speed & Efficiency', description: 'Deliver smooth experiences with optimized performance.' },
   ]
 
   const handlePrev = () => {
@@ -45,7 +45,7 @@ const AnimatedCarousel = () => {
   }
 
   useEffect(() => {
-    const interval = setInterval(handleNext, 5000) //slide changes every 5 sec
+    const interval = setInterval(handleNext, 5000)
     return () => clearInterval(interval)
   },)
 

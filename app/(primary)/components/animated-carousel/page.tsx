@@ -37,7 +37,7 @@ const Animatedcarousel = () => {
       <Dependencies><CodeBlock code={`npm install lucide-react framer-motion`} language="javascript" /></Dependencies>
       <VerticalContainer>
         <SourceCode />
-        <RoutePlaceHolder>components/ui/{routepoint}.jsx</RoutePlaceHolder>
+        <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
         <span className='pl-7'>
           <CodeBlock code={code} language="javascript" />
         </span>
