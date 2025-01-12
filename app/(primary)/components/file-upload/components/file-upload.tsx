@@ -163,13 +163,10 @@ const FileUpload = ({
                         {file.name}
                       </p>
                       <div className="flex items-center gap-3 text-xs text-neutral-500 dark:text-neutral-400 mt-1">
-                        <span className="rounded-full px-2 py-0.5 bg-neutral-100 dark:bg-neutral-800">
+                        <span className="text-[0.5rem] rounded-full px-2 py-0.5 bg-neutral-100 dark:bg-neutral-800">
                           {(file.size / (1024 * 1024)).toFixed(2)} MB
                         </span>
                         <span>{file.type || 'Unknown type'}</span>
-                        <span>
-                          {new Date(file.lastModified).toLocaleDateString()}
-                        </span>
                       </div>
                     </div>
 

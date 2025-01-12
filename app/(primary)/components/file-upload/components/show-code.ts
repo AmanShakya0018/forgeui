@@ -184,9 +184,6 @@ const FileUpload = ({
                           {(file.size / (1024 * 1024)).toFixed(2)} MB
                         </span>
                         <span>{file.type || 'Unknown type'}</span>
-                        <span>
-                          {new Date(file.lastModified).toLocaleDateString()}
-                        </span>
                       </div>
                     </div>
 

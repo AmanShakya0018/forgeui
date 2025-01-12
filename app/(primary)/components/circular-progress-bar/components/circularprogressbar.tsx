@@ -1,46 +1,46 @@
-"use client";
-import { cn } from "@/lib/utils";
+"use client"
 
-import { useEffect, useState } from "react";
+import { cn } from "@/lib/utils"
+import { useEffect, useState } from "react"
+import { motion } from "framer-motion"
 
-
-export function AnimatedCircularProgressBarDemo() {
-  const [value, setValue] = useState(0);
+export default function CircularProgressBarDemo() {
+  const [value, setValue] = useState(0)
 
   useEffect(() => {
-    const handleIncrement = (prev: number) => {
-      if (prev === 100) {
-        return 0;
-      }
-      return prev + 10;
-    };
-    setValue(handleIncrement);
-    const interval = setInterval(() => setValue(handleIncrement), 2000);
-    return () => clearInterval(interval);
-  }, []);
+    const interval = setInterval(() => {
+      setValue((prev) => (prev + 10) % 110) // Increment by 10, reset after 100
+    }, 2000) // Change every 2 seconds
+    return () => clearInterval(interval)
+  }, [])
 
   return (
-    <AnimatedCircularProgressBar
-      max={100}
-      min={0}
-      value={value}
-      gaugePrimaryColor="rgb(16 185 129)"
-      gaugeSecondaryColor="rgb(163 163 163)"
-    />
-  );
+    <div className="flex flex-col items-center justify-center gap-8 rounded-xl bg-background dark:bg-black  p-8">
+      <div className="relative">
+        <CircularProgressBar
+          max={100}
+          min={0}
+          value={value}
+          gaugePrimaryColor="rgb(16, 185, 129)"
+          gaugeSecondaryColor="rgba(16, 185, 129, 0.2)"
+          className="relative z-10"
+        />
+        <div className="absolute left-1/2 top-1/2 -z-0 size-48 -translate-x-1/2 -translate-y-1/2 animate-pulse rounded-full bg-gray-500/20 blur-3xl" />
+      </div>
+    </div>
+  )
 }
-
 
 interface Props {
-  max: number;
-  value: number;
-  min: number;
-  gaugePrimaryColor: string;
-  gaugeSecondaryColor: string;
-  className?: string;
+  max: number
+  value: number
+  min: number
+  gaugePrimaryColor: string
+  gaugeSecondaryColor: string
+  className?: string
 }
 
-function AnimatedCircularProgressBar({
+function CircularProgressBar({
   max = 100,
   min = 0,
   value = 0,
@@ -48,27 +48,17 @@ function AnimatedCircularProgressBar({
   gaugeSecondaryColor,
   className,
 }: Props) {
-  const circumference = 2 * Math.PI * 45;
-  const percentPx = circumference / 100;
-  const currentPercent = Math.round(((value - min) / (max - min)) * 100);
+  const currentPercent = Math.min(100, Math.max(0, Math.round(((value - min) / (max - min)) * 100)))
 
   return (
-    <div
-      className={cn("relative size-40 text-2xl font-semibold", className)}
-      style={
-        {
-          "--circle-size": "100px",
-          "--circumference": circumference,
-          "--percent-to-px": `${percentPx}px`,
-          "--gap-percent": "5",
-          "--offset-factor": "0",
-          "--transition-length": "1s",
-          "--transition-step": "200ms",
-          "--delay": "0s",
-          "--percent-to-deg": "3.6deg",
-          transform: "translateZ(0)",
-        } as React.CSSProperties
-      }
+    <motion.div
+      className={cn(
+        "relative size-48 text-2xl font-semibold drop-shadow-2xl",
+        className
+      )}
+      initial={{ scale: 0.8, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <svg
         fill="none"
@@ -76,64 +66,47 @@ function AnimatedCircularProgressBar({
         strokeWidth="2"
         viewBox="0 0 100 100"
       >
-        {currentPercent <= 90 && currentPercent >= 0 && (
-          <circle
-            cx="50"
-            cy="50"
-            r="45"
-            strokeWidth="10"
-            strokeDashoffset="0"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className=" opacity-100"
-            style={
-              {
-                stroke: gaugeSecondaryColor,
-                "--stroke-percent": 90 - currentPercent,
-                "--offset-factor-secondary": "calc(1 - var(--offset-factor))",
-                strokeDasharray:
-                  "calc(var(--stroke-percent) * var(--percent-to-px)) var(--circumference)",
-                transform:
-                  "rotate(calc(1turn - 90deg - (var(--gap-percent) * var(--percent-to-deg) * var(--offset-factor-secondary)))) scaleY(-1)",
-                transition: "all var(--transition-length) ease var(--delay)",
-                transformOrigin:
-                  "calc(var(--circle-size) / 2) calc(var(--circle-size) / 2)",
-              } as React.CSSProperties
-            }
-          />
-        )}
         <circle
           cx="50"
           cy="50"
           r="45"
           strokeWidth="10"
-          strokeDashoffset="0"
           strokeLinecap="round"
           strokeLinejoin="round"
-          className="opacity-100"
-          style={
-            {
-              stroke: gaugePrimaryColor,
-              "--stroke-percent": currentPercent,
-              strokeDasharray:
-                "calc(var(--stroke-percent) * var(--percent-to-px)) var(--circumference)",
-              transition:
-                "var(--transition-length) ease var(--delay),stroke var(--transition-length) ease var(--delay)",
-              transitionProperty: "stroke-dasharray,transform",
-              transform:
-                "rotate(calc(-90deg + var(--gap-percent) * var(--offset-factor) * var(--percent-to-deg)))",
-              transformOrigin:
-                "calc(var(--circle-size) / 2) calc(var(--circle-size) / 2)",
-            } as React.CSSProperties
-          }
+          className="opacity-100 transition-opacity duration-500"
+          style={{ stroke: gaugeSecondaryColor }}
+        />
+        <motion.circle
+          cx="50"
+          cy="50"
+          r="45"
+          strokeWidth="10"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="opacity-100 drop-shadow-[0_0_10px_rgba(16,185,129,0.1)]"
+          style={{ stroke: gaugePrimaryColor }}
+          initial={{ pathLength: 0 }}
+          animate={{ pathLength: currentPercent / 100 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
         />
       </svg>
-      <span
-        data-current-value={currentPercent}
-        className="duration-[var(--transition-length)] delay-[var(--delay)] absolute inset-0 m-auto size-fit ease-linear animate-in fade-in"
+      <motion.div
+        initial={false}
+        animate={{ opacity: 1 }}
+        className="absolute inset-0 m-auto flex size-fit items-center gap-1 text-emerald-300 dark:text-emerald-200"
       >
-        {currentPercent}
-      </span>
-    </div>
-  );
+        <motion.span
+          key={currentPercent}
+          initial={{ y: 10, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+          className="text-4xl font-bold tabular-nums"
+        >
+          {currentPercent}
+        </motion.span>
+        <span className="text-lg font-normal text-emerald-300 dark:text-emerald-200">%</span>
+      </motion.div>
+    </motion.div>
+  )
 }
+

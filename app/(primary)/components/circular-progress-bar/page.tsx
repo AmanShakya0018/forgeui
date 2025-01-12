@@ -1,7 +1,7 @@
 "use client"
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
-import { AnimatedCircularProgressBarDemo } from './components/circularprogressbar';
+import CircularProgressBarDemo from './components/circularprogressbar';
 import { code, democode, title, description, routepoint } from './components/show-code';
 import ContentNavigation from '@/components/content-navigation';
 import SourceCode from '@/components/sourcecode';
@@ -28,7 +28,7 @@ const Circularprogressbar = () => {
       <ToggleButtonGroup sourceCode={sourceCode} setSourceCode={setSourceCode} />
       {(!sourceCode) ?
         (<PreviewComponentContainer>
-          <AnimatedCircularProgressBarDemo />
+          <CircularProgressBarDemo />
         </PreviewComponentContainer>)
         : (<CodeBlock
           language="jsx"
