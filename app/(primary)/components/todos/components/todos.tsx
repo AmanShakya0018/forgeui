@@ -31,22 +31,22 @@ export default function Todos() {
       </div>
 
       <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
-        <TodoItem
+        <TaskItem
           text="Plan team meeting"
           time="2:00 PM"
-          priority="High"
+          importance="High"
         />
 
-        <TodoItem
+        <TaskItem
           text="Write blog post draft"
           time="4:30 PM"
-          priority="Medium"
+          importance="Medium"
         />
 
-        <TodoItem
+        <TaskItem
           text="Organize workspace"
           time="6:00 PM"
-          priority="Low"
+          importance="Low"
         />
       </div>
 
@@ -66,14 +66,14 @@ export default function Todos() {
   );
 }
 
-interface TodoItemProps {
+interface TaskItemProps {
   text: string;
   time: string;
-  priority?: 'High' | 'Medium' | 'Low';
+  importance?: 'High' | 'Medium' | 'Low';
   flag?: boolean;
 }
 
-function TodoItem({ text, time, priority }: TodoItemProps) {
+function TaskItem({ text, time, importance }: TaskItemProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
@@ -97,8 +97,8 @@ function TodoItem({ text, time, priority }: TodoItemProps) {
               {time}
             </span>
           </div>
-          {priority && (
-            <PriorityBadge priority={priority} />
+          {importance && (
+            <ImportanceBadge importance={importance} />
           )}
         </div>
       </div>
@@ -112,7 +112,7 @@ function TodoItem({ text, time, priority }: TodoItemProps) {
   );
 }
 
-function PriorityBadge({ priority }: { priority: 'High' | 'Medium' | 'Low' }) {
+function ImportanceBadge({ importance }: { importance: 'High' | 'Medium' | 'Low' }) {
   const styles = {
     High: "border-rose-500 text-rose-700 dark:border-rose-500 dark:text-rose-400",
     Medium: "border-amber-500 text-amber-700 dark:border-amber-500 dark:text-amber-400",
@@ -122,9 +122,9 @@ function PriorityBadge({ priority }: { priority: 'High' | 'Medium' | 'Low' }) {
   return (
     <span className={cn(
       "text-xs px-2 py-0.5 rounded-full font-medium border",
-      styles[priority]
+      styles[importance]
     )}>
-      {priority}
+      {importance}
     </span>
   );
 }

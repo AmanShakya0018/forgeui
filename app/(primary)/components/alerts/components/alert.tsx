@@ -4,7 +4,7 @@ import { Check, X } from 'lucide-react';
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-export default function BeautifulAlert() {
+export default function Alert() {
   return (
     <div className="w-full max-w-md mx-auto p-3">
       <motion.div

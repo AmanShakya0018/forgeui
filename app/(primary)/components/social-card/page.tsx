@@ -3,7 +3,7 @@ import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
 import SocialCard from './components/socialcard';
 import Dependencies from '@/components/dependencies';
-import { code, democode, title, description, routepoint } from './components/show-card';
+import { code, democode, title, description, routepoint } from './components/show-code';
 import ContentNavigation from '@/components/content-navigation';
 import SourceCode from '@/components/sourcecode';
 import RoutePlaceHolder from '@/components/route-place';

@@ -11,9 +11,10 @@ import MainTitle from '@/components/maintitle';
 import MainDescription from '@/components/maindescription';
 import PreviewComponentContainer from '@/components/previewcomponentcontainer';
 import StepsInstallation from '@/components/steps-installation';
-import UtilFirst from '@/components/util-first';
 import VerticalContainer from '@/components/verticalcontainer';
 import MainContentContainer from '@/components/maincontentcontainer';
+import UtilSecond from '@/components/util-second';
+import Dependencies from '@/components/dependencies';
 
 const Circularprogressbar = () => {
 
@@ -34,7 +35,8 @@ const Circularprogressbar = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <UtilFirst />
+      <Dependencies><CodeBlock code={`npm install framer-motion clsx tailwind-merge`} language="javascript" /></Dependencies>
+      <UtilSecond />
       <VerticalContainer>
         <SourceCode />
         <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>

@@ -35,7 +35,7 @@ const Transaction = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm install framer-motion`} language="javascript" /></Dependencies>
+      <Dependencies><CodeBlock code={`npm install framer-motion clsx tailwind-merge`} language="javascript" /></Dependencies>
       <UtilSecond />
       <VerticalContainer>
         <SourceCode />

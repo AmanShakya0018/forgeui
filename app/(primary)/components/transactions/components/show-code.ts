@@ -34,11 +34,11 @@ import {
 interface Transaction {
   id: string
   title: string
-  amount: string
-  type: "incoming" | "outgoing"
-  category: string
+  money: string
+  subset: "incoming" | "outgoing"
+  genre: string
   icon: LucideIcon
-  timestamp: string
+  time: string
   status: "completed" | "pending" | "failed"
 }
 
@@ -47,7 +47,40 @@ interface TransactionsProps {
   className?: string
 }
 
-const categoryStyles = {
+const TRANSACTIONS: Transaction[] = [
+  {
+    id: "1",
+    title: "Business Trip",
+    money: "$1,200.00",
+    subset: "outgoing",
+    genre: "travel",
+    icon: Plane,
+    time: "2 hours ago",
+    status: "completed",
+  },
+  {
+    id: "2",
+    title: "Morning Coffee",
+    money: "$5.00",
+    subset: "outgoing",
+    genre: "coffee",
+    icon: Coffee,
+    time: "Today at 7:30 AM",
+    status: "completed",
+  },
+  {
+    id: "3",
+    title: "Freelance Work",
+    money: "$3,800.00",
+    subset: "incoming",
+    genre: "work",
+    icon: Briefcase,
+    time: "Yesterday at 6:00 PM",
+    status: "completed",
+  },
+]
+
+const genreForms = {
   travel:
     "from-teal-600/20 via-teal-600/10 to-teal-600/5 text-teal-700 dark:from-teal-400/30 dark:via-teal-400/20 dark:to-teal-400/10 dark:text-teal-300",
   work: "from-purple-600/20 via-purple-600/10 to-purple-600/5 text-purple-700 dark:from-purple-400/30 dark:via-purple-400/20 dark:to-purple-400/10 dark:text-purple-300",
@@ -57,44 +90,11 @@ const categoryStyles = {
     "from-green-600/20 via-green-600/10 to-green-600/5 text-green-700 dark:from-green-400/30 dark:via-green-400/20 dark:to-green-400/10 dark:text-green-300",
 }
 
-const TRANSACTIONS: Transaction[] = [
-  {
-    id: "1",
-    title: "Business Trip",
-    amount: "$1,200.00",
-    type: "outgoing",
-    category: "travel",
-    icon: Plane,
-    timestamp: "2 hours ago",
-    status: "completed",
-  },
-  {
-    id: "2",
-    title: "Morning Coffee",
-    amount: "$5.00",
-    type: "outgoing",
-    category: "coffee",
-    icon: Coffee,
-    timestamp: "Today at 7:30 AM",
-    status: "completed",
-  },
-  {
-    id: "3",
-    title: "Freelance Work",
-    amount: "$3,800.00",
-    type: "incoming",
-    category: "work",
-    icon: Briefcase,
-    timestamp: "Yesterday at 6:00 PM",
-    status: "completed",
-  },
-]
-
 export default function Transactions({
   transactions = TRANSACTIONS,
   className,
 }: TransactionsProps) {
-  const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [scaledId, setScaledId] = useState<string | null>(null)
 
   return (
     <TooltipProvider>
@@ -142,7 +142,7 @@ export default function Transactions({
                     "border border-transparent",
                     "hover:border-zinc-200 dark:hover:border-zinc-700/50"
                   )}
-                  onClick={() => setExpandedId(expandedId === transaction.id ? null : transaction.id)}
+                  onClick={() => setScaledId(scaledId === transaction.id ? null : transaction.id)}
                 >
                   <Tooltip>
                     <TooltipTrigger>
@@ -152,8 +152,8 @@ export default function Transactions({
                           "w-10 h-10 sm:w-14 sm:h-14 flex items-center justify-center",
                           "rounded-2xl",
                           "bg-gradient-to-br",
-                          categoryStyles[
-                          transaction.category as keyof typeof categoryStyles
+                          genreForms[
+                          transaction.genre as keyof typeof genreForms
                           ],
                           "transition-all duration-300",
                           "group-hover:scale-110",
@@ -165,7 +165,7 @@ export default function Transactions({
                       </div>
                     </TooltipTrigger>
                     <TooltipContent>
-                      <p>{transaction.category}</p>
+                      <p>{transaction.genre}</p>
                     </TooltipContent>
                   </Tooltip>
 
@@ -176,7 +176,7 @@ export default function Transactions({
                       </h3>
                       <p className="hidden sm:flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400">
                         <Clock className="w-4 h-4 text-zinc-400" />
-                        {transaction.timestamp}
+                        {transaction.time}
                       </p>
                     </div>
 
@@ -189,13 +189,13 @@ export default function Transactions({
                       <span
                         className={cn(
                           "text-sm sm:text-[1rem] font-semibold",
-                          transaction.type === "incoming"
+                          transaction.subset === "incoming"
                             ? "text-emerald-600 dark:text-emerald-400"
                             : "text-rose-600 dark:text-rose-400"
                         )}
                       >
-                        {transaction.type === "incoming" ? "+" : "-"}
-                        {transaction.amount}
+                        {transaction.subset === "incoming" ? "+" : "-"}
+                        {transaction.money}
                       </span>
                     </div>
                   </div>
