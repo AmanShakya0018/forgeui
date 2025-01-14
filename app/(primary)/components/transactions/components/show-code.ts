@@ -26,7 +26,6 @@ import { Button } from "@/components/ui/button"
 import { ScrollArea } from "@/components/ui/scroll-area"
 import {
   Tooltip,
-  TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
@@ -75,7 +74,7 @@ const TRANSACTIONS: Transaction[] = [
     subset: "incoming",
     genre: "work",
     icon: Briefcase,
-    time: "Yesterday at 6:00 PM",
+    time: "Today at 6:00 PM",
     status: "completed",
   },
 ]
@@ -114,7 +113,7 @@ export default function Transactions({
                 Financial Overview
               </h2>
               <p className="text-xs font-medium text-zinc-500 dark:text-zinc-400 mt-1 bg-zinc-100 dark:bg-zinc-800 rounded-full px-2 py-0.5 inline-block">
-                18 Transactions
+                3 Transactions
               </p>
             </div>
             <Button className="hidden sm:flex flex-row bg-transparent text-neutral-400 hover:bg-zinc-100 dark:hover:bg-zinc-800" size="sm">
@@ -135,7 +134,7 @@ export default function Transactions({
                   transition={{ duration: 0.3 }}
                   className={cn(
                     "group relative flex items-center gap-4",
-                    "px-0 py-3 sm:p-4 rounded-2xl",
+                    "px-1 py-3 sm:p-4 rounded-2xl",
                     "transition-all duration-300 ease-out",
                     "hover:bg-zinc-50 dark:hover:bg-zinc-800/50",
                     "hover:shadow-md",
@@ -164,17 +163,14 @@ export default function Transactions({
                         <transaction.icon className="w-6 h-6" />
                       </div>
                     </TooltipTrigger>
-                    <TooltipContent>
-                      <p>{transaction.genre}</p>
-                    </TooltipContent>
                   </Tooltip>
 
-                  <div className="flex-1 sm:flex items-center justify-between min-w-0">
+                  <div className="flex-1 flex items-center justify-between min-w-0">
                     <div className="space-y-1 min-w-0">
-                      <h3 className="text-xs sm:text-[1rem]  -ml-1 sm:pl-0 font-semibold text-zinc-900 dark:text-zinc-100 truncate">
+                      <h3 className="text-xs sm:text-[1rem] font-semibold text-zinc-900 dark:text-zinc-100 truncate">
                         {transaction.title}
                       </h3>
-                      <p className="hidden sm:flex items-center gap-1 text-sm text-zinc-600 dark:text-zinc-400">
+                      <p className="flex items-center gap-1 text-xs sm:text-sm text-zinc-600 dark:text-zinc-400">
                         <Clock className="w-4 h-4 text-zinc-400" />
                         {transaction.time}
                       </p>
@@ -188,7 +184,7 @@ export default function Transactions({
                     >
                       <span
                         className={cn(
-                          "text-sm sm:text-[1rem] font-semibold",
+                          "text-xs sm:text-[1rem] font-semibold",
                           transaction.subset === "incoming"
                             ? "text-emerald-600 dark:text-emerald-400"
                             : "text-rose-600 dark:text-rose-400"
