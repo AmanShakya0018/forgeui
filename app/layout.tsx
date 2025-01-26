@@ -6,6 +6,7 @@ import Provider from "@/components/provider";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
+import { Analytics } from "@vercel/analytics/react"
 
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -32,6 +33,7 @@ export default function RootLayout({
             <Toaster />
           </div>
         </Provider>
+        <Analytics />
       </body>
     </html>
   );
