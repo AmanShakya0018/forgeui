@@ -1,6 +1,6 @@
 "use client";
 import React, { ReactNode } from "react";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "@/provider/theme-provider"
 
 type Props = {
   children: ReactNode
