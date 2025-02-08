@@ -139,11 +139,15 @@ const FeedbackButton = () => {
                     placeholder="Your comments or suggestions"
                     className="bg-white border-neutral-200"
                     value={formData.feedback}
+                    maxLength={300}
                     onChange={(e) =>
                       setFormData({ ...formData, feedback: e.target.value })
                     }
                     required
                   />
+                  <p className="text-xs text-gray-500 text-right">
+                    {formData.feedback.length}/300
+                  </p>
                 </div>
                 <div className="pt-4">
                   <Button
