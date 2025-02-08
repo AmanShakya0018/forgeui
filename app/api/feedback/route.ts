@@ -4,7 +4,7 @@ import nodemailer from 'nodemailer';
 export async function POST(req: Request) {
   try {
     const body = await req.json();
-    const { name, email, rating, message } = body;
+    const { name, email, rating, feedback } = body;
     const subject = "Feedback for ForgeUI from user";
 
 
@@ -19,20 +19,20 @@ export async function POST(req: Request) {
       from: email,
       to: process.env.EMAIL_USER,
       subject: subject,
-      text: message,
+      text: feedback,
       html: `
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Subject:</strong> ${subject}</p>
         <p><strong>Rating:</strong> ${rating}</p>
-        <p><strong>Message:</strong></p>
-        <p>${message}</p>
+        <p><strong>Feedback:</strong></p>
+        <p>${feedback}</p>
       `
     };
 
     await transporter.sendMail(mailOptions);
 
-    console.log('contact form submitted', { name, email, subject, rating, message });
+    // console.log('contact form submitted', { name, email, subject, rating, feedback });
 
 
     return NextResponse.json({ message: 'Email sent successfully!' },
