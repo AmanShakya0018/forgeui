@@ -91,9 +91,17 @@ export default {
             transform: "translate(-50%,-40%) scale(1)",
           },
         },
-				
+				'skew-scroll': {
+					'0%': {
+						transform: 'rotateX(20deg) rotateZ(-20deg) skewX(20deg)',
+					},
+					'100%': {
+						transform: 'rotateX(20deg) rotateZ(-20deg) skewX(20deg) translateY(-300%)', // Adjust this
+					},
+				},			
   		},
   		animation: {
+				'skew-scroll': 'skew-scroll 20s linear infinite',
 				spotlight: "spotlight 2s ease .75s 1 forwards",
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
