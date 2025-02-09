@@ -12,7 +12,7 @@ import AnchorNav from './anchor-nav';
 const Navbar = () => {
 
   return (
-    <nav className="z-50 sticky top-0 w-full bg-secondary/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border-b border-primary/10 px-4 lg:px-8
+    <nav className="z-50 sticky top-0 w-full dark:bg-zinc-950/10 bg-white/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border-b border-primary/10 px-4 lg:px-8
 ">
       <div className="max-w-[88rem] mx-auto px-4">
         <div className="flex justify-between items-center h-16">

@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "framer-motion";
+import { motion, MotionProps, useInView } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 
 interface AnimatedSpanProps extends MotionProps {
@@ -15,17 +15,23 @@ export const AnimatedSpan = ({
   delay = 0,
   className,
   ...props
-}: AnimatedSpanProps) => (
-  <motion.div
-    initial={{ opacity: 0, y: -5 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3, delay: delay / 1000 }}
-    className={cn("grid text-sm font-normal tracking-tight", className)}
-    {...props}
-  >
-    {children}
-  </motion.div>
-);
+}: AnimatedSpanProps) => {
+  const elementRef = useRef(null);
+  const isInView = useInView(elementRef, { once: true });
+
+  return (
+    <motion.div
+      ref={elementRef}
+      initial={{ opacity: 0, y: -5 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.3, delay: delay / 1000 }}
+      className={cn("grid text-sm font-normal tracking-tight", className)}
+      {...props}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 interface TypingAnimationProps extends MotionProps {
   children: string;
@@ -44,7 +50,7 @@ export const TypingAnimation = ({
   ...props
 }: TypingAnimationProps) => {
   if (typeof children !== "string") {
-    throw new Error("TypingAnimation: children must be a string. Received:");
+    throw new Error("TypingAnimation: children must be a string.");
   }
 
   const MotionComponent = motion.create(Component, {
@@ -52,33 +58,28 @@ export const TypingAnimation = ({
   });
 
   const [displayedText, setDisplayedText] = useState<string>("");
-  const [started, setStarted] = useState(false);
   const elementRef = useRef<HTMLElement | null>(null);
+  const isInView = useInView(elementRef, { once: true });
 
   useEffect(() => {
+    if (!isInView) return;
+
     const startTimeout = setTimeout(() => {
-      setStarted(true);
+      let i = 0;
+      const typingEffect = setInterval(() => {
+        if (i < children.length) {
+          setDisplayedText(children.substring(0, i + 1));
+          i++;
+        } else {
+          clearInterval(typingEffect);
+        }
+      }, duration);
+
+      return () => clearInterval(typingEffect);
     }, delay);
+
     return () => clearTimeout(startTimeout);
-  }, [delay]);
-
-  useEffect(() => {
-    if (!started) return;
-
-    let i = 0;
-    const typingEffect = setInterval(() => {
-      if (i < children.length) {
-        setDisplayedText(children.substring(0, i + 1));
-        i++;
-      } else {
-        clearInterval(typingEffect);
-      }
-    }, duration);
-
-    return () => {
-      clearInterval(typingEffect);
-    };
-  }, [children, duration, started]);
+  }, [children, duration, delay, isInView]);
 
   return (
     <MotionComponent
