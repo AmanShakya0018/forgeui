@@ -32,10 +32,10 @@ function DisplayCard({
     >
       <div>
         <span className="relative inline-block rounded-full bg-blue-800 p-1">{icon}</span>
-        <p className={cn("text-lg font-medium", titleClassName)}>{title}</p>
+        <p className={cn("text-sm md:text-lg font-medium", titleClassName)}>{title}</p>
       </div>
-      <p className="whitespace-nowrap text-sm text-wrap">{description}</p>
-      <p className="text-muted-foreground">{date}</p>
+      <p className="whitespace-nowrap text-xs md:text-sm text-wrap">{description}</p>
+      <p className="text-xs md:text-sm text-muted-foreground">{date}</p>
     </div>
   )
 }
@@ -74,7 +74,7 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
       iconClassName: "text-blue-500",
       titleClassName: "text-blue-500",
       className:
-        "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 dark:before:bg-black/70 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration-700 hover:grayscale-0 before:left-0 before:top-0",
+        "[grid-area:stack] translate-x-24 translate-y-20 hover:translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 dark:before:bg-black/70 grayscale-[100%] before:opacity-0 dark:bg-black bg-white before:transition-opacity before:duration-700 grayscale-0 before:left-0 before:top-0",
     },
   ]
 

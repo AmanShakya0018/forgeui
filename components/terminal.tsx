@@ -165,11 +165,11 @@ export function TerminalDemo() {
         <span className="pl-2">- lib/utils.ts</span>
       </AnimatedSpan>
 
-      <TypingAnimation delay={6500} className="text-muted-foreground">
+      <TypingAnimation delay={6500} className="text-muted-foreground dark:text-neutral-400">
         Success! Project initialization completed.
       </TypingAnimation>
 
-      <TypingAnimation delay={7000} className="text-muted-foreground">
+      <TypingAnimation delay={7000} className="text-muted-foreground dark:text-neutral-400">
         You may now add components.
       </TypingAnimation>
     </Terminal>

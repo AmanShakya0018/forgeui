@@ -106,7 +106,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
                   duration: 0.3,
                   ease: "easeOut",
                 }}
-                className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed"
+                className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed"
               >
                 {answer}
               </motion.p>
@@ -122,7 +122,7 @@ function FAQ() {
   const faqs: Omit<FAQItemProps, "index">[] = [
     {
       question: "What makes ForgeUI unique?",
-      answer: "ForgeUI stands out with its intuitive design, seamless developer experience, and a powerful CLI for adding components effortlessly. We prioritize both flexibility and performance to enhance your workflow.",
+      answer: "ForgeUI stands out with its intuitive design, and seamless developer experience. We prioritize both flexibility and performance to enhance your workflow.",
     },
     {
       question: "Is ForgeUI compatible with Next.js and other frameworks?",
