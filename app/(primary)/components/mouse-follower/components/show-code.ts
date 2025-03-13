@@ -82,21 +82,20 @@ export default function MouseFollower() {
           top: smoothY,
           x: '-50%',
           y: '-50%',
-          scale: isHovering ? 2.5 : scale,
+          scale: isHovering ? 2 : scale,
         }}
       />
       <motion.div
         ref={cursorOuterRef}
-        className="pointer-events-none fixed z-40 h-8 w-8 rounded-full bg-gradient-to-r from-blue-500 to-teal-500 opacity-30 blur-sm mix-blend-screen dark:mix-blend-difference"
+        className="pointer-events-none fixed z-40 h-8 w-8 rounded-full bg-transparent opacity-30 blur-sm mix-blend-screen dark:mix-blend-difference"
         style={{
           left: outerX,
           top: outerY,
           x: '-50%',
           y: '-50%',
-          scale: isHovering ? 3 : 1,
+          scale: isHovering ? 1 : 1,
         }}
       />
     </>
   );
-}
-`;
+}`;

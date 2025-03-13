@@ -36,25 +36,44 @@ const AnimatedCarousel = () => {
     enter: (direction: number) => ({
       x: direction > 0 ? '100%' : '-100%',
       opacity: 0,
+      rotateY: direction > 0 ? 15 : -15,
     }),
     center: {
       x: 0,
       opacity: 1,
+      rotateY: 0,
     },
     exit: (direction: number) => ({
       x: direction < 0 ? '100%' : '-100%',
       opacity: 0,
+      rotateY: direction < 0 ? 15 : -15,
     }),
   }
 
   const backgroundVariants = {
-    initial: { scale: 1.2, opacity: 0 },
-    animate: { scale: 1, opacity: 1 },
-    exit: { scale: 1.2, opacity: 0 },
+    initial: { scale: 1.1, opacity: 0, filter: 'saturate(0.8) brightness(0.6)' },
+    animate: {
+      scale: 1,
+      opacity: 1,
+      filter: 'saturate(1.2) brightness(0.5)',
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    },
+    exit: {
+      scale: 1.1,
+      opacity: 0,
+      filter: 'saturate(0.8) brightness(0.6)',
+      transition: {
+        duration: 0.5,
+        ease: [0.25, 0.1, 0.25, 1]
+      }
+    },
   }
 
   return (
-    <div className="h-[400px] w-full max-w-2xl mx-auto overflow-hidden relative rounded-lg shadow-lg">
+    <div className="h-[400px] w-full max-w-2xl mx-auto overflow-hidden relative rounded-lg shadow-xl">
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={index}
@@ -63,7 +82,6 @@ const AnimatedCarousel = () => {
           initial="initial"
           animate="animate"
           exit="exit"
-          transition={{ duration: 0.75 }}
           className="absolute inset-0"
         >
           <Image
@@ -73,6 +91,9 @@ const AnimatedCarousel = () => {
             objectFit="cover"
             className="brightness-50"
           />
+
+          {/* Overlay gradient */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
         </motion.div>
       </AnimatePresence>
 
@@ -84,31 +105,35 @@ const AnimatedCarousel = () => {
           initial="enter"
           animate="center"
           exit="exit"
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{
+            duration: 0.6,
+            ease: [0.25, 0.1, 0.25, 1],
+            opacity: { duration: 0.3 }
+          }}
           className="absolute inset-0 flex items-center justify-center"
         >
           <div className="max-w-xl w-full px-4 text-white z-10">
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.2, duration: 0.5 }}
+              transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
               className="text-lg md:text-2xl font-bold mb-1"
             >
               {items[index].title}
             </motion.div>
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.5 }}
+              initial={{ y: 30, opacity: 0, scale: 0.95 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3, duration: 0.5, ease: "easeOut" }}
               className="text-xl md:text-3xl text-yellow-400 font-black mb-2"
             >
               {items[index].topic}
             </motion.div>
             <motion.div
-              initial={{ y: 20, opacity: 0 }}
+              initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.4, duration: 0.5 }}
-              className="text-sm md:text-base mb-4"
+              transition={{ delay: 0.4, duration: 0.5, ease: "easeOut" }}
+              className="text-sm md:text-base mb-4 text-gray-200 max-w-md"
             >
               {items[index].description}
             </motion.div>
@@ -117,13 +142,18 @@ const AnimatedCarousel = () => {
       </AnimatePresence>
 
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-2">
+        <div className="flex space-x-3">
           {items.map((_, i) => (
             <motion.div
               key={i}
-              className={`w-2 h-2 rounded-full ${i === index ? 'bg-white' : 'bg-gray-500'}`}
+              className={`h-2 rounded-full cursor-pointer transition-all duration-300 ${i === index ? 'bg-yellow-400 w-6' : 'bg-gray-400/60 w-2 hover:bg-gray-300'}`}
               initial={false}
-              animate={i === index ? { scale: 1.2 } : { scale: 1 }}
+              animate={i === index ? { scale: 1, opacity: 1 } : { scale: 0.8, opacity: 0.7 }}
+              whileHover={{ scale: 1.1, opacity: 1 }}
+              onClick={() => {
+                setDirection(i > index ? 1 : -1);
+                setIndex(i);
+              }}
               transition={{ duration: 0.3 }}
             />
           ))}
@@ -132,13 +162,13 @@ const AnimatedCarousel = () => {
 
       <button
         onClick={handlePrev}
-        className="absolute top-[94%] left-6 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-1 transition-colors duration-300"
+        className="absolute top-1/2 left-3 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-2 transition-colors duration-300"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-[94%] right-6 transform -translate-y-1/2 z-20 bg-white/10 hover:bg-white/20 text-white rounded-full p-1 transition-colors duration-300"
+        className="absolute top-1/2 right-3 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-2 transition-colors duration-300"
       >
         <ChevronRight size={20} />
       </button>
@@ -147,4 +177,3 @@ const AnimatedCarousel = () => {
 }
 
 export default AnimatedCarousel
-

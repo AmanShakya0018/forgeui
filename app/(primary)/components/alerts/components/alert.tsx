@@ -11,16 +11,16 @@ export default function Alert() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="rounded-lg p-4 shadow-md bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-800 dark:to-zinc-900 border border-zinc-200 dark:border-zinc-700 relative overflow-hidden"
+        className="rounded-lg p-4 shadow-md dark:shadow-white/10 bg-gradient-to-br from-white to-zinc-100 dark:from-zinc-900 dark:to-zinc-950 border border-zinc-200 dark:border-zinc-800 relative overflow-hidden"
       >
         <div className="flex items-center gap-4">
-          <div className="relative flex-shrink-0 w-12 h-12">
+          <div className="relative w-12 h-12">
             <Image
-              src="/pfp.png"
-              alt="Profile picture"
               width={190}
               height={190}
-              className="object-cover rounded-full ring-2 ring-white dark:ring-zinc-800"
+              src="/pfp.png"
+              alt="Emma Johnson"
+              className="rounded-full object-cover w-full h-full"
             />
             <motion.div
               animate={{ scale: [1, 1.2, 1] }}
@@ -35,7 +35,7 @@ export default function Alert() {
             </h2>
             <p className="text-xs text-zinc-600 dark:text-zinc-300">
               Join Forgeui&apos;s{" "}
-              <span className="font-semibold text-indigo-600 dark:text-indigo-400">
+              <span className="font-semibold text-emerald-600 dark:text-emerald-400">
                 Technical Team
               </span>
             </p>
