@@ -20,5 +20,6 @@ export const primaryItems = [
   { name: 'Todos', href: '/components/todos' },
   { name: 'Team Roster', href: '/components/team-roster' },
   { name: 'Text Rendering Effect', href: '/components/text-rendering-effect' },
+  { name: 'Text Morphing', href: '/components/text-morphing' },
   { name: 'File Upload', href: '/components/file-upload' },
 ];
