@@ -7,11 +7,11 @@ export const democode = `"use client";
 import React from 'react'
 import  Transactions from './components/ui/transactions';
 function Page() {
-return (
-  <>
-    <Transactions />
-  </>
-)
+  return (
+    <>
+      <Transactions />
+    </>
+  )
 }
 
 export default Page;`;
@@ -100,9 +100,9 @@ export default function Transactions({
       <div
         className={cn(
           "w-full max-w-lg mx-auto p-1",
-          "bg-white dark:bg-zinc-900/70",
+          "bg-white dark:bg-zinc-950",
           "border border-zinc-200 dark:border-zinc-800",
-          "rounded-3xl shadow-xl backdrop-blur-xl",
+          "rounded-3xl shadow-xl dark:shadow-white/10 backdrop-blur-xl",
           className
         )}
       >

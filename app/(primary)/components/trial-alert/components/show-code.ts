@@ -7,11 +7,11 @@ export const democode = `"use client";
 import React from 'react'
 import TrialAlert from './components/ui/trial-alert';
 function Page() {
-return (
-  <>
-    <TrialAlert />
-  </>
-)
+  return (
+    <>
+      <TrialAlert />
+    </>
+  )
 }
 
 export default Page;`;
@@ -33,7 +33,7 @@ return (
     transition={{ duration: 0.5 }}
     className="max-w-sm mx-auto"
   >
-    <div className="bg-white dark:bg-zinc-900/95 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center gap-4 p-8 shadow-lg border border-gray-200 dark:border-zinc-700">
+    <div className="bg-white dark:bg-zinc-950 dark:shadow-white/10 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center gap-4 p-8 shadow-lg border border-gray-200 dark:border-zinc-800">
       <motion.div
         animate={{ rotate: isHovered ? [0, -5, 5, -5, 5, 0] : 0 }}
         transition={{ duration: 0.5 }}

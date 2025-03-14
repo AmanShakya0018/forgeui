@@ -162,13 +162,13 @@ const AnimatedCarousel = () => {
 
       <button
         onClick={handlePrev}
-        className="absolute top-1/2 left-3 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-2 transition-colors duration-300"
+        className="absolute top-[94%] left-3 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-2 transition-colors duration-300"
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={handleNext}
-        className="absolute top-1/2 right-3 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-2 transition-colors duration-300"
+        className="absolute top-[94%] right-3 transform -translate-y-1/2 z-20 bg-black/20 backdrop-blur-sm hover:bg-white/30 text-white rounded-full p-2 transition-colors duration-300"
       >
         <ChevronRight size={20} />
       </button>

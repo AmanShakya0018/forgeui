@@ -7,11 +7,11 @@ export const democode = `"use client";
 import React from 'react'
 import  SkillCard from './components/ui/skill-card';
 function Page() {
-return (
-  <>
-    <SkillCard />
-  </>
-)
+  return (
+    <>
+      <SkillCard />
+    </>
+  )
 }
 
 export default Page;`;

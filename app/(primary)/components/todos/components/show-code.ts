@@ -7,11 +7,11 @@ export const democode = `"use client";
 import React from 'react'
 import  Todos from './components/ui/todos';
 function Page() {
-return (
-  <>
-    <Todos />
-  </>
-)
+  return (
+    <>
+      <Todos />
+    </>
+  )
 }
 
 export default Page;`;
@@ -30,9 +30,9 @@ export default function Todos() {
       transition={{ duration: 0.5 }}
       className={cn(
         "w-full max-w-md",
-        "bg-white dark:bg-zinc-900",
+        "bg-white dark:bg-zinc-950",
         "border border-zinc-200 dark:border-zinc-800",
-        "rounded-3xl shadow-2xl overflow-hidden"
+        "rounded-3xl shadow-2xl dark:shadow-white/10 overflow-hidden"
       )}
     >
       <div className="p-6 flex items-center justify-between border-b border-zinc-200 dark:border-zinc-800">

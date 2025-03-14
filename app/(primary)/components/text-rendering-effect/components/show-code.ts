@@ -6,11 +6,11 @@ export const democode = `"use client";
 import React from 'react'
 import  TextRenderingEffect from './components/ui/text-rendering-effect';
 function Page() {
-return (
-  <>
-    <TextRenderingEffect />
-  </>
-)
+  return (
+    <>
+      <TextRenderingEffect />
+    </>
+  )
 }
 
 export default Page;`;

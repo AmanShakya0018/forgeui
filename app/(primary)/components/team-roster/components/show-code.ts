@@ -6,11 +6,11 @@ export const democode = `"use client";
 import React from 'react'
 import  TeamRoster from './components/ui/team-roster';
 function Page() {
-return (
-  <>
-    <TeamRoster />
-  </>
-)
+  return (
+    <>
+      <TeamRoster />
+    </>
+  )
 }
 
 export default Page;`;

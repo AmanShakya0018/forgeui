@@ -7,11 +7,11 @@ export const democode = `"use client";
 import React from 'react'
 import SocialCard from './components/ui/social-card';
 function Page() {
-return (
-  <>
-    <SocialCard />
-  </>
-)
+  return (
+    <>
+      <SocialCard />
+    </>
+  )
 }
 
 export default Page;`;

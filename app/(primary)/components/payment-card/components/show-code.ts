@@ -7,11 +7,11 @@ export const democode = `"use client";
 import React from 'react'
 import  PaymentCard from './components/ui/payment-card';
 function Page() {
-return (
-  <>
-    <PaymentCard />
-  </>
-)
+  return (
+    <>
+      <PaymentCard />
+    </>
+  )
 }
 
 export default Page;`;
