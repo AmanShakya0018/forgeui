@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Provider from "@/provider/provider";
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react"
 
@@ -27,9 +25,7 @@ export default function RootLayout({
       >
         <Provider>
           <div className={cn("relative flex min-h-dvh flex-col bg-background dark:bg-black")}>
-            <Navbar />
             <main className="flex-1 px-6">{children}</main>
-            <Footer />
             <Toaster />
           </div>
         </Provider>

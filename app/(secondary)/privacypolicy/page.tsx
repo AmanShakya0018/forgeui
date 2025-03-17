@@ -1,9 +1,15 @@
+import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
 import PrivacyPolicyPage from '@/components/privacypolicy';
 import React from 'react';
 
 const PrivacyPolicy = () => {
   return (
-    <PrivacyPolicyPage />
+    <main>
+      <Navbar />
+      <PrivacyPolicyPage />
+      <Footer />
+    </main>
   )
 };
 
