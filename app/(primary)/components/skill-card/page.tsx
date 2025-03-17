@@ -24,7 +24,7 @@ const Skillcard = () => {
       <ContentNavigation>{title}</ContentNavigation>
       <MainTitle>{title}</MainTitle>
       <MainDescription>{description}</MainDescription>
-      <ToggleButtonGroup sourceCode={sourceCode} setSourceCode={setSourceCode} />
+      <ToggleButtonGroup sourceCode={sourceCode} setSourceCode={setSourceCode} routepoint={routepoint} />
       {(!sourceCode) ?
         (<PreviewComponentContainer>
           <SkillCard />

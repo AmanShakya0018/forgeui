@@ -193,7 +193,7 @@ const HeroSection = () => {
           <div className='flex gap-4'>
             <Link href="/components/alerts">
               <Button size="sm">
-                Get Started
+                Browse Components
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
             </Link>
