@@ -39,10 +39,10 @@ const Navbar = () => {
 
           <div className="hidden lg:flex items-center space-x-4">
             <Link href="https://twitter.com/AmanShakya0018" target="_blank">
-              <p className="text-sm font-medium text-zinc-400 hover:text-foreground/80 relative">Twitter</p>
+              <p className="text-sm font-medium dark:text-zinc-400 text-zinc-500 hover:text-foreground/80 relative">Twitter</p>
             </Link>
             <Link href="https://www.linkedin.com/in/amanshakya0018/" target="_blank">
-              <p className="text-sm font-medium text-zinc-400 hover:text-foreground/80 relative">LinkedIn</p>
+              <p className="text-sm font-medium dark:text-zinc-400 text-zinc-500 hover:text-foreground/80 relative">LinkedIn</p>
             </Link>
             <Themetoggle />
             <DocumentSearch />

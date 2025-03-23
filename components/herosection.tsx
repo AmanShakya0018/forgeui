@@ -204,7 +204,7 @@ const HeroSection = () => {
             </Link>
           </div>
           <div>
-            <div className="block sm:hidden absolute h-full w-20 bg-white dark:bg-black right-0 [mask-image:linear-gradient(to_left,white,transparent)] z-40 -mx-8"></div>
+            <div className="block sm:hidden absolute h-full w-20 bg-white dark:bg-black right-0 [mask-image:linear-gradient(to_left,white,transparent)] z-40"></div>
             <div className="flex  justify-start items-center mb-4 overflow-x-auto relative z-20 "
               style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
               <div className="flex items-center space-x-2 mr-4">

@@ -24,7 +24,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
         ease: "easeOut",
       }}
       className={cn(
-        "group rounded-lg border-[0.5px] border-gray-200/50 dark:border-gray-800/50",
+        "group rounded-lg border-[0.5px] border-neutral-200/70 dark:border-neutral-800/60",
         "transition-all duration-200 ease-in-out",
         isOpen
           ? "bg-linear-to-br from-white via-gray-50/50 to-white dark:from-white/5 dark:via-white/2 dark:to-white/5"

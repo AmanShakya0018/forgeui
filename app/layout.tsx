@@ -25,7 +25,7 @@ export default function RootLayout({
       >
         <Provider>
           <div className={cn("relative flex min-h-dvh flex-col bg-background dark:bg-black")}>
-            <main className="flex-1 px-6">{children}</main>
+            <main className="flex-1">{children}</main>
             <Toaster />
           </div>
         </Provider>

@@ -7,7 +7,7 @@ const Footer = () => {
 
   return (
     <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-black">
-      <div className="max-w-[87rem] mx-auto text-sm px-4 text-gray-400 flex sm:flex-row flex-col justify-between items-start ">
+      <div className="max-w-[87rem] mx-auto text-sm px-4 dark:text-zinc-400 text-zinc-500 flex sm:flex-row flex-col justify-between items-start ">
         <div>
           <div className="mb-4 flex">
             <Link href="/" className="flex items-center space-x-1">
@@ -15,7 +15,7 @@ const Footer = () => {
               <span className="text-xl font-extrabold text-black dark:text-white ">Forge UI</span>
             </Link>
           </div>
-          <div className="mt-2 text-zinc-400">
+          <div className="mt-2 text-zinc-500 dark:text-zinc-400">
             Build by
             <a className="dark:text-emerald-500 pl-1 font-medium text-neutral-600" target="__blank" href="https://www.amanshakya.in">@AmanShakya</a>
           </div>
@@ -35,7 +35,7 @@ const Footer = () => {
               </div>
             </Link>
           </div>
-          <p className="text-sm dark:text-zinc-400 mt-5">
+          <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-5">
             © {new Date().getFullYear()} Forge UI. All rights reserved.
           </p>
         </div>

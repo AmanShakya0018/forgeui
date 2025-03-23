@@ -28,7 +28,7 @@ export default function AnchorSidebar({
       <div className={cn(className, "cursor-not-allowed")}>{children}</div>
     );
   return (
-    <Link className={cn(className, isMatch && activeClassName, "text-zinc-400 text-sm flex w-full items-center rounded-md border border-transparent pr-2 py-1 hover:text-black dark:hover:text-white hover:translate-x-1 transition duration-200")} {...props}>
+    <Link className={cn(className, isMatch && activeClassName, "text-zinc-500 dark:text-zinc-400 text-sm flex w-full items-center rounded-md border border-transparent pr-2 py-1 hover:text-black dark:hover:text-white hover:translate-x-1 transition duration-200")} {...props}>
       {children}
     </Link>
   );

@@ -5,7 +5,7 @@ interface MainDescriptionProps {
 }
 
 const MainDescription = ({ children }: MainDescriptionProps) => {
-  return <p className="text-lg mt-0 text-neutral-400">{children}</p>;
+  return <p className="text-lg mt-0 text-neutral-500 dark:text-zinc-400">{children}</p>;
 };
 
 export default MainDescription;

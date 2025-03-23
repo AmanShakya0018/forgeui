@@ -5,7 +5,7 @@ import { SparklesCore } from "./ui/sparkles"
 
 export default function OpenSourceBanner() {
   return (
-    <div className="pt-6">
+    <div className="pt-6 px-2">
       <Card className="w-full max-w-3xl mx-auto border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-black">
         <CardHeader>
           <CardTitle className="text-black dark:text-white text-2xl font-bold text-center">

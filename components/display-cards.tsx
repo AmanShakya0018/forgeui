@@ -20,7 +20,7 @@ function DisplayCard({
   icon = <Sparkles className="size-4 text-blue-300" />,
   title = "Featured",
   description = "Discover amazing content",
-  date = "Just now",
+  // date = "Just now",
   titleClassName = "text-blue-500",
 }: DisplayCardProps) {
   return (
@@ -35,7 +35,7 @@ function DisplayCard({
         <p className={cn("text-sm md:text-lg font-medium", titleClassName)}>{title}</p>
       </div>
       <p className="whitespace-nowrap text-xs md:text-sm text-wrap">{description}</p>
-      <p className="text-xs md:text-sm text-muted-foreground">{date}</p>
+      <p className="text-xs md:text-sm text-muted-foreground"></p>
     </div>
   )
 }
@@ -81,7 +81,7 @@ export default function DisplayCards({ cards }: DisplayCardsProps) {
   const displayCards = cards || defaultCards
 
   return (
-    <div className="relative w-full overflow-hidden h-[350px]">
+    <div className="hidden sm:block relative w-full overflow-hidden h-[350px]">
       <div className="grid [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700 max-w-3xl mx-auto absolute inset-0">
         {displayCards.map((cardProps, index) => (
           <DisplayCard key={index} {...cardProps} />
