@@ -27,7 +27,6 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <AnchorNav
                   key={item.name + item.href}
-                  activeClassName="text-black dark:text-white font-semibold"
                   absolute
                   href={item.href}
                 >

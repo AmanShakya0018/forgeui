@@ -18,7 +18,6 @@ const PrimaryItems = () => {
         <p className="mb-1 rounded-md pr-2 py-1 text-[0.95rem] font-semibold text-black dark:text-white">Getting Started</p>
         <AnchorStart
           key="introduction"
-          activeClassName="text-black dark:text-white font-medium"
           absolute
           href={"/introduction"}
         >
@@ -26,7 +25,6 @@ const PrimaryItems = () => {
         </AnchorStart>
         <AnchorStart
           key="install-nextjs"
-          activeClassName="text-black dark:text-white font-medium"
           absolute
           href={"/install-nextjs"}
         >
@@ -34,7 +32,6 @@ const PrimaryItems = () => {
         </AnchorStart>
         <AnchorStart
           key="install-tailwindcss"
-          activeClassName="text-black dark:text-white font-medium"
           absolute
           href={"/install-tailwindcss"}
         >
@@ -46,7 +43,6 @@ const PrimaryItems = () => {
         {sortedPrimaryItems.map((item) => (
           <AnchorSidebar
             key={item.name + item.href}
-            activeClassName="text-black dark:text-white font-medium"
             absolute
             href={item.href}
           >

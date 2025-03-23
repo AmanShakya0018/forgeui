@@ -13,7 +13,6 @@ type AnchorProps = ComponentProps<typeof Link> & {
 export default function AnchorNav({
   absolute,
   className = "",
-  activeClassName = "",
   disabled,
   children,
   ...props
@@ -28,7 +27,7 @@ export default function AnchorNav({
       <div className={cn(className, "cursor-not-allowed")}>{children}</div>
     );
   return (
-    <Link className={cn(className, isMatch && activeClassName, "text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-foreground/80 relative")} {...props}>
+    <Link className={cn(className, "text-sm font-medium text-zinc-500 dark:text-zinc-400 hover:text-foreground/80 relative", isMatch && "text-black dark:text-white font-semibold")} {...props}>
       {children}
     </Link>
   );
