@@ -34,7 +34,7 @@ function FAQItem({ question, answer, index }: FAQItemProps) {
       <button
         type="button"
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full px-6 py-4 flex items-center justify-between gap-4"
+        className="w-full px-2 py-4 flex items-center justify-between gap-4"
       >
         <h3
           className={cn(
