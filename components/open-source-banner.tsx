@@ -1,11 +1,17 @@
+"use client"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Github, Star } from 'lucide-react'
 import Link from "next/link"
 import { SparklesCore } from "./ui/sparkles"
+import { motion } from "framer-motion"
 
 export default function OpenSourceBanner() {
   return (
-    <div className="pt-6 px-2">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.8 }} className="pt-6 px-2">
       <Card className="w-full max-w-3xl mx-auto border border-neutral-300 dark:border-neutral-800 bg-white dark:bg-black">
         <CardHeader>
           <CardTitle className="text-black dark:text-white text-2xl font-bold text-center">
@@ -46,7 +52,7 @@ export default function OpenSourceBanner() {
           <div className="absolute inset-0 w-full h-full bg-white dark:bg-black [mask-image:radial-gradient(350px_200px_at_top,transparent_20%,white)]"></div>
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

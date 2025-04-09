@@ -55,9 +55,10 @@ const RequestComponents = () => {
   return (
     <>
       <motion.div
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeInOut", type: "spring", damping: 10, delay: 0.2 }}
-        initial={{ y: -20, opacity: 0 }} className='max-w-[88rem] mx-auto flex flex-col items-center justify-center'>
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }} className='max-w-[88rem] mx-auto flex flex-col items-center justify-center'>
         <button onClick={toggleForm} className=" no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-full p-px text-xs font-semibold leading-6 text-white inline-block">
           <span className="absolute inset-0 overflow-hidden rounded-full">
             <span className="absolute inset-0 rounded-full bg-[image:radial-gradient(75%_100%_at_50%_0%,rgba(56,189,248,0.6)_0%,rgba(56,189,248,0)_75%)] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
