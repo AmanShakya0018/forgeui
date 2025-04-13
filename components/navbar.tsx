@@ -1,4 +1,3 @@
-'use client'
 import React from 'react';
 import { Themetoggle } from '@/components/ui/ThemeToggle';
 import Link from 'next/link';
@@ -7,16 +6,12 @@ import { navItems } from '@/contants';
 import DocumentSearch from './documentsearch';
 import NavbarDrawer from './navbar-drawer';
 import AnchorNav from './anchor-nav';
-import { motion } from 'framer-motion';
 
 
 const Navbar = () => {
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }} className="z-50 sticky top-0 w-full dark:bg-zinc-950/10 bg-white/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border-b border-primary/10 px-4 lg:px-8
+    <nav className="z-50 sticky top-0 w-full dark:bg-zinc-950/10 bg-white/15 shadow-lg shadow-neutral-600/5 backdrop-blur-lg border-b border-primary/10 px-4 lg:px-8
 ">
       <div className="max-w-[88rem] mx-auto px-4">
         <div className="flex justify-between items-center h-16">
@@ -56,7 +51,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-    </motion.nav>
+    </nav>
   );
 };
 

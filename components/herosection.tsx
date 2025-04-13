@@ -51,6 +51,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           className="max-w-[88rem] mx-auto px-4 py-4 flex flex-col gap-4 items-center justify-center space-y-3"
         >
           <div className="flex flex-col items-center justify-center">
