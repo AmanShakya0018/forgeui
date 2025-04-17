@@ -20,6 +20,7 @@ export const primaryItems = [
   { name: 'Transactions', href: '/components/transactions' },
   { name: 'Todos', href: '/components/todos' },
   { name: 'Team Roster', href: '/components/team-roster' },
+  { name: 'Text Shimmer', href: '/components/text-shimmer' },
   { name: 'Text Rendering Effect', href: '/components/text-rendering-effect' },
   { name: 'Text Morphing', href: '/components/text-morphing' },
   { name: 'File Upload', href: '/components/file-upload' },
