@@ -51,9 +51,9 @@ cd my-project
           <span className='font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200'>Install Tailwind CSS
           </span>
         </span>
-        <span className='pl-7'>
+        <ComponentSource className="pl-7">
           <CodeBlock code={code} language="javascript" />
-        </span>
+        </ComponentSource>
       </div>
       <div className="flex flex-col border-l border-neutral-300 dark:border-neutral-700 py-6 gap-5">
         <span className='flex h-8 items-center gap-6'>

@@ -17,6 +17,7 @@ import MainContentContainer from '@/components/maincontentcontainer';
 import TextShimmer from './components/text-shimmer';
 import { getNavigationItems } from '@/lib/getNavigationItems';
 import ComponentNavigation from '@/components/componentnavigation';
+import { ComponentSource } from '@/components/componentsource';
 
 const Textshimmereffect = () => {
 
@@ -45,9 +46,9 @@ const Textshimmereffect = () => {
       <VerticalContainer>
         <SourceCode />
         <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
-        <span className='pl-7'>
+        <ComponentSource className="pl-7">
           <CodeBlock code={code} language="javascript" />
-        </span>
+        </ComponentSource>
       </VerticalContainer>
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>

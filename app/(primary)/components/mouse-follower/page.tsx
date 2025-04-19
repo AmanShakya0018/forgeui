@@ -16,6 +16,7 @@ import MainContentContainer from '@/components/maincontentcontainer';
 import VerticalContainer from '@/components/verticalcontainer';
 import ComponentNavigation from '@/components/componentnavigation';
 import { getNavigationItems } from '@/lib/getNavigationItems';
+import { ComponentSource } from '@/components/componentsource';
 
 const Mousefollower = () => {
 
@@ -42,9 +43,9 @@ const Mousefollower = () => {
       <VerticalContainer>
         <SourceCode />
         <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
-        <span className='pl-7'>
+        <ComponentSource className="pl-7">
           <CodeBlock code={code} language="javascript" />
-        </span>
+        </ComponentSource>
       </VerticalContainer>
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
