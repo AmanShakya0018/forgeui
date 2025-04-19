@@ -1,4 +1,4 @@
-export const title = "Circular text";
+export const title = "Circular Text";
 export const routepoint = "circular-text";
 export const description = "CircularText animates text in a spinning circle, creating a smooth and visually engaging motion effect.";
 

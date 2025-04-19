@@ -14,11 +14,13 @@ import PreviewComponentContainer from '@/components/previewcomponentcontainer';
 import StepsInstallation from '@/components/steps-installation';
 import VerticalContainer from '@/components/verticalcontainer';
 import MainContentContainer from '@/components/maincontentcontainer';
+import ComponentNavigation from '@/components/componentnavigation';
+import { getNavigationItems } from '@/lib/getNavigationItems';
 
 const Trialalert = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
-
+  const { previous, next } = getNavigationItems(title);
 
   return (
     <MainContentContainer>
@@ -43,6 +45,7 @@ const Trialalert = () => {
           <CodeBlock code={code} language="javascript" />
         </span>
       </VerticalContainer>
+      <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )
 }

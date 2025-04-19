@@ -15,10 +15,13 @@ import MainContentContainer from '@/components/maincontentcontainer';
 import UtilSecond from '@/components/util-second';
 import Dependencies from '@/components/dependencies';
 import CircularText from './components/circulartext';
+import { getNavigationItems } from '@/lib/getNavigationItems';
+import ComponentNavigation from '@/components/componentnavigation';
 
 const Circulartext = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const { previous, next } = getNavigationItems(title);
 
   return (
     <MainContentContainer>
@@ -46,6 +49,7 @@ const Circulartext = () => {
           <CodeBlock code={code} language="javascript" />
         </span>
       </VerticalContainer>
+      <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )
 }

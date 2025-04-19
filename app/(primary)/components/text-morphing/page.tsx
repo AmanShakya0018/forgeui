@@ -15,10 +15,13 @@ import StepsInstallation from '@/components/steps-installation';
 import MainContentContainer from '@/components/maincontentcontainer';
 import VerticalContainer from '@/components/verticalcontainer';
 import UtilSecond from '@/components/util-second';
+import { getNavigationItems } from '@/lib/getNavigationItems';
+import ComponentNavigation from '@/components/componentnavigation';
 
 const Textmorphing = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const { previous, next } = getNavigationItems(title);
 
   return (
     <MainContentContainer>
@@ -44,6 +47,7 @@ const Textmorphing = () => {
           <CodeBlock code={code} language="javascript" />
         </span>
       </VerticalContainer>
+      <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )
 }

@@ -15,10 +15,13 @@ import StepsInstallation from '@/components/steps-installation';
 import UtilSecond from '@/components/util-second';
 import VerticalContainer from '@/components/verticalcontainer';
 import MainContentContainer from '@/components/maincontentcontainer';
+import ComponentNavigation from '@/components/componentnavigation';
+import { getNavigationItems } from '@/lib/getNavigationItems';
 
 const Todo = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const { previous, next } = getNavigationItems(title);
 
   return (
     <MainContentContainer>
@@ -44,6 +47,7 @@ const Todo = () => {
           <CodeBlock code={code} language="javascript" />
         </span>
       </VerticalContainer>
+      <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )
 }

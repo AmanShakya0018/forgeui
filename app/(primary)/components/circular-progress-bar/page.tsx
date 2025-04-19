@@ -15,10 +15,13 @@ import VerticalContainer from '@/components/verticalcontainer';
 import MainContentContainer from '@/components/maincontentcontainer';
 import UtilSecond from '@/components/util-second';
 import Dependencies from '@/components/dependencies';
+import { getNavigationItems } from '@/lib/getNavigationItems';
+import ComponentNavigation from '@/components/componentnavigation';
 
 const Circularprogressbar = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const { previous, next } = getNavigationItems(title);
 
   return (
     <MainContentContainer>
@@ -44,6 +47,7 @@ const Circularprogressbar = () => {
           <CodeBlock code={code} language="javascript" />
         </span>
       </VerticalContainer>
+      <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )
 }
