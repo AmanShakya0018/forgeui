@@ -1,0 +1,14 @@
+{
+  "name": "trial-alert",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "components/ui/trial-alert.tsx",
+      "content": "\"use client\";\n\nimport { useState } from 'react';\nimport { Button } from \"@/components/ui/button\";\nimport { motion } from \"framer-motion\";\nimport { LockIcon } from 'lucide-react';\n\nexport default function TrialAlert() {\n  const [isHovered, setIsHovered] = useState(false);\n\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: 20 }}\n      animate={{ opacity: 1, y: 0 }}\n      transition={{ duration: 0.5 }}\n      className=\"max-w-sm mx-auto\"\n    >\n      <div className=\"bg-white dark:bg-zinc-950 dark:shadow-white/10 backdrop-blur-sm rounded-xl flex flex-col items-center justify-center gap-4 p-8 shadow-lg border border-gray-200 dark:border-zinc-800\">\n        <motion.div\n          animate={{ rotate: isHovered ? [0, -5, 5, -5, 5, 0] : 0 }}\n          transition={{ duration: 0.5 }}\n        >\n          <LockIcon className=\"w-12 h-12 text-yellow-500 dark:text-yellow-400\" />\n        </motion.div>\n        <h2 className=\"text-2xl font-bold text-gray-900 dark:text-gray-100 mt-2\">\n          ACCESS LIMITED\n        </h2>\n        <p className=\"text-center text-base text-gray-600 dark:text-gray-300 mb-4\">\n          Upgrade your plan today to unlock all features and enjoy uninterrupted access.\n        </p>\n        <Button\n          type=\"button\"\n          onMouseEnter={() => setIsHovered(true)}\n          onMouseLeave={() => setIsHovered(false)}\n          className=\"relative group overflow-hidden bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-50\"\n        >\n          <span className=\"relative z-10 text-sm\">\n            Upgrade Now\n          </span>\n          <motion.div\n            className=\"absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-500\"\n            initial={{ x: \"100%\" }}\n            animate={{ x: isHovered ? \"0%\" : \"100%\" }}\n            transition={{ duration: 0.5 }}\n          />\n        </Button>\n      </div>\n    </motion.div>\n  );\n}",
+      "type": "registry:ui",
+      "target": "components/ui/trial-alert.tsx"
+    }
+  ],
+  "author": "Aman Shakya <hi@amanshakya.in>",
+  "title": "Trial Alert"
+}

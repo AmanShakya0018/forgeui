@@ -1,0 +1,14 @@
+{
+  "name": "text-rendering-effect",
+  "type": "registry:ui",
+  "files": [
+    {
+      "path": "components/ui/text-rendering-effect.tsx",
+      "content": "\"use client\";\nimport { useEffect } from \"react\";\nimport { motion, stagger, useAnimate } from \"framer-motion\";\nimport { cn } from \"@/lib/utils\";\n\nconst words = `TypeScript is a superset of JavaScript that adds static typing, enabling better error detection and improved code quality. It provides enhanced development experience with features like interfaces, generics, and type inference, making it ideal for large-scale applications and teams.`;\n\nexport default function TextRenderingEffect() {\n  return (\n    <TextRenderEffect words={words} />\n  );\n}\n\nconst TextRenderEffect = ({\n  words,\n  className,\n  filter = true,\n  duration = 0.5,\n}: {\n  words: string;\n  className?: string;\n  filter?: boolean;\n  duration?: number;\n}) => {\n  const [scope, animate] = useAnimate();\n  const wordsArray = words.split(\" \");\n\n  useEffect(() => {\n    animate(\n      \"span\",\n      {\n        opacity: 1,\n        x: 0,\n        y: 0,\n        letterSpacing: \"normal\",\n      },\n      {\n        duration: duration ? duration : 0.6,\n        delay: stagger(0.06),\n        ease: \"easeOut\",\n      }\n    );\n  }, []);\n\n  const renderWords = () => {\n    return (\n      <motion.div ref={scope}>\n        {wordsArray.map((word, idx) => {\n          return (\n            <motion.span\n              key={word + idx}\n              className=\"dark:text-white text-black opacity-0 inline-block\"\n              style={{\n                x: filter ? \"-5px\" : \"0px\",\n                y: filter ? \"12px\" : \"0px\",\n                letterSpacing: filter ? \"-0.05em\" : \"normal\",\n                marginRight: \"0.25rem\",\n              }}\n            >\n              {word}\n            </motion.span>\n          );\n        })}\n      </motion.div>\n    );\n  };\n\n  return (\n    <div className={cn(\"font-bold\", className)}>\n      <div className=\"mt-4\">\n        <div className=\"dark:text-white text-black text-xl leading-snug tracking-wide\">\n          {renderWords()}\n        </div>\n      </div>\n    </div>\n  );\n};\n",
+      "type": "registry:ui",
+      "target": "components/ui/text-rendering-effect.tsx"
+    }
+  ],
+  "author": "Aman Shakya <hi@amanshakya.in>",
+  "title": "Text Rendering Effect"
+}
