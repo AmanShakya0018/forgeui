@@ -3,6 +3,8 @@ export const title = "Dock";
 export const routepoint = "dock";
 export const description = "Interactive, macOS-style dock component for React — smooth animations, customizable sizing, and dynamic hover effects.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/dock.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import Dock from './components/ui/dock'

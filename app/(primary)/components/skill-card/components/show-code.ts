@@ -2,6 +2,7 @@ export const title = "Skill Card";
 export const routepoint = "skill-card";
 export const description = "A professional profile card showcasing an expert's details, skills, and availability with a contact button.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/skill-card.json\"";
 
 export const democode = `"use client";
 import React from 'react'

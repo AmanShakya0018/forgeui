@@ -3,7 +3,7 @@ import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
 import Todos from './components/todos';
 import Dependencies from '@/components/dependencies';
-import { code, democode, title, description, routepoint } from './components/show-code';
+import { code, democode, title, description, routepoint, cliscript } from './components/show-code';
 import ContentNavigation from '@/components/content-navigation';
 import SourceCode from '@/components/sourcecode';
 import RoutePlaceHolder from '@/components/route-place';
@@ -18,10 +18,13 @@ import MainContentContainer from '@/components/maincontentcontainer';
 import ComponentNavigation from '@/components/componentnavigation';
 import { getNavigationItems } from '@/lib/getNavigationItems';
 import { ComponentSource } from '@/components/componentsource';
+import InstallCli from '@/components/installcli';
+import ToggleManualCli from '@/components/togglemanualcli';
 
 const Todo = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
 
   return (
@@ -39,15 +42,24 @@ const Todo = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm install lucide-react framer-motion clsx tailwind-merge`} language="javascript" /></Dependencies>
-      <UtilSecond />
-      <VerticalContainer>
-        <SourceCode />
-        <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
-        <ComponentSource className="pl-7">
-          <CodeBlock code={code} language="javascript" />
-        </ComponentSource>
-      </VerticalContainer>
+      <ToggleManualCli sourceManual={sourceManual} setSourceManual={setSourceManual} />
+      {(!sourceManual) ? (
+        <InstallCli><CodeBlock
+          language="jsx"
+          code={cliscript}
+        /></InstallCli>
+      ) : (
+        <>
+          <Dependencies><CodeBlock code={`npm install lucide-react framer-motion clsx tailwind-merge`} language="javascript" /></Dependencies>
+          <UtilSecond />
+          <VerticalContainer>
+            <SourceCode />
+            <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
+            <ComponentSource className="pl-7">
+              <CodeBlock code={code} language="javascript" />
+            </ComponentSource>
+          </VerticalContainer>
+        </>)}
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )

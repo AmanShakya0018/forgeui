@@ -2,6 +2,8 @@ export const title = "File Upload";
 export const routepoint = "file-upload";
 export const description = "Clean file upload form featuring drag-and-drop, subtle micro-interactions, and a grid backdrop.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/file-upload.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import FileUpload from './components/ui/file-upload';

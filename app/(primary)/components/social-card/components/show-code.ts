@@ -2,6 +2,7 @@ export const title = "Social Card";
 export const routepoint = "social-card";
 export const description = "Interactive React social card displaying user content, profile, and actions like comments, likes, and shares.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/social-card.json\"";
 
 export const democode = `"use client";
 import React from 'react'

@@ -2,6 +2,8 @@ export const title = "Circular Progress Bar";
 export const routepoint = "circular-progress-bar";
 export const description = "Hover over the cards to see the effect shift smoothly to the highlighted card.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/circular-progress-bar.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import CircularProgressBarDemo from './components/ui/circular-progress-bar';

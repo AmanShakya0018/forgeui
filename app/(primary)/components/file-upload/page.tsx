@@ -2,7 +2,7 @@
 import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
 import FileUpload from './components/file-upload';
-import { code, democode, title, description, routepoint } from './components/show-code';
+import { code, democode, title, description, routepoint, cliscript } from './components/show-code';
 import ContentNavigation from '@/components/content-navigation';
 import SourceCode from '@/components/sourcecode';
 import RoutePlaceHolder from '@/components/route-place';
@@ -18,10 +18,13 @@ import Dependencies from '@/components/dependencies';
 import { getNavigationItems } from '@/lib/getNavigationItems';
 import ComponentNavigation from '@/components/componentnavigation';
 import { ComponentSource } from '@/components/componentsource';
+import ToggleManualCli from '@/components/togglemanualcli';
+import InstallCli from '@/components/installcli';
 
 const Fileupload = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
 
   return (
@@ -39,15 +42,24 @@ const Fileupload = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm i framer-motion clsx tailwind-merge lucide-react react-dropzone`} language="javascript" /></Dependencies>
-      <UtilSecond />
-      <VerticalContainer>
-        <SourceCode />
-        <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
-        <ComponentSource className="pl-7">
-          <CodeBlock code={code} language="javascript" />
-        </ComponentSource>
-      </VerticalContainer>
+      <ToggleManualCli sourceManual={sourceManual} setSourceManual={setSourceManual} />
+      {(!sourceManual) ? (
+        <InstallCli><CodeBlock
+          language="jsx"
+          code={cliscript}
+        /></InstallCli>
+      ) : (
+        <>
+          <Dependencies><CodeBlock code={`npm i framer-motion clsx tailwind-merge lucide-react react-dropzone`} language="javascript" /></Dependencies>
+          <UtilSecond />
+          <VerticalContainer>
+            <SourceCode />
+            <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
+            <ComponentSource className="pl-7">
+              <CodeBlock code={code} language="javascript" />
+            </ComponentSource>
+          </VerticalContainer>
+        </>)}
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )

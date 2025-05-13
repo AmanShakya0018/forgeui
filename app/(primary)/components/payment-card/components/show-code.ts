@@ -2,6 +2,7 @@ export const title = "Payment Card";
 export const routepoint = "payment-card";
 export const description = "A sleek payment card highlighting a successful transaction with smooth animations and modern design.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/payment-card.json\"";
 
 export const democode = `"use client";
 import React from 'react'

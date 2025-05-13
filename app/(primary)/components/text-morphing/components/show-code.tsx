@@ -3,6 +3,8 @@ export const title = "Text Morphing";
 export const routepoint = "text-morphing";
 export const description = "Fluid, morphing text component for React — create mesmerizing, gooey transitions between words with customizable timing and styling.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/text-morphing.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import TextMorphing from './components/ui/text-morphing'

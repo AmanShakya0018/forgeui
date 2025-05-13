@@ -2,6 +2,8 @@ export const title = "Team Roster";
 export const routepoint = "team-roster";
 export const description = "A detailed team management component showcasing participants, roles, activity status, and permissions in a modern design.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/team-roster.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import  TeamRoster from './components/ui/team-roster';

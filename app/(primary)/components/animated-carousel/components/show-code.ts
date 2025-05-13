@@ -2,6 +2,8 @@ export const title = "Animated Carousel";
 export const routepoint = "animated-carousel";
 export const description = "A dynamic, interactive carousel for showcasing images or content with smooth transitions and engaging animations.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/animated-carousel.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import AnimatedCarousel from './components/ui/animated-carousel'

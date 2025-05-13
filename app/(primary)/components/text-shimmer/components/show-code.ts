@@ -2,6 +2,8 @@ export const title = "Text Shimmer";
 export const routepoint = "text-shimmer";
 export const description = "A React component that creates an animated text shimmer effect using Framer Motion, customizable by tag, duration, and spread.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/text-shimmer.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import  TextShimmer from './components/ui/text-shimmer';

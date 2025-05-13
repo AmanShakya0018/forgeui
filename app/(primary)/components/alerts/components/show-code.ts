@@ -3,6 +3,8 @@ export const title = "Alerts";
 export const routepoint = "alerts";
 export const description = "Customizable React alerts for notifications, warnings, or messages with flexible styling and seamless integration.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/alerts.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import Alert from './components/ui/alerts'

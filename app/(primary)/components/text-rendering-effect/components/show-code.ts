@@ -2,6 +2,8 @@ export const title = "Text Rendering Effect";
 export const routepoint = "text-rendering-effect";
 export const description = "A stylish effect that sequentially fades in text on page load, creating a dynamic reveal.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/text-rendering-effect.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import  TextRenderingEffect from './components/ui/text-rendering-effect';

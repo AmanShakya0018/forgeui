@@ -3,7 +3,7 @@ import { CodeBlock } from '@/components/ui/code-block';
 import React, { useState } from 'react'
 import TextMorphing from './components/text-morphing';
 import Dependencies from '@/components/dependencies';
-import { democode, code, title, description, routepoint } from './components/show-code';
+import { democode, code, title, description, routepoint, cliscript } from './components/show-code';
 import ContentNavigation from '@/components/content-navigation';
 import SourceCode from '@/components/sourcecode';
 import RoutePlaceHolder from '@/components/route-place';
@@ -18,10 +18,13 @@ import UtilSecond from '@/components/util-second';
 import { getNavigationItems } from '@/lib/getNavigationItems';
 import ComponentNavigation from '@/components/componentnavigation';
 import { ComponentSource } from '@/components/componentsource';
+import InstallCli from '@/components/installcli';
+import ToggleManualCli from '@/components/togglemanualcli';
 
 const Textmorphing = () => {
 
   const [sourceCode, setSourceCode] = useState(false);
+  const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
 
   return (
@@ -39,15 +42,24 @@ const Textmorphing = () => {
           code={democode}
         />)}
       <StepsInstallation />
-      <Dependencies><CodeBlock code={`npm install clsx tailwind-merge`} language="javascript" /></Dependencies>
-      <UtilSecond />
-      <VerticalContainer>
-        <SourceCode />
-        <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
-        <ComponentSource className="pl-7">
-          <CodeBlock code={code} language="javascript" />
-        </ComponentSource>
-      </VerticalContainer>
+      <ToggleManualCli sourceManual={sourceManual} setSourceManual={setSourceManual} />
+      {(!sourceManual) ? (
+        <InstallCli><CodeBlock
+          language="jsx"
+          code={cliscript}
+        /></InstallCli>
+      ) : (
+        <>
+          <Dependencies><CodeBlock code={`npm install clsx tailwind-merge`} language="javascript" /></Dependencies>
+          <UtilSecond />
+          <VerticalContainer>
+            <SourceCode />
+            <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
+            <ComponentSource className="pl-7">
+              <CodeBlock code={code} language="javascript" />
+            </ComponentSource>
+          </VerticalContainer>
+        </>)}
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   )

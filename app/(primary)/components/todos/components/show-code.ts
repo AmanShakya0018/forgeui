@@ -2,6 +2,7 @@ export const title = "Todos";
 export const routepoint = "todos";
 export const description = "A sleek, responsive task management component displaying daily goals with priorities and completion tracking.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/todos.json\"";
 
 export const democode = `"use client";
 import React from 'react'

@@ -3,6 +3,8 @@ export const title = "Card Hover Effect";
 export const routepoint = "card-hover-effect";
 export const description = "Hover over the cards to see the effect shift smoothly to the highlighted card.";
 
+export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/card-hover-effect.json\"";
+
 export const democode = `"use client";
 import React from 'react'
 import CardHover from './components/ui/card-hover-effect'
