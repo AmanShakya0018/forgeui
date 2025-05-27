@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import React from 'react';
 import { primaryItems } from '@/contants';
 import AnchorSidebar from './anchor-sidebar';
@@ -9,11 +8,6 @@ const PrimaryItems = () => {
 
   return (
     <div className='space-y-4'>
-      <div className="mb-4">
-        <Link href="https://x.com/AmanShakya0018" target="_blank" rel="noopener noreferrer">
-          <p className="mb-1 rounded-md pr-2 py-1 text-[0.95rem] font-semibold text-black dark:text-white">Follow for updates</p><p className="text-zinc-500 dark:text-zinc-400 text-sm flex w-full items-center rounded-md border border-transparent pr-2 py-1 hover:text-black dark:hover:text-white hover:translate-x-1 transition duration-200">X @amanshakya0018</p>
-        </Link>
-      </div>
       <div className="mb-4">
         <p className="mb-1 rounded-md pr-2 py-1 text-[0.95rem] font-semibold text-black dark:text-white">Getting Started</p>
         <AnchorStart
