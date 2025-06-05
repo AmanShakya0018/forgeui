@@ -2,11 +2,12 @@
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
+import { CiHeart } from 'react-icons/ci'
 
 const Footer = () => {
 
   return (
-    <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-20 bg-white dark:bg-black">
+    <div className="border-t border-neutral-100 dark:border-white/[0.1] px-8 py-12 bg-white dark:bg-black">
       <div className="max-w-[87rem] mx-auto text-sm px-4 dark:text-zinc-400 text-zinc-500 flex sm:flex-row flex-col justify-between items-start ">
         <div>
           <div className="mb-4 flex">
@@ -14,10 +15,6 @@ const Footer = () => {
               <Image src="/logo-ui.png" width={30} height={30} priority={false} alt="Logo" unoptimized={true} className="rounded-xl" />
               <span className="text-xl font-extrabold text-black dark:text-white ">Forge UI</span>
             </Link>
-          </div>
-          <div className="mt-2 text-zinc-500 dark:text-zinc-400">
-            Build by
-            <a className="dark:text-emerald-500 pl-1 font-medium text-neutral-600" target="__blank" href="https://www.amanshakya.in">@AmanShakya</a>
           </div>
           <div className="mt-2 mr-2 max-w-fit">
             <Link href="https://x.com/compose/tweet?text=🚀%20Just%20discovered%20%23ForgeUI%20and%20it%27s%20a%20game-changer%20for%20building%20modern%20UIs!%20%F0%9F%9A%80%20%40amanshakya0018%20%23WebDev%20%23React" target='_blank'>
@@ -71,11 +68,22 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className=" w-full flex mt-4 items-center justify-center">
-        <h1 className="text-center text-3xl md:text-5xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
+      <div className=" w-full hidden md:flex mt-4 items-center justify-center">
+        <h1 className="text-center text-3xl md:text-7xl lg:text-[10rem] font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-700 to-neutral-900 select-none">
           FORGE UI
         </h1>
       </div>
+      <p className="w-full mt-12 -mb-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
+        Made with <CiHeart className="inline-block text-foreground align-middle w-5 h-5 pb-0.5" /> by{' '}
+        <a
+          href="https://amanshakya.in"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:underline text-zinc-500"
+        >
+          this guy
+        </a>
+      </p>
     </div>
   )
 }

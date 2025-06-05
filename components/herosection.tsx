@@ -75,7 +75,7 @@ const HeroSection = () => {
               </AnimatePresence>{''}your website&apos;s appearance in no time.
             </h1>
           </div>
-          <p className="text-primary/80 max-w-[34rem] text-center tracking-tight md:text-lg font-light">
+          <p className="bg-clip-text text-transparent bg-gradient-to-br from-zinc-800/80 via-zinc-700/70 to-zinc-900/40 dark:from-white/70 dark:via-white/70 dark:to-white/30 max-w-sm sm:max-w-[34rem] text-center text-[0.9rem] md:text-base">
             Effortlessly build accessible, high-quality web apps by copy-pasting trending React components with seamless styling.
           </p>
           <Herobuttons />
