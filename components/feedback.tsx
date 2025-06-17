@@ -19,7 +19,7 @@ const FeedbackButton = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(
-    null
+    null,
   );
 
   const toggleForm = () => {
@@ -59,7 +59,7 @@ const FeedbackButton = () => {
     <>
       <button
         onClick={toggleForm}
-        className="z-[100] fixed right-5 bottom-5 flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-zinc-800 rounded-full shadow-lg hover:bg-zinc-700 transition-all duration-200"
+        className="fixed bottom-5 right-5 z-[100] flex items-center gap-2 rounded-full bg-zinc-800 px-4 py-2 text-sm font-medium text-white shadow-lg transition-all duration-200 hover:bg-zinc-700"
       >
         <LuMessageCircle />
         Feedback
@@ -68,24 +68,26 @@ const FeedbackButton = () => {
       {isOpen && (
         <div
           onClick={toggleForm}
-          className="fixed inset-0 flex items-center justify-center p-4 bg-black bg-opacity-50 z-[999]"
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black bg-opacity-50 p-4"
         >
           <div
             onClick={(e) => e.stopPropagation()}
-            className="bg-white rounded-2xl w-full max-w-[450px] shadow-2xl relative"
+            className="relative w-full max-w-[450px] rounded-2xl bg-white shadow-2xl"
           >
             <button
-              className="absolute top-4 right-4 p-1 rounded-full text-gray-800 hover:bg-gray-200"
+              className="absolute right-4 top-4 rounded-full p-1 text-gray-800 hover:bg-gray-200"
               onClick={toggleForm}
             >
               <X size={20} />
             </button>
             <div className="px-6 py-6 text-gray-800">
-              <h2 className="text-2xl font-bold mb-1">How was your experience?</h2>
+              <h2 className="mb-1 text-2xl font-bold">
+                How was your experience?
+              </h2>
               <p className="text-sm opacity-80">
                 Your feedback helps us improve and provide a better experience.
               </p>
-              <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+              <form onSubmit={handleSubmit} className="mt-4 space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Name</Label>
                   <Input
@@ -93,7 +95,7 @@ const FeedbackButton = () => {
                     name="name"
                     type="text"
                     placeholder="Your name"
-                    className="bg-white border-neutral-200"
+                    className="border-neutral-200 bg-white"
                     value={formData.name}
                     onChange={(e) =>
                       setFormData({ ...formData, name: e.target.value })
@@ -108,7 +110,7 @@ const FeedbackButton = () => {
                     name="email"
                     type="email"
                     placeholder="your@email.com"
-                    className="bg-white border-neutral-200"
+                    className="border-neutral-200 bg-white"
                     value={formData.email}
                     onChange={(e) =>
                       setFormData({ ...formData, email: e.target.value })
@@ -123,10 +125,11 @@ const FeedbackButton = () => {
                       <Star
                         key={star}
                         onClick={() => handleRatingClick(star)}
-                        className={`w-8 h-8 cursor-pointer ${star <= selectedRating
-                          ? "text-yellow-400 fill-current"
-                          : "text-gray-400"
-                          }`}
+                        className={`h-8 w-8 cursor-pointer ${
+                          star <= selectedRating
+                            ? "fill-current text-yellow-400"
+                            : "text-gray-400"
+                        }`}
                       />
                     ))}
                   </div>
@@ -137,7 +140,7 @@ const FeedbackButton = () => {
                     id="feedback"
                     name="feedback"
                     placeholder="Your comments or suggestions"
-                    className="bg-white border-neutral-200"
+                    className="border-neutral-200 bg-white"
                     value={formData.feedback}
                     maxLength={300}
                     onChange={(e) =>
@@ -145,7 +148,7 @@ const FeedbackButton = () => {
                     }
                     required
                   />
-                  <p className="text-xs text-gray-500 text-right">
+                  <p className="text-right text-xs text-gray-500">
                     {formData.feedback.length}/300
                   </p>
                 </div>
@@ -153,25 +156,25 @@ const FeedbackButton = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-emerald-600 text-white hover:bg-emerald-700 transition-opacity disabled:opacity-50"
+                    className="w-full bg-emerald-600 text-white transition-opacity hover:bg-emerald-700 disabled:opacity-50"
                   >
                     {isSubmitting ? "Submitting..." : "Submit Feedback"}
                   </Button>
                 </div>
 
                 {submitStatus === "success" && (
-                  <p className="text-green-600 text-center text-xs">
+                  <p className="text-center text-xs text-green-600">
                     Feedback submitted successfully!
                   </p>
                 )}
                 {submitStatus === "error" && (
-                  <p className="text-red-600 text-center text-xs">
+                  <p className="text-center text-xs text-red-600">
                     Failed to submit feedback. Please try again.
                   </p>
                 )}
               </form>
             </div>
-            <div className="bg-gray-100 rounded-b-2xl px-6 py-3 text-center">
+            <div className="rounded-b-2xl bg-gray-100 px-6 py-3 text-center">
               <p className="text-xs text-gray-600">
                 Powered by{" "}
                 <a
