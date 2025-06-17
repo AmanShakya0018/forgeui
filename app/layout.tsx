@@ -1,14 +1,21 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import Provider from "@/provider/provider";
+import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
-import { Analytics } from "@vercel/analytics/react"
-import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
+import Provider from "@/provider/provider";
+// import Script from "next/script";
 
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
 export const metadata: Metadata = {
   title: "Forge UI",
   description: "Future of UI Design",
@@ -20,20 +27,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-pt-[4.2rem]" suppressHydrationWarning={true}>
-      <Script
+    <html lang="en" suppressHydrationWarning={true}>
+      {/* <Script
         defer
         data-site="217027c0-3557-4a81-8f84-92043de74a6a"
         src="https://statsio.amanshakya.in/tracker.js"
-      />
+      /> */}
       <body
-        className={cn("min-h-screen font-sans antialiased bg-background dark:bg-black ", inter.variable)}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Provider>
-          <div className={cn("relative flex min-h-dvh flex-col bg-background dark:bg-black")}>
-            <main className="flex-1">{children}</main>
-            <Toaster />
-          </div>
+          {children}
+          <Toaster />
         </Provider>
         <Analytics />
       </body>

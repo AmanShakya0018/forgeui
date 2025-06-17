@@ -1,8 +1,8 @@
-import FeedbackButton from '@/components/feedback'
-import Footer from '@/components/footer'
-import LandingPage from '@/components/landingpage'
-import Navbar from '@/components/navbar'
-import React from 'react'
+import FeedbackButton from "@/components/feedback";
+import Footer from "@/components/footer";
+import LandingPage from "@/components/landingpage";
+import Navbar from "@/components/navbar";
+import React from "react";
 
 const home = () => {
   return (
@@ -14,7 +14,7 @@ const home = () => {
       </div>
       <Footer />
     </main>
-  )
-}
+  );
+};
 
-export default home
+export default home;
