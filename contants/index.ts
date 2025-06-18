@@ -5,6 +5,21 @@ export const navItems = [
   { name: 'Docs', href: '/introduction' },
 ];
 
+export const introItems = [
+  {
+    name: "Introduction",
+    href: "/introduction",
+  },
+  {
+    name: "Install Next.js",
+    href: "/install-nextjs",
+  },
+  {
+    name: "Install Tailwind CSS",
+    href: "/install-tailwindcss",
+  },
+]
+
 export const primaryItems = [
   { name: 'Alerts', href: '/components/alerts' },
   { name: 'Animated Carousel', href: '/components/animated-carousel' },

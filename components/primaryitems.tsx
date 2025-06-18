@@ -1,51 +1,37 @@
-import React from 'react';
-import { primaryItems } from '@/contants';
-import AnchorSidebar from './anchor-sidebar';
-import AnchorStart from './anchor-start';
+import React from "react";
+import { introItems, primaryItems } from "@/contants";
+import Anchor from "./ui/anchor-single";
 
 const PrimaryItems = () => {
-  const sortedPrimaryItems = [...primaryItems].sort((a, b) => a.name.localeCompare(b.name));
+  const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
 
   return (
-    <div className='space-y-4'>
-      <div className="mb-4">
-        <p className="mb-1 rounded-md pr-2 py-1 text-[0.95rem] font-semibold text-black dark:text-white">Getting Started</p>
-        <AnchorStart
-          key="introduction"
-          absolute
-          href={"/introduction"}
-        >
-          Introduction
-        </AnchorStart>
-        <AnchorStart
-          key="install-nextjs"
-          absolute
-          href={"/install-nextjs"}
-        >
-          Install Next.js
-        </AnchorStart>
-        <AnchorStart
-          key="install-tailwindcss"
-          absolute
-          href={"/install-tailwindcss"}
-        >
-          Install Tailwind CSS
-        </AnchorStart>
+    <div className="flex flex-col gap-6 pr-6">
+      <div className="flex flex-col gap-1">
+        <h4 className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+          Getting Started
+        </h4>
+        <div className="grid gap-1">
+          {introItems.map((item) => (
+            <Anchor key={item.name + item.href} matchDepth={1} href={item.href}>
+              {item.name}
+            </Anchor>
+          ))}
+        </div>
       </div>
-      <div>
-        <p className="mb-1 rounded-md pr-2 py-1 text-[0.95rem] font-semibold text-black dark:text-white">All Components</p>
+      <div className="flex flex-col gap-1">
+        <h4 className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+          All Components
+        </h4>
         {sortedPrimaryItems.map((item) => (
-          <AnchorSidebar
-            key={item.name + item.href}
-            absolute
-            href={item.href}
-          >
+          <Anchor key={item.name + item.href} matchDepth={2} href={item.href}>
             {item.name}
-          </AnchorSidebar>
+          </Anchor>
         ))}
       </div>
     </div>
-
   );
 };
 

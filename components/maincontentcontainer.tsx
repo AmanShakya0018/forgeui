@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface MainContentContainerProps {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface MainContentContainerProps {
 
 const MainContentContainer = ({ children }: MainContentContainerProps) => {
   return (
-    <article className="container lg:pl-8 py-6 max-w-6xl mx-auto">
+    <article className="container mx-auto max-w-6xl py-6 lg:pl-8">
       {children}
     </article>
   );

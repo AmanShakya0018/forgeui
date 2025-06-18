@@ -1,12 +1,14 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface PreviewComponentContainerProps {
   children: ReactNode;
 }
 
-const PreviewComponentContainer = ({ children }: PreviewComponentContainerProps) => {
+const PreviewComponentContainer = ({
+  children,
+}: PreviewComponentContainerProps) => {
   return (
-    <div className="border border-zinc-200 dark:border-zinc-800 sm:px-10 px-2 py-6 sm:py-12 mt-[2px] bg-transparent rounded-md shadow-md flex justify-center items-center space-x-2 overflow-hidden flex-wrap min-h-[22rem]">
+    <div className="mt-[2px] flex min-h-[22rem] flex-wrap items-center justify-center space-x-2 overflow-hidden rounded-md border border-zinc-200 bg-transparent px-2 py-6 shadow-md dark:border-zinc-800 sm:px-10 sm:py-12">
       {children}
     </div>
   );

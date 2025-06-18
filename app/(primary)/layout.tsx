@@ -1,7 +1,7 @@
-import { ScrollArea } from "@/components/ui/scroll-area";
-import PrimaryItems from "@/components/primaryitems";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import PrimaryItems from "@/components/primaryitems";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 export default function RootLayout({
   children,
@@ -11,16 +11,17 @@ export default function RootLayout({
   return (
     <section>
       <Navbar />
-      <div className="md:flex max-w-[88rem] mx-auto relative md:px-1 items-start gap-3">
-        <aside className="hidden pt-10 pl-6 lg:sticky lg:top-0 lg:overflow-hidden lg:block lg:w-[240px] lg:max-w-[240px] lg:min-w-[240px] h-screen">
-          <ScrollArea className="h-full flex flex-col w-full gap-4 pr-2 py-6 lg:py-8">
+      <div className="mx-auto max-w-[95.8rem] items-start gap-3 border-x px-8 lg:flex">
+        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-r pb-3 lg:sticky lg:block lg:w-[240px] lg:overflow-hidden">
+          <ScrollArea className="h-full w-full pb-2 pt-8">
             <PrimaryItems />
           </ScrollArea>
         </aside>
-        <main className="flex-1 overflow-y-auto pt-12 pb-8 px-3">{children}</main>
+        <main className="flex-1 overflow-y-auto pb-8 pl-4 pr-16 pt-12">
+          {children}
+        </main>
       </div>
       <Footer />
     </section>
   );
 }
-

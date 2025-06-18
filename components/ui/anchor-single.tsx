@@ -6,27 +6,30 @@ import { usePathname } from "next/navigation";
 import { ComponentProps } from "react";
 
 type AnchorProps = ComponentProps<typeof Link> & {
-  absolute?: boolean;
-  activeClassName?: string;
+  matchDepth?: number;
   disabled?: boolean;
 };
 
-export default function AnchorStart({
-  absolute,
+export default function Anchor({
+  matchDepth = 1,
   className = "",
   disabled,
   children,
   ...props
 }: AnchorProps) {
   const path = usePathname();
-  const isMatch = absolute
-    ? props.href.toString().split("/")[1] == path.split("/")[1]
-    : path === props.href;
+  const isMatch =
+    matchDepth === 0
+      ? path === props.href
+      : props.href.toString().split("/")[matchDepth]?.toLowerCase() ===
+        path.split("/")[matchDepth]?.toLowerCase();
 
-  if (disabled)
+  if (disabled) {
     return (
       <div className={cn(className, "cursor-not-allowed")}>{children}</div>
     );
+  }
+
   return (
     <div className="relative w-full">
       {isMatch && (
@@ -40,7 +43,7 @@ export default function AnchorStart({
       <Link
         className={cn(
           className,
-          "relative z-10 flex w-full items-center rounded-lg px-3 py-2 text-sm text-zinc-500 transition duration-200 hover:text-black dark:text-zinc-400 dark:hover:text-white",
+          "relative z-10 flex w-full items-center rounded-lg px-3 py-2 text-sm text-zinc-700 transition duration-200 hover:bg-neutral-200/40 hover:text-black dark:text-zinc-300 dark:hover:bg-neutral-900/50 dark:hover:text-white",
           isMatch && "font-medium text-black dark:text-white",
         )}
         {...props}
