@@ -6,6 +6,7 @@ import { navItems } from "@/contants";
 import DocumentSearch from "./documentsearch";
 import NavbarDrawer from "./navbar-drawer";
 import AnchorNav from "./anchor-nav";
+import { GithubLink, TwitterLink } from "./ui/SocialButtons";
 
 const Navbar = () => {
   return (
@@ -13,17 +14,17 @@ const Navbar = () => {
       <div className="mx-auto max-w-[95.8rem] border-x px-8">
         <div className="flex h-[3.5rem] items-center justify-between">
           <div className="flex items-center space-x-12">
-            <Link href="/" className="flex items-center space-x-1">
+            <Link href="/" className="flex items-center space-x-1.5">
               <Image
                 src="/logo-ui.png"
-                width={30}
-                height={30}
+                width={500}
+                height={500}
                 priority={false}
                 alt="Logo"
                 unoptimized={true}
-                className="rounded-xl"
+                className="h-7 w-7 rounded-xl"
               />
-              <span className="text-2xl font-bold">Forge UI</span>
+              <span className="text-xl font-bold">Forge UI</span>
             </Link>
 
             <div className="hidden items-center space-x-6 lg:flex">
@@ -39,22 +40,13 @@ const Navbar = () => {
             </div>
           </div>
 
-          <div className="hidden items-center space-x-4 lg:flex">
-            <Link href="https://twitter.com/AmanShakya0018" target="_blank">
-              <p className="relative text-sm font-medium text-zinc-500 hover:text-foreground/80 dark:text-zinc-400">
-                Twitter
-              </p>
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/amanshakya0018/"
-              target="_blank"
-            >
-              <p className="relative text-sm font-medium text-zinc-500 hover:text-foreground/80 dark:text-zinc-400">
-                LinkedIn
-              </p>
-            </Link>
-            <Themetoggle />
+          <div className="hidden items-center space-x-2 lg:flex">
             <DocumentSearch />
+            <div className="flex items-center gap-0.5">
+              <GithubLink />
+              <TwitterLink />
+              <Themetoggle />
+            </div>
           </div>
           <div className="flex items-center space-x-1 lg:hidden">
             <Themetoggle />
