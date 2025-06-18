@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className="border-t">
       <div className="mx-auto max-w-[95.8rem] border-x px-4 py-12">
-        <div className="mx-auto flex max-w-full flex-col items-start justify-between px-4 text-sm text-zinc-500 dark:text-zinc-400 sm:flex-row">
+        <div className="mx-auto flex max-w-full flex-col items-start justify-between pl-4 pr-8 text-sm text-zinc-500 dark:text-zinc-400 sm:flex-row">
           <div>
             <div className="mb-4 flex">
               <Link href="/" className="flex items-center space-x-1.5">
