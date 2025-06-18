@@ -11,17 +11,17 @@ const Footer = () => {
         <div className="mx-auto flex max-w-full flex-col items-start justify-between px-4 text-sm text-zinc-500 dark:text-zinc-400 sm:flex-row">
           <div>
             <div className="mb-4 flex">
-              <Link href="/" className="flex items-center space-x-1">
+              <Link href="/" className="flex items-center space-x-1.5">
                 <Image
                   src="/logo-ui.png"
-                  width={30}
-                  height={30}
+                  width={500}
+                  height={500}
                   priority={false}
                   alt="Logo"
                   unoptimized={true}
-                  className="rounded-xl"
+                  className="h-7 w-7 rounded-xl"
                 />
-                <span className="text-xl font-extrabold text-black dark:text-white">
+                <span className="text-xl font-bold text-black dark:text-white">
                   Forge UI
                 </span>
               </Link>

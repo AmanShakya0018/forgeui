@@ -1,82 +1,163 @@
-"use client"
-import React, { useState } from 'react'
-import { Button } from './ui/button'
-import { useToast } from '@/hooks/use-toast'
+"use client";
 
-const ContactPage = () => {
-  const { toast } = useToast()
+import type React from "react";
 
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+
+export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  })
+    name: "",
+    email: "",
+    message: "",
+  });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
-  const handleClick = () => {
-    toast({
-      title: 'Available soon',
-      description: 'This feature is in development and will be available soon.',
-    })
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    })
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Form validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Missing information",
+        description: "Please fill in all fields before submitting.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    // Simulate form submission
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Your message couldn't be sent. Please try again later.",
+        variant: "destructive",
+      });
+      console.log(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
-    <article className="container lg:pl-8 py-6 prose dark:prose-invert max-w-[45rem] mx-auto">
-      <h1 className="mb-2 text-5xl font-extrabold">Contact Us</h1>
+    <article className="container mx-auto max-w-3xl px-4 py-12 lg:px-8">
+      <div className="space-y-6">
+        {/* Header */}
+        <div className="space-y-4">
+          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">
+            Contact Us
+          </h1>
+          <p className="text-muted-foreground">
+            If you have any questions or need assistance,{" "}
+            <em>please reach out</em>. We&apos;re here to help!
+          </p>
+        </div>
 
-      <p className="text-lg mt-0 text-gray-400">
-        If you have any questions or need assistance, please feel free to reach out to us. We&apos;re here to help!
-      </p>
+        {/* Divider */}
+        <div className="h-px bg-border/60" />
 
-      <div className="mt-6 space-y-4 max-w-[45rem] mx-auto">
-        <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Name</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-900 rounded-md shadow-sm sm:text-sm"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-900 rounded-md shadow-sm sm:text-sm"
-          />
-        </div>
-        <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">Message</label>
-          <textarea
-            id="message"
-            name="message"
-            rows={4}
-            value={formData.message}
-            onChange={handleChange}
-            className="mt-1 block w-full px-3 py-2 border border-gray-300 dark:border-gray-900 rounded-md shadow-sm sm:text-sm"
-          ></textarea>
-        </div>
-        <div className="mx-auto">
-          <Button size="sm" onClick={handleClick}>Send</Button>
-        </div>
+        {/* Form */}
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="space-y-2">
+              <label
+                htmlFor="name"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Name <span className="text-destructive">*</span>
+              </label>
+              <Input
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your name"
+                className="h-10"
+                required
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label
+                htmlFor="email"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Email <span className="text-destructive">*</span>
+              </label>
+              <Input
+                type="email"
+                id="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="your.email@example.com"
+                className="h-10"
+                required
+              />
+            </div>
+          </div>
+
+          <div className="space-y-2">
+            <label
+              htmlFor="message"
+              className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+            >
+              Message <span className="text-destructive">*</span>
+            </label>
+            <Textarea
+              id="message"
+              name="message"
+              rows={6}
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="How can we help you?"
+              className="min-h-[120px] resize-y"
+              required
+            />
+          </div>
+
+          <div className="flex items-center justify-between">
+            <p className="text-xs text-muted-foreground">
+              <span className="text-destructive">*</span> Required fields
+            </p>
+            <Button type="submit" disabled={isSubmitting}>
+              {isSubmitting ? "Sending..." : "Send Message"}
+            </Button>
+          </div>
+        </form>
+
+        {/* Contact Info */}
       </div>
     </article>
-  )
+  );
 }
-
-export default ContactPage

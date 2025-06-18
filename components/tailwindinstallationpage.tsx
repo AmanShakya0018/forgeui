@@ -29,13 +29,13 @@ npx tailwindcss init -p
 
   return (
     <article className="container mx-auto max-w-6xl py-6 lg:pl-8">
-      <h1 className="mb-2 text-4xl font-bold">{title}</h1>
-      <p className="mt-0 text-lg text-neutral-400">{description}</p>
+      <h1 className="mb-4 text-3xl font-bold sm:text-4xl">{title}</h1>
+      <p className="mt-0 text-neutral-500 dark:text-zinc-400">{description}</p>
 
       <div className="mt-6 flex flex-col gap-5 border-l border-neutral-300 dark:border-neutral-700">
         <span className="flex h-8 items-center gap-6">
           <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
             Create your project
           </span>
         </span>
@@ -51,7 +51,7 @@ cd my-project
       <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
         <span className="flex h-8 items-center gap-6">
           <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
             Install Tailwind CSS
           </span>
         </span>
@@ -62,7 +62,7 @@ cd my-project
       <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
         <span className="flex h-8 items-center gap-6">
           <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
             Configure your template paths
           </span>
         </span>
@@ -78,7 +78,7 @@ cd my-project
       <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
         <span className="flex h-8 items-center gap-6">
           <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
             Add the Tailwind directives to your CSS
           </span>
         </span>
@@ -100,7 +100,7 @@ cd my-project
       <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
         <span className="flex h-8 items-center gap-6">
           <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
             Start your build process
           </span>
         </span>
@@ -108,10 +108,10 @@ cd my-project
           <CodeBlock code={`npm run dev`} language="javascript" />
         </span>
       </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
+      <div className="flex flex-col gap-5 border-l border-neutral-300 pt-6 dark:border-neutral-700">
         <span className="flex h-8 items-center gap-6">
           <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
             Start using Tailwind
           </span>
         </span>

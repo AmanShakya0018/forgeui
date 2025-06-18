@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface ContentNavigationProps {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface ContentNavigationProps {
 
 const ContentNavigation = ({ children }: ContentNavigationProps) => {
   return (
-    <div className="mb-4 flex items-center space-x-1 text-sm leading-none text-neutral-500 dark:text-zinc-400">
+    <div className="mb-8 flex items-center space-x-1 text-sm leading-none text-neutral-500 dark:text-zinc-400">
       <div className="truncate">Components</div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
