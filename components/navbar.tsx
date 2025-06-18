@@ -9,9 +9,9 @@ import AnchorNav from "./anchor-nav";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-primary/10 bg-white/15 px-4 shadow-lg shadow-neutral-600/5 backdrop-blur-lg dark:bg-zinc-950/10 lg:px-8">
-      <div className="mx-auto max-w-[88rem] px-4">
-        <div className="flex h-16 items-center justify-between">
+    <nav className="sticky top-0 z-50 w-full border-b bg-white/5 shadow-lg shadow-neutral-400/5 backdrop-blur-lg dark:bg-neutral-800/5 dark:shadow-neutral-700/5">
+      <div className="mx-auto max-w-[95.8rem] border-x px-8">
+        <div className="flex h-[3.5rem] items-center justify-between">
           <div className="flex items-center space-x-12">
             <Link href="/" className="flex items-center space-x-1">
               <Image

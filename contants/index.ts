@@ -2,21 +2,21 @@
 export const navItems = [
   { name: 'Home', href: '/' },
   { name: 'Components', href: '/components/alerts' },
-  { name: 'Docs', href: '/introduction' },
+  { name: 'Docs', href: '/docs/introduction' },
 ];
 
 export const introItems = [
   {
     name: "Introduction",
-    href: "/introduction",
+    href: "/docs/introduction",
   },
   {
     name: "Install Next.js",
-    href: "/install-nextjs",
+    href: "/docs/install-nextjs",
   },
   {
     name: "Install Tailwind CSS",
-    href: "/install-tailwindcss",
+    href: "/docs/install-tailwindcss",
   },
 ]
 

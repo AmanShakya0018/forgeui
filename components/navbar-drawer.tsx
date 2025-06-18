@@ -1,6 +1,6 @@
-"use client"
-import React from 'react'
-import { Menu } from 'lucide-react';
+"use client";
+import React from "react";
+import { Menu } from "lucide-react";
 import {
   Drawer,
   DrawerClose,
@@ -9,70 +9,88 @@ import {
   DrawerFooter,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import { ScrollArea } from './ui/scroll-area';
-import { navItems } from '@/contants';
-import { primaryItems } from '@/contants';
-import Link from 'next/link';
+} from "@/components/ui/drawer";
+import { ScrollArea } from "./ui/scroll-area";
+import { navItems } from "@/contants";
+import { primaryItems } from "@/contants";
+import Link from "next/link";
 
 const NavbarDrawer = () => {
-
-  const sortedPrimaryItems = [...primaryItems].sort((a, b) => a.name.localeCompare(b.name));
+  const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
 
   return (
     <Drawer>
-      <DrawerTrigger><Menu className="w-10 h-10 hover:bg-slate-100 dark:hover:bg-neutral-900 p-2 rounded-lg" /></DrawerTrigger>
+      <DrawerTrigger>
+        <Menu className="h-10 w-10 rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-neutral-900" />
+      </DrawerTrigger>
       <DrawerContent>
         <DrawerTitle></DrawerTitle>
         <DrawerDescription></DrawerDescription>
-        <ScrollArea className="h-80 flex flex-col w-full gap-4 pr-2 py-2 mx-1">
+        <ScrollArea className="mx-1 flex h-80 w-full flex-col gap-4 py-2 pr-2">
           <div className="my-2">
             {navItems.map((item) => (
-              <a key={item.name} href={item.href} className="block text-[0.95rem] px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900 rounded-lg relative">
+              <a
+                key={item.name}
+                href={item.href}
+                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900"
+              >
                 {item.name}
               </a>
             ))}
             <Link href="https://twitter.com/AmanShakya0018" target="_blank">
-              <p className="block px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900 rounded-lg relative">Twitter</p>
+              <p className="relative block rounded-lg px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900">
+                Twitter
+              </p>
             </Link>
-            <Link href="https://www.linkedin.com/in/amanshakya0018/" target="_blank">
-              <p className="block px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900 rounded-lg relative">LinkedIn</p>
+            <Link
+              href="https://www.linkedin.com/in/amanshakya0018/"
+              target="_blank"
+            >
+              <p className="relative block rounded-lg px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900">
+                LinkedIn
+              </p>
             </Link>
-            <div className="border-b border-y-2 rounded-lg border-slate-300 dark:border-neutral-800 mx-2 mt-2"></div>
+            <div className="mx-2 mt-2 rounded-lg border-y-2 border-b border-slate-300 dark:border-neutral-800"></div>
           </div>
           <div>
             <div>
-              <p className="block px-4 py-2 text-[1rem] font-semibold text-gray-900 dark:text-gray-100 rounded-lg relative">Getting Started</p>
+              <p className="relative block rounded-lg px-4 py-2 text-[1rem] font-semibold text-gray-900 dark:text-gray-100">
+                Getting Started
+              </p>
               <a
                 key="introduction"
-                href={"/introduction"}
-                className="block px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900 rounded-lg relative"
+                href={"/docs/introduction"}
+                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
               >
                 Introduction
               </a>
               <a
                 key="install-nextjs"
                 href={"/install-nextjs"}
-                className="block px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900 rounded-lg relative"
+                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
               >
                 Install Next.js
               </a>
               <a
                 key="install-tailwindcss"
                 href={"/install-tailwindcss"}
-                className="block px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900 rounded-lg relative"
+                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
               >
                 Install Tailwind CSS
               </a>
             </div>
-            <div className="border-b border-y-2 rounded-lg border-slate-300 dark:border-neutral-800 mx-2 mt-2"></div>
+            <div className="mx-2 mt-2 rounded-lg border-y-2 border-b border-slate-300 dark:border-neutral-800"></div>
             <div>
-              <p className="block px-4 py-2 text-[1rem] font-semibold text-gray-900 dark:text-gray-100 rounded-lg relative">All Components</p>
+              <p className="relative block rounded-lg px-4 py-2 text-[1rem] font-semibold text-gray-900 dark:text-gray-100">
+                All Components
+              </p>
               {sortedPrimaryItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900 rounded-lg relative"
+                  className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
                 >
                   {item.name}
                 </a>
@@ -81,12 +99,11 @@ const NavbarDrawer = () => {
           </div>
         </ScrollArea>
         <DrawerFooter>
-          <DrawerClose>
-          </DrawerClose>
+          <DrawerClose></DrawerClose>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>
-  )
-}
+  );
+};
 
-export default NavbarDrawer
+export default NavbarDrawer;

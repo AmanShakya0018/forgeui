@@ -1,5 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
+import { ChevronRight } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -48,7 +49,16 @@ export default function Anchor({
         )}
         {...props}
       >
-        {children}
+        <span>{children}</span>
+        {isMatch && (
+          <motion.div
+            className="ml-auto"
+            animate={{ rotate: [0, -30, 27, -17, 13, 0] }}
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
+            <ChevronRight className="h-4 w-4" />
+          </motion.div>
+        )}
       </Link>
     </div>
   );

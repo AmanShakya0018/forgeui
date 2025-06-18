@@ -15,7 +15,7 @@ const PrimaryItems = () => {
         </h4>
         <div className="grid gap-1">
           {introItems.map((item) => (
-            <Anchor key={item.name + item.href} matchDepth={1} href={item.href}>
+            <Anchor key={item.name + item.href} matchDepth={2} href={item.href}>
               {item.name}
             </Anchor>
           ))}
