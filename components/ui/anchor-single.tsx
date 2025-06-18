@@ -12,7 +12,7 @@ type AnchorProps = ComponentProps<typeof Link> & {
 };
 
 export default function Anchor({
-  matchDepth = 1,
+  matchDepth = 2,
   className = "",
   disabled,
   children,
@@ -31,8 +31,25 @@ export default function Anchor({
     );
   }
 
+  const itemVariants = {
+    initial: {
+      x: -5,
+      opacity: 0,
+      filter: "blur(2px)",
+    },
+    animate: {
+      x: 0,
+      opacity: 1,
+      filter: "blur(0px)",
+    },
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  };
+
   return (
-    <div className="relative w-full">
+    <motion.div variants={itemVariants} className="relative w-full">
       {isMatch && (
         <motion.div
           layoutId="anchor-tab-background"
@@ -44,8 +61,8 @@ export default function Anchor({
       <Link
         className={cn(
           className,
-          "relative z-10 flex w-full items-center rounded-lg px-3 py-2 text-sm text-zinc-700 transition duration-200 hover:bg-neutral-200/40 hover:text-black dark:text-zinc-300 dark:hover:bg-neutral-900/50 dark:hover:text-white",
-          isMatch && "font-medium text-black dark:text-white",
+          "relative z-10 flex w-full items-center rounded-lg px-3 py-2 text-sm font-medium tracking-tight text-zinc-700 transition duration-200 hover:bg-neutral-200/40 hover:text-black dark:text-zinc-300/90 dark:hover:bg-neutral-900/50 dark:hover:text-white",
+          isMatch && "font-semibold text-black dark:text-white",
         )}
         {...props}
       >
@@ -60,6 +77,6 @@ export default function Anchor({
           </motion.div>
         )}
       </Link>
-    </div>
+    </motion.div>
   );
 }

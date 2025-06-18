@@ -4,7 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { Analytics } from "@vercel/analytics/react";
 import Provider from "@/provider/provider";
-// import Script from "next/script";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,11 +29,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      {/* <Script
+      <Script
         defer
         data-site="217027c0-3557-4a81-8f84-92043de74a6a"
         src="https://statsio.amanshakya.in/tracker.js"
-      /> */}
+      />
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
