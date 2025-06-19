@@ -1,30 +1,34 @@
+"use client";
+import { useActiveSection } from "@/hooks/intersection-observer";
 import React from "react";
 import { LuBug, LuLayoutDashboard, LuLightbulb } from "react-icons/lu";
 
-const PageContentSidebar = () => {
-  const navigationItems = [
-    { title: "Usage", href: "#usage" },
-    { title: "Installation", href: "#installation" },
-    { title: "Props", href: "#props" },
-  ];
+const navigationItems = [
+  { title: "Preview", href: "#preview" },
+  { title: "Installation", href: "#installation" },
+  { title: "Props", href: "#props" },
+];
 
-  const contributeItems = [
-    {
-      title: "Report an issue",
-      href: "https://github.com/amanshakya0018/forgeui/issues/new?title=[bug]:%20%2Fcomponents%2F&labels=bug&labels=documentation&template=bug_report.md",
-      icon: LuBug,
-    },
-    {
-      title: "Request a feature",
-      href: "https://github.com/amanshakya0018/forgeui/issues/new?title=[feat]:%20%2Fcomponents%2F&labels=enhancement&template=feature_request.md",
-      icon: LuLightbulb,
-    },
-    {
-      title: "Request a new component",
-      href: "https://github.com/amanshakya0018/forgeui/issues/new?title=[feat]:%20%2Fcomponents%2F&labels=enhancement&template=feature_request.md",
-      icon: LuLayoutDashboard,
-    },
-  ];
+const contributeItems = [
+  {
+    title: "Report an issue",
+    href: "https://github.com/amanshakya0018/forgeui/issues/new?title=[bug]:%20%2Fcomponents%2F&labels=bug&labels=documentation&template=bug_report.md",
+    icon: LuBug,
+  },
+  {
+    title: "Request a feature",
+    href: "https://github.com/amanshakya0018/forgeui/issues/new?title=[feat]:%20%2Fcomponents%2F&labels=enhancement&template=feature_request.md",
+    icon: LuLightbulb,
+  },
+  {
+    title: "Request a new component",
+    href: "https://github.com/amanshakya0018/forgeui/issues/new?title=[feat]:%20%2Fcomponents%2F&labels=enhancement&template=feature_request.md",
+    icon: LuLayoutDashboard,
+  },
+];
+
+const PageContentSidebar = () => {
+  const activeId = useActiveSection();
 
   return (
     <div className="h-full w-full overflow-y-auto py-6 pl-6 pr-2">
@@ -32,16 +36,23 @@ const PageContentSidebar = () => {
         <div className="space-y-2">
           <p className="text-sm font-medium">On This Page</p>
           <div>
-            {navigationItems.map((item, index) => (
-              <div key={index}>
-                <a
-                  href={item.href}
-                  className="block pt-2 text-sm text-neutral-500 transition-colors duration-200 hover:text-black dark:text-zinc-400 dark:hover:text-white"
-                >
-                  {item.title}
-                </a>
-              </div>
-            ))}
+            {navigationItems.map((item, index) => {
+              const isActive = activeId === item.href.replace("#", "");
+              return (
+                <div key={index}>
+                  <a
+                    href={item.href}
+                    className={`block pt-2 text-sm transition-colors duration-200 ${
+                      isActive
+                        ? "font-semibold text-black dark:text-white"
+                        : "text-neutral-500 hover:text-black dark:text-zinc-400 dark:hover:text-white"
+                    }`}
+                  >
+                    {item.title}
+                  </a>
+                </div>
+              );
+            })}
           </div>
         </div>
 
