@@ -1,23 +1,23 @@
-"use client"
-import React, { useEffect, useState } from 'react'
+"use client";
+import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import RequestComponents from './requestforcomponents';
-import Floatingsvgs from './floatingsvgs';
-import Techstacksectionhero from './techstacksectionhero';
-import Herobuttons from './herobuttons';
+import RequestComponents from "./requestforcomponents";
+import Floatingsvgs from "./floatingsvgs";
+import Techstacksectionhero from "./techstacksectionhero";
+import Herobuttons from "./herobuttons";
 
-const words = ['Upgrade', 'Enhance', '\u00A0Improve']
+const words = ["Upgrade", "Enhance", "\u00A0Improve"];
 
 const HeroSection = () => {
-  const [currentWord, setCurrentWord] = useState(0)
+  const [currentWord, setCurrentWord] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentWord((prev) => (prev + 1) % words.length)
-    }, 2000)
+      setCurrentWord((prev) => (prev + 1) % words.length);
+    }, 2000);
 
-    return () => clearInterval(interval)
-  }, [])
+    return () => clearInterval(interval);
+  }, []);
 
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -38,13 +38,14 @@ const HeroSection = () => {
     };
   }, []);
 
-
-
   return (
     <div>
       <RequestComponents />
-      <div className='py-2 lg:py-16'>
-        <div className='max-w-[44rem] mx-auto relative' onMouseMove={handleMouseMove}>
+      <div className="py-2 lg:py-16">
+        <div
+          className="relative mx-auto max-w-[44rem]"
+          onMouseMove={handleMouseMove}
+        >
           <Floatingsvgs x={mousePosition.x} y={mousePosition.y} />
         </div>
         <motion.div
@@ -52,10 +53,10 @@ const HeroSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-[88rem] mx-auto px-4 py-4 flex flex-col gap-4 items-center justify-center space-y-3"
+          className="mx-auto flex max-w-[88rem] flex-col items-center justify-center gap-4 space-y-3 px-4 py-4"
         >
           <div className="flex flex-col items-center justify-center">
-            <h1 className="tracking-tighter max-w-[40rem] text-4xl lg:text-6xl text-center font-bold">
+            <h1 className="max-w-[40rem] text-center text-4xl font-bold tracking-tighter lg:text-6xl">
               <AnimatePresence mode="wait">
                 <motion.span
                   key={currentWord}
@@ -64,27 +65,28 @@ const HeroSection = () => {
                   exit={{ opacity: 0 }}
                   transition={{
                     duration: 0.3,
-                    ease: "easeInOut"
+                    ease: "easeInOut",
                   }}
                   className="inline-block"
                 >
-                  <div className='w-[9rem] lg:w-[14rem] h-8 lg:h-12 text-left overflow-visible mr-1 lg:mr-4'>
+                  <div className="mr-1 h-8 w-[9rem] overflow-visible text-left lg:mr-4 lg:h-12 lg:w-[14rem]">
                     {words[currentWord]}
                   </div>
                 </motion.span>
-              </AnimatePresence>{''}your website&apos;s appearance in no time.
+              </AnimatePresence>
+              {""}your website&apos;s appearance in no time.
             </h1>
           </div>
-          <p className="bg-clip-text text-transparent bg-gradient-to-br from-zinc-800/80 via-zinc-700/70 to-zinc-900/40 dark:from-white/70 dark:via-white/70 dark:to-white/30 max-w-sm sm:max-w-[34rem] text-center text-[0.9rem] md:text-base">
-            Effortlessly build accessible, high-quality web apps by copy-pasting trending React components with seamless styling.
+          <p className="max-w-sm bg-gradient-to-br from-zinc-800/80 via-zinc-700/70 to-zinc-900/40 bg-clip-text text-center text-[0.9rem] text-transparent dark:from-white/70 dark:via-white/70 dark:to-white/30 sm:max-w-[34rem] md:text-base">
+            Effortlessly build accessible, high-quality web apps by copy-pasting
+            trending React components with seamless styling.
           </p>
           <Herobuttons />
           <Techstacksectionhero />
         </motion.div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default HeroSection
-
+export default HeroSection;
