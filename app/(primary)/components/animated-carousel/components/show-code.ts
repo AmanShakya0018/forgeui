@@ -2,7 +2,14 @@ export const title = "Animated Carousel";
 export const routepoint = "animated-carousel";
 export const description = "A dynamic, interactive carousel for showcasing images or content with smooth transitions and engaging animations.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/animated-carousel.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/animated-carousel.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'

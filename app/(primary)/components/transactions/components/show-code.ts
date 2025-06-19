@@ -2,7 +2,14 @@ export const title = "Transactions";
 export const routepoint = "transactions";
 export const description = "A dynamic transaction list showcasing categorized activities with icons, timestamps, and interactive hover effects.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/transactions.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/transactions.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'

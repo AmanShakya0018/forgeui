@@ -2,7 +2,14 @@ export const title = "Circular Text";
 export const routepoint = "circular-text";
 export const description = "CircularText animates text in a spinning circle, creating a smooth and visually engaging motion effect.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/circular-text.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/circular-text.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'

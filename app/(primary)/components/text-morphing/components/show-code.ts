@@ -3,7 +3,14 @@ export const title = "Text Morphing";
 export const routepoint = "text-morphing";
 export const description = "Fluid, morphing text component for React — create mesmerizing, gooey transitions between words with customizable timing and styling.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/text-morphing.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/text-morphing.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'

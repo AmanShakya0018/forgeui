@@ -2,7 +2,14 @@ export const title = "Trial Alert";
 export const routepoint = "trial-alert";
 export const description = "A sleek notification component prompting users to upgrade their plan for enhanced features and uninterrupted access.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/trial-alert.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/trial-alert.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'

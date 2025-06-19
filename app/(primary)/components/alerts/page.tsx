@@ -9,7 +9,7 @@ import {
   title,
   description,
   routepoint,
-  cliscript,
+  commandMap,
 } from "./components/show-code";
 import ContentNavigation from "@/components/content-navigation";
 import SourceCode from "@/components/sourcecode";
@@ -25,11 +25,11 @@ import ComponentNavigation from "@/components/componentnavigation";
 import { getNavigationItems } from "@/lib/getNavigationItems";
 import { ComponentSource } from "@/components/componentsource";
 import ToggleManualCli from "@/components/togglemanualcli";
-import InstallCli from "@/components/installcli";
+import { CommandBlock } from "@/components/cli/commmand-block";
 
 const Alerts = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationItems(title);
 
   return (
@@ -55,9 +55,12 @@ const Alerts = () => {
         setSourceManual={setSourceManual}
       />
       {!sourceManual ? (
-        <InstallCli>
-          <CodeBlock language="jsx" code={cliscript} />
-        </InstallCli>
+        <CommandBlock
+          npmCommand={commandMap.npm}
+          pnpmCommand={commandMap.pnpm}
+          yarnCommand={commandMap.yarn}
+          bunCommand={commandMap.bun}
+        />
       ) : (
         <>
           <Dependencies>

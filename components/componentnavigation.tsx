@@ -1,45 +1,105 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import Link from "next/link";
+import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface ComponentNavigationProps {
-  previous?: { label: string; href: string }
-  next?: { label: string; href: string }
+  previous?: { label: string; href: string };
+  next?: { label: string; href: string };
 }
 
-export default function ComponentNavigation({ previous, next }: ComponentNavigationProps) {
+export default function ComponentNavigation({
+  previous,
+  next,
+}: ComponentNavigationProps) {
+  const onlyPrevious = previous && !next;
+  const onlyNext = next && !previous;
+
   return (
-    <div className="grid grid-cols-2 gap-4 mt-12">
-      {previous ? (
+    <div
+      className={cn(
+        "mt-12 gap-3 border-t border-neutral-200 pt-8 dark:border-neutral-900 max-sm:flex-col",
+        onlyPrevious || onlyNext ? "flex flex-col" : "grid grid-cols-2",
+      )}
+    >
+      {previous && (
         <Link
           href={previous.href}
-          className="flex w-full flex-col gap-2 rounded-lg border border-zinc-300 bg-white p-4 text-sm transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900"
+          className="group flex flex-1 flex-col gap-2 whitespace-nowrap rounded-xl border border-neutral-200 p-3.5 outline-none transition-colors hover:bg-[#eeeeee] focus-visible:border-neutral-300 dark:border-neutral-900 dark:hover:bg-[#111111] dark:focus-visible:border-neutral-800"
         >
-          <div className="inline-flex items-center gap-0.5 text-zinc-500 dark:text-zinc-400">
-            <ChevronLeft className="-ms-1 size-4 shrink-0 rtl:rotate-180" />
-            <p>Previous</p>
+          <div className="flex items-center gap-1 text-foreground">
+            <ChevronIconGlitch />
+            <span className="mb-px text-sm leading-none text-primary/80">
+              Previous
+            </span>
           </div>
-          <p className="font-medium">{previous.label}</p>
+          <span className="ml-1 text-sm font-medium leading-none text-primary">
+            {previous.label}
+          </span>
         </Link>
-      ) : (
-        <div />
       )}
 
-      {next ? (
+      {next && (
         <Link
           href={next.href}
-          className="flex w-full flex-col gap-2 rounded-lg border border-zinc-300 bg-white p-4 text-sm transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:bg-zinc-900 col-start-2 text-end"
+          className="group flex flex-1 flex-col items-end gap-2 whitespace-nowrap rounded-xl border border-neutral-200 p-3.5 outline-none transition-colors hover:bg-[#eeeeee] focus-visible:border-neutral-300 dark:border-neutral-900 dark:hover:bg-[#111111] dark:focus-visible:border-neutral-800"
         >
-          <div className="inline-flex items-center gap-0.5 text-zinc-500 dark:text-zinc-400 flex-row-reverse">
-            <ChevronRight className="-me-1 size-4 shrink-0 rtl:rotate-180" />
-            <p>Next</p>
+          <div className="flex items-center gap-1 text-foreground">
+            <span className="mb-px text-sm leading-none text-primary/80">
+              Next
+            </span>
+            <ChevronIconGlitch direction="right" />
           </div>
-          <p className="font-medium">{next.label}</p>
+          <span className="mr-1 text-sm font-medium leading-none text-primary">
+            {next.label}
+          </span>
         </Link>
-      ) : (
-        <div />
       )}
     </div>
-  )
+  );
+}
+
+function ChevronIconGlitch({
+  direction = "left",
+}: {
+  direction?: "left" | "right";
+}) {
+  return (
+    <div className="relative overflow-hidden font-medium">
+      <span className="invisible">
+        {direction === "left" ? (
+          <ChevronLeftIcon size={15} />
+        ) : (
+          <ChevronRightIcon size={15} />
+        )}
+      </span>
+      <span
+        className={cn(
+          "absolute left-0 top-0 text-neutral-400 transition-transform duration-300 ease-in-out hover:duration-150",
+          direction === "left"
+            ? "group-hover:-translate-x-full"
+            : "group-hover:translate-x-full",
+        )}
+      >
+        {direction === "left" ? (
+          <ChevronLeftIcon size={15} />
+        ) : (
+          <ChevronRightIcon size={15} />
+        )}
+      </span>
+      <span
+        className={cn(
+          "absolute left-0 top-0 text-neutral-400 transition-transform duration-300 ease-in-out hover:duration-150 group-hover:translate-x-0",
+          direction === "left" ? "translate-x-full" : "-translate-x-full",
+        )}
+      >
+        {direction === "left" ? (
+          <ChevronLeftIcon size={15} />
+        ) : (
+          <ChevronRightIcon size={15} />
+        )}
+      </span>
+    </div>
+  );
 }

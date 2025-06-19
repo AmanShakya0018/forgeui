@@ -1,30 +1,36 @@
-"use client"
-import { CodeBlock } from '@/components/ui/code-block';
-import React, { useState } from 'react'
-import TextMorphing from './components/text-morphing';
-import Dependencies from '@/components/dependencies';
-import { democode, code, title, description, routepoint, cliscript } from './components/show-code';
-import ContentNavigation from '@/components/content-navigation';
-import SourceCode from '@/components/sourcecode';
-import RoutePlaceHolder from '@/components/route-place';
-import ToggleButtonGroup from '@/components/togglebuttongroup';
-import MainTitle from '@/components/maintitle';
-import MainDescription from '@/components/maindescription';
-import PreviewComponentContainer from '@/components/previewcomponentcontainer';
-import StepsInstallation from '@/components/steps-installation';
-import MainContentContainer from '@/components/maincontentcontainer';
-import VerticalContainer from '@/components/verticalcontainer';
-import UtilSecond from '@/components/util-second';
-import { getNavigationItems } from '@/lib/getNavigationItems';
-import ComponentNavigation from '@/components/componentnavigation';
-import { ComponentSource } from '@/components/componentsource';
-import InstallCli from '@/components/installcli';
-import ToggleManualCli from '@/components/togglemanualcli';
+"use client";
+import { CodeBlock } from "@/components/ui/code-block";
+import React, { useState } from "react";
+import TextMorphing from "./components/text-morphing";
+import Dependencies from "@/components/dependencies";
+import {
+  democode,
+  code,
+  title,
+  description,
+  routepoint,
+  commandMap,
+} from "./components/show-code";
+import ContentNavigation from "@/components/content-navigation";
+import SourceCode from "@/components/sourcecode";
+import RoutePlaceHolder from "@/components/route-place";
+import ToggleButtonGroup from "@/components/togglebuttongroup";
+import MainTitle from "@/components/maintitle";
+import MainDescription from "@/components/maindescription";
+import PreviewComponentContainer from "@/components/previewcomponentcontainer";
+import StepsInstallation from "@/components/steps-installation";
+import MainContentContainer from "@/components/maincontentcontainer";
+import VerticalContainer from "@/components/verticalcontainer";
+import UtilSecond from "@/components/util-second";
+import { getNavigationItems } from "@/lib/getNavigationItems";
+import ComponentNavigation from "@/components/componentnavigation";
+import { ComponentSource } from "@/components/componentsource";
+import { CommandBlock } from "@/components/cli/commmand-block";
+import ToggleManualCli from "@/components/togglemanualcli";
 
 const Textmorphing = () => {
-
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationItems(title);
 
   return (
@@ -32,25 +38,38 @@ const Textmorphing = () => {
       <ContentNavigation>{title}</ContentNavigation>
       <MainTitle>{title}</MainTitle>
       <MainDescription>{description}</MainDescription>
-      <ToggleButtonGroup sourceCode={sourceCode} setSourceCode={setSourceCode} routepoint={routepoint} />
-      {(!sourceCode) ?
-        (<PreviewComponentContainer>
+      <ToggleButtonGroup
+        sourceCode={sourceCode}
+        setSourceCode={setSourceCode}
+        routepoint={routepoint}
+      />
+      {!sourceCode ? (
+        <PreviewComponentContainer>
           <TextMorphing />
-        </PreviewComponentContainer>)
-        : (<CodeBlock
-          language="jsx"
-          code={democode}
-        />)}
+        </PreviewComponentContainer>
+      ) : (
+        <CodeBlock language="jsx" code={democode} />
+      )}
       <StepsInstallation />
-      <ToggleManualCli sourceManual={sourceManual} setSourceManual={setSourceManual} />
-      {(!sourceManual) ? (
-        <InstallCli><CodeBlock
-          language="jsx"
-          code={cliscript}
-        /></InstallCli>
+      <ToggleManualCli
+        sourceManual={sourceManual}
+        setSourceManual={setSourceManual}
+      />
+      {!sourceManual ? (
+        <CommandBlock
+          npmCommand={commandMap.npm}
+          pnpmCommand={commandMap.pnpm}
+          yarnCommand={commandMap.yarn}
+          bunCommand={commandMap.bun}
+        />
       ) : (
         <>
-          <Dependencies><CodeBlock code={`npm install clsx tailwind-merge`} language="javascript" /></Dependencies>
+          <Dependencies>
+            <CodeBlock
+              code={`npm install clsx tailwind-merge`}
+              language="javascript"
+            />
+          </Dependencies>
           <UtilSecond />
           <VerticalContainer>
             <SourceCode />
@@ -59,10 +78,11 @@ const Textmorphing = () => {
               <CodeBlock code={code} language="javascript" />
             </ComponentSource>
           </VerticalContainer>
-        </>)}
+        </>
+      )}
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
-  )
-}
+  );
+};
 
-export default Textmorphing
+export default Textmorphing;

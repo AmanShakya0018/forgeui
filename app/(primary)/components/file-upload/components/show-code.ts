@@ -2,7 +2,14 @@ export const title = "File Upload";
 export const routepoint = "file-upload";
 export const description = "Clean file upload form featuring drag-and-drop, subtle micro-interactions, and a grid backdrop.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/file-upload.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/file-upload.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'

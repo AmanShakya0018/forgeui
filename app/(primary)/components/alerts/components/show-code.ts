@@ -3,7 +3,14 @@ export const title = "Alerts";
 export const routepoint = "alerts";
 export const description = "Customizable React alerts for notifications, warnings, or messages with flexible styling and seamless integration.";
 
-export const cliscript = "npx shadcn@latest add \"https://forgeui.amanshakya.in/registry/alerts.json\"";
+export const cliscript = "add https://forgeui.amanshakya.in/registry/alerts.json";
+
+export const commandMap = {
+  npm: `npx shadcn@latest ${cliscript}`,
+  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
+  yarn: `npx shadcn@latest ${cliscript}`,
+  bun: `bunx --bun shadcn@latest ${cliscript}`,
+};
 
 export const democode = `"use client";
 import React from 'react'
