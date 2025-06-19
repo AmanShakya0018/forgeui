@@ -1,18 +1,18 @@
 "use client";
 import React from "react";
-import { Menu } from "lucide-react";
 import {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { ScrollArea } from "./ui/scroll-area";
-import { navItems } from "@/contants";
-import { primaryItems } from "@/contants";
+import { introItems, primaryItems } from "@/contants";
+import { HiOutlineMenuAlt2 } from "react-icons/hi";
+import Anchor from "./ui/anchor-single";
+import Image from "next/image";
 import Link from "next/link";
 
 const NavbarDrawer = () => {
@@ -21,88 +21,60 @@ const NavbarDrawer = () => {
   );
 
   return (
-    <Drawer>
-      <DrawerTrigger>
-        <Menu className="h-10 w-10 rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-neutral-900" />
-      </DrawerTrigger>
-      <DrawerContent>
-        <DrawerTitle></DrawerTitle>
-        <DrawerDescription></DrawerDescription>
-        <ScrollArea className="mx-1 flex h-80 w-full flex-col gap-4 py-2 pr-2">
-          <div className="my-2">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900"
-              >
-                {item.name}
-              </a>
-            ))}
-            <Link href="https://twitter.com/AmanShakya0018" target="_blank">
-              <p className="relative block rounded-lg px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900">
-                Twitter
-              </p>
+    <Sheet>
+      <SheetTrigger>
+        <HiOutlineMenuAlt2 className="h-10 w-10 rounded-lg p-2 hover:bg-slate-100 dark:hover:bg-neutral-900" />
+      </SheetTrigger>
+      <SheetContent side={"left"} className="p-2">
+        <SheetHeader>
+          <div className="ml-1 mt-2 flex items-center">
+            <Link href="/" className="flex items-center space-x-1.5">
+              <Image
+                src="/logo-ui.png"
+                width={500}
+                height={500}
+                priority={false}
+                alt="Logo"
+                unoptimized={true}
+                className="h-7 w-7 rounded-xl"
+              />
+              <span className="text-xl font-bold">Forge UI</span>
             </Link>
-            <Link
-              href="https://www.linkedin.com/in/amanshakya0018/"
-              target="_blank"
-            >
-              <p className="relative block rounded-lg px-4 py-2 text-gray-900 hover:bg-slate-100 dark:text-gray-100 dark:hover:bg-neutral-900">
-                LinkedIn
-              </p>
-            </Link>
-            <div className="mx-2 mt-2 rounded-lg border-y-2 border-b border-slate-300 dark:border-neutral-800"></div>
           </div>
-          <div>
-            <div>
-              <p className="relative block rounded-lg px-4 py-2 text-[1rem] font-semibold text-gray-900 dark:text-gray-100">
-                Getting Started
-              </p>
-              <a
-                key="introduction"
-                href={"/docs/introduction"}
-                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
-              >
-                Introduction
-              </a>
-              <a
-                key="install-nextjs"
-                href={"/install-nextjs"}
-                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
-              >
-                Install Next.js
-              </a>
-              <a
-                key="install-tailwindcss"
-                href={"/install-tailwindcss"}
-                className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
-              >
-                Install Tailwind CSS
-              </a>
+          <SheetTitle></SheetTitle>
+          <SheetDescription></SheetDescription>
+          <ScrollArea className="flex h-[calc(100vh-5rem)] w-full flex-col gap-4 py-2">
+            <div className="flex flex-col gap-6 pr-6">
+              <div className="flex flex-col gap-1">
+                <div className="flex px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+                  Getting Started
+                </div>
+                <div className="grid gap-1">
+                  {introItems.map((item) => (
+                    <Anchor key={item.name + item.href} href={item.href}>
+                      {item.name}
+                    </Anchor>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-1">
+                <div className="flex px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+                  All Components
+                </div>
+
+                <div className="grid gap-1">
+                  {sortedPrimaryItems.map((item) => (
+                    <Anchor key={item.name + item.href} href={item.href}>
+                      {item.name}
+                    </Anchor>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="mx-2 mt-2 rounded-lg border-y-2 border-b border-slate-300 dark:border-neutral-800"></div>
-            <div>
-              <p className="relative block rounded-lg px-4 py-2 text-[1rem] font-semibold text-gray-900 dark:text-gray-100">
-                All Components
-              </p>
-              {sortedPrimaryItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="relative block rounded-lg px-4 py-2 text-[0.95rem] text-gray-900 hover:bg-slate-100 dark:text-neutral-400 dark:hover:bg-neutral-900"
-                >
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        </ScrollArea>
-        <DrawerFooter>
-          <DrawerClose></DrawerClose>
-        </DrawerFooter>
-      </DrawerContent>
-    </Drawer>
+          </ScrollArea>
+        </SheetHeader>
+      </SheetContent>
+    </Sheet>
   );
 };
 
