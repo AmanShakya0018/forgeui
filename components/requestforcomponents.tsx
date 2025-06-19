@@ -93,6 +93,14 @@ const RequestComponents = () => {
           </motion.div>
         </div>
         <div className="relative z-10 flex items-center justify-between pl-2 pr-1">
+          {/* <div
+            className={cn(
+              "dark:bg-[#eaec8a]/16 h-4 w-[30px] rounded-full bg-yellow-400/30 text-[10px] font-medium",
+              "mr-2.5 text-center leading-[150%] text-yellow-600 [text-shadow:0_1px_1.5px_rgb(0,0,0,0.16)] dark:text-[#eaec8a]",
+            )}
+          >
+            New
+          </div> */}
           <span className="relative text-[10px] font-medium leading-none sm:text-xs">
             ✨ Request For Components
           </span>

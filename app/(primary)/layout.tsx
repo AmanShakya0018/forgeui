@@ -2,6 +2,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import PrimaryItems from "@/components/primaryitems";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import PageContentSidebar from "@/components/page-content-sidebar";
 
 export default function RootLayout({
   children,
@@ -17,9 +18,12 @@ export default function RootLayout({
             <PrimaryItems />
           </ScrollArea>
         </aside>
-        <main className="flex-1 overflow-y-auto pb-8 pl-4 pr-16 pt-4">
+        <main className="flex-1 overflow-y-auto pb-8 pl-4 pr-12 pt-4">
           {children}
         </main>
+        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-l pb-3 lg:sticky lg:block lg:w-[240px] lg:overflow-hidden">
+          <PageContentSidebar />
+        </aside>
       </div>
       <Footer />
     </section>
