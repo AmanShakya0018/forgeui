@@ -61,11 +61,6 @@ const Footer = () => {
                   Components
                 </p>
               </Link>
-              <Link href="/contact">
-                <p className="text-foreground/60 hover:text-foreground/80">
-                  Contact
-                </p>
-              </Link>
               <Link href="/docs/introduction">
                 <p className="text-foreground/60 hover:text-foreground/80">
                   About

@@ -22,7 +22,9 @@ What import alias would you like configured? @/*
 
   return (
     <article className="container mx-auto max-w-6xl py-6 lg:pl-8">
-      <h1 className="mb-4 text-3xl font-bold sm:text-4xl">{title}</h1>
+      <h1 id="installation" className="mb-4 text-3xl font-bold sm:text-4xl">
+        {title}
+      </h1>
       <p className="mt-0 text-neutral-500 dark:text-zinc-400">{description}</p>
 
       <div className="mt-6 flex flex-col gap-5 border-l border-neutral-300 dark:border-neutral-700">

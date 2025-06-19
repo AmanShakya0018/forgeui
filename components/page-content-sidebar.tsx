@@ -1,13 +1,9 @@
 "use client";
-import { useActiveSection } from "@/hooks/intersection-observer";
-import React from "react";
+import { useActiveSection } from "@/hooks/use-active-section";
+import { usePathname } from "next/navigation";
 import { LuBug, LuLayoutDashboard, LuLightbulb } from "react-icons/lu";
-
-const navigationItems = [
-  { title: "Preview", href: "#preview" },
-  { title: "Installation", href: "#installation" },
-  { title: "Props", href: "#props" },
-];
+import React from "react";
+import Link from "next/link";
 
 const contributeItems = [
   {
@@ -28,7 +24,32 @@ const contributeItems = [
 ];
 
 const PageContentSidebar = () => {
+  const pathname = usePathname();
   const activeId = useActiveSection();
+
+  let navigationItems = [
+    { title: "Preview", href: "#preview" },
+    { title: "Installation", href: "#installation" },
+  ];
+
+  if (pathname === "/docs/introduction") {
+    navigationItems = [
+      { title: "Introduction", href: "#introduction" },
+      { title: "Philosophy", href: "#philosophy" },
+    ];
+  }
+  if (
+    pathname === "/docs/install-nextjs" ||
+    pathname === "/docs/install-tailwindcss"
+  ) {
+    navigationItems = [
+      { title: "Installation", href: "#installation" },
+      {
+        title: "View Source",
+        href: "",
+      },
+    ];
+  }
 
   return (
     <div className="h-full w-full overflow-y-auto py-6 pl-6 pr-2">
@@ -40,7 +61,7 @@ const PageContentSidebar = () => {
               const isActive = activeId === item.href.replace("#", "");
               return (
                 <div key={index}>
-                  <a
+                  <Link
                     href={item.href}
                     className={`block pt-2 text-sm transition-colors duration-200 ${
                       isActive
@@ -49,7 +70,7 @@ const PageContentSidebar = () => {
                     }`}
                   >
                     {item.title}
-                  </a>
+                  </Link>
                 </div>
               );
             })}

@@ -6,7 +6,7 @@ interface MainContentContainerProps {
 
 const MainContentContainer = ({ children }: MainContentContainerProps) => {
   return (
-    <article className="container mx-auto max-w-6xl py-6 lg:pl-8">
+    <article className="container mx-auto max-w-6xl scroll-smooth py-6 lg:pl-8">
       {children}
     </article>
   );

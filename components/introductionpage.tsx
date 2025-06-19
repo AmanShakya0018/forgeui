@@ -3,7 +3,7 @@ export default function IntroductionPage() {
     <article className="container mx-auto max-w-6xl py-6 lg:pl-8">
       <div className="space-y-8">
         {/* Header */}
-        <div className="space-y-4">
+        <div id="introduction" className="space-y-4">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Introduction
           </h1>
@@ -53,7 +53,9 @@ export default function IntroductionPage() {
 
         {/* Philosophy Section */}
         <div className="space-y-4 border-t border-border pt-8">
-          <h2 className="text-2xl font-bold tracking-tight">Philosophy</h2>
+          <h2 id="philosophy" className="text-2xl font-bold tracking-tight">
+            Philosophy
+          </h2>
 
           <div className="space-y-4 text-base leading-relaxed">
             <p>
