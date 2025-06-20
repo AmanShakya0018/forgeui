@@ -29,6 +29,36 @@ export default function Techstacksectionhero() {
           viewport={{ once: true }}
           transition={{
             duration: 0.3,
+            delay: 0.6,
+            ease: [0.23, 1, 0.32, 1],
+          }}
+          className={cn(
+            "relative col-span-1 col-start-1 flex flex-col items-center gap-2 text-black dark:text-white md:col-auto",
+          )}
+          onMouseEnter={() => handleMouseEnter("Next.js")}
+          onMouseLeave={handleMouseLeave}
+        >
+          <Nextjs className="h-8 w-8" aria-label="Next.js" />
+          <motion.span
+            animate={{
+              scale: hoveredItem === "Next.js" ? 1.05 : 1,
+            }}
+            transition={{
+              duration: 0.2,
+              ease: "easeInOut",
+            }}
+            className="mt-1 whitespace-nowrap text-center text-xs"
+          >
+            Next.js
+          </motion.span>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{
+            duration: 0.3,
             delay: 0.1,
             ease: [0.23, 1, 0.32, 1],
           }}
@@ -113,36 +143,6 @@ export default function Techstacksectionhero() {
             className="mt-1 whitespace-nowrap text-center text-xs"
           >
             shadcn/ui
-          </motion.span>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{
-            duration: 0.3,
-            delay: 0.6,
-            ease: [0.23, 1, 0.32, 1],
-          }}
-          className={cn(
-            "relative col-span-1 col-start-1 flex flex-col items-center gap-2 text-black dark:text-white md:col-auto",
-          )}
-          onMouseEnter={() => handleMouseEnter("Next.js")}
-          onMouseLeave={handleMouseLeave}
-        >
-          <Nextjs className="h-8 w-8" aria-label="Next.js" />
-          <motion.span
-            animate={{
-              scale: hoveredItem === "Next.js" ? 1.05 : 1,
-            }}
-            transition={{
-              duration: 0.2,
-              ease: "easeInOut",
-            }}
-            className="mt-1 whitespace-nowrap text-center text-xs"
-          >
-            Next.js
           </motion.span>
         </motion.div>
 
