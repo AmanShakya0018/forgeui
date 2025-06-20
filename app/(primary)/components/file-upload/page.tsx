@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import FileUpload from "./components/file-upload";
+import FileUpload from "./_components/file-upload";
 import {
   code,
   democode,
@@ -10,7 +10,7 @@ import {
   commandMap,
   packagesMap,
   utilcode,
-} from "./components/show-code";
+} from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";

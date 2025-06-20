@@ -10,12 +10,12 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-} from "./components/show-code";
+} from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";
 import MainContentContainer from "@/components/maincontentcontainer";
-import TextShimmer from "./components/text-shimmer";
+import TextShimmer from "./_components/text-shimmer";
 import { getNavigationItems } from "@/lib/getNavigationItems";
 import ComponentNavigation from "@/components/componentnavigation";
 import { ComponentSource } from "@/components/componentsource";

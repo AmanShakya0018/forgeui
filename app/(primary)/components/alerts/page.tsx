@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Alert from "./components/alert";
+import Alert from "./_components/alert";
 import Dependencies from "@/components/dependencies";
 import {
   democode,
@@ -10,7 +10,7 @@ import {
   routepoint,
   commandMap,
   packagesMap,
-} from "./components/show-code";
+} from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";

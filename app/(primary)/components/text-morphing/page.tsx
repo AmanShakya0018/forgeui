@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import TextMorphing from "./components/text-morphing";
+import TextMorphing from "./_components/text-morphing";
 import Dependencies from "@/components/dependencies";
 import {
   democode,
@@ -11,7 +11,7 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-} from "./components/show-code";
+} from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";

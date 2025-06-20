@@ -8,13 +8,13 @@ import {
   routepoint,
   commandMap,
   packagesMap,
-} from "./components/show-code";
+} from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";
 import MainContentContainer from "@/components/maincontentcontainer";
 import Dependencies from "@/components/dependencies";
-import CircularText from "./components/circulartext";
+import CircularText from "./_components/circulartext";
 import { getNavigationItems } from "@/lib/getNavigationItems";
 import ComponentNavigation from "@/components/componentnavigation";
 import { ComponentSource } from "@/components/componentsource";

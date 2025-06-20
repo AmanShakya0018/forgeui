@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import TextRenderingEffect from "./components/text-rendering-effect";
+import TextRenderingEffect from "./_components/text-rendering-effect";
 import Dependencies from "@/components/dependencies";
 import {
   code,
@@ -11,7 +11,7 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-} from "./components/show-code";
+} from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";
