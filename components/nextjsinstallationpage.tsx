@@ -1,16 +1,28 @@
 "use client";
-import { CodeBlock } from "@/components/ui/code-block";
 import React from "react";
+import Dependencies from "./dependencies";
+import { CodeBlock2 } from "./cli/CodeBlock";
+import { CommandBlock } from "./cli/commmand-block";
 
 const NextjsInstallationPage = () => {
   const title = "Install Next.js";
   const description = "Install Next.js with Create Next App";
 
-  const code2 = `cd my-app
-npm run dev`;
+  const createAppMap = {
+    npm: "npx create-next-app@latest",
+    pnpm: "pnpm dlx create-next-app@latest",
+    yarn: "yarn create next-app",
+    bun: "bunx create-next-app@latest",
+  };
 
-  const code = `
-What is your project named? my-app
+  const serverStartMap = {
+    npm: "cd my-app && npm run dev",
+    pnpm: "cd my-app && pnpm dev",
+    yarn: "cd my-app && yarn dev",
+    bun: "cd my-app && bun dev",
+  };
+
+  const code = `What is your project named? my-app
 Would you like to use TypeScript? No / Yes
 Would you like to use ESLint? No / Yes
 Would you like to use Tailwind CSS? No / Yes
@@ -25,44 +37,30 @@ What import alias would you like configured? @/*
       <h1 id="installation" className="mb-4 text-3xl font-bold sm:text-4xl">
         {title}
       </h1>
-      <p className="mt-0 text-neutral-500 dark:text-zinc-400">{description}</p>
+      <p className="mb-8 text-neutral-500 dark:text-zinc-400">{description}</p>
 
-      <div className="mt-6 flex flex-col gap-5 border-l border-neutral-300 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Create a new project
-          </span>
-        </span>
-        <span className="pl-7">
-          <CodeBlock
-            code={`npx create-next-app@latest`}
-            language="javascript"
-          />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            As you install, the following prompts will appear:
-          </span>
-        </span>
-        <span className="pl-7">
-          <CodeBlock code={code} language="javascript" />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 pt-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            On installation, you&apos;ll see the following prompts:
-          </span>
-        </span>
-        <span className="pl-7">
-          <CodeBlock code={code2} language="javascript" />
-        </span>
-      </div>
+      <Dependencies step={1} title="Create a new project">
+        <CommandBlock
+          npmCommand={createAppMap.npm}
+          pnpmCommand={createAppMap.pnpm}
+          yarnCommand={createAppMap.yarn}
+          bunCommand={createAppMap.bun}
+        />
+      </Dependencies>
+      <Dependencies
+        step={2}
+        title="As you install, the following prompts will appear:"
+      >
+        <CodeBlock2 code={code} />
+      </Dependencies>
+      <Dependencies step={3} title="Start the development server">
+        <CommandBlock
+          npmCommand={serverStartMap.npm}
+          pnpmCommand={serverStartMap.pnpm}
+          yarnCommand={serverStartMap.yarn}
+          bunCommand={serverStartMap.bun}
+        />
+      </Dependencies>
     </article>
   );
 };

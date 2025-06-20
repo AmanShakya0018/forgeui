@@ -11,18 +11,31 @@ export const commandMap = {
   bun: `bunx --bun shadcn@latest ${cliscript}`,
 };
 
-export const democode = `"use client";
-import React from 'react'
-import FileUpload from './components/ui/file-upload';
-function Page() {
+export const utilcode = `import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+`;
+
+const packagescript = "framer-motion clsx tailwind-merge lucide-react react-dropzone";
+
+export const packagesMap = {
+  npm: `npm i ${packagescript}`,
+  pnpm: `pnpm add ${packagescript}`,
+  yarn: `yarn add ${packagescript}`,
+  bun: `bun add ${packagescript}`,
+};
+
+export const democode = `import FileUpload from '@/components/forgeui/file-upload';
+
+export function ${title.replace(/\s+/g, "")}Example() {
   return (
-    <>
       <FileUpload />
-    </>
   )
 }
-
-export default Page;`;
+`;
 
 export const code = `"use client"
 

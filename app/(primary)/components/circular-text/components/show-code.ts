@@ -11,20 +11,25 @@ export const commandMap = {
   bun: `bunx --bun shadcn@latest ${cliscript}`,
 };
 
-export const democode = `"use client";
-import React from 'react'
-import CircularText from './components/ui/circular-text';
-function Page() {
+const packagescript = "framer-motion";
+
+export const packagesMap = {
+  npm: `npm i ${packagescript}`,
+  pnpm: `pnpm add ${packagescript}`,
+  yarn: `yarn add ${packagescript}`,
+  bun: `bun add ${packagescript}`,
+};
+
+export const democode = `import CircularText from '@/components/forgeui/circular-text';
+
+export function ${title.replace(/\s+/g, "")}Example() {
   return (
-    <>
       <CircularText
         text="FORGEUI*IS*AWESOME*"
       />
-    </>
   )
 }
-
-export default Page;`;
+`;
 
 export const code = `"use client"
 import type React from "react"

@@ -3,7 +3,7 @@ export const title = "Alerts";
 export const routepoint = "alerts";
 export const description = "Customizable React alerts for notifications, warnings, or messages with flexible styling and seamless integration.";
 
-export const cliscript = "add https://forgeui.amanshakya.in/registry/alerts.json";
+const cliscript = "add https://forgeui.amanshakya.in/registry/alerts.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,
@@ -12,18 +12,23 @@ export const commandMap = {
   bun: `bunx --bun shadcn@latest ${cliscript}`,
 };
 
-export const democode = `"use client";
-import React from 'react'
-import Alert from './components/ui/alerts'
-function Page() {
+const packagescript = "lucide-react framer-motion";
+
+export const packagesMap = {
+  npm: `npm i ${packagescript}`,
+  pnpm: `pnpm add ${packagescript}`,
+  yarn: `yarn add ${packagescript}`,
+  bun: `bun add ${packagescript}`,
+};
+
+export const democode = `import Alert from '@/components/forgeui/alerts'
+
+export function ${title.replace(/\s+/g, "")}Example() {
   return (
-    <>
       <Alert />
-    </>
   )
 }
-
-export default Page;`;
+`;
 
 export const code = `'use client'
 

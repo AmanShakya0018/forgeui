@@ -1,10 +1,18 @@
-"use client";
-import { CodeBlock } from "@/components/ui/code-block";
 import React from "react";
+import Dependencies from "./dependencies";
+import { CommandBlock } from "./cli/commmand-block";
+import { CodeBlock2 } from "./cli/CodeBlock";
 
 const TailwindInstallationPage = () => {
   const title = "Install Tailwind CSS";
   const description = "Install Tailwind CSS with Next.js";
+
+  const serverStartMap = {
+    npm: "cd my-app && npm run dev",
+    pnpm: "cd my-app && pnpm dev",
+    yarn: "cd my-app && yarn dev",
+    bun: "cd my-app && bun dev",
+  };
 
   const code2 = `/** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -23,115 +31,71 @@ module.exports = {
 };
 `;
 
-  const code = `npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p  
-`;
+  const createAppMap = {
+    npm: "npx create-next-app@latest my-app --typescript --eslint && cd my-app",
+    pnpm: "pnpm dlx create-next-app@latest my-app --typescript --eslint && cd my-app",
+    yarn: "yarn create next-app my-app --typescript --eslint && cd my-app",
+    bun: "bunx create-next-app@latest my-app --typescript --eslint && cd my-app",
+  };
+
+  const tailwindSetupMap = {
+    npm: `npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p`,
+    pnpm: `pnpm add -D tailwindcss postcss autoprefixer && pnpm dlx tailwindcss init -p`,
+    yarn: `yarn add -D tailwindcss postcss autoprefixer && npx tailwindcss init -p`,
+    bun: `bun add -d tailwindcss postcss autoprefixer && bunx tailwindcss init -p`,
+  };
 
   return (
     <article className="container mx-auto max-w-6xl py-6 lg:pl-8">
       <h1 id="installation" className="mb-4 text-3xl font-bold sm:text-4xl">
         {title}
       </h1>
-      <p className="mt-0 text-neutral-500 dark:text-zinc-400">{description}</p>
-
-      <div className="mt-6 flex flex-col gap-5 border-l border-neutral-300 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Create your project
-          </span>
-        </span>
-        <span className="pl-7">
-          <CodeBlock
-            code={`npx create-next-app@latest my-project --typescript --eslint
-cd my-project
-`}
-            language="javascript"
-          />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Install Tailwind CSS
-          </span>
-        </span>
-        <span className="pl-7">
-          <CodeBlock code={code} language="javascript" />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Configure your template paths
-          </span>
-        </span>
-        <div className="ml-7 inline-flex max-w-max rounded bg-zinc-100 dark:bg-zinc-800">
-          <span className="px-[0.3rem] py-[0.2rem] text-[0.8rem] font-normal tracking-wider text-neutral-800 dark:text-neutral-300">
-            tailwind.config.ts
-          </span>
-        </div>
-        <span className="pl-7">
-          <CodeBlock code={code2} language="javascript" />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Add the Tailwind directives to your CSS
-          </span>
-        </span>
-        <div className="ml-7 inline-flex max-w-max rounded bg-zinc-100 dark:bg-zinc-800">
-          <span className="px-[0.3rem] py-[0.2rem] text-[0.8rem] font-normal tracking-wider text-neutral-800 dark:text-neutral-300">
-            globals.css
-          </span>
-        </div>
-        <span className="pl-7">
-          <CodeBlock
-            code={`@tailwind base;
+      <p className="mb-6 text-neutral-500 dark:text-zinc-400">{description}</p>
+      <Dependencies step={1} title="Create a new project">
+        <CommandBlock
+          npmCommand={createAppMap.npm}
+          pnpmCommand={createAppMap.pnpm}
+          yarnCommand={createAppMap.yarn}
+          bunCommand={createAppMap.bun}
+        />
+      </Dependencies>
+      <Dependencies step={2} title="Install Tailwind CSS">
+        <CommandBlock
+          npmCommand={tailwindSetupMap.npm}
+          pnpmCommand={tailwindSetupMap.pnpm}
+          yarnCommand={tailwindSetupMap.yarn}
+          bunCommand={tailwindSetupMap.bun}
+        />
+      </Dependencies>
+      <Dependencies step={3} title="Configure your template paths">
+        <CodeBlock2 fileName="tailwind.config.ts" code={code2} />
+      </Dependencies>
+      <Dependencies step={4} title="Add the Tailwind directives to your CSS">
+        <CodeBlock2
+          fileName="globals.css"
+          code={`@tailwind base;
 @tailwind components;
 @tailwind utilities;
 `}
-            language="javascript"
-          />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 py-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Start your build process
-          </span>
-        </span>
-        <span className="pl-7">
-          <CodeBlock code={`npm run dev`} language="javascript" />
-        </span>
-      </div>
-      <div className="flex flex-col gap-5 border-l border-neutral-300 pt-6 dark:border-neutral-700">
-        <span className="flex h-8 items-center gap-6">
-          <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-          <span className="scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
-            Start using Tailwind
-          </span>
-        </span>
-        <div className="ml-7 inline-flex max-w-max rounded bg-zinc-100 dark:bg-zinc-800">
-          <span className="px-[0.3rem] py-[0.2rem] text-[0.8rem] font-normal tracking-wider text-neutral-800 dark:text-neutral-300">
-            index.tsx
-          </span>
-        </div>
-        <span className="pl-7">
-          <CodeBlock
-            code={`export default function Home() {
+        />
+      </Dependencies>
+      <Dependencies step={5} title="Start the development server">
+        <CommandBlock
+          npmCommand={serverStartMap.npm}
+          pnpmCommand={serverStartMap.pnpm}
+          yarnCommand={serverStartMap.yarn}
+          bunCommand={serverStartMap.bun}
+        />
+      </Dependencies>
+      <Dependencies step={6} title="Start using Tailwind">
+        <CodeBlock2
+          fileName="page.tsx"
+          code={`export default function Home() {
   return <h1 className="text-4xl font-extrabold">Hello world!</h1>;
 }
 `}
-            language="javascript"
-          />
-        </span>
-      </div>
+        />
+      </Dependencies>
     </article>
   );
 };

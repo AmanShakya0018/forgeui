@@ -43,7 +43,7 @@ const NavbarDrawer = () => {
           </div>
           <SheetTitle></SheetTitle>
           <SheetDescription></SheetDescription>
-          <ScrollArea className="flex h-[calc(100vh-5rem)] w-full flex-col gap-4 py-2">
+          <ScrollArea className="flex h-[calc(100vh-10rem)] w-full flex-col gap-4 py-2">
             <div className="flex flex-col gap-6 pr-6">
               <div className="flex flex-col gap-1">
                 <div className="flex px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">

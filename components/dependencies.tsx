@@ -1,19 +1,29 @@
+import { cn } from "@/lib/utils";
 import React, { ReactNode } from "react";
 
 interface SectionProps {
-  children: ReactNode;
+  step?: number;
+  title?: string;
+  children?: ReactNode;
 }
 
-const Dependencies = ({ children }: SectionProps) => {
+const Dependencies = ({ step, title, children }: SectionProps) => {
   return (
-    <div className="mt-6 flex flex-col gap-5 border-l border-neutral-300 dark:border-neutral-700">
-      <span className="flex h-8 items-center gap-6">
-        <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
-        <span className="font-medium leading-relaxed text-black/80 dark:text-white/90">
-          Install dependencies
-        </span>
-      </span>
-      <span className="pl-7">{children}</span>
+    <div className="flex flex-col gap-5">
+      <div className="absolute flex h-9 w-9 select-none items-center justify-center rounded-full border-[3px] border-background bg-neutral-300 dark:bg-neutral-800">
+        <span className="font-semibold text-primary">{step}</span>
+      </div>
+      <div
+        className={cn(
+          "ml-[1.1rem]",
+          children && "border-l border-neutral-200 dark:border-neutral-900",
+        )}
+      >
+        <div className="space-y-4 pb-8 pl-8 pt-1">
+          <h2 className="font-medium text-primary/90">{title}</h2>
+          <span className="pl-7">{children}</span>
+        </div>
+      </div>
     </div>
   );
 };

@@ -18,7 +18,7 @@ export default function RootLayout({
             <PrimaryItems />
           </ScrollArea>
         </aside>
-        <main className="flex-1 overflow-y-auto px-1 pb-8 pt-4 lg:pr-6 xl:pr-10">
+        <main className="flex-1 overflow-y-auto px-2 pb-8 pt-4 lg:pr-6 xl:pr-10">
           {children}
         </main>
         <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-l pb-3 lg:sticky lg:w-[240px] lg:overflow-hidden xl:block">

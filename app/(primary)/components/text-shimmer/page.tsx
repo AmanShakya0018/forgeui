@@ -1,5 +1,4 @@
 "use client";
-import { CodeBlock } from "@/components/ui/code-block";
 import React, { useState } from "react";
 import Dependencies from "@/components/dependencies";
 import {
@@ -9,17 +8,12 @@ import {
   description,
   routepoint,
   commandMap,
+  utilcode,
+  packagesMap,
 } from "./components/show-code";
-import ContentNavigation from "@/components/content-navigation";
-import SourceCode from "@/components/sourcecode";
-import RoutePlaceHolder from "@/components/route-place";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
-import MainDescription from "@/components/maindescription";
 import PreviewComponentContainer from "@/components/previewcomponentcontainer";
-import StepsInstallation from "@/components/steps-installation";
-import UtilSecond from "@/components/util-second";
-import VerticalContainer from "@/components/verticalcontainer";
 import MainContentContainer from "@/components/maincontentcontainer";
 import TextShimmer from "./components/text-shimmer";
 import { getNavigationItems } from "@/lib/getNavigationItems";
@@ -27,17 +21,16 @@ import ComponentNavigation from "@/components/componentnavigation";
 import { ComponentSource } from "@/components/componentsource";
 import { CommandBlock } from "@/components/cli/commmand-block";
 import ToggleManualCli from "@/components/togglemanualcli";
+import { CodeBlock2 } from "@/components/cli/CodeBlock";
 
 const Textshimmereffect = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(false);
+  const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
 
   return (
     <MainContentContainer>
-      <ContentNavigation>{title}</ContentNavigation>
-      <MainTitle>{title}</MainTitle>
-      <MainDescription>{description}</MainDescription>
+      <MainTitle title={title} description={description} />
       <ToggleButtonGroup
         sourceCode={sourceCode}
         setSourceCode={setSourceCode}
@@ -50,9 +43,11 @@ const Textshimmereffect = () => {
           </TextShimmer>
         </PreviewComponentContainer>
       ) : (
-        <CodeBlock language="jsx" code={democode} />
+        <CodeBlock2
+          fileName={`${title.replace(/\s+/g, "")}Example.tsx`}
+          code={democode}
+        />
       )}
-      <StepsInstallation />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}
@@ -66,20 +61,29 @@ const Textshimmereffect = () => {
         />
       ) : (
         <>
-          <Dependencies>
-            <CodeBlock
-              code={`npm install framer-motion clsx tailwind-merge`}
-              language="javascript"
+          <Dependencies step={1} title="Install the packages">
+            <CommandBlock
+              npmCommand={packagesMap.npm}
+              pnpmCommand={packagesMap.pnpm}
+              yarnCommand={packagesMap.yarn}
+              bunCommand={packagesMap.bun}
             />
           </Dependencies>
-          <UtilSecond />
-          <VerticalContainer>
-            <SourceCode />
-            <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
-            <ComponentSource className="pl-7">
-              <CodeBlock code={code} language="javascript" />
+          <Dependencies step={2} title="Add util file">
+            <CodeBlock2 fileName={`lib/util.ts`} code={utilcode} />
+          </Dependencies>
+          <Dependencies
+            step={3}
+            title="Copy and paste the following code into your project"
+          >
+            <ComponentSource>
+              <CodeBlock2 fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
-          </VerticalContainer>
+          </Dependencies>
+          <Dependencies
+            step={4}
+            title="Update the import paths to match your project setup"
+          ></Dependencies>
         </>
       )}
       <ComponentNavigation previous={previous} next={next} />

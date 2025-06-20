@@ -3,10 +3,10 @@
   "type": "registry:ui",
   "files": [
     {
-      "path": "components/ui/circular-text.tsx",
+      "path": "components/forgeui/circular-text.tsx",
       "content": "\"use client\"\nimport type React from \"react\"\nimport { useEffect, useState } from \"react\"\nimport { motion, useAnimation } from \"framer-motion\"\n\ninterface CircularTextProps {\n  text: string\n  spinDuration?: number\n  className?: string\n}\n\nconst getRotationTransition = (duration: number, from: number, loop = true) => ({\n  from: from,\n  to: from + 360,\n  ease: \"linear\",\n  duration: duration,\n  type: \"tween\",\n  repeat: loop ? Number.POSITIVE_INFINITY : 0,\n})\n\nconst getTransition = (duration: number, from: number) => ({\n  rotate: getRotationTransition(duration, from),\n})\n\nconst CircularText: React.FC<CircularTextProps> = ({ text, spinDuration = 20, className = \"\" }) => {\n  const letters = Array.from(text)\n  const controls = useAnimation()\n  const [currentRotation, setCurrentRotation] = useState(0)\n\n  useEffect(() => {\n    controls.start({\n      rotate: currentRotation + 360,\n      transition: getTransition(spinDuration, currentRotation),\n    })\n  }, [spinDuration, controls, text, currentRotation])\n\n  return (\n    <motion.div\n      initial={{ rotate: 0 }}\n      className={`mx-auto rounded-full w-[200px] h-[200px] text-white font-black text-center origin-center ${className}`}\n      animate={controls}\n      onUpdate={(latest) => setCurrentRotation(Number(latest.rotate))}\n    >\n      {letters.map((letter, i) => {\n        const rotation = (360 / letters.length) * i\n        const factor = Number((Math.PI / letters.length).toFixed(0))\n        const x = factor * i\n        const y = factor * i\n        const transform = `rotateZ(${rotation}deg) translate3d(${x}px, ${y}px, 0)`\n\n        return (\n          <span\n            key={i}\n            className=\"absolute inline-block inset-0 text-2xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]\"\n            style={{ transform, WebkitTransform: transform }}\n          >\n            {letter}\n          </span>\n        )\n      })}\n    </motion.div>\n  )\n}\n\nexport default CircularText",
       "type": "registry:ui",
-      "target": "components/ui/circular-text.tsx"
+      "target": "components/forgeui/circular-text.tsx"
     }
   ],
   "author": "Aman Shakya <hi@amanshakya.in>",

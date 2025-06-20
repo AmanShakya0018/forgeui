@@ -1,8 +1,8 @@
-"use client"
-import { cn } from '@/lib/utils';
-import { ArrowUpRight, Code2 } from 'lucide-react';
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import { cn } from "@/lib/utils";
+import { ArrowUpRight, Code2 } from "lucide-react";
+import Link from "next/link";
+import React from "react";
 
 interface ToggleButtonGroupProps {
   routepoint: string;
@@ -10,16 +10,20 @@ interface ToggleButtonGroupProps {
   setSourceCode: (value: boolean) => void;
 }
 
-const ToggleButtonGroup = ({ sourceCode, setSourceCode, routepoint }: ToggleButtonGroupProps) => {
+const ToggleButtonGroup = ({
+  sourceCode,
+  setSourceCode,
+  routepoint,
+}: ToggleButtonGroupProps) => {
   return (
-    <div className="flex flex-col xs:flex-row xs:justify-between gap-2 mt-12 mb-4 border-b border-zinc-200 dark:border-zinc-800">
-      <div className='flex flex-row gap-2'>
+    <div className="mb-4 mt-12 flex flex-col gap-2 border-b border-zinc-200 dark:border-zinc-800 xs:flex-row xs:justify-between">
+      <div className="flex flex-row gap-2">
         <button
-          className={`inline-flex items-center justify-center gap-1.5 relative h-9 rounded-none border-b-2 px-4 pb-3 pt-2 font-medium text-sm transition-colors
-          ${!sourceCode
-              ? "border-b-primary dark:text-white text-zinc-950 duration-300"
+          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none border-b-2 px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
+            !sourceCode
+              ? "border-b-primary text-zinc-950 duration-300 dark:text-white"
               : "border-b-transparent text-neutral-500 dark:text-neutral-400"
-            }`}
+          }`}
           onClick={() => setSourceCode(false)}
         >
           <svg
@@ -41,11 +45,11 @@ const ToggleButtonGroup = ({ sourceCode, setSourceCode, routepoint }: ToggleButt
           <span>Preview</span>
         </button>
         <button
-          className={`inline-flex items-center justify-center gap-1.5 relative h-9 rounded-none border-b-2 px-4 pb-3 pt-2 font-medium text-sm transition-colors
-          ${sourceCode
-              ? "border-b-primary dark:text-white text-zinc-950 duration-300"
+          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none border-b-2 px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
+            sourceCode
+              ? "border-b-primary text-zinc-950 duration-300 dark:text-white"
               : "border-b-transparent text-neutral-500 dark:text-neutral-400"
-            }`}
+          }`}
           onClick={() => setSourceCode(true)}
         >
           <Code2 className="h-4 w-4" />
@@ -57,18 +61,18 @@ const ToggleButtonGroup = ({ sourceCode, setSourceCode, routepoint }: ToggleButt
         target="_blank"
         rel="noreferrer"
         className={cn(
-          "hidden xs:flex items-center gap-2 pb-2 pr-1",
+          "hidden items-center gap-2 pb-2 pr-1 xs:flex",
           "text-sm font-medium",
           "text-zinc-800 dark:text-zinc-200",
           "hover:text-zinc-600 dark:hover:text-zinc-400",
-          "transition-all duration-200 no-underline group"
+          "group no-underline transition-all duration-300",
         )}
       >
         Live Preview
         <ArrowUpRight
           className={cn(
             "h-4 w-4",
-            "transition-transform duration-200 group-hover:rotate-12"
+            "transition-transform duration-200 group-hover:rotate-12",
           )}
         />
       </Link>
