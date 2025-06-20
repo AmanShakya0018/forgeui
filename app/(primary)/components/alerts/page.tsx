@@ -13,7 +13,6 @@ import {
 } from "./components/show-code";
 import ContentNavigation from "@/components/content-navigation";
 import SourceCode from "@/components/sourcecode";
-import RoutePlaceHolder from "@/components/route-place";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
 import MainDescription from "@/components/maindescription";
@@ -26,6 +25,7 @@ import { getNavigationItems } from "@/lib/getNavigationItems";
 import { ComponentSource } from "@/components/componentsource";
 import ToggleManualCli from "@/components/togglemanualcli";
 import { CommandBlock } from "@/components/cli/commmand-block";
+import { CodeBlock2 } from "@/components/cli/CodeBlock";
 
 const Alerts = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -71,9 +71,8 @@ const Alerts = () => {
           </Dependencies>
           <VerticalContainer>
             <SourceCode />
-            <RoutePlaceHolder>components/ui/{routepoint}.tsx</RoutePlaceHolder>
             <ComponentSource className="pl-7">
-              <CodeBlock code={code} language="javascript" />
+              <CodeBlock2 fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </VerticalContainer>
         </>

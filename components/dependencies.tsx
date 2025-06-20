@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface SectionProps {
   children: ReactNode;
@@ -6,10 +6,10 @@ interface SectionProps {
 
 const Dependencies = ({ children }: SectionProps) => {
   return (
-    <div className="flex flex-col border-l border-neutral-300 dark:border-neutral-700 gap-5 mt-6">
+    <div className="mt-6 flex flex-col gap-5 border-l border-neutral-300 dark:border-neutral-700">
       <span className="flex h-8 items-center gap-6">
-        <span className="bg-neutral-300 dark:bg-neutral-700 w-[6px] h-full rounded-tr-full rounded-br-full"></span>
-        <span className="font-heading scroll-m-20 text-lg font-semibold tracking-tight text-black dark:text-neutral-200">
+        <span className="h-full w-[6px] rounded-br-full rounded-tr-full bg-neutral-300 dark:bg-neutral-700"></span>
+        <span className="font-medium leading-relaxed text-black/80 dark:text-white/90">
           Install dependencies
         </span>
       </span>

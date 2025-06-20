@@ -40,12 +40,12 @@ export function CodeBlockWrapper({
         </CollapsibleContent>
         <div
           className={cn(
-            "absolute flex items-center justify-center bg-gradient-to-b from-background/5 to-background dark:from-neutral-900/5 dark:to-neutral-900 to-99% p-2",
-            isOpened ? "inset-x-0 bottom-0 h-12 from-neutral-500/30" : "inset-0 ",
+            "to-99% absolute flex items-center justify-center bg-gradient-to-b from-background/5 to-background p-2",
+            isOpened ? "inset-x-0 bottom-0 h-12 from-background/40" : "inset-0",
           )}
         >
           <CollapsibleTrigger asChild>
-            <Button className="mb-8 h-8 text-xs text-neutral-900 bg-zinc-100 hover:text-neutral-900 hover:bg-zinc-200 dark:text-neutral-200 dark:bg-zinc-800 dark:hover:text-neutral-200 dark:hover:bg-zinc-700">
+            <Button className="mb-8 h-8 bg-zinc-100 text-xs text-neutral-900 hover:bg-zinc-200 hover:text-neutral-900 dark:bg-zinc-800 dark:text-neutral-200 dark:hover:bg-zinc-700 dark:hover:text-neutral-200">
               {isOpened ? "Collapse" : expandButtonTitle}
             </Button>
           </CollapsibleTrigger>
