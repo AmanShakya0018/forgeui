@@ -17,7 +17,7 @@ const BuildFeature = () => {
           opacity: 1,
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.3,
           delay: 0.1,
           ease: "easeInOut",
         }}
@@ -38,12 +38,12 @@ const BuildFeature = () => {
           opacity: 1,
         }}
         transition={{
-          duration: 0.5,
+          duration: 0.4,
           delay: 0.2,
           ease: "easeInOut",
         }}
         viewport={{ once: true }}
-        className="bg-gradient-stop mx-auto max-w-3xl text-balance bg-gradient-to-br from-foreground via-foreground via-50% to-foreground/30 bg-clip-text py-2 text-center text-4xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-5xl"
+        className="mx-auto max-w-3xl text-balance bg-gradient-to-br from-foreground via-foreground via-50% to-foreground/30 bg-clip-text py-2 text-center text-4xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-5xl"
       >
         Visually Stunning Interfaces With Complete Design Freedom
       </motion.h1>
@@ -59,7 +59,7 @@ const BuildFeature = () => {
           opacity: 1,
         }}
         transition={{
-          duration: 0.4,
+          duration: 0.3,
           delay: 0.3,
           ease: "easeInOut",
         }}

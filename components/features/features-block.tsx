@@ -1,7 +1,6 @@
 import CliCompatible from "./cli-compatible";
 import BuildWithForgeUI from "./build-with-forgeui";
 import BuildFeature from "./build-feature";
-import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 
 const FeaturesBlock = () => {
   return (
@@ -11,9 +10,6 @@ const FeaturesBlock = () => {
         <CliCompatible />
         <BuildWithForgeUI />
       </div>
-      <TextShimmer className="py-4 text-sm" duration={2}>
-        In Development...
-      </TextShimmer>
     </div>
   );
 };

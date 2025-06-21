@@ -63,7 +63,7 @@ const Footer = () => {
               </Link>
               <Link href="/docs/introduction">
                 <p className="text-foreground/60 hover:text-foreground/80">
-                  About
+                  Docs
                 </p>
               </Link>
             </div>
