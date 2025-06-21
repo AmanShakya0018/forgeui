@@ -1,15 +1,20 @@
-import React from "react";
+import FeaturesContainer from "./features-container";
 import NewNextApp from "./new-next-app";
+import { Layers } from "lucide-react";
 
 const BuildWithForgeUI = () => {
   return (
-    <div className="flex w-full flex-col gap-2 border px-6 py-12 md:py-16">
-      <h3 className="text-xl font-semibold">Build with ForgeUI.</h3>
-      <p className="mb-8">
-        Set up your project with ForgeUI components and shadcn/ui integration.
+    <FeaturesContainer>
+      <div className="mb-4 inline-flex items-center gap-2 text-sm font-medium">
+        <Layers className="h-4 w-4" />
+        <p>Build with ForgeUI</p>
+      </div>
+      <p className="mb-6 text-balance text-primary/70">
+        Create beautiful, accessible UI components with ForgeUI&apos;s powerful
+        toolkit built on top of shadcn/ui foundation.
       </p>
       <NewNextApp />
-    </div>
+    </FeaturesContainer>
   );
 };
 
