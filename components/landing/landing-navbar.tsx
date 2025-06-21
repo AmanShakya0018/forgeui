@@ -32,7 +32,7 @@ const LandingNavbar = () => {
           : "border-transparent bg-transparent shadow-none backdrop-blur-none",
       )}
     >
-      <div className="mx-auto max-w-7xl px-8">
+      <div className="mx-auto max-w-7xl px-3 md:px-5 lg:px-8">
         <div className="flex h-[3.7rem] items-center justify-between">
           <div className="flex items-center space-x-12">
             <Link href="/" className="flex items-center space-x-1.5">
