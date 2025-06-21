@@ -50,13 +50,13 @@ const LandingNavbar = () => {
           </div>
 
           <div className="hidden items-center space-x-2 lg:flex">
-            <div className="flex items-center gap-0.5">
-              <GithubLink opacity={50} />
-              <TwitterLink opacity={50} />
-              <Themetoggle opacity={50} />
+            <div className="flex items-center gap-0.5 opacity-50">
+              <GithubLink />
+              <TwitterLink />
+              <Themetoggle />
             </div>
           </div>
-          <div className="flex items-center space-x-1 lg:hidden">
+          <div className="flex items-center space-x-1 opacity-50 lg:hidden">
             <Themetoggle />
           </div>
         </div>
