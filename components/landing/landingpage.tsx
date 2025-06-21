@@ -1,14 +1,16 @@
 import HeroSection from "@/components/herosection";
 import Footer from "../footer";
-import Navbar from "../navbar";
+import { Spotlight } from "../ui/spotlight";
+import LandingNavbar from "./landing-navbar";
 
 export default function LandingPage() {
   return (
     <>
-      <Navbar />
-      <div className="mx-auto max-w-[95.8rem] border border-x">
+      <LandingNavbar />
+      <div className="mx-auto max-w-[95.8rem]">
         <div className="mx-auto max-w-7xl">
           <HeroSection />
+          <Spotlight />
         </div>
       </div>
       <Footer />
