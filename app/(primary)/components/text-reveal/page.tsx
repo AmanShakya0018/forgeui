@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import TextRenderingEffect from "./_components/text-rendering-effect";
 import Dependencies from "@/components/dependencies";
 import {
   code,
@@ -11,6 +10,7 @@ import {
   commandMap,
   utilcode,
   packagesMap,
+  textRevealProps,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
@@ -22,6 +22,10 @@ import { ComponentSource } from "@/components/componentsource";
 import { CommandBlock } from "@/components/cli/commmand-block";
 import ToggleManualCli from "@/components/togglemanualcli";
 import { CodeBlock2 } from "@/components/cli/CodeBlock";
+import TextReveal from "./_components/text-reveal";
+import PropsTable from "@/components/content/props-table";
+
+const text = `ForgeUI is a beautifully designed component library built with Tailwind CSS and Motion. It helps developers build modern, animated UIs faster, with consistent styling and production-ready components.`;
 
 const Textrenderingeffect = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -38,7 +42,11 @@ const Textrenderingeffect = () => {
       />
       {!sourceCode ? (
         <PreviewComponentContainer>
-          <TextRenderingEffect />
+          <TextReveal
+            staggerDelay={0.2}
+            text={text}
+            className="mx-auto max-w-3xl text-lg font-semibold"
+          />
         </PreviewComponentContainer>
       ) : (
         <CodeBlock2
@@ -84,6 +92,7 @@ const Textrenderingeffect = () => {
           ></Dependencies>
         </>
       )}
+      <PropsTable propsData={textRevealProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

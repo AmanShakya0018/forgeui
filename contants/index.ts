@@ -24,7 +24,7 @@ export const primaryItems = [
   { name: 'Alerts', href: '/components/alerts' },
   { name: 'Circular Text', href: '/components/circular-text' },
   { name: 'Text Shimmer', href: '/components/text-shimmer' },
-  { name: 'Text Rendering Effect', href: '/components/text-rendering-effect' },
+  { name: 'Text Reveal', href: '/components/text-reveal' },
   { name: 'Text Morphing', href: '/components/text-morphing' },
   // { name: 'File Upload', href: '/components/file-upload' },
 ];

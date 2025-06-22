@@ -19,7 +19,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 `;
 
-const packagescript = "framer-motion clsx tailwind-merge";
+const packagescript = "motion clsx tailwind-merge";
 
 export const packagesMap = {
   npm: `npm i ${packagescript}`,
