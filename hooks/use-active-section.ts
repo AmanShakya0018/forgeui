@@ -1,42 +1,80 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 
 export function useActiveSection(): string {
   const [activeId, setActiveId] = useState("");
   const pathname = usePathname();
+  const activeIdRef = useRef(activeId);
 
   useEffect(() => {
-    let observer: IntersectionObserver;
+    activeIdRef.current = activeId;
+  }, [activeId]);
 
-    const initObserver = () => {
-      const targets = Array.from(document.querySelectorAll("[id]")) as HTMLElement[];
-      if (!targets.length) return;
+  useEffect(() => {
+    const handleScroll = () => {
+      let selectors: string[] = [];
 
-      observer = new IntersectionObserver(
-        (entries) => {
-          const visible = entries
-            .filter((entry) => entry.isIntersecting)
-            .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (pathname === "/docs/introduction") {
+        selectors = ["#introduction", "#philosophy"];
+      } else if (pathname === "/docs/install-nextjs" || pathname === "/docs/install-tailwindcss") {
+        selectors = ["#installation"];
+      } else {
+        selectors = ["#preview", "#installation", "#props"];
+      }
 
-          if (visible.length > 0) {
-            setActiveId(visible[0].target.id);
-          }
-        },
-        {
-          rootMargin: "0% 0% -70% 0%",
-          threshold: 0.1,
+      const headingElements = selectors
+        .map(selector => document.querySelector(selector) as HTMLElement)
+        .filter(Boolean);
+
+      if (headingElements.length === 0) return;
+
+      const scrollPosition = window.scrollY + 200;
+
+      let currentActiveId = "";
+
+      for (let i = 0; i < headingElements.length; i++) {
+        const element = headingElements[i];
+        const elementTop = element.offsetTop;
+
+        if (scrollPosition >= elementTop) {
+          currentActiveId = element.id;
+        } else {
+          break;
         }
-      );
+      }
 
-      targets.forEach((el) => observer.observe(el));
+      if (!currentActiveId && headingElements.length > 0) {
+        currentActiveId = headingElements[0].id;
+      }
+
+      if (currentActiveId && currentActiveId !== activeIdRef.current) {
+        setActiveId(currentActiveId);
+      }
     };
 
-    const timeout = setTimeout(initObserver, 100);
+    setActiveId("");
+
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+    }, 300);
+
+    let ticking = false;
+    const throttledScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+
+    window.addEventListener("scroll", throttledScroll, { passive: true });
 
     return () => {
-      clearTimeout(timeout);
-      if (observer) observer.disconnect();
+      clearTimeout(timeoutId);
+      window.removeEventListener("scroll", throttledScroll);
     };
   }, [pathname]);
 

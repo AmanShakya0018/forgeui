@@ -44,7 +44,10 @@ export default function IntroductionPage() {
               feel like part of your application.
             </p>
 
-            <p className="border-l-2 border-border pl-4 italic text-muted-foreground">
+            <p
+              id="philosophy"
+              className="border-l-2 border-border pl-4 italic text-muted-foreground"
+            >
               Use Forge UI as a foundation to build your own tailored component
               libraries.
             </p>
@@ -53,9 +56,7 @@ export default function IntroductionPage() {
 
         {/* Philosophy Section */}
         <div className="space-y-4 border-t border-border pt-8">
-          <h2 id="philosophy" className="text-2xl font-bold tracking-tight">
-            Philosophy
-          </h2>
+          <h2 className="text-2xl font-bold tracking-tight">Philosophy</h2>
 
           <div className="space-y-4 text-base leading-relaxed">
             <p>

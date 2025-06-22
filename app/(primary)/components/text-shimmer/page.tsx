@@ -10,6 +10,7 @@ import {
   commandMap,
   utilcode,
   packagesMap,
+  shimmerProps,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
@@ -22,6 +23,7 @@ import { ComponentSource } from "@/components/componentsource";
 import { CommandBlock } from "@/components/cli/commmand-block";
 import ToggleManualCli from "@/components/togglemanualcli";
 import { CodeBlock2 } from "@/components/cli/CodeBlock";
+import PropsTable from "@/components/content/props-table";
 
 const Textshimmereffect = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -38,7 +40,7 @@ const Textshimmereffect = () => {
       />
       {!sourceCode ? (
         <PreviewComponentContainer>
-          <TextShimmer className="text-sm" duration={1}>
+          <TextShimmer className="text-sm" duration={1.5} repeatDelay={0.5}>
             Loading...
           </TextShimmer>
         </PreviewComponentContainer>
@@ -86,6 +88,7 @@ const Textshimmereffect = () => {
           ></Dependencies>
         </>
       )}
+      <PropsTable propsData={shimmerProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

@@ -26,5 +26,5 @@ export const primaryItems = [
   { name: 'Text Shimmer', href: '/components/text-shimmer' },
   { name: 'Text Rendering Effect', href: '/components/text-rendering-effect' },
   { name: 'Text Morphing', href: '/components/text-morphing' },
-  { name: 'File Upload', href: '/components/file-upload' },
+  // { name: 'File Upload', href: '/components/file-upload' },
 ];

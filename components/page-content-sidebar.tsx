@@ -30,6 +30,7 @@ const PageContentSidebar = () => {
   let navigationItems = [
     { title: "Preview", href: "#preview" },
     { title: "Installation", href: "#installation" },
+    { title: "Props", href: "#props" },
   ];
 
   if (pathname === "/docs/introduction") {
