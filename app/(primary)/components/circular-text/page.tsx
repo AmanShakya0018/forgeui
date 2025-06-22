@@ -21,7 +21,7 @@ import ComponentNavigation from "@/components/layout/componentnavigation";
 import { ComponentSource } from "@/components/code/componentsource";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CommandBlock } from "@/components/code/commmand-block";
-import { CodeBlock2 } from "@/components/code/CodeBlock";
+import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 
 const Circulartext = () => {
@@ -47,7 +47,7 @@ const Circulartext = () => {
           />
         </PreviewComponentContainer>
       ) : (
-        <CodeBlock2
+        <CodeBlock
           fileName={`${title.replace(/\s+/g, "")}Example.tsx`}
           code={democode}
         />
@@ -78,7 +78,7 @@ const Circulartext = () => {
             title="Copy and paste the following code into your project"
           >
             <ComponentSource>
-              <CodeBlock2 fileName={`${routepoint}.tsx`} code={code} />
+              <CodeBlock fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </Dependencies>
           <Dependencies

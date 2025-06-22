@@ -21,7 +21,7 @@ import ComponentNavigation from "@/components/layout/componentnavigation";
 import { ComponentSource } from "@/components/code/componentsource";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CommandBlock } from "@/components/code/commmand-block";
-import { CodeBlock2 } from "@/components/code/CodeBlock";
+import { CodeBlock } from "@/components/code/CodeBlock";
 
 const Fileupload = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -41,7 +41,7 @@ const Fileupload = () => {
           <FileUpload />
         </PreviewComponentContainer>
       ) : (
-        <CodeBlock2
+        <CodeBlock
           fileName={`${title.replace(/\s+/g, "")}Example.tsx`}
           code={democode}
         />
@@ -68,14 +68,14 @@ const Fileupload = () => {
             />
           </Dependencies>
           <Dependencies step={2} title="Add util file">
-            <CodeBlock2 fileName={`lib/util.ts`} code={utilcode} />
+            <CodeBlock fileName={`lib/util.ts`} code={utilcode} />
           </Dependencies>
           <Dependencies
             step={3}
             title="Copy and paste the following code into your project"
           >
             <ComponentSource>
-              <CodeBlock2 fileName={`${routepoint}.tsx`} code={code} />
+              <CodeBlock fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </Dependencies>
           <Dependencies

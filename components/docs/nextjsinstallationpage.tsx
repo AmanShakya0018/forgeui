@@ -2,7 +2,7 @@
 import React from "react";
 import Dependencies from "../content/dependencies";
 import { CommandBlock } from "../code/commmand-block";
-import { CodeBlock2 } from "../code/CodeBlock";
+import { CodeBlock } from "../code/CodeBlock";
 
 const NextjsInstallationPage = () => {
   const title = "Install Next.js";
@@ -51,7 +51,7 @@ What import alias would you like configured? @/*
         step={2}
         title="As you install, the following prompts will appear:"
       >
-        <CodeBlock2 code={code} />
+        <CodeBlock code={code} />
       </Dependencies>
       <Dependencies step={3} title="Start the development server">
         <CommandBlock

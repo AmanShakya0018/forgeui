@@ -21,7 +21,7 @@ import { getNavigationItems } from "@/lib/getNavigationItems";
 import { ComponentSource } from "@/components/code/componentsource";
 import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
-import { CodeBlock2 } from "@/components/code/CodeBlock";
+import { CodeBlock } from "@/components/code/CodeBlock";
 import TextReveal from "./_components/text-reveal";
 import PropsTable from "@/components/content/props-table";
 
@@ -49,7 +49,7 @@ const Textrenderingeffect = () => {
           />
         </PreviewComponentContainer>
       ) : (
-        <CodeBlock2
+        <CodeBlock
           fileName={`${title.replace(/\s+/g, "")}Example.tsx`}
           code={democode}
         />
@@ -76,14 +76,14 @@ const Textrenderingeffect = () => {
             />
           </Dependencies>
           <Dependencies step={2} title="Add util file">
-            <CodeBlock2 fileName={`lib/util.ts`} code={utilcode} />
+            <CodeBlock fileName={`lib/util.ts`} code={utilcode} />
           </Dependencies>
           <Dependencies
             step={3}
             title="Copy and paste the following code into your project"
           >
             <ComponentSource>
-              <CodeBlock2 fileName={`${routepoint}.tsx`} code={code} />
+              <CodeBlock fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </Dependencies>
           <Dependencies

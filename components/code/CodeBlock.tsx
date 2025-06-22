@@ -19,7 +19,7 @@ type CodeBlockProps = {
   code: string;
 } & React.ComponentProps<"div">;
 
-export function CodeBlock2({
+export function CodeBlock({
   fileName,
   className,
   contentClassName,

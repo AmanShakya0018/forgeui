@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function DashboardPage() {
-  redirect("/components/text-reveal");
+  redirect("/components/animated-tabs");
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { CodeBlock2 } from "../code/CodeBlock";
+import { CodeBlock } from "../code/CodeBlock";
 import { CommandBlock } from "../code/commmand-block";
 import Dependencies from "../content/dependencies";
 
@@ -68,10 +68,10 @@ module.exports = {
         />
       </Dependencies>
       <Dependencies step={3} title="Configure your template paths">
-        <CodeBlock2 fileName="tailwind.config.ts" code={code2} />
+        <CodeBlock fileName="tailwind.config.ts" code={code2} />
       </Dependencies>
       <Dependencies step={4} title="Add the Tailwind directives to your CSS">
-        <CodeBlock2
+        <CodeBlock
           fileName="globals.css"
           code={`@tailwind base;
 @tailwind components;
@@ -88,7 +88,7 @@ module.exports = {
         />
       </Dependencies>
       <Dependencies step={6} title="Start using Tailwind">
-        <CodeBlock2
+        <CodeBlock
           fileName="page.tsx"
           code={`export default function Home() {
   return <h1 className="text-4xl font-extrabold">Hello world!</h1>;

@@ -1,9 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
-
-import { usePackageManager } from "@/components/code/use-package-manager";
-
+import { useMemo, useState } from "react";
 import { CopyCode } from "./CopyCode";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";
 import { cn } from "@/lib/utils";
@@ -24,7 +21,7 @@ export function CommandBlock({
   bunCommand,
   className,
 }: CommandBlockProps) {
-  const [packageManager, setPackageManager] = usePackageManager();
+  const [packageManager, setPackageManager] = useState<PackageManager>("npm");
 
   const tabs = useMemo(() => {
     return {
