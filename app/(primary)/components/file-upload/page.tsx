@@ -11,17 +11,17 @@ import {
   packagesMap,
   utilcode,
 } from "./_components/show-code";
-import ToggleButtonGroup from "@/components/togglebuttongroup";
-import MainTitle from "@/components/maintitle";
-import PreviewComponentContainer from "@/components/previewcomponentcontainer";
-import MainContentContainer from "@/components/maincontentcontainer";
-import Dependencies from "@/components/dependencies";
+import ToggleButtonGroup from "@/components/content/togglebuttongroup";
+import MainTitle from "@/components/content/maintitle";
+import PreviewComponentContainer from "@/components/content/previewcomponentcontainer";
+import MainContentContainer from "@/components/content/maincontentcontainer";
+import Dependencies from "@/components/content/dependencies";
 import { getNavigationItems } from "@/lib/getNavigationItems";
-import ComponentNavigation from "@/components/componentnavigation";
-import { ComponentSource } from "@/components/componentsource";
-import ToggleManualCli from "@/components/togglemanualcli";
-import { CommandBlock } from "@/components/cli/commmand-block";
-import { CodeBlock2 } from "@/components/cli/CodeBlock";
+import ComponentNavigation from "@/components/layout/componentnavigation";
+import { ComponentSource } from "@/components/code/componentsource";
+import ToggleManualCli from "@/components/content/togglemanualcli";
+import { CommandBlock } from "@/components/code/commmand-block";
+import { CodeBlock2 } from "@/components/code/CodeBlock";
 
 const Fileupload = () => {
   const [sourceCode, setSourceCode] = useState(false);

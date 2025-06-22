@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import Dependencies from "./dependencies";
-import { CodeBlock2 } from "./cli/CodeBlock";
-import { CommandBlock } from "./cli/commmand-block";
+import Dependencies from "../content/dependencies";
+import { CommandBlock } from "../code/commmand-block";
+import { CodeBlock2 } from "../code/CodeBlock";
 
 const NextjsInstallationPage = () => {
   const title = "Install Next.js";

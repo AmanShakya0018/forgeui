@@ -1,4 +1,4 @@
-import HeroSection from "@/components/herosection";
+import HeroSection from "@/components/landing/herosection";
 import { Spotlight } from "../ui/spotlight";
 import LandingNavbar from "./landing-navbar";
 import FeaturesBlock from "../features/features-block";

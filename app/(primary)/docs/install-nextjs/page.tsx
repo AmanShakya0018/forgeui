@@ -1,12 +1,8 @@
-import NextjsInstallationPage from '@/components/nextjsinstallationpage'
-import React from 'react'
+import NextjsInstallationPage from "@/components/docs/nextjsinstallationpage";
+import React from "react";
 
 const NextjsInstallation = () => {
+  return <NextjsInstallationPage />;
+};
 
-
-  return (
-    <NextjsInstallationPage />
-  )
-}
-
-export default NextjsInstallation
+export default NextjsInstallation;

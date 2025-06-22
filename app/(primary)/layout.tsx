@@ -1,8 +1,8 @@
-import Navbar from "@/components/navbar";
-import Footer from "@/components/footer";
-import PrimaryItems from "@/components/primaryitems";
+import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import PageContentSidebar from "@/components/page-content-sidebar";
+import PageContentSidebar from "@/components/layout/page-content-sidebar";
+import PrimaryItems from "@/components/landing/primaryitems";
 
 export default function RootLayout({
   children,

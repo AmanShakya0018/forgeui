@@ -1,7 +1,7 @@
 import React from "react";
-import Dependencies from "./dependencies";
-import { CommandBlock } from "./cli/commmand-block";
-import { CodeBlock2 } from "./cli/CodeBlock";
+import { CodeBlock2 } from "../code/CodeBlock";
+import { CommandBlock } from "../code/commmand-block";
+import Dependencies from "../content/dependencies";
 
 const TailwindInstallationPage = () => {
   const title = "Install Tailwind CSS";

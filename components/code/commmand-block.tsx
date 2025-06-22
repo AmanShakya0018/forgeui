@@ -2,7 +2,7 @@
 
 import { useMemo } from "react";
 
-import { usePackageManager } from "@/components/cli/use-package-manager";
+import { usePackageManager } from "@/components/code/use-package-manager";
 
 import { CopyCode } from "./CopyCode";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";

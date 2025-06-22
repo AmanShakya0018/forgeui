@@ -8,13 +8,13 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { ScrollArea } from "./ui/scroll-area";
 import { introItems, primaryItems } from "@/contants";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import Anchor from "./ui/anchor-single";
 import Image from "next/image";
 import Link from "next/link";
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
+import Anchor from "../ui/anchor-single";
+import { ScrollArea } from "../ui/scroll-area";
 
 const NavbarDrawer = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>

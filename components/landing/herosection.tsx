@@ -2,7 +2,7 @@
 import React from "react";
 import Techstacksectionhero from "./techstacksectionhero";
 import Herobuttons from "./herobuttons";
-import HeroBadge from "./landing/hero-badge";
+import HeroBadge from "./hero-badge";
 import { motion } from "motion/react";
 
 const HeroSection = () => {

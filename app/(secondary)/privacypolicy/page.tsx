@@ -1,7 +1,7 @@
-import Footer from '@/components/footer';
-import Navbar from '@/components/navbar';
-import PrivacyPolicyPage from '@/components/privacypolicy';
-import React from 'react';
+import Footer from "@/components/layout/footer";
+import Navbar from "@/components/layout/navbar";
+import PrivacyPolicyPage from "@/components/docs/privacypolicy";
+import React from "react";
 
 const PrivacyPolicy = () => {
   return (
@@ -10,7 +10,7 @@ const PrivacyPolicy = () => {
       <PrivacyPolicyPage />
       <Footer />
     </main>
-  )
+  );
 };
 
 export default PrivacyPolicy;

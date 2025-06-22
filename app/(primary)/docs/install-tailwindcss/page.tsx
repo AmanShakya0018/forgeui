@@ -1,12 +1,7 @@
-import TailwindInstallationPage from '@/components/tailwindinstallationpage'
-import React from 'react'
+import TailwindInstallationPage from "@/components/docs/tailwindinstallationpage";
 
 const TailwindInstallation = () => {
+  return <TailwindInstallationPage />;
+};
 
-
-  return (
-    <TailwindInstallationPage />
-  )
-}
-
-export default TailwindInstallation
+export default TailwindInstallation;

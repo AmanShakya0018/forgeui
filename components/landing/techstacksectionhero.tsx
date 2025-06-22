@@ -6,8 +6,8 @@ import Nextjs from "@/components/icons/nextjs";
 import ReactIcon from "@/components/icons/react";
 import ShadcnIcon from "@/components/icons/shadcn";
 import { useState } from "react";
-import Motion from "./icons/motion";
-import Tailwindcss from "./icons/tailwindcss";
+import Motion from "../icons/motion";
+import Tailwindcss from "../icons/tailwindcss";
 
 export default function Techstacksectionhero() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null);

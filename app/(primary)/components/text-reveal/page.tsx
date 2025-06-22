@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import Dependencies from "@/components/dependencies";
+import Dependencies from "@/components/content/dependencies";
 import {
   code,
   democode,
@@ -12,16 +12,16 @@ import {
   packagesMap,
   textRevealProps,
 } from "./_components/show-code";
-import ToggleButtonGroup from "@/components/togglebuttongroup";
-import MainTitle from "@/components/maintitle";
-import PreviewComponentContainer from "@/components/previewcomponentcontainer";
-import MainContentContainer from "@/components/maincontentcontainer";
-import ComponentNavigation from "@/components/componentnavigation";
+import ToggleButtonGroup from "@/components/content/togglebuttongroup";
+import MainTitle from "@/components/content/maintitle";
+import PreviewComponentContainer from "@/components/content/previewcomponentcontainer";
+import MainContentContainer from "@/components/content/maincontentcontainer";
+import ComponentNavigation from "@/components/layout/componentnavigation";
 import { getNavigationItems } from "@/lib/getNavigationItems";
-import { ComponentSource } from "@/components/componentsource";
-import { CommandBlock } from "@/components/cli/commmand-block";
-import ToggleManualCli from "@/components/togglemanualcli";
-import { CodeBlock2 } from "@/components/cli/CodeBlock";
+import { ComponentSource } from "@/components/code/componentsource";
+import { CommandBlock } from "@/components/code/commmand-block";
+import ToggleManualCli from "@/components/content/togglemanualcli";
+import { CodeBlock2 } from "@/components/code/CodeBlock";
 import TextReveal from "./_components/text-reveal";
 import PropsTable from "@/components/content/props-table";
 

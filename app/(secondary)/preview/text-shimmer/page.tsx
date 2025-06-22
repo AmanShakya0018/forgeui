@@ -1,5 +1,5 @@
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
-import LivePreviewComponent from "@/components/livepreview";
+import LivePreviewComponent from "@/components/layout/livepreview";
 import React from "react";
 
 const TextRenderingPreview = () => {

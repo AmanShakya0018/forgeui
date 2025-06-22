@@ -4,9 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { navItems } from "@/contants";
 import DocumentSearch from "./documentsearch";
-import NavbarDrawer from "./navbar-drawer";
 import AnchorNav from "./anchor-nav";
-import { GithubLink, TwitterLink } from "./ui/SocialButtons";
+import { GithubLink, TwitterLink } from "../ui/SocialButtons";
+import NavbarDrawer from "./navbar-drawer";
 
 const Navbar = () => {
   return (

@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { introItems, primaryItems } from "@/contants";
-import Anchor from "./ui/anchor-single";
+import Anchor from "../ui/anchor-single";
 import { motion } from "motion/react";
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 
