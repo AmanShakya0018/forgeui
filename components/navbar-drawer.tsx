@@ -14,6 +14,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Anchor from "./ui/anchor-single";
 import Image from "next/image";
 import Link from "next/link";
+import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 
 const NavbarDrawer = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
@@ -70,6 +71,13 @@ const NavbarDrawer = () => {
                   ))}
                 </div>
               </div>
+              <TextShimmer
+                className="mt-4 cursor-default pl-3 text-xs"
+                repeatDelay={0.5}
+                delay={1.5}
+              >
+                New drops incoming...
+              </TextShimmer>
             </div>
           </ScrollArea>
         </SheetHeader>

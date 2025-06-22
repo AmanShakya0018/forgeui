@@ -1,6 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Code2 } from "lucide-react";
+import { motion } from "motion/react";
 import Link from "next/link";
 import React from "react";
 
@@ -17,15 +18,27 @@ const ToggleButtonGroup = ({
 }: ToggleButtonGroupProps) => {
   return (
     <div className="mb-4 mt-12 flex flex-col gap-2 border-b border-zinc-200 dark:border-zinc-800 xs:flex-row xs:justify-between">
-      <div className="flex flex-row gap-2">
+      <div className="relative flex flex-row gap-2">
         <button
-          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none border-b-2 px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
+          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
             !sourceCode
-              ? "border-b-primary text-zinc-950 duration-300 dark:text-white"
-              : "border-b-transparent text-neutral-500 dark:text-neutral-400"
+              ? "text-zinc-950 duration-300 dark:text-white"
+              : "text-neutral-500 dark:text-neutral-400"
           }`}
           onClick={() => setSourceCode(false)}
         >
+          {!sourceCode && (
+            <motion.div
+              layoutId="preview-code-underline"
+              className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+              initial={false}
+              transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30,
+              }}
+            />
+          )}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -45,13 +58,25 @@ const ToggleButtonGroup = ({
           <span>Preview</span>
         </button>
         <button
-          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none border-b-2 px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
+          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
             sourceCode
-              ? "border-b-primary text-zinc-950 duration-300 dark:text-white"
-              : "border-b-transparent text-neutral-500 dark:text-neutral-400"
+              ? "text-zinc-950 duration-300 dark:text-white"
+              : "text-neutral-500 dark:text-neutral-400"
           }`}
           onClick={() => setSourceCode(true)}
         >
+          {sourceCode && (
+            <motion.div
+              layoutId="preview-code-underline"
+              className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+              initial={false}
+              transition={{
+                type: "spring",
+                stiffness: 500,
+                damping: 30,
+              }}
+            />
+          )}
           <Code2 className="h-4 w-4" />
           <span>Code</span>
         </button>

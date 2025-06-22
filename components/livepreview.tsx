@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface LivePreviewComponentProps {
   children: ReactNode;
@@ -6,7 +6,7 @@ interface LivePreviewComponentProps {
 
 const LivePreviewComponent = ({ children }: LivePreviewComponentProps) => {
   return (
-    <div className="min-h-screen flex items-center justify-center">
+    <div className="flex min-h-screen items-center justify-center px-2">
       {children}
     </div>
   );

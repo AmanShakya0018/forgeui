@@ -1,0 +1,15 @@
+import AnimatedTabs from "@/app/(primary)/components/animated-tabs/_components/animated-tabs";
+import LivePreviewComponent from "@/components/livepreview";
+import React from "react";
+
+const tabs = ["Home", "Components", "Docs", "Templates"];
+
+const TextRenderingPreview = () => {
+  return (
+    <LivePreviewComponent>
+      <AnimatedTabs tabs={tabs} />
+    </LivePreviewComponent>
+  );
+};
+
+export default TextRenderingPreview;
