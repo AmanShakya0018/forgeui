@@ -5,7 +5,12 @@ import React from "react";
 const CircularProgressBarPreview = () => {
   return (
     <LivePreviewComponent>
-      <CircularText text="FORGEUI*IS*AWESOME*" />
+      <CircularText
+        text="FORGEUI*IS*AWESOME*"
+        letterClassName="font-[900]"
+        radius={65}
+        duration={20}
+      />
     </LivePreviewComponent>
   );
 };

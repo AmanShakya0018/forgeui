@@ -1,7 +1,7 @@
 
 export const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Components', href: '/components/alerts' },
+  { name: 'Components', href: '/components/text-reveal' },
   { name: 'Docs', href: '/docs/introduction' },
 ];
 
@@ -21,10 +21,8 @@ export const introItems = [
 ]
 
 export const primaryItems = [
-  { name: 'Alerts', href: '/components/alerts' },
   { name: 'Circular Text', href: '/components/circular-text' },
   { name: 'Text Shimmer', href: '/components/text-shimmer' },
   { name: 'Text Reveal', href: '/components/text-reveal' },
-  { name: 'Text Morphing', href: '/components/text-morphing' },
   // { name: 'File Upload', href: '/components/file-upload' },
 ];

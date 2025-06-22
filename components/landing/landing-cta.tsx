@@ -82,7 +82,7 @@ export default LandingCta;
 const CtaButtons = () => {
   return (
     <div className="flex items-center gap-3 sm:gap-4 md:gap-6">
-      <Link href="/components/alerts">
+      <Link href="/components/text-reveal">
         <div className="group relative z-20 flex h-9 w-full cursor-pointer items-center justify-center gap-1 rounded-lg bg-neutral-900 px-4 py-1.5 text-[0.9rem] font-semibold text-white no-underline transition-all duration-300 hover:bg-black dark:bg-neutral-300 dark:text-black dark:hover:bg-white md:h-10 md:rounded-xl md:px-5 md:py-2 md:text-[1rem]">
           Explore Components
         </div>

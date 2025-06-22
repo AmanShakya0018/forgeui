@@ -1,6 +1,7 @@
 {
   "name": "text-shimmer",
   "type": "registry:ui",
+  "dependencies": ["motion"],
   "files": [
     {
       "path": "components/forgeui/text-shimmer.tsx",

@@ -1,66 +1,72 @@
-"use client"
-import type React from "react"
-import { useEffect, useState } from "react"
-import { motion, useAnimation } from "framer-motion"
+"use client";
+import { useEffect, useState } from "react";
+import { motion } from "motion/react";
 
 interface CircularTextProps {
-  text: string
-  spinDuration?: number
-  className?: string
+  text: string;
+  duration?: number;
+  radius?: number;
+  className?: string;
+  letterClassName?: string;
 }
 
-const getRotationTransition = (duration: number, from: number, loop = true) => ({
-  from: from,
-  to: from + 360,
-  ease: "linear",
-  duration: duration,
-  type: "tween",
-  repeat: loop ? Number.POSITIVE_INFINITY : 0,
-})
-
-const getTransition = (duration: number, from: number) => ({
-  rotate: getRotationTransition(duration, from),
-})
-
-const CircularText: React.FC<CircularTextProps> = ({ text, spinDuration = 20, className = "" }) => {
-  const letters = Array.from(text)
-  const controls = useAnimation()
-  const [currentRotation, setCurrentRotation] = useState(0)
+const CircularText = ({
+  text,
+  duration = 20,
+  radius = 80,
+  className = "",
+  letterClassName = "",
+}: CircularTextProps) => {
+  const characters = Array.from(text);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    controls.start({
-      rotate: currentRotation + 360,
-      transition: getTransition(spinDuration, currentRotation),
-    })
-  }, [spinDuration, controls, text, currentRotation])
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <motion.div
       initial={{ rotate: 0 }}
-      className={`mx-auto rounded-full w-[200px] h-[200px] text-white font-black text-center origin-center ${className}`}
-      animate={controls}
-      onUpdate={(latest) => setCurrentRotation(Number(latest.rotate))}
+      animate={{ rotate: 360 }}
+      transition={{
+        duration: duration,
+        ease: "linear",
+        repeat: Number.POSITIVE_INFINITY,
+      }}
+      className={className}
+      style={{
+        position: "relative",
+        width: radius * 2,
+        height: radius * 2,
+      }}
     >
-      {letters.map((letter, i) => {
-        const rotation = (360 / letters.length) * i
-        const factor = Number((Math.PI / letters.length).toFixed(0))
-        const x = factor * i
-        const y = factor * i
-        const transform = `rotateZ(${rotation}deg) translate3d(${x}px, ${y}px, 0)`
+      {characters.map((char, index) => {
+        const angleStep = (360 / characters.length) * index;
+        const radianAngle = (angleStep * Math.PI) / 180;
+        const xPosition = Math.cos(radianAngle) * radius;
+        const yPosition = Math.sin(radianAngle) * radius;
+        const letterTransform = `translate(-50%, -50%) translate(${xPosition}px, ${yPosition}px) rotate(${angleStep + 90}deg)`;
 
         return (
           <span
-            key={i}
-            className="absolute inline-block inset-0 text-2xl transition-all duration-500 ease-[cubic-bezier(0,0,0,1)]"
-            style={{ transform, WebkitTransform: transform }}
+            key={index}
+            className={`absolute ${letterClassName}`}
+            style={{
+              transform: letterTransform,
+              left: "50%",
+              top: "50%",
+            }}
           >
-            {letter}
+            {char}
           </span>
-        )
+        );
       })}
     </motion.div>
-  )
-}
+  );
+};
 
-export default CircularText
-
+export default CircularText;

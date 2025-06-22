@@ -56,7 +56,7 @@ const Footer = () => {
                   Home
                 </p>
               </Link>
-              <Link href="/components/alerts">
+              <Link href="/components/text-reveal">
                 <p className="text-foreground/60 hover:text-foreground/80">
                   Components
                 </p>

@@ -3,6 +3,7 @@ import React from "react";
 import { introItems, primaryItems } from "@/contants";
 import Anchor from "./ui/anchor-single";
 import { motion } from "motion/react";
+import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 
 const PrimaryItems = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
@@ -85,6 +86,26 @@ const PrimaryItems = () => {
               {item.name}
             </Anchor>
           ))}
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            transition={{
+              duration: 1,
+              delay: 0.5,
+            }}
+          >
+            <TextShimmer
+              className="mt-4 cursor-default pl-3 text-xs"
+              repeatDelay={0.5}
+              delay={1.5}
+            >
+              New drops incoming...
+            </TextShimmer>
+          </motion.div>
         </motion.div>
       </div>
     </div>

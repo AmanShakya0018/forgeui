@@ -8,6 +8,7 @@ import {
   routepoint,
   commandMap,
   packagesMap,
+  circularTextProps,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/togglebuttongroup";
 import MainTitle from "@/components/maintitle";
@@ -21,6 +22,7 @@ import { ComponentSource } from "@/components/componentsource";
 import ToggleManualCli from "@/components/togglemanualcli";
 import { CommandBlock } from "@/components/cli/commmand-block";
 import { CodeBlock2 } from "@/components/cli/CodeBlock";
+import PropsTable from "@/components/content/props-table";
 
 const Circulartext = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -37,7 +39,12 @@ const Circulartext = () => {
       />
       {!sourceCode ? (
         <PreviewComponentContainer>
-          <CircularText text="FORGEUI*IS*AWESOME*" />
+          <CircularText
+            text="FORGEUI*IS*AWESOME*"
+            letterClassName="font-[900]"
+            radius={65}
+            duration={20}
+          />
         </PreviewComponentContainer>
       ) : (
         <CodeBlock2
@@ -80,6 +87,7 @@ const Circulartext = () => {
           ></Dependencies>
         </>
       )}
+      <PropsTable propsData={circularTextProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

@@ -19,7 +19,7 @@ const LandingFooter = () => {
           <div className="flex gap-5">
             <div className="flex gap-5">
               <Link
-                href={"/components/alerts"}
+                href={"/components/text-reveal"}
                 className="w-fit px-1 text-[13px] text-primary/70 duration-200 hover:text-primary"
               >
                 Components
