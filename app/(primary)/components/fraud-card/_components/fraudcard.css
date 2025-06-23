@@ -1,0 +1,40 @@
+.clbeam {
+  offset-anchor: 10px 0px;
+  animation: none;
+}
+
+@media (hover: hover) {
+  .clbeam-container:hover .clbeam {
+    animation: clbeam-animation-path;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.05, 0.05, 0.05, 0.03);
+    animation-duration: 3s;
+    animation-delay: 0s;
+  }
+}
+
+@media (hover: none) {
+  .clbeam-container.animate-active .clbeam {
+    animation: clbeam-animation-path;
+    animation-iteration-count: infinite;
+    animation-timing-function: cubic-bezier(0.05, 0.05, 0.05, 0.03);
+    animation-duration: 3s;
+    animation-delay: 0s;
+  }
+}
+
+.clbeam-line-1 {
+  offset-path: path("M 13 -4 v 8 l 9.9 9.2 v 95");
+}
+
+@keyframes clbeam-animation-path {
+  0% {
+    offset-distance: 0%;
+  }
+  50% {
+    offset-distance: 100%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}

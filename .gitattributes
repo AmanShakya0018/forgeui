@@ -1,0 +1,2 @@
+#git check-attr linguist-vendored -- app/components/fraud-card/_components/fraudcard.css
+app/components/*/_components/*.css linguist-vendored

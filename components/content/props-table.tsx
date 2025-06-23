@@ -13,7 +13,7 @@ type PropsTableProps = {
 
 const PropsTable = ({ propsData }: PropsTableProps) => {
   return (
-    <div>
+    <div className="pb-8">
       <h2
         id="props"
         className="my-10 border-b border-neutral-300/50 pb-2 text-2xl font-semibold dark:border-neutral-800/60"
