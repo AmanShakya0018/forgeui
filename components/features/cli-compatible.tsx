@@ -1,6 +1,7 @@
 import { Terminal } from "lucide-react";
 import Grid from "../icons/grid";
 import FeaturesContainer from "./features-container";
+import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 
 const CliCompatible = () => {
   return (
@@ -17,8 +18,10 @@ const CliCompatible = () => {
       <div className="relative mt-6">
         <Grid />
         <code className="absolute inset-0 flex items-center justify-center">
-          <code className="bg-gradient-to-r from-neutral-500 to-neutral-400 bg-clip-text text-sm font-medium text-transparent dark:from-neutral-400 dark:to-neutral-300">
-            npx shadcn@latest add
+          <code className="text-sm font-medium">
+            <TextShimmer duration={3} repeatDelay={0.5}>
+              npx shadcn@latest add
+            </TextShimmer>
           </code>
         </code>
       </div>

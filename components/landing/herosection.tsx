@@ -2,7 +2,6 @@
 import React from "react";
 import Techstacksectionhero from "./techstacksectionhero";
 import Herobuttons from "./herobuttons";
-import HeroBadge from "./hero-badge";
 import { motion } from "motion/react";
 
 const HeroSection = () => {
@@ -11,7 +10,6 @@ const HeroSection = () => {
       <div className="z-[3] flex flex-col items-center justify-center gap-20 text-center">
         <div className="flex flex-col items-center justify-center gap-5">
           <div className="space-y-6">
-            <HeroBadge />
             <motion.h1
               initial={{
                 y: 10,
@@ -25,7 +23,7 @@ const HeroSection = () => {
               }}
               transition={{
                 duration: 0.5,
-                delay: 0.2,
+                delay: 0.1,
                 ease: "easeInOut",
               }}
               viewport={{ once: true }}
@@ -47,7 +45,7 @@ const HeroSection = () => {
             }}
             transition={{
               duration: 0.4,
-              delay: 0.4,
+              delay: 0.3,
               ease: "easeInOut",
             }}
             viewport={{ once: true }}
@@ -70,7 +68,7 @@ const HeroSection = () => {
             }}
             transition={{
               duration: 0.3,
-              delay: 0.6,
+              delay: 0.5,
               ease: "easeInOut",
             }}
             viewport={{ once: true }}
