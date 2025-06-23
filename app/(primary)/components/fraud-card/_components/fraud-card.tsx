@@ -2,8 +2,8 @@
 import "./fraudcard.css";
 import { cn } from "@/lib/utils";
 import { IconCircleDotted, IconPointFilled, IconX } from "@tabler/icons-react";
-import { motion, useInView, Variants } from "motion/react";
-import { useRef, useState, useEffect } from "react";
+import { motion, Variants } from "motion/react";
+import { useState } from "react";
 
 type BlockedEmail = {
   email: string;
@@ -16,28 +16,6 @@ type FraudCardProps = {
 
 const FraudCard = ({ blockedEmails }: FraudCardProps) => {
   const [hovered, setHovered] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(false);
-  const ref = useRef(null);
-
-  const isInView = useInView(ref, {
-    once: false,
-    margin: "-200px",
-  });
-
-  useEffect(() => {
-    const checkTouchDevice = () => {
-      setIsTouchDevice(
-        "ontouchstart" in window || navigator.maxTouchPoints > 0,
-      );
-    };
-
-    checkTouchDevice();
-    window.addEventListener("resize", checkTouchDevice);
-
-    return () => window.removeEventListener("resize", checkTouchDevice);
-  }, []);
-
-  const shouldAnimate = isTouchDevice ? isInView : hovered;
 
   const parentvariant = {
     open: {
@@ -118,18 +96,17 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
 
   return (
     <motion.div
-      ref={ref}
-      onHoverStart={() => !isTouchDevice && setHovered(true)}
-      onHoverEnd={() => !isTouchDevice && setHovered(false)}
+      onClick={() => setHovered((prev) => !prev)}
+      onHoverStart={() => setHovered(true)}
+      onHoverEnd={() => setHovered(false)}
       variants={parentvariant}
-      animate={shouldAnimate ? "open" : "close"}
+      animate={hovered ? "open" : "close"}
       initial="close"
       className={cn(
         "h-[34rem] min-h-[34rem] w-[350px] max-w-[350px]",
         "group overflow-hidden border border-neutral-800",
         "clbeam-container relative flex flex-col",
         "rounded-md bg-neutral-900 p-4 text-white",
-        shouldAnimate && "animate-active",
       )}
     >
       <div className="absolute inset-0 hidden h-full w-full [@media(min-width:400px)]:block">
