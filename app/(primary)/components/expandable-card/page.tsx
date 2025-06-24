@@ -10,9 +10,7 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-  fraudCardProps,
-  csscode,
-  screennotice,
+  expandableCardProps,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
 import MainTitle from "@/components/content/maintitle";
@@ -25,18 +23,47 @@ import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
-import FraudCard from "./_components/fraud-card";
-import CliDependencies from "@/components/content/clidependencies";
-import ScreenNotice from "@/components/content/screen-notice";
+import ExpandableCard, {
+  CardItem,
+  Firebase,
+  MetaMask,
+  Upstash,
+} from "./_components/expandable-card";
 
-const blockedEmails = [
-  { email: "bad_actor+1@gamil.com", time: "Aug 9 at 14:09" },
-  { email: "spammer123@mailor.com", time: "Aug 10 at 11:23" },
-  { email: "fake+prmo@tempmail.com", time: "Aug 11 at 09:45" },
-  { email: "bot@disposablemail.org", time: "Aug 12 at 16:02" },
+const sampleItems: CardItem[] = [
+  {
+    id: "upstash",
+    title: "Upstash",
+    subtitle: "Backend Developer",
+    icon: <Upstash className="h-8 w-8" />,
+    description: "$90k - $120k",
+    details:
+      "Work with Redis, Kafka, and serverless technologies to build scalable backend infrastructure.",
+    metadata: "Remote | Full-time | Global",
+  },
+  {
+    id: "firebase",
+    title: "Firebase",
+    subtitle: "Cloud Engineer",
+    icon: <Firebase className="h-8 w-8" />,
+    description: "$110k - $140k",
+    details:
+      "Contribute to Firebase's real-time databases, authentication, and cloud functions on GCP.",
+    metadata: "Hybrid | Full-time | Mountain View, CA",
+  },
+  {
+    id: "metamask",
+    title: "MetaMask",
+    subtitle: "Frontend Developer",
+    icon: <MetaMask className="h-8 w-8" />,
+    description: "$100k - $130k",
+    details:
+      "Build React-based Web3 interfaces for the MetaMask crypto wallet, focusing on usability and security.",
+    metadata: "Remote | Full-time | Global",
+  },
 ];
 
-const Fraudcard = () => {
+const Expandablecard = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
@@ -50,8 +77,8 @@ const Fraudcard = () => {
         routepoint={routepoint}
       />
       {!sourceCode ? (
-        <PreviewComponentContainer>
-          <FraudCard blockedEmails={blockedEmails} />
+        <PreviewComponentContainer className="relative">
+          <ExpandableCard items={sampleItems} />
         </PreviewComponentContainer>
       ) : (
         <CodeBlock
@@ -59,25 +86,17 @@ const Fraudcard = () => {
           code={democode}
         />
       )}
-      <ScreenNotice text={screennotice} />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}
       />
       {!sourceManual ? (
-        <>
-          <CommandBlock
-            npmCommand={commandMap.npm}
-            pnpmCommand={commandMap.pnpm}
-            yarnCommand={commandMap.yarn}
-            bunCommand={commandMap.bun}
-          />
-          <CliDependencies title="Add animations in globals CSS File">
-            <ComponentSource>
-              <CodeBlock fileName={`css`} code={csscode} />
-            </ComponentSource>
-          </CliDependencies>
-        </>
+        <CommandBlock
+          npmCommand={commandMap.npm}
+          pnpmCommand={commandMap.pnpm}
+          yarnCommand={commandMap.yarn}
+          bunCommand={commandMap.bun}
+        />
       ) : (
         <>
           <Dependencies step={1} title="Install the packages">
@@ -99,21 +118,16 @@ const Fraudcard = () => {
               <CodeBlock fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </Dependencies>
-          <Dependencies step={4} title="Add animations in globals CSS File">
-            <ComponentSource>
-              <CodeBlock fileName={`css`} code={csscode} />
-            </ComponentSource>
-          </Dependencies>
           <Dependencies
-            step={5}
+            step={4}
             title="Update the import paths to match your project setup"
           ></Dependencies>
         </>
       )}
-      <PropsTable propsData={fraudCardProps} />
+      <PropsTable propsData={expandableCardProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );
 };
 
-export default Fraudcard;
+export default Expandablecard;

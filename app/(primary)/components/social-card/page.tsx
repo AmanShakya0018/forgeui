@@ -27,7 +27,7 @@ import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { GiStrikingDiamonds } from "react-icons/gi";
 import SocialCard from "./_components/social-card";
 
-const Textrenderingeffect = () => {
+const Socialcard = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
@@ -112,4 +112,4 @@ const Textrenderingeffect = () => {
   );
 };
 
-export default Textrenderingeffect;
+export default Socialcard;

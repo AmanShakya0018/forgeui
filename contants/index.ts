@@ -27,5 +27,6 @@ export const primaryItems = [
   { name: 'Fraud Card', href: '/components/fraud-card' },
   { name: 'Animated Tabs', href: '/components/animated-tabs' },
   { name: 'Social Card', href: '/components/social-card' },
+  { name: 'Expandable Card', href: '/components/expandable-card' },
   // { name: 'File Upload', href: '/components/file-upload' },
 ];
