@@ -25,6 +25,7 @@ export const primaryItems = [
   { name: 'Text Reveal', href: '/components/text-reveal' },
   { name: 'Animated Tabs', href: '/components/animated-tabs' },
   { name: 'Social Card', href: '/components/social-card' },
+  { name: 'Onboard Card', href: '/components/onboard-card' },
   { name: 'Expandable Card', href: '/components/expandable-card' },
   // { name: 'File Upload', href: '/components/file-upload' },
 ];
