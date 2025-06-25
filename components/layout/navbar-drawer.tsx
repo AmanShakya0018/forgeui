@@ -8,7 +8,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { introItems, primaryItems } from "@/contants";
+import { eliteItems, introItems, primaryItems } from "@/contants";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,6 +18,10 @@ import { ScrollArea } from "../ui/scroll-area";
 
 const NavbarDrawer = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+
+  const sortedEliteItems = [...eliteItems].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
@@ -47,7 +51,7 @@ const NavbarDrawer = () => {
           <ScrollArea className="flex h-[calc(100vh-10rem)] w-full flex-col gap-4 py-2">
             <div className="flex flex-col gap-6 pr-6">
               <div className="flex flex-col gap-1">
-                <div className="flex px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+                <div className="flex px-3 py-2 text-start text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
                   Getting Started
                 </div>
                 <div className="grid gap-1">
@@ -59,8 +63,21 @@ const NavbarDrawer = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <div className="flex px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
-                  All Components
+                <div className="flex px-3 py-2 text-start text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+                  Elite Components
+                </div>
+
+                <div className="grid gap-1">
+                  {sortedEliteItems.map((item) => (
+                    <Anchor key={item.name + item.href} href={item.href}>
+                      {item.name}
+                    </Anchor>
+                  ))}
+                </div>
+              </div>
+              <div className="flex flex-col gap-1">
+                <div className="flex px-3 py-2 text-start text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
+                  Basic Components
                 </div>
 
                 <div className="grid gap-1">

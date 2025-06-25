@@ -1,5 +1,5 @@
 import { redirect } from "next/navigation";
 
 export default function DashboardPage() {
-  redirect("/components/animated-tabs");
+  redirect("/components/animated-form");
 }

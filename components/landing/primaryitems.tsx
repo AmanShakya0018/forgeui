@@ -1,12 +1,16 @@
 "use client";
 import React from "react";
-import { introItems, primaryItems } from "@/contants";
+import { eliteItems, introItems, primaryItems } from "@/contants";
 import Anchor from "../ui/anchor-single";
 import { motion } from "motion/react";
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 
 const PrimaryItems = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+
+  const sortedEliteItems = [...eliteItems].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
@@ -72,7 +76,41 @@ const PrimaryItems = () => {
           }}
           className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70"
         >
-          All Components
+          Elite Components
+        </motion.div>
+
+        <motion.div
+          variants={containerVariants}
+          initial="initial"
+          animate="animate"
+          className="grid gap-1"
+        >
+          {sortedEliteItems.map((item) => (
+            <Anchor key={item.name + item.href} href={item.href}>
+              {item.name}
+            </Anchor>
+          ))}
+        </motion.div>
+      </div>
+      <div className="flex flex-col gap-1">
+        <motion.div
+          initial={{
+            y: 5,
+            filter: "blur(2px)",
+            opacity: 0,
+          }}
+          animate={{
+            y: 0,
+            filter: "blur(0px)",
+            opacity: 1,
+          }}
+          transition={{
+            duration: 0.3,
+            ease: "easeInOut",
+          }}
+          className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70"
+        >
+          Basic Components
         </motion.div>
 
         <motion.div

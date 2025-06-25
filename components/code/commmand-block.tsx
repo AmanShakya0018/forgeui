@@ -8,10 +8,10 @@ import { cn } from "@/lib/utils";
 type PackageManager = "npm" | "pnpm" | "yarn" | "bun";
 
 type CommandBlockProps = {
-  npmCommand: string;
-  yarnCommand: string;
-  pnpmCommand: string;
-  bunCommand: string;
+  npmCommand?: string;
+  yarnCommand?: string;
+  pnpmCommand?: string;
+  bunCommand?: string;
 } & React.ComponentProps<"div">;
 
 export function CommandBlock({
@@ -21,16 +21,22 @@ export function CommandBlock({
   bunCommand,
   className,
 }: CommandBlockProps) {
-  const [packageManager, setPackageManager] = useState<PackageManager>("npm");
-
   const tabs = useMemo(() => {
-    return {
-      npm: npmCommand,
-      pnpm: pnpmCommand,
-      yarn: yarnCommand,
-      bun: bunCommand,
-    };
+    const entries: [PackageManager, string | undefined][] = [
+      ["npm", npmCommand],
+      ["pnpm", pnpmCommand],
+      ["yarn", yarnCommand],
+      ["bun", bunCommand],
+    ];
+    return Object.fromEntries(entries.filter(([, cmd]) => !!cmd)) as Record<
+      PackageManager,
+      string
+    >;
   }, [npmCommand, pnpmCommand, yarnCommand, bunCommand]);
+
+  const firstKey = Object.keys(tabs)[0] as PackageManager;
+  const [packageManager, setPackageManager] =
+    useState<PackageManager>(firstKey);
 
   return (
     <div
@@ -40,7 +46,6 @@ export function CommandBlock({
       )}
     >
       <Tabs
-        defaultValue="npm"
         value={packageManager}
         onValueChange={(value) => setPackageManager(value as PackageManager)}
       >
