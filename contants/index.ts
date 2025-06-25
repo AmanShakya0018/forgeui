@@ -21,7 +21,6 @@ export const introItems = [
 ]
 
 export const primaryItems = [
-  { name: 'Circular Text', href: '/components/circular-text' },
   { name: 'Text Shimmer', href: '/components/text-shimmer' },
   { name: 'Text Reveal', href: '/components/text-reveal' },
   { name: 'Animated Tabs', href: '/components/animated-tabs' },

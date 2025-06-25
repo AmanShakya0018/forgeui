@@ -69,6 +69,7 @@ export const fraudCardProps = [
 ];
 
 export const screennotice = "*Tap to animate - full experience on desktop."
+export const screennoticedesktop = "*Hover to animate - (Dark mode available for now)"
 
 export const democode = `import FraudCard from '@/components/forgeui/fraud-card';
 

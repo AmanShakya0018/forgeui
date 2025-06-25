@@ -13,6 +13,7 @@ import {
   fraudCardProps,
   csscode,
   screennotice,
+  screennoticedesktop,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
 import MainTitle from "@/components/content/maintitle";
@@ -59,7 +60,14 @@ const Fraudcard = () => {
           code={democode}
         />
       )}
-      <ScreenNotice text={screennotice} />
+      <ScreenNotice
+        className="block [@media(min-width:400px)]:hidden"
+        text={screennotice}
+      />
+      <ScreenNotice
+        className="hidden text-primary/50 [@media(min-width:400px)]:block"
+        text={screennoticedesktop}
+      />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}

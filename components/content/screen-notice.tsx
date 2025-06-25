@@ -1,12 +1,19 @@
+import { cn } from "@/lib/utils";
 import React from "react";
 
 type ScreenNoticeProps = {
   text: string;
+  className?: string;
 };
 
-const ScreenNotice = ({ text }: ScreenNoticeProps) => {
+const ScreenNotice = ({ text, className }: ScreenNoticeProps) => {
   return (
-    <p className="mt-0.5 block w-full text-right text-[10px] text-primary/30 [@media(min-width:400px)]:hidden">
+    <p
+      className={cn(
+        "mt-0.5 w-full text-right text-[10px] text-primary/30",
+        className,
+      )}
+    >
       {text}
     </p>
   );

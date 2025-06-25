@@ -25,7 +25,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import AnimatedForm from "./_components/animated-form";
 
-const Animatedtabs = () => {
+const Animatedform = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
@@ -92,4 +92,4 @@ const Animatedtabs = () => {
   );
 };
 
-export default Animatedtabs;
+export default Animatedform;
