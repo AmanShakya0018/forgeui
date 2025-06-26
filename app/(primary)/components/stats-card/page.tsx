@@ -12,6 +12,7 @@ import {
   packagesMap,
   statsCardProps,
   csscode,
+  screennoticedesktop,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
 import MainTitle from "@/components/content/maintitle";
@@ -26,6 +27,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import StatsCard from "./_components/statscard";
 import CliDependencies from "@/components/content/clidependencies";
+import ScreenNotice from "@/components/content/screen-notice";
 
 const Statscard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -59,6 +61,7 @@ const Statscard = () => {
           code={democode}
         />
       )}
+      <ScreenNotice className="text-primary/50" text={screennoticedesktop} />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}

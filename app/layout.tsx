@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     siteName: "Forge UI",
     images: [
       {
-        url: "https://forgeui.amanshakya.in/forgeui-ogimage.png",
+        url: "https://forgeui.amanshakya.in/forgeui-ogimage-v2.png",
         width: 1200,
         height: 630,
         alt: "Forge UI Open Graph Image",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Forge UI",
     description:
       "Open source component library built with accessibility and customization in mind.",
-    images: ["https://forgeui.amanshakya.in/forgeui-ogimage.png"],
+    images: ["https://forgeui.amanshakya.in/forgeui-ogimage-v2.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },
