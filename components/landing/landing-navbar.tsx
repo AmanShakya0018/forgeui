@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { Themetoggle } from "@/components/ui/ThemeToggle";
 import Link from "next/link";
-import Image from "next/image";
 import { GithubLink, TwitterLink } from "../ui/SocialButtons";
 import { cn } from "@/lib/utils";
+import { MyIcon } from "../icons/logo";
 
 const LandingNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,16 +35,8 @@ const LandingNavbar = () => {
       <div className="mx-auto max-w-7xl px-3 md:px-5 lg:px-8">
         <div className="flex h-[3.7rem] items-center justify-between">
           <div className="flex items-center space-x-12">
-            <Link href="/" className="flex items-center space-x-1.5">
-              <Image
-                src="/logo-ui.png"
-                width={500}
-                height={500}
-                priority={false}
-                alt="Logo"
-                unoptimized={true}
-                className="h-7 w-7 rounded-xl"
-              />
+            <Link href="/" className="flex items-center space-x-2">
+              <MyIcon className="h-5 w-5 text-black dark:text-white" />
               <span className="text-xl font-bold">Forge UI</span>
             </Link>
           </div>

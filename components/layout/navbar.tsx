@@ -7,6 +7,7 @@ import DocumentSearch from "./documentsearch";
 import AnchorNav from "./anchor-nav";
 import { GithubLink, TwitterLink } from "../ui/SocialButtons";
 import NavbarDrawer from "./navbar-drawer";
+import { MyIcon } from "../icons/logo";
 
 const Navbar = () => {
   return (
@@ -14,16 +15,8 @@ const Navbar = () => {
       <div className="mx-auto max-w-[95.8rem] border-x px-2 md:pl-8 md:pr-5">
         <div className="flex h-[3.5rem] items-center justify-between">
           <div className="flex items-center space-x-12">
-            <Link href="/" className="flex items-center space-x-1.5">
-              <Image
-                src="/logo-ui.png"
-                width={500}
-                height={500}
-                priority={false}
-                alt="Logo"
-                unoptimized={true}
-                className="h-7 w-7 rounded-xl"
-              />
+            <Link href="/" className="flex items-center space-x-2">
+              <MyIcon className="h-5 w-5 text-black dark:text-white" />
               <span className="text-xl font-bold">Forge UI</span>
             </Link>
 

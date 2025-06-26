@@ -10,11 +10,11 @@ import {
 } from "@/components/ui/sheet";
 import { eliteItems, introItems, primaryItems } from "@/contants";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-import Image from "next/image";
 import Link from "next/link";
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 import Anchor from "../ui/anchor-single";
 import { ScrollArea } from "../ui/scroll-area";
+import { MyIcon } from "../icons/logo";
 
 const NavbarDrawer = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
@@ -33,16 +33,8 @@ const NavbarDrawer = () => {
       <SheetContent side={"left"} className="p-2">
         <SheetHeader>
           <div className="ml-1 mt-2 flex items-center">
-            <Link href="/" className="flex items-center space-x-1.5">
-              <Image
-                src="/logo-ui.png"
-                width={500}
-                height={500}
-                priority={false}
-                alt="Logo"
-                unoptimized={true}
-                className="h-7 w-7 rounded-xl"
-              />
+            <Link href="/" className="flex items-center space-x-2">
+              <MyIcon className="h-5 w-5 text-black dark:text-white" />
               <span className="text-xl font-bold">Forge UI</span>
             </Link>
           </div>

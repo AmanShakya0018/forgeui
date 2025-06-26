@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
+import { MyIcon } from "../icons/logo";
 
 const Footer = () => {
   return (
@@ -11,16 +11,8 @@ const Footer = () => {
         <div className="mx-auto flex max-w-full flex-col items-start justify-between pl-4 pr-8 text-sm text-zinc-500 dark:text-zinc-400 sm:flex-row">
           <div>
             <div className="mb-4 flex">
-              <Link href="/" className="flex items-center space-x-1.5">
-                <Image
-                  src="/logo-ui.png"
-                  width={500}
-                  height={500}
-                  priority={false}
-                  alt="Logo"
-                  unoptimized={true}
-                  className="h-7 w-7 rounded-xl"
-                />
+              <Link href="/" className="flex items-center space-x-2">
+                <MyIcon className="h-5 w-5 text-black dark:text-white" />
                 <span className="text-xl font-bold text-black dark:text-white">
                   Forge UI
                 </span>
