@@ -33,7 +33,7 @@ export const csscode = `.clbeam {
 }
 
 .clbeam-line-1 {
-  offset-path: path("M 13 -4 v 8 l 9.9 9.2 v 95");
+  offset-path: path("M 3.7 -5 v 5.8 l 6.7 5.9 v 80");
 }
 
 @keyframes clbeam-animation-path {
@@ -49,7 +49,7 @@ export const csscode = `.clbeam {
 }
 `
 
-const packagescript = "motion @tabler/icons-react clsx tailwind-merge";
+const packagescript = "motion react-icons clsx tailwind-merge";
 
 export const packagesMap = {
   npm: `npm i ${packagescript}`,
@@ -89,8 +89,11 @@ export function ${title.replace(/\s+/g, "")}Example() {
 `;
 
 export const code = `"use client";
+import "./fraudcard.css";
 import { cn } from "@/lib/utils";
-import { IconCircleDotted, IconPointFilled, IconX } from "@tabler/icons-react";
+import { TbCircleDotted } from "react-icons/tb";
+import { RxCross2 } from "react-icons/rx";
+import { GoDotFill } from "react-icons/go";
 import { motion, Variants } from "motion/react";
 import { useState } from "react";
 
@@ -193,127 +196,111 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
       initial="close"
       className={cn(
         "h-[34rem] min-h-[34rem] w-[350px] max-w-[350px]",
-        "group overflow-hidden border border-neutral-800",
-        "clbeam-container relative flex flex-col",
-        "rounded-md bg-neutral-900 p-4 text-white",
+        "group overflow-hidden border shadow-md",
+        "clbeam-container relative flex flex-col items-center",
+        "rounded-md bg-neutral-50 text-white dark:bg-neutral-900",
       )}
     >
-      <div className="absolute inset-0 hidden h-full w-full [@media(min-width:400px)]:block">
-        <svg
-          className="h-full w-full"
-          width="100%"
-          height="100%"
-          viewBox="0 0 90 50"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <g
-            stroke="#535353"
-            strokeWidth="0.2"
-            pathLength="105"
-            strokeDasharray="105"
-          >
-            <path d="M 13 0 v 8 l 9.9 9.2 v 80" />
-            <animate
-              attributeName="stroke-dashoffset"
-              from="105"
-              to="0"
-              dur="1s"
-              fill="freeze"
-              calcMode="spline"
-              keySplines="0.25,0.1,0.5,1"
-              keyTimes="0; 1"
-            />
-          </g>
-          <g mask="url(#clbeam-mask-1)">
-            <circle
-              className="clbeam clbeam-line-1"
-              cx="0"
-              cy="0"
-              r="15"
-              fill="url(#clbeam-red-grad)"
-            />
-          </g>
-          <defs>
-            <mask id="clbeam-mask-1">
-              <path
-                d="M 13 0 v 8 l 9.9 9.2 v 80"
-                stroke="white"
-                strokeWidth="0.3"
-              />
-            </mask>
-            <radialGradient id="clbeam-red-grad" fx="1">
-              <stop offset="0%" stopColor="#ef4444" />
-              <stop offset="100%" stopColor="transparent" />
-            </radialGradient>
-          </defs>
-        </svg>
-      </div>
-      <div className={cn("flex flex-col gap-2")}>
-        <h2 className="text-[14px] font-bold">Email Security Enhancements</h2>
+      <div className={cn("flex flex-col gap-2 px-4 pt-4")}>
+        <h2 className="text-[14px] font-bold text-primary">
+          Email Security Enhancements
+        </h2>
         <p className="text-[11px] text-neutral-500 sm:text-xs">
           Improve account integrity and reduce fake registrations by identifying
           temporary inboxes and filtering suspicious patterns in email addresses
           used.
         </p>
       </div>
-      <div className="mt-8 px-3 py-3">
-        <div className="relative z-[10] flex items-center justify-center gap-2 rounded-[6px] bg-black p-0.5">
-          <div className="flex h-full w-full items-center justify-between gap-3 rounded-[4px] bg-neutral-800 p-3">
-            <div className="flex items-center justify-center gap-4">
-              <motion.div variants={circlevariant} className="h-4 w-4">
-                <IconCircleDotted className="h-full w-full text-white" />
-              </motion.div>
-              <p className="font-mono text-[10px] text-neutral-400 transition-all duration-300 group-hover:text-neutral-100">
-                Malicious email activity flagged
+      <div className="relative flex h-full w-[300px] flex-col">
+        <div className="mt-8 py-3">
+          <div className="relative z-[10] flex items-center justify-center gap-2 rounded-[6px] bg-neutral-50 p-0.5 shadow-md dark:bg-black">
+            <div className="flex h-full w-full items-center justify-between gap-3 rounded-[4px] bg-neutral-100 p-3 dark:bg-neutral-800">
+              <div className="flex items-center justify-center gap-4">
+                <motion.div variants={circlevariant} className="h-4 w-4">
+                  <TbCircleDotted className="h-full w-full text-primary" />
+                </motion.div>
+                <p className="font-mono text-[10px] text-neutral-600 transition-all duration-300 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
+                  Malicious email activity flagged
+                </p>
+              </div>
+              <p className="text-[10px] text-neutral-500">
+                {new Date().toLocaleTimeString([], {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                  hour12: false,
+                })}
               </p>
             </div>
-            <p className="text-[10px] text-neutral-500">
-              {new Date().toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-              })}
-            </p>
           </div>
         </div>
-      </div>
-
-      <div className="relative mx-4 my-4 flex-1">
-        <div className="absolute -inset-y-8 inset-x-5 block h-[25rem] w-[0.5px] bg-[#535353] [@media(min-width:400px)]:hidden" />
-        <div className="absolute inset-0 -ml-4 flex h-full w-full flex-col items-center justify-center gap-5 p-2 [@media(min-width:400px)]:ml-5">
-          {blockedEmails.map(({ email, time }) => (
-            <div
-              key={email}
-              className="ml-4 flex h-full w-full justify-start gap-2 p-2"
-            >
-              <div className="relative mr-2 mt-1.5 h-6 w-6">
-                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-white/10">
-                  <IconPointFilled className="h-3 w-3 text-neutral-500" />
+        <div className="absolute inset-0 h-full w-full">
+          <svg
+            className="h-full w-full stroke-current text-neutral-400 dark:text-neutral-700"
+            width="100%"
+            height="100%"
+            viewBox="0 0 52 50"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g strokeWidth="0.1">
+              <path d="M 3.7 0 v 5.8 l 6.7 5.9 v 60" />
+            </g>
+            <g mask="url(#clbeam-mask-1)">
+              <circle
+                className="clbeam clbeam-line-1"
+                cx="0"
+                cy="0"
+                r="12"
+                fill="url(#clbeam-red-grad)"
+              />
+            </g>
+            <defs>
+              <mask id="clbeam-mask-1">
+                <path
+                  d="M 3.7 0 v 5.8 l 6.7 5.9 v 60"
+                  stroke="white"
+                  strokeWidth="0.15"
+                />
+              </mask>
+              <radialGradient id="clbeam-red-grad" fx="1">
+                <stop offset="0%" stopColor="#ef4444" />
+                <stop offset="100%" stopColor="transparent" />
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+        <div className="absolute inset-x-12 top-[130px] flex h-fit w-fit flex-col items-center justify-center">
+          <div className="flex h-full w-full flex-col items-center justify-center gap-9">
+            {blockedEmails.map(({ email, time }) => (
+              <div key={email} className="flex h-full w-full justify-start">
+                <div className="relative mr-2 mt-1.5 h-6 w-6">
+                  <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10">
+                    <GoDotFill className="h-2.5 w-2.5 text-neutral-400 dark:text-neutral-500" />
+                  </div>
+                  <motion.div
+                    variants={iconvariant}
+                    className="absolute inset-0 flex items-center justify-center rounded-full bg-red-500 p-1"
+                  >
+                    <RxCross2 className="h-4 w-4 text-neutral-100 dark:text-neutral-800" />
+                  </motion.div>
                 </div>
-                <motion.div
-                  variants={iconvariant}
-                  className="absolute inset-0 flex items-center justify-center rounded-full bg-red-500 p-1"
-                >
-                  <IconX className="h-4 w-4 text-neutral-800" />
-                </motion.div>
+                <div className="flex flex-col items-start justify-center gap-1 p-1">
+                  <motion.h2
+                    variants={emailvariant}
+                    className="text-[10px] font-semibold text-neutral-800 dark:text-neutral-200 sm:text-xs"
+                  >
+                    {email}
+                  </motion.h2>
+                  <motion.p
+                    variants={timevariant}
+                    className="font-mono text-[9px] text-neutral-500"
+                  >
+                    Blocked {time}
+                  </motion.p>
+                </div>
               </div>
-              <div className="flex flex-col items-start justify-center gap-1 p-1">
-                <motion.h2
-                  variants={emailvariant}
-                  className="text-[10px] font-semibold text-neutral-200 sm:text-xs"
-                >
-                  {email}
-                </motion.h2>
-                <motion.p
-                  variants={timevariant}
-                  className="font-mono text-[9px] text-neutral-500"
-                >
-                  Blocked {time}
-                </motion.p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </motion.div>

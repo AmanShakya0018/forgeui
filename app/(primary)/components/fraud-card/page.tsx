@@ -61,11 +61,11 @@ const Fraudcard = () => {
         />
       )}
       <ScreenNotice
-        className="block [@media(min-width:400px)]:hidden"
+        className="block text-primary/50 sm:hidden"
         text={screennotice}
       />
       <ScreenNotice
-        className="hidden text-primary/50 [@media(min-width:400px)]:block"
+        className="hidden text-primary/50 sm:block"
         text={screennoticedesktop}
       />
       <ToggleManualCli
