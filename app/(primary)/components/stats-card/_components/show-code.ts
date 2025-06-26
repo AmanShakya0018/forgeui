@@ -19,7 +19,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 `;
 
-export const screennoticedesktop = "*Hover to animate - (Dark mode available for now)"
+export const screennoticedesktop = "*Hover to animate"
 
 const packagescript = "lucide-react clsx tailwind-merge";
 

@@ -104,26 +104,21 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
       initial="close"
       className={cn(
         "h-[34rem] min-h-[34rem] w-[350px] max-w-[350px]",
-        "group overflow-hidden border border-neutral-800",
+        "group overflow-hidden border shadow-md",
         "clbeam-container relative flex flex-col",
-        "rounded-md bg-neutral-900 p-4 text-white",
+        "rounded-md bg-neutral-50 p-4 text-white dark:bg-neutral-900",
       )}
     >
       <div className="absolute inset-0 hidden h-full w-full [@media(min-width:400px)]:block">
         <svg
-          className="h-full w-full"
+          className="h-full w-full stroke-current text-neutral-400 dark:text-neutral-700"
           width="100%"
           height="100%"
           viewBox="0 0 90 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <g
-            stroke="#535353"
-            strokeWidth="0.2"
-            pathLength="105"
-            strokeDasharray="105"
-          >
+          <g strokeWidth="0.2" pathLength="105" strokeDasharray="105">
             <path d="M 13 0 v 8 l 9.9 9.2 v 80" />
             <animate
               attributeName="stroke-dashoffset"
@@ -161,7 +156,9 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
         </svg>
       </div>
       <div className={cn("flex flex-col gap-2")}>
-        <h2 className="text-[14px] font-bold">Email Security Enhancements</h2>
+        <h2 className="text-[14px] font-bold text-primary">
+          Email Security Enhancements
+        </h2>
         <p className="text-[11px] text-neutral-500 sm:text-xs">
           Improve account integrity and reduce fake registrations by identifying
           temporary inboxes and filtering suspicious patterns in email addresses
@@ -169,13 +166,13 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
         </p>
       </div>
       <div className="mt-8 px-3 py-3">
-        <div className="relative z-[10] flex items-center justify-center gap-2 rounded-[6px] bg-black p-0.5">
-          <div className="flex h-full w-full items-center justify-between gap-3 rounded-[4px] bg-neutral-800 p-3">
+        <div className="relative z-[10] flex items-center justify-center gap-2 rounded-[6px] bg-neutral-50 p-0.5 shadow-md dark:bg-black">
+          <div className="flex h-full w-full items-center justify-between gap-3 rounded-[4px] bg-neutral-100 p-3 dark:bg-neutral-800">
             <div className="flex items-center justify-center gap-4">
               <motion.div variants={circlevariant} className="h-4 w-4">
-                <IconCircleDotted className="h-full w-full text-white" />
+                <IconCircleDotted className="h-full w-full text-primary" />
               </motion.div>
-              <p className="font-mono text-[10px] text-neutral-400 transition-all duration-300 group-hover:text-neutral-100">
+              <p className="font-mono text-[10px] text-neutral-600 transition-all duration-300 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
                 Malicious email activity flagged
               </p>
             </div>
@@ -199,20 +196,20 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
               className="ml-4 flex h-full w-full justify-start gap-2 p-2"
             >
               <div className="relative mr-2 mt-1.5 h-6 w-6">
-                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-white/10">
-                  <IconPointFilled className="h-3 w-3 text-neutral-500" />
+                <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10">
+                  <IconPointFilled className="h-3 w-3 text-neutral-400 dark:text-neutral-500" />
                 </div>
                 <motion.div
                   variants={iconvariant}
                   className="absolute inset-0 flex items-center justify-center rounded-full bg-red-500 p-1"
                 >
-                  <IconX className="h-4 w-4 text-neutral-800" />
+                  <IconX className="h-4 w-4 text-neutral-300 dark:text-neutral-800" />
                 </motion.div>
               </div>
               <div className="flex flex-col items-start justify-center gap-1 p-1">
                 <motion.h2
                   variants={emailvariant}
-                  className="text-[10px] font-semibold text-neutral-200 sm:text-xs"
+                  className="text-[10px] font-semibold text-neutral-800 dark:text-neutral-200 sm:text-xs"
                 >
                   {email}
                 </motion.h2>
