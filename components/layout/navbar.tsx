@@ -1,7 +1,6 @@
 import React from "react";
 import { Themetoggle } from "@/components/ui/ThemeToggle";
 import Link from "next/link";
-import Image from "next/image";
 import { navItems } from "@/contants";
 import DocumentSearch from "./documentsearch";
 import AnchorNav from "./anchor-nav";

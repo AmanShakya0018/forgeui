@@ -76,7 +76,7 @@ const PrimaryItems = () => {
           }}
           className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70"
         >
-          Elite Components
+          Featured Components
         </motion.div>
 
         <motion.div

@@ -56,7 +56,7 @@ const NavbarDrawer = () => {
               </div>
               <div className="flex flex-col gap-1">
                 <div className="flex px-3 py-2 text-start text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
-                  Elite Components
+                  Featured Components
                 </div>
 
                 <div className="grid gap-1">

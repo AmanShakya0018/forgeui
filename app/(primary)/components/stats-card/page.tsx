@@ -10,7 +10,8 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-  animatedFormProps,
+  statsCardProps,
+  csscode,
 } from "./_components/show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
 import MainTitle from "@/components/content/maintitle";
@@ -23,9 +24,10 @@ import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
-import AnimatedForm from "./_components/animated-form";
+import StatsCard from "./_components/statscard";
+import CliDependencies from "@/components/content/clidependencies";
 
-const Animatedform = () => {
+const Statscard = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationFeaturedItems(title);
@@ -40,7 +42,16 @@ const Animatedform = () => {
       />
       {!sourceCode ? (
         <PreviewComponentContainer>
-          <AnimatedForm delay={7000} name="Alex Morgan" />
+          <StatsCard
+            gradientColor="#60A5FA"
+            statsType="PRs Merged"
+            firstPerson="Toji Fushiguro"
+            secondPerson="Gojo Satoru"
+            firstData={23}
+            secondData={18}
+            firstImage="/assets/toji.png"
+            secondImage="/assets/gojo.png"
+          />
         </PreviewComponentContainer>
       ) : (
         <CodeBlock
@@ -53,12 +64,19 @@ const Animatedform = () => {
         setSourceManual={setSourceManual}
       />
       {!sourceManual ? (
-        <CommandBlock
-          npmCommand={commandMap.npm}
-          pnpmCommand={commandMap.pnpm}
-          yarnCommand={commandMap.yarn}
-          bunCommand={commandMap.bun}
-        />
+        <>
+          <CommandBlock
+            npmCommand={commandMap.npm}
+            pnpmCommand={commandMap.pnpm}
+            yarnCommand={commandMap.yarn}
+            bunCommand={commandMap.bun}
+          />
+          <CliDependencies title="Add animations in globals CSS File">
+            <ComponentSource>
+              <CodeBlock fileName={`css`} code={csscode} />
+            </ComponentSource>
+          </CliDependencies>
+        </>
       ) : (
         <>
           <Dependencies step={1} title="Install the packages">
@@ -80,16 +98,21 @@ const Animatedform = () => {
               <CodeBlock fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </Dependencies>
+          <Dependencies step={4} title="Add animations in globals CSS File">
+            <ComponentSource>
+              <CodeBlock fileName={`css`} code={csscode} />
+            </ComponentSource>
+          </Dependencies>
           <Dependencies
-            step={4}
+            step={5}
             title="Update the import paths to match your project setup"
           ></Dependencies>
         </>
       )}
-      <PropsTable propsData={animatedFormProps} />
+      <PropsTable propsData={statsCardProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );
 };
 
-export default Animatedform;
+export default Statscard;

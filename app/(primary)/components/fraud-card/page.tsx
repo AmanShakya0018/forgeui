@@ -20,7 +20,6 @@ import MainTitle from "@/components/content/maintitle";
 import PreviewComponentContainer from "@/components/content/previewcomponentcontainer";
 import MainContentContainer from "@/components/content/maincontentcontainer";
 import ComponentNavigation from "@/components/layout/componentnavigation";
-import { getNavigationItems } from "@/lib/getNavigationItems";
 import { ComponentSource } from "@/components/code/componentsource";
 import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
@@ -29,6 +28,7 @@ import PropsTable from "@/components/content/props-table";
 import FraudCard from "./_components/fraud-card";
 import CliDependencies from "@/components/content/clidependencies";
 import ScreenNotice from "@/components/content/screen-notice";
+import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 
 const blockedEmails = [
   { email: "bad_actor+1@gamil.com", time: "Aug 9 at 14:09" },
@@ -40,7 +40,7 @@ const blockedEmails = [
 const Fraudcard = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
-  const { previous, next } = getNavigationItems(title);
+  const { previous, next } = getNavigationFeaturedItems(title);
 
   return (
     <MainContentContainer>
