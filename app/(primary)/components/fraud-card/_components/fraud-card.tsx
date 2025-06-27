@@ -179,7 +179,7 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
             </defs>
           </svg>
         </div>
-        <div className="absolute inset-x-12 top-[130px] flex h-fit w-fit flex-col items-center justify-center">
+        <div className="absolute inset-x-12 top-[130px] flex w-fit flex-col items-center justify-center">
           <div className="flex h-full w-full flex-col items-center justify-center gap-9">
             {blockedEmails.map(({ email, time }) => (
               <div key={email} className="flex h-full w-full justify-start">
