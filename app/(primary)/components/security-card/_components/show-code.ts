@@ -161,10 +161,10 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
         <div className="flex items-center justify-center text-xs text-primary">
           <motion.p
             initial={{
-              translateX: 8,
+              x: 8,
             }}
             animate={{
-              translateX: -2,
+              x: -2,
             }}
             transition={{
               duration: 0.4,
