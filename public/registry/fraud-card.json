@@ -1,7 +1,6 @@
 {
   "name": "fraud-card",
   "type": "registry:ui",
-  "dependencies": ["@tabler/icons-react", "motion"],
   "files": [
     {
       "path": "components/forgeui/fraud-card.tsx",

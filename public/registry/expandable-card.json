@@ -1,7 +1,6 @@
 {
   "name": "expandable-card",
   "type": "registry:ui",
-  "dependencies": ["motion"],
   "files": [
     {
       "path": "components/forgeui/expandable-card.tsx",

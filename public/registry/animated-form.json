@@ -1,7 +1,6 @@
 {
   "name": "animated-form",
   "type": "registry:ui",
-  "dependencies": ["react-icons", "motion"],
   "files": [
     {
       "path": "components/forgeui/animated-form.tsx",

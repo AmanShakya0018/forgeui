@@ -1,7 +1,6 @@
 {
   "name": "social-card",
   "type": "registry:ui",
-  "dependencies": ["react-icons", "motion"],
   "files": [
     {
       "path": "components/forgeui/social-card.tsx",

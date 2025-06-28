@@ -1,7 +1,6 @@
 {
   "name": "onboard-card",
   "type": "registry:ui",
-  "dependencies": ["react-icons", "motion"],
   "files": [
     {
       "path": "components/forgeui/onboard-card.tsx",

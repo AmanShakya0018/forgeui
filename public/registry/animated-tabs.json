@@ -1,7 +1,6 @@
 {
   "name": "animated-tabs",
   "type": "registry:ui",
-  "dependencies": ["motion"],
   "files": [
     {
       "path": "components/forgeui/animated-tabs.tsx",

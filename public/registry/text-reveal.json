@@ -1,7 +1,6 @@
 {
   "name": "text-reveal",
   "type": "registry:ui",
-  "dependencies": ["motion"],
   "files": [
     {
       "path": "components/forgeui/text-reveal.tsx",

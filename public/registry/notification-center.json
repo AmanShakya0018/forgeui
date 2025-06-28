@@ -1,7 +1,6 @@
 {
   "name": "notification-center",
   "type": "registry:ui",
-  "dependencies": ["react-icons", "motion"],
   "files": [
     {
       "path": "components/forgeui/notification-center.tsx",
