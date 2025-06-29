@@ -1,10 +1,10 @@
 "use client";
 import React, { ReactNode } from "react";
-import { ThemeProvider } from "@/provider/theme-provider"
+import { ThemeProvider } from "@/provider/theme-provider";
 
 type Props = {
-  children: ReactNode
-}
+  children: ReactNode;
+};
 
 const Provider = ({ children }: Props) => {
   return (

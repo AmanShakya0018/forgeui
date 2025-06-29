@@ -9,11 +9,11 @@ type CodeBlockProps = {
   filename?: string;
   highlightLines?: number[];
 } & (
-    | {
+  | {
       code: string;
       tabs?: never;
     }
-    | {
+  | {
       code?: never;
       tabs: Array<{
         name: string;
@@ -22,7 +22,7 @@ type CodeBlockProps = {
         highlightLines?: number[];
       }>;
     }
-  );
+);
 
 export const CodeBlock = ({
   language,
@@ -54,18 +54,19 @@ export const CodeBlock = ({
     : highlightLines;
 
   return (
-    <div className="relative w-full rounded-lg bg-zinc-900 p-4 font-mono text-sm border dark:border-zinc-800 max-h-[38rem] overflow-y-auto">
+    <div className="relative max-h-[38rem] w-full overflow-y-auto rounded-lg border bg-zinc-900 p-4 font-mono text-sm dark:border-zinc-800">
       <div className="flex flex-col gap-2">
         {tabsExist && (
-          <div className="flex  overflow-x-auto">
+          <div className="flex overflow-x-auto">
             {tabs.map((tab, index) => (
               <button
                 key={index}
                 onClick={() => setActiveTab(index)}
-                className={`px-3 !py-2 text-xs transition-colors font-sans ${activeTab === index
-                  ? "text-white"
-                  : "text-zinc-400 hover:text-zinc-200"
-                  }`}
+                className={`!py-2 px-3 font-sans text-xs transition-colors ${
+                  activeTab === index
+                    ? "text-white"
+                    : "text-zinc-400 hover:text-zinc-200"
+                }`}
               >
                 {tab.name}
               </button>
@@ -73,12 +74,12 @@ export const CodeBlock = ({
           </div>
         )}
         {!tabsExist && (
-          <div className="flex justify-between items-center pt-1 -mb-4">
+          <div className="-mb-4 flex items-center justify-between pt-1">
             {/* <div className="text-xs text-zinc-400">{filename}</div> */}
             <div className="text-xs text-zinc-400"></div>
             <button
               onClick={copyToClipboard}
-              className="flex items-center gap-1 text-xs text-zinc-400 hover:text-zinc-200 transition-colors font-sans rounded-sm bg-zinc-900 z-10"
+              className="z-10 flex items-center gap-1 rounded-sm bg-zinc-900 font-sans text-xs text-zinc-400 transition-colors hover:text-zinc-200"
             >
               {copied ? <IconCheck size={14} /> : <IconCopy size={14} />}
             </button>
@@ -109,6 +110,6 @@ export const CodeBlock = ({
       >
         {String(activeCode)}
       </SyntaxHighlighter>
-    </div >
+    </div>
   );
 };
