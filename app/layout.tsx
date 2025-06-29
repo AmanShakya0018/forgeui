@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Forge UI",
+  title: "ForgeUI",
   description:
     "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
   keywords: [
-    "Forge UI",
+    "ForgeUI",
     "UI Library",
     "Component Library",
     "React Components",
@@ -36,22 +36,36 @@ export const metadata: Metadata = {
     "Developer Tools",
     "Frontend Engineer",
     "Beautiful UI",
+    "React UI Kit",
+    "Free React Components",
+    "Open Source UI Kit",
+    "Tailwind UI Components",
+    "Headless UI",
+    "Reusable React Components",
+    "UI Templates",
+    "Accessible React Components",
+    "Copy-Paste UI",
+    "Next.js Component Library",
+    "Open Source Developer Tools",
+    "Frontend Design System",
+    "Minimal UI Kit",
+    "Clean React UI",
   ],
   authors: [{ name: "Aman Shakya", url: "https://amanshakya.in" }],
   creator: "Aman Shakya",
   publisher: "Aman Shakya",
   openGraph: {
-    title: "Forge UI",
+    title: "ForgeUI",
     description:
       "Beautifully designed components you can copy and paste into your apps. Open Source. Customizable. Accessible.",
-    url: "https://forgeui.amanshakya.in",
-    siteName: "Forge UI",
+    url: "https://forgeui.in",
+    siteName: "ForgeUI",
     images: [
       {
-        url: "https://forgeui.amanshakya.in/forgeui-ogimage-v2.png",
+        url: "https://forgeui.in/forgeui-ogimage-v2.png",
         width: 1200,
         height: 630,
-        alt: "Forge UI Open Graph Image",
+        alt: "ForgeUI Open Graph Image",
       },
     ],
     locale: "en_US",
@@ -59,10 +73,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Forge UI",
+    title: "ForgeUI",
     description:
       "Open source component library built with accessibility and customization in mind.",
-    images: ["https://forgeui.amanshakya.in/forgeui-ogimage-v2.png"],
+    images: ["https://forgeui.in/forgeui-ogimage-v2.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },

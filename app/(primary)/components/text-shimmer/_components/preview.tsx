@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import FileUpload from "./_components/file-upload";
+import Dependencies from "@/components/content/dependencies";
 import {
   code,
   democode,
@@ -8,22 +8,24 @@ import {
   description,
   routepoint,
   commandMap,
-  packagesMap,
   utilcode,
-} from "./_components/show-code";
+  packagesMap,
+  shimmerProps,
+} from "./show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
 import MainTitle from "@/components/content/maintitle";
 import PreviewComponentContainer from "@/components/content/previewcomponentcontainer";
 import MainContentContainer from "@/components/content/maincontentcontainer";
-import Dependencies from "@/components/content/dependencies";
+import TextShimmer from "./text-shimmer";
 import { getNavigationItems } from "@/lib/getNavigationItems";
 import ComponentNavigation from "@/components/layout/componentnavigation";
 import { ComponentSource } from "@/components/code/componentsource";
-import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CommandBlock } from "@/components/code/commmand-block";
+import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
+import PropsTable from "@/components/content/props-table";
 
-const Fileupload = () => {
+const Textshimmereffect = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationItems(title);
@@ -38,7 +40,9 @@ const Fileupload = () => {
       />
       {!sourceCode ? (
         <PreviewComponentContainer>
-          <FileUpload />
+          <TextShimmer className="text-sm" duration={1.5} repeatDelay={0.5}>
+            Loading...
+          </TextShimmer>
         </PreviewComponentContainer>
       ) : (
         <CodeBlock
@@ -84,9 +88,10 @@ const Fileupload = () => {
           ></Dependencies>
         </>
       )}
+      <PropsTable propsData={shimmerProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );
 };
 
-export default Fileupload;
+export default Textshimmereffect;
