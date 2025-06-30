@@ -2,7 +2,7 @@ import AnimatedForm from "@/app/(primary)/components/animated-form/_components/a
 import LivePreviewComponent from "@/components/layout/livepreview";
 import React from "react";
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <AnimatedForm />
@@ -10,4 +10,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

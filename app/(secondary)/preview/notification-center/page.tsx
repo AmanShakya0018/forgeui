@@ -2,7 +2,7 @@ import NotificationCenter from "@/app/(primary)/components/notification-center/_
 import LivePreviewComponent from "@/components/layout/livepreview";
 import React from "react";
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <NotificationCenter />
@@ -10,4 +10,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

@@ -2,7 +2,7 @@ import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/tex
 import LivePreviewComponent from "@/components/layout/livepreview";
 import React from "react";
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <TextShimmer className="text-sm" duration={1}>
@@ -12,4 +12,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

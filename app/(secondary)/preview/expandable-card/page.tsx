@@ -40,7 +40,7 @@ const sampleItems: CardItem[] = [
   },
 ];
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <ExpandableCard items={sampleItems} />
@@ -48,4 +48,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

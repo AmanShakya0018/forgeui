@@ -5,7 +5,7 @@ import React from "react";
 const text = `ForgeUI is a beautifully designed component library built with Tailwind CSS and Motion. It helps developers build modern, animated UIs faster, with consistent styling and production-ready components.
 `;
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <TextReveal
@@ -17,4 +17,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

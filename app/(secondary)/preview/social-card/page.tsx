@@ -4,7 +4,7 @@ import React from "react";
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { GiStrikingDiamonds } from "react-icons/gi";
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <SocialCard
@@ -30,4 +30,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

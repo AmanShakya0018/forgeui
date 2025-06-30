@@ -2,7 +2,7 @@ import StatsCard from "@/app/(primary)/components/stats-card/_components/statsca
 import LivePreviewComponent from "@/components/layout/livepreview";
 import React from "react";
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <StatsCard />
@@ -10,4 +10,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

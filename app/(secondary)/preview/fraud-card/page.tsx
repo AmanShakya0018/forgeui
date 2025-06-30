@@ -8,7 +8,7 @@ const blockedEmails = [
   { email: "fake+prmo@tempmail.com", time: "Aug 11 at 09:45" },
   { email: "bot@disposablemail.org", time: "Aug 12 at 16:02" },
 ];
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <FraudCard blockedEmails={blockedEmails} />
@@ -16,4 +16,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

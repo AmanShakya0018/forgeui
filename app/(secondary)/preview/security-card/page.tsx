@@ -2,7 +2,7 @@ import SecurityCard from "@/app/(primary)/components/security-card/_components/s
 import LivePreviewComponent from "@/components/layout/livepreview";
 import React from "react";
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <SecurityCard />
@@ -10,4 +10,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;

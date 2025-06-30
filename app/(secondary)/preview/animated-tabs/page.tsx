@@ -4,7 +4,7 @@ import React from "react";
 
 const tabs = ["Home", "Components", "Docs", "Templates"];
 
-const TextRenderingPreview = () => {
+const Preview = () => {
   return (
     <LivePreviewComponent>
       <AnimatedTabs tabs={tabs} />
@@ -12,4 +12,4 @@ const TextRenderingPreview = () => {
   );
 };
 
-export default TextRenderingPreview;
+export default Preview;
