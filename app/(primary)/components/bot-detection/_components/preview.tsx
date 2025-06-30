@@ -10,9 +10,8 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-  statsCardProps,
-  csscode,
-  screennoticedesktop,
+  botDetectionProps,
+  screennotice,
 } from "./show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
 import MainTitle from "@/components/content/maintitle";
@@ -24,15 +23,14 @@ import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
-import StatsCard from "./statscard";
-import CliDependencies from "@/components/content/clidependencies";
+import BotDetection from "./bot-detection";
+import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import ScreenNotice from "@/components/content/screen-notice";
-import { getNavigationItems } from "@/lib/getNavigationItems";
 
-const Statscard = () => {
+const Botdetection = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
-  const { previous, next } = getNavigationItems(title);
+  const { previous, next } = getNavigationFeaturedItems(title);
 
   return (
     <MainContentContainer>
@@ -43,17 +41,8 @@ const Statscard = () => {
         routepoint={routepoint}
       />
       {!sourceCode ? (
-        <PreviewComponentContainer>
-          <StatsCard
-            gradientColor="#60A5FA"
-            statsType="PRs Merged"
-            firstPerson="Toji Fushiguro"
-            secondPerson="Gojo Satoru"
-            firstData={23}
-            secondData={18}
-            firstImage="/assets/toji.png"
-            secondImage="/assets/gojo.png"
-          />
+        <PreviewComponentContainer className="bg-black">
+          <BotDetection />
         </PreviewComponentContainer>
       ) : (
         <CodeBlock
@@ -61,25 +50,18 @@ const Statscard = () => {
           code={democode}
         />
       )}
-      <ScreenNotice className="text-primary/50" text={screennoticedesktop} />
+      <ScreenNotice className="text-primary/50" text={screennotice} />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}
       />
       {!sourceManual ? (
-        <>
-          <CommandBlock
-            npmCommand={commandMap.npm}
-            pnpmCommand={commandMap.pnpm}
-            yarnCommand={commandMap.yarn}
-            bunCommand={commandMap.bun}
-          />
-          <CliDependencies title="Add animations in globals CSS File">
-            <ComponentSource>
-              <CodeBlock fileName={`css`} code={csscode} />
-            </ComponentSource>
-          </CliDependencies>
-        </>
+        <CommandBlock
+          npmCommand={commandMap.npm}
+          pnpmCommand={commandMap.pnpm}
+          yarnCommand={commandMap.yarn}
+          bunCommand={commandMap.bun}
+        />
       ) : (
         <>
           <Dependencies step={1} title="Install the packages">
@@ -101,21 +83,16 @@ const Statscard = () => {
               <CodeBlock fileName={`${routepoint}.tsx`} code={code} />
             </ComponentSource>
           </Dependencies>
-          <Dependencies step={4} title="Add animations in globals CSS File">
-            <ComponentSource>
-              <CodeBlock fileName={`css`} code={csscode} />
-            </ComponentSource>
-          </Dependencies>
           <Dependencies
-            step={5}
+            step={4}
             title="Update the import paths to match your project setup"
           ></Dependencies>
         </>
       )}
-      <PropsTable propsData={statsCardProps} />
+      <PropsTable propsData={botDetectionProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );
 };
 
-export default Statscard;
+export default Botdetection;

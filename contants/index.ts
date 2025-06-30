@@ -27,12 +27,13 @@ export const primaryItems = [
   { name: 'Social Card', href: '/components/social-card' },
   { name: 'Onboard Card', href: '/components/onboard-card' },
   { name: 'Expandable Card', href: '/components/expandable-card' },
+  { name: 'Stats Card', href: '/components/stats-card' },
 ];
 export const eliteItems = [
   { name: 'Fraud Card', href: '/components/fraud-card' },
   { name: 'Animated Form', href: '/components/animated-form' },
   { name: 'Animated OTP', href: '/components/animated-otp' },
-  { name: 'Stats Card', href: '/components/stats-card' },
   { name: 'Security Card', href: '/components/security-card' },
   { name: 'Notification Center', href: '/components/notification-center' },
+  { name: 'Bot Detection', href: '/components/bot-detection' },
 ];

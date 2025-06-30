@@ -46,6 +46,11 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://forgeui.in/components/bot-detection</loc>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://forgeui.in/components/notification-center</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
