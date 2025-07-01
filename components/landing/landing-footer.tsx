@@ -5,13 +5,13 @@ const LandingFooter = () => {
     <div className="relative">
       <div className="mx-auto w-full max-w-7xl px-8 py-5">
         <div className="flex flex-col items-center gap-10 md:flex-row md:justify-between">
-          <p className="text-[13px] text-primary/70">
+          <p className="text-[13px] text-white/70">
             &#169; {new Date().getFullYear()},{" "}
             <Link
               href="https://amanshakya.in"
               target="_blank"
               rel="noopener noreferrer"
-              className="duration-200 hover:text-primary"
+              className="duration-200 hover:text-white"
             >
               Forge/ui
             </Link>
@@ -20,22 +20,22 @@ const LandingFooter = () => {
             <div className="flex gap-5">
               <Link
                 href={"/components/animated-form"}
-                className="w-fit px-1 text-[13px] text-primary/70 duration-200 hover:text-primary"
+                className="w-fit px-1 text-[13px] text-white/70 duration-200 hover:text-white"
               >
                 Components
               </Link>
               <Link
                 href={"/docs/introduction"}
-                className="w-fit px-1 text-[13px] text-primary/70 duration-200 hover:text-primary"
+                className="w-fit px-1 text-[13px] text-white/70 duration-200 hover:text-white"
               >
                 Docs
               </Link>
-              <div aria-hidden className="h-[21px] w-[1px] bg-border" />
+              <div aria-hidden className="h-[21px] w-[1px] bg-neutral-700" />
               <Link
                 href="https://github.com/amanshakya0018/forgeui"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-fit px-1 text-[13px] text-primary/70 duration-200 hover:text-primary"
+                className="w-fit px-1 text-[13px] text-white/70 duration-200 hover:text-white"
               >
                 GitHub
               </Link>
@@ -43,7 +43,7 @@ const LandingFooter = () => {
                 href="https://x.com/amanshakya0018"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-fit px-1 text-[13px] text-primary/70 duration-200 hover:text-primary"
+                className="w-fit px-1 text-[13px] text-white/70 duration-200 hover:text-white"
               >
                 Twitter
               </Link>

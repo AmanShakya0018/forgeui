@@ -41,24 +41,21 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
       className={cn(
         "relative overflow-hidden",
         "flex h-[30rem] w-full max-w-[350px] items-center justify-center",
-        "rounded-md border border-neutral-300 bg-neutral-100 dark:border-neutral-900 dark:bg-neutral-950",
-        "shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]",
+        "rounded-md border border-neutral-900 bg-neutral-950",
       )}
     >
       <InfiniteScrambler />
-      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(10,10,10)_20%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
-      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(10,10,10)_20%,transparent_100%)] dark:block" />
-      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute left-0 top-0 h-full w-[80px] [background-image:linear-gradient(to_right,rgb(10,10,10)_20%,transparent_100%)]" />
+      <div className="absolute right-0 top-0 h-full w-[80px] [background-image:linear-gradient(to_left,rgb(10,10,10)_20%,transparent_100%)]" />
       <div
         className={cn(
           "absolute bottom-0 h-[51%] w-[150%] rounded-t-[60%]",
-          "bg-gradient-to-b from-neutral-200 to-neutral-50 shadow-[0_0_900px_rgba(250,250,250,0.9)]",
-          "dark:from-neutral-800 dark:to-neutral-950 dark:shadow-[0_0_900px_rgba(10,10,10,0.9)]",
+          "bg-gradient-to-b",
+          "from-neutral-800 to-neutral-950 shadow-[0_0_900px_rgba(10,10,10,0.9)]",
         )}
       />
       <div className="absolute top-[70%] flex h-12 w-full flex-col items-center justify-center gap-1">
-        <div className="flex items-center justify-center text-xs text-primary">
+        <div className="flex items-center justify-center text-xs text-white">
           <motion.p
             initial={{
               x: 8,
@@ -78,18 +75,17 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
         </div>
         <div className="no-ios-link text-[10px] text-neutral-500">{email}</div>
       </div>
-      <div className="relative rounded-[2px] bg-neutral-300/50 px-[3px] py-[3.2px] dark:bg-neutral-950/50">
-        <div className="relative h-32 w-24 rounded-[2px] bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800">
+      <div className="relative rounded-[2px] bg-neutral-950/50 px-[3px] py-[3.2px]">
+        <div className="relative h-32 w-24 rounded-[2px] bg-gradient-to-br from-neutral-700 to-neutral-800">
           <FaceCard />
         </div>
       </div>
-      <div className="absolute left-0 top-0 hidden h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(10,10,10)_30%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(245,245,245)_30%,transparent_100%)] dark:hidden" />
+      <div className="absolute left-0 top-0 h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(10,10,10)_30%,transparent_100%)]" />
       <div className="absolute left-0 top-4 w-full px-3">
-        <h3 className="text-sm font-semibold text-primary">
+        <h3 className="text-sm font-semibold text-white">
           Smart Access Control
         </h3>
-        <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
+        <p className="mt-2 text-xs text-neutral-400">
           Evaluate each login based on real-time signals like IP, device
           history, and context before allowing access intelligently.
         </p>
@@ -110,11 +106,11 @@ const FaceCard = () => {
     >
       <path
         d="M26.22 78.25c2.679-3.522 1.485-17.776 1.485-17.776-1.084-2.098-1.918-4.288-2.123-5.619-3.573 0-3.7-8.05-3.827-9.937-.102-1.509 1.403-1.383 2.169-1.132-.298-1.3-.92-5.408-1.021-11.446C22.775 24.794 30.94 17.75 40 17.75h.005c9.059 0 17.225 7.044 17.097 14.59-.102 6.038-.723 10.147-1.021 11.446.765-.251 2.271-.377 2.169 1.132-.128 1.887-.254 9.937-3.827 9.937-.205 1.331-1.039 3.521-2.123 5.619 0 0-1.194 14.254 1.485 17.776"
-        className="stroke-neutral-500 dark:stroke-neutral-900"
+        className="stroke-neutral-900"
       ></path>
       <path
         d="M27.705 60.474a26.884 26.884 0 0 0 1.577 2.682c1.786 2.642 5.36 6.792 10.718 6.792h.005c5.358 0 8.932-4.15 10.718-6.792a26.884 26.884 0 0 0 1.577-2.682"
-        className="stroke-neutral-500 dark:stroke-neutral-900"
+        className="stroke-neutral-900"
       />
       <path
         d="M26.22 78.25c2.679-3.522 1.485-17.776 1.485-17.776-1.084-2.098-1.918-4.288-2.123-5.619-3.573 0-3.7-8.05-3.827-9.937-.102-1.509 1.403-1.383 2.169-1.132-.298-1.3-.92-5.408-1.021-11.446C22.775 24.794 30.94 17.75 40 17.75h.005c9.059 0 17.225 7.044 17.097 14.59-.102 6.038-.723 10.147-1.021 11.446.765-.251 2.271-.377 2.169 1.132-.128 1.887-.254 9.937-3.827 9.937-.205 1.331-1.039 3.521-2.123 5.619 0 0-1.194 14.254 1.485 17.776"
@@ -147,7 +143,7 @@ const CheckCircle = () => {
         />
       </svg>
       <motion.div
-        className="absolute left-[5px] top-[5px] flex items-center justify-center text-white dark:text-black"
+        className="justify-centertext-black absolute left-[5px] top-[5px] flex items-center"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{

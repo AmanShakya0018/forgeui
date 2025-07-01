@@ -33,7 +33,7 @@ export default function Techstacksectionhero() {
             ease: [0.23, 1, 0.32, 1],
           }}
           className={cn(
-            "relative col-span-1 col-start-1 flex flex-col items-center gap-2 text-black dark:text-white md:col-auto",
+            "relative col-span-1 col-start-1 flex flex-col items-center gap-2 text-white md:col-auto",
           )}
           onMouseEnter={() => handleMouseEnter("Next.js")}
           onMouseLeave={handleMouseLeave}
@@ -77,7 +77,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs text-black dark:text-white"
+            className="mt-1 whitespace-nowrap text-center text-xs text-white"
           >
             TailwindCSS
           </motion.span>
@@ -107,7 +107,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs text-black dark:text-white"
+            className="mt-1 whitespace-nowrap text-center text-xs text-white"
           >
             Motion
           </motion.span>
@@ -122,16 +122,11 @@ export default function Techstacksectionhero() {
             delay: 0.6,
             ease: [0.23, 1, 0.32, 1],
           }}
-          className={cn(
-            "relative flex flex-col items-center gap-2 text-black dark:text-white",
-          )}
+          className={cn("relative flex flex-col items-center gap-2 text-white")}
           onMouseEnter={() => handleMouseEnter("Shadcn UI")}
           onMouseLeave={handleMouseLeave}
         >
-          <ShadcnIcon
-            className="h-8 w-8 text-black dark:text-white"
-            aria-label="Shadcn/ui"
-          />
+          <ShadcnIcon className="h-8 w-8 text-white" aria-label="Shadcn/ui" />
           <motion.span
             animate={{
               scale: hoveredItem === "Shadcn UI" ? 1.05 : 1,
@@ -156,7 +151,7 @@ export default function Techstacksectionhero() {
             ease: [0.23, 1, 0.32, 1],
           }}
           className={cn(
-            "relative col-span-1 col-start-3 flex flex-col items-center gap-2 text-black dark:text-white md:col-auto",
+            "relative col-span-1 col-start-3 flex flex-col items-center gap-2 text-white md:col-auto",
           )}
           onMouseEnter={() => handleMouseEnter("React")}
           onMouseLeave={handleMouseLeave}

@@ -7,7 +7,7 @@ import LandingFooter from "./landing-footer";
 
 export default function LandingPage() {
   return (
-    <>
+    <div className="bg-black">
       <LandingNavbar />
       <div className="mx-auto max-w-[95.8rem]">
         <div className="mx-auto max-w-7xl px-3 md:px-5 lg:px-8">
@@ -18,6 +18,6 @@ export default function LandingPage() {
         </div>
       </div>
       <LandingFooter />
-    </>
+    </div>
   );
 }

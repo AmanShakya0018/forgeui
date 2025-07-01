@@ -66,8 +66,7 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
         "relative",
         "flex items-center justify-center",
         "h-[14rem] w-full max-w-[350px]",
-        "rounded-md border bg-neutral-50 dark:bg-neutral-900",
-        "shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
+        "rounded-md border border-neutral-800 bg-neutral-900",
       )}
     >
       <div className="absolute left-1/2 top-[25%] -translate-x-1/2">
@@ -76,8 +75,7 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
             <div
               key={idx}
               className={cn(
-                "relative flex h-10 w-8 cursor-default items-center justify-center rounded-md bg-gradient-to-br from-neutral-100 to-neutral-50 text-primary dark:from-neutral-800 dark:to-neutral-800",
-                "shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
+                "relative flex h-10 w-8 cursor-default items-center justify-center rounded-md bg-gradient-to-br from-neutral-800 to-neutral-800 text-white",
               )}
             >
               <motion.div
@@ -152,10 +150,8 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
         </div>
       </div>
       <div className="absolute bottom-4 left-0 w-full px-3">
-        <h3 className="text-sm font-semibold text-primary">{cardTitle}</h3>
-        <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
-          {cardDescription}
-        </p>
+        <h3 className="text-sm font-semibold text-white">{cardTitle}</h3>
+        <p className="mt-2 text-xs text-neutral-400">{cardDescription}</p>
       </div>
     </div>
   );

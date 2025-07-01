@@ -26,12 +26,12 @@ const ComponenetContainer = ({
       }}
       transition={{
         duration: 0.3,
-        delay: 0.3,
+        delay: 0.1,
         ease: "easeInOut",
       }}
       viewport={{ once: true }}
       className={cn(
-        "relative flex w-full flex-col items-center justify-center gap-2 rounded-2xl border border-secondary/40 px-2 py-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] md:py-10",
+        "relative flex w-full flex-col items-center justify-center gap-2 rounded-2xl border border-neutral-800/60 px-2 py-4 sm:py-10",
         className,
       )}
     >
