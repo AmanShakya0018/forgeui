@@ -99,7 +99,7 @@ export const ExploreComponentsButton = () => {
         viewport={{ once: true }}
         className="group relative z-20 mt-12 flex h-9 w-full cursor-pointer items-center justify-center gap-1 rounded-lg bg-neutral-300 px-4 py-1.5 text-[0.9rem] font-semibold text-black no-underline transition-all duration-300 hover:bg-white md:h-10 md:rounded-xl md:px-5 md:py-2 md:text-[1rem]"
       >
-        Explrore All Components
+        Explore All Components
         <ChevronRight className="mt-0.5 h-3.5 w-3.5 transition-all duration-200 ease-in-out group-hover:translate-x-2 md:h-4 md:w-4 md:group-hover:translate-x-3" />
       </motion.div>
     </Link>

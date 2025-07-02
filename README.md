@@ -1,16 +1,18 @@
-# ForgeUI
+# ⚡ ForgeUI
 
 ## 📖 Introduction
 
-ForgeUI is a customizable, developer-friendly React component library, enabling rapid UI development with modern design, seamless integration, and reusable components tailored for modern web projects.
+[**ForgeUI**](https://forgeui.in) is an animation-first React component library focused on building **rich, modern, and interactive UI components**. From animated forms to shimmer text and motion-enhanced cards, ForgeUI helps you drop in delightful, production-ready components with minimal setup.
+
+Perfect for developers who care about UX, detail, and micro-interactions.
 
 ## 🛠️ Technologies Used
 
 - Next.js
 - TypeScript
-- Nodemailer
 - Tailwind CSS
-- Shadcn
+- shadcn/ui
+- Framer Motion
 
 ## 🚀 Getting Started
 
@@ -19,7 +21,7 @@ ForgeUI is a customizable, developer-friendly React component library, enabling 
 To clone the repository locally, use the following commands:
 
 ```bash
-git clone https://github.com/your-username/forgeui.git
+git clone https://github.com/amanshakya0018/forgeui.git
 cd forgeui
 ```
 
@@ -29,32 +31,24 @@ cd forgeui
 npm install
 ```
 
-### Configuration
-
-Create a `.env` file in the root folder of your project. Update it following the convention of the `.env.example` file.
-Here's an example:
-
-```
-EMAIL_USER=
-EMAIL_PASS=
-```
-
 ### Running the Project
 
 ```bash
 npm run dev
 ```
 
-## 🤝 Contribution Guide
+## 🌟 Highlights
 
-I hearty welcome contributions! Please follow these steps:
+- Fully animated components (forms, OTP inputs, shimmers, cards)
+- Theme-aware and dark-mode compatible
+- Built for performance and visual delight
+- Developer-friendly and customizable
 
-- Fork the repository.
-- Create a new branch `(git checkout -b feature-branch-name)`.
-- Make your changes and commit them `(git commit -m "Add feature description")`.
-- Push your changes `(git push origin feature-branch-name)`.
-  Create a Pull Request.
+## 🔗 Official Site
+
+Explore all components and live previews at:  
+👉 [https://forgeui.in](https://forgeui.in)
 
 ---
 
-Thank you for checking out this project! Feel free to open an issue if you have any questions or suggestions.
+If you found this project useful, please consider giving it a ⭐ on [GitHub](https://github.com/AmanShakya0018/forgeui)!
