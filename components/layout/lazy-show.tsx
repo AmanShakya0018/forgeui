@@ -14,7 +14,7 @@ const LazyShow = ({
   children,
   fallback = null,
   threshold = 0.01,
-  rootMargin = "300px",
+  rootMargin = "500px",
 }: LazyShowProps) => {
   const { ref, inView } = useInView({
     triggerOnce: true,

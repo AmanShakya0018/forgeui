@@ -3,15 +3,15 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import React from "react";
 
-type ComponenetContainerProps = {
+type ComponentContainerProps = {
   children: React.ReactNode;
   className?: string;
 };
 
-const ComponenetContainer = ({
+const ComponentContainer = ({
   children,
   className,
-}: ComponenetContainerProps) => {
+}: ComponentContainerProps) => {
   return (
     <motion.div
       initial={{
@@ -40,4 +40,4 @@ const ComponenetContainer = ({
   );
 };
 
-export default ComponenetContainer;
+export default ComponentContainer;

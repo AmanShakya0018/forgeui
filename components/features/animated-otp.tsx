@@ -2,45 +2,30 @@
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
-import ComponenetContainer from "./component-container";
+import ComponentContainer from "./component-container";
 
 const digits = ["4", "8", "3", "1", "9", "7"];
 
-type AnimatedOTPProps = {
-  delay?: number;
-  cardTitle?: string;
-  cardDescription?: string;
-};
-
-const AnimatedOTP = ({
-  delay = 3500,
-  cardTitle = "Secure Access",
-  cardDescription = "Protect accounts with a one-time password, auto-applied during every user login for enhanced security.",
-}: AnimatedOTPProps) => {
+const AnimatedOTP = () => {
   const [animationKey, setAnimationKey] = useState(0);
-  const delayTime = Math.max(delay, 3500);
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimationKey((prev) => prev + 1);
-    }, delayTime);
+    }, 3500);
 
     return () => clearInterval(interval);
-  }, [delayTime]);
+  });
 
   return (
-    <ComponenetContainer className="md:py-20">
-      <OTPinput
-        key={animationKey}
-        cardTitle={cardTitle}
-        cardDescription={cardDescription}
-      />
-    </ComponenetContainer>
+    <ComponentContainer className="md:py-20">
+      <OTPinput key={animationKey} />
+    </ComponentContainer>
   );
 };
 
 export default AnimatedOTP;
 
-const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
+const OTPinput = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [fadeOut, setFadeOut] = useState(false);
 
@@ -150,8 +135,11 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
         </div>
       </div>
       <div className="absolute bottom-4 left-0 w-full px-3">
-        <h3 className="text-sm font-semibold text-white">{cardTitle}</h3>
-        <p className="mt-2 text-xs text-neutral-400">{cardDescription}</p>
+        <h3 className="text-sm font-semibold text-white">Secure Access</h3>
+        <p className="mt-2 text-xs text-neutral-400">
+          Protect accounts with a one-time password, auto-applied during every
+          user login for enhanced security.
+        </p>
       </div>
     </div>
   );

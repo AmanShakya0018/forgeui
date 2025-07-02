@@ -7,7 +7,7 @@ import { FaPhoneAlt, FaPinterest, FaSnapchatGhost } from "react-icons/fa";
 import { MdMarkunread } from "react-icons/md";
 import { RiNetflixFill } from "react-icons/ri";
 import { cn } from "@/lib/utils";
-import ComponenetContainer from "./component-container";
+import ComponentContainer from "./component-container";
 
 type NotificationCardProps = {
   cardTitle?: string;
@@ -96,7 +96,7 @@ const NotificationCenter = ({
   };
 
   return (
-    <ComponenetContainer>
+    <ComponentContainer>
       <motion.div
         onClick={() => setIsHovered((prev) => !prev)}
         onMouseEnter={() => setIsHovered(true)}
@@ -116,11 +116,7 @@ const NotificationCenter = ({
         >
           <div className="relative h-[258px] overflow-hidden rounded-[38px] bg-neutral-950/50">
             <div className="absolute left-8 top-3.5 text-[9px] text-neutral-500">
-              {new Date().toLocaleTimeString([], {
-                hour: "2-digit",
-                minute: "2-digit",
-                hour12: false,
-              })}
+              11:03
             </div>
             <motion.div
               variants={lockVariant}
@@ -221,7 +217,7 @@ const NotificationCenter = ({
           <p className="mt-1 text-xs text-neutral-500">{cardDescription}</p>
         </div>
       </motion.div>
-    </ComponenetContainer>
+    </ComponentContainer>
   );
 };
 

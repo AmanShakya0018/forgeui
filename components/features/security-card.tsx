@@ -4,38 +4,27 @@ import React, { useEffect, useRef, useState } from "react";
 import "@/app/(primary)/components/security-card/_components/security-card.css";
 import { IoMdCheckmark } from "react-icons/io";
 import { motion } from "motion/react";
-import ComponenetContainer from "./component-container";
+import ComponentContainer from "./component-container";
 
-type SecurityCardProps = {
-  delay?: number;
-  name?: string;
-  email?: string;
-};
-
-const SecurityCard = ({
-  delay = 5000,
-  name = "Liam Parker",
-  email = "liam.parker@example.com",
-}: SecurityCardProps) => {
+const SecurityCard = () => {
   const [animationKey, setAnimationKey] = useState(0);
-  const delayTime = Math.max(delay, 5000);
   useEffect(() => {
     const interval = setInterval(() => {
       setAnimationKey((prev) => prev + 1);
-    }, delayTime);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [delayTime]);
+  });
 
   return (
-    <ComponenetContainer>
-      <Securitycard name={name} email={email} key={animationKey} />
-    </ComponenetContainer>
+    <ComponentContainer>
+      <Securitycard key={animationKey} />
+    </ComponentContainer>
   );
 };
 export default SecurityCard;
 
-const Securitycard = ({ name, email }: { name: string; email: string }) => {
+const Securitycard = () => {
   return (
     <div
       className={cn(
@@ -69,11 +58,13 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
               delay: 1.8,
             }}
           >
-            {name}
+            Liam Parker
           </motion.p>
           <CheckCircle />
         </div>
-        <div className="no-ios-link text-[10px] text-neutral-500">{email}</div>
+        <div className="no-ios-link text-[10px] text-neutral-500">
+          liam.parker@example.com
+        </div>
       </div>
       <div className="relative rounded-[2px] bg-neutral-950/50 px-[3px] py-[3.2px]">
         <div className="relative h-32 w-24 rounded-[2px] bg-gradient-to-br from-neutral-700 to-neutral-800">
@@ -143,7 +134,7 @@ const CheckCircle = () => {
         />
       </svg>
       <motion.div
-        className="justify-centertext-black absolute left-[5px] top-[5px] flex items-center"
+        className="justify-centertext-black absolute left-[5px] top-[5px] flex items-center text-black"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -151,7 +142,7 @@ const CheckCircle = () => {
           delay: 2.4,
         }}
       >
-        <IoMdCheckmark className="size-2" />
+        <IoMdCheckmark className="size-2 text-black" />
       </motion.div>
     </div>
   );

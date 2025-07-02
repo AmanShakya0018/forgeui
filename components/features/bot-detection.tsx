@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
-import CompoenentContainer from "./component-container";
+import ComponentContainer from "./component-container";
 
 type BotDetectionProps = {
   cardTitle?: string;
@@ -39,7 +39,7 @@ const BotDetection = ({
   }, []);
 
   return (
-    <CompoenentContainer>
+    <ComponentContainer>
       <div
         className={cn(
           "relative overflow-hidden",
@@ -137,7 +137,7 @@ const BotDetection = ({
           <p className="mt-2 text-xs text-neutral-400">{cardDescription}</p>
         </div>
       </div>
-    </CompoenentContainer>
+    </ComponentContainer>
   );
 };
 
