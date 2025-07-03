@@ -10,7 +10,7 @@ import {
   commandMap,
   utilcode,
   packagesMap,
-  botDetectionProps,
+  vaultLockProps,
   screennotice,
 } from "./show-code";
 import ToggleButtonGroup from "@/components/content/togglebuttongroup";
@@ -23,11 +23,11 @@ import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
-import BotDetection from "./bot-detection";
+import VaultLock from "./vault-lock";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import ScreenNotice from "@/components/content/screen-notice";
 
-const Botdetection = () => {
+const Vaultlock = () => {
   const [sourceCode, setSourceCode] = useState(false);
   const [sourceManual, setSourceManual] = useState(true);
   const { previous, next } = getNavigationFeaturedItems(title);
@@ -42,7 +42,7 @@ const Botdetection = () => {
       />
       {!sourceCode ? (
         <PreviewComponentContainer className="bg-neutral-950">
-          <BotDetection />
+          <VaultLock />
         </PreviewComponentContainer>
       ) : (
         <CodeBlock
@@ -50,10 +50,7 @@ const Botdetection = () => {
           code={democode}
         />
       )}
-      <ScreenNotice
-        className="block text-primary/50 dark:hidden"
-        text={screennotice}
-      />
+      <ScreenNotice className="text-primary/50" text={screennotice} />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}
@@ -92,10 +89,10 @@ const Botdetection = () => {
           ></Dependencies>
         </>
       )}
-      <PropsTable propsData={botDetectionProps} />
+      <PropsTable propsData={vaultLockProps} />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );
 };
 
-export default Botdetection;
+export default Vaultlock;

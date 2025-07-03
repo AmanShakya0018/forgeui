@@ -36,4 +36,5 @@ export const eliteItems = [
   { name: 'Security Card', href: '/components/security-card' },
   { name: 'Notification Center', href: '/components/notification-center' },
   { name: 'Bot Detection', href: '/components/bot-detection' },
+  { name: 'Vault Lock', href: '/components/vault-lock' },
 ];
