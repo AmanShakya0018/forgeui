@@ -8,11 +8,12 @@ import SecurityCard from "./security-card";
 import BotDetection from "./bot-detection";
 import AnimatedOTP from "./animated-otp";
 import NotificationCenter from "./notification-center";
+import BuildFeature from "./build-feature";
 const CliCompatible = dynamic(() => import("./cli-compatible"), { ssr: false });
 const BuildWithForgeUI = dynamic(() => import("./build-with-forgeui"), {
   ssr: false,
 });
-const BuildFeature = dynamic(() => import("./build-feature"), { ssr: false });
+
 const FeaturesBlock = () => {
   return (
     <div className="flex min-h-screen flex-col items-center gap-4 py-12 lg:py-6">
@@ -34,13 +35,7 @@ const FeaturesBlock = () => {
       </div>
 
       <ExploreComponentsButton />
-      <LazyShow
-        fallback={
-          <div className="h-[100px] w-full animate-pulse rounded-md bg-neutral-900/50" />
-        }
-      >
-        <BuildFeature />
-      </LazyShow>
+      <BuildFeature />
 
       <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2">
         <LazyShow

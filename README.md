@@ -4,7 +4,7 @@
 
 [**ForgeUI**](https://forgeui.in) is an animation-first React component library focused on building **rich, modern, and interactive UI components**. From animated forms to shimmer text and motion-enhanced cards, ForgeUI helps you drop in delightful, production-ready components with minimal setup.
 
-Perfect for developers who care about UX, detail, and micro-interactions.
+Perfect for developers who care about UI, detail, and micro-interactions.
 
 ## 🛠️ Technologies Used
 
