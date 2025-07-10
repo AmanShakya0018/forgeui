@@ -14,29 +14,6 @@ Perfect for developers who care about UI, detail, and micro-interactions.
 - shadcn/ui
 - Framer Motion
 
-## 🚀 Getting Started
-
-### Cloning the Repository
-
-To clone the repository locally, use the following commands:
-
-```bash
-git clone https://github.com/amanshakya0018/forgeui.git
-cd forgeui
-```
-
-### Installation
-
-```bash
-npm install
-```
-
-### Running the Project
-
-```bash
-npm run dev
-```
-
 ## 🌟 Highlights
 
 - Fully animated components (forms, OTP inputs, shimmers, cards)
@@ -48,6 +25,14 @@ npm run dev
 
 Explore all components and live previews at:  
 👉 [https://forgeui.in](https://forgeui.in)
+
+## 🧪 Note
+
+ForgeUI isn’t a community-driven project — it's more like a personal lab where I explore UI, animation, and motion design in React.  
+Everything you see is built with the intent to learn, refine, and share what excites me in the frontend space.
+You're welcome to explore and take inspiration — but this repo isn’t actively maintained for external contributions.
+
+Check out the [Contribution Guide](./CONTRIBUTING.md).
 
 ---
 
