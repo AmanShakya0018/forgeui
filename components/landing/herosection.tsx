@@ -3,21 +3,12 @@ import React from "react";
 import Techstacksectionhero from "./techstacksectionhero";
 import Herobuttons from "./herobuttons";
 import { motion } from "motion/react";
-import { PeerlistIcon } from "../icons/peerlist";
-import Link from "next/link";
 
 const HeroSection = () => {
   return (
     <div className="flex min-h-[100vh] flex-col items-center justify-center">
       <div className="z-[3] flex flex-col items-center justify-center gap-20 text-center">
         <div className="flex flex-col items-center justify-center gap-5">
-          <Link
-            href={"https://peerlist.io/amanshakya/project/forge-ui"}
-            target="_blank"
-            className="scale-[0.75]"
-          >
-            <PeerlistIcon />
-          </Link>
           <div className="space-y-6">
             <motion.h1
               initial={{
