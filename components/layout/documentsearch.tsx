@@ -11,9 +11,13 @@ import {
   CommandSeparator,
 } from "@/components/ui/command";
 import { primaryItems } from "@/contants";
+import { eliteItems } from "@/contants";
 
 const DocumentSearch = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+  const sortedEliteItems = [...eliteItems].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
   const [open, setOpen] = React.useState(false);
@@ -62,7 +66,16 @@ const DocumentSearch = () => {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="All Components">
+          <CommandGroup heading="Featured Components" className="mb-5 mt-2">
+            <CommandSeparator />
+            {sortedEliteItems.map((item) => (
+              <a href={item.href} key={item.name}>
+                <CommandItem>{item.name}</CommandItem>
+              </a>
+            ))}
+          </CommandGroup>
+          <CommandGroup heading="Basic Components" className="my-2">
+            <CommandSeparator />
             {sortedPrimaryItems.map((item) => (
               <a href={item.href} key={item.name}>
                 <CommandItem>{item.name}</CommandItem>
