@@ -2,7 +2,7 @@ export const title = "Animated Tabs";
 export const routepoint = "animated-tabs";
 export const description = "Switch tabs smoothly with motion-based underline or highlight effects.";
 
-export const cliscript = "add https://forgeui.amanshakya.in/registry/animated-tabs.json";
+export const cliscript = "add https://forgeui.in/registry/animated-tabs.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

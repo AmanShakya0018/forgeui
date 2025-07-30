@@ -2,7 +2,7 @@ export const title = "Bot Detection";
 export const routepoint = "bot-detection";
 export const description = "Animated radar-style component that simulates real-time bot detection using glowing pulses and scanning motion.";
 
-export const cliscript = "add https://forgeui.amanshakya.in/registry/bot-detection.json";
+export const cliscript = "add https://forgeui.in/registry/bot-detection.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

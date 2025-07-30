@@ -2,7 +2,7 @@ export const title = "Social Card";
 export const routepoint = "social-card";
 export const description = "An animated profile card showing name, avatar, and social links on hover.";
 
-export const cliscript = "add https://forgeui.amanshakya.in/registry/social-card.json";
+export const cliscript = "add https://forgeui.in/registry/social-card.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

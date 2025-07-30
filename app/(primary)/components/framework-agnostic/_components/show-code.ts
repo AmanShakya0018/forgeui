@@ -2,7 +2,7 @@ export const title = "Framework Agnostic";
 export const routepoint = "framework-agnostic";
 export const description = "Visually demonstrates cross-framework adaptability using animated stack icons and a glowing pipeline effect.";
 
-export const cliscript = "add https://forgeui.amanshakya.in/registry/framework-agnostic.json";
+export const cliscript = "add https://forgeui.in/registry/framework-agnostic.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,
