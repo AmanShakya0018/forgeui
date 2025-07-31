@@ -125,10 +125,7 @@ const BotDetection = ({
             }}
           />
 
-          <div className="absolute left-1/2 top-[48px] h-full w-[130%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
-          <div className="absolute left-1/2 top-[100px] h-full w-[110%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
-          <div className="absolute left-1/2 top-[152px] h-full w-[100%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
-          <div className="absolute left-1/2 top-[204px] h-full w-[80%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+          <ContainerMask />
           <svg
             width="100%"
             height="100%"
@@ -197,4 +194,15 @@ const BotDetection = ({
 };
 
 export default BotDetection;
+
+const ContainerMask = () => {
+  return (
+    <>
+      <div className="absolute left-1/2 top-[48px] h-full w-[130%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute left-1/2 top-[100px] h-full w-[110%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute left-1/2 top-[152px] h-full w-[100%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute left-1/2 top-[204px] h-full w-[80%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+    </>
+  );
+};
 `;

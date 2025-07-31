@@ -41,10 +41,7 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
       )}
     >
       <InfiniteScrambler />
-      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
-      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <ContainerMask />
       <div
         className={cn(
           "absolute bottom-0 h-1/2 w-[150%] rounded-t-[60%]",
@@ -184,5 +181,16 @@ const InfiniteScrambler = () => {
         {text}
       </p>
     </div>
+  );
+};
+
+const ContainerMask = () => {
+  return (
+    <>
+      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+    </>
   );
 };

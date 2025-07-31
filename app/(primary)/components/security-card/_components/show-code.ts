@@ -112,6 +112,7 @@ export function ${title.replace(/\s+/g, "")}Example() {
 export const code = `"use client";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
+import "./security-card.css";
 import { IoMdCheckmark } from "react-icons/io";
 import { motion } from "motion/react";
 
@@ -151,10 +152,7 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
       )}
     >
       <InfiniteScrambler />
-      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
-      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <ContainerMask />
       <div
         className={cn(
           "absolute bottom-0 h-1/2 w-[150%] rounded-t-[60%]",
@@ -181,7 +179,7 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
           </motion.p>
           <CheckCircle />
         </div>
-        <div className="text-[10px] text-neutral-500">{email}</div>
+        <div className="no-ios-link text-[10px] text-neutral-500">{email}</div>
       </div>
       <div className="relative rounded-[2px] bg-neutral-300/50 px-[3px] py-[3.2px] dark:bg-neutral-950/50">
         <div className="relative h-32 w-24 rounded-[2px] bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800">
@@ -294,6 +292,17 @@ const InfiniteScrambler = () => {
         {text}
       </p>
     </div>
+  );
+};
+
+const ContainerMask = () => {
+  return (
+    <>
+      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+    </>
   );
 };
 `;
