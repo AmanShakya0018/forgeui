@@ -41,15 +41,51 @@ const Animatedform = ({ name }: { name: string }) => {
   const nameStaggerDelay = nameAnimationDuration / name.length;
   const passwordStaggerDelay = passwordAnimationDuration / password.length;
 
+  const icons = [
+    {
+      icon: <FaGithub className="size-6 text-primary" />,
+      key: "github",
+    },
+    {
+      icon: <ShopifyIcon className="size-6" />,
+      key: "shopify",
+    },
+    {
+      icon: <TwitchIcon className="size-6" />,
+      key: "twitch",
+    },
+    {
+      icon: <YoutubeIcon className="size-6" />,
+      key: "youtube",
+    },
+  ];
+
   return (
     <div className={cn("relative", "w-full max-w-[340px]")}>
-      <div className="w-full rounded-[12px] border border-neutral-200/70 p-1.5 dark:border-neutral-900/70">
-        <div className="relative flex flex-col gap-1 divide-y divide-neutral-200 rounded-lg border border-neutral-200 dark:divide-neutral-900 dark:border-neutral-900">
-          <div className="bg-gradient-to-r from-neutral-700 to-neutral-300 bg-clip-text px-3 pb-2 pt-3 text-[14px] leading-[1rem] tracking-wide text-transparent dark:from-neutral-400 dark:to-neutral-700">
+      <div className="w-full rounded-[12px] border border-neutral-200/60 p-1.5 dark:border-neutral-900/60">
+        <div
+          className={cn(
+            "relative",
+            "flex flex-col gap-1 divide-y divide-neutral-200 rounded-lg",
+            "border border-neutral-200 dark:divide-neutral-900 dark:border-neutral-900",
+          )}
+        >
+          <div
+            className={cn(
+              "px-3 pb-2 pt-3 text-[14px] leading-[1rem] tracking-wide text-transparent",
+              "bg-gradient-to-r from-neutral-700 to-neutral-300 bg-clip-text dark:from-neutral-400 dark:to-neutral-700",
+            )}
+          >
             Create Account
           </div>
           <div className="flex flex-col gap-2 p-2">
-            <div className="flex w-full items-center justify-between gap-4 rounded-md border bg-gradient-to-r from-neutral-50 to-neutral-100 p-2 dark:from-neutral-900 dark:to-neutral-950">
+            <div
+              className={cn(
+                "w-full rounded-md border p-2",
+                "flex items-center justify-between gap-4",
+                "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+              )}
+            >
               <div className="text-xs">
                 {name.split("").map((char, index) => (
                   <motion.span
@@ -68,52 +104,22 @@ const Animatedform = ({ name }: { name: string }) => {
                 ))}
               </div>
 
-              <div className="relative">
-                <svg width="20" height="20" className="rotate-[-90deg]">
-                  <motion.circle
-                    cx="10"
-                    cy="10"
-                    r="7"
-                    stroke="#22c55e"
-                    strokeWidth="2"
-                    fill="transparent"
-                    strokeDasharray={circleLength}
-                    strokeDashoffset={circleLength}
-                    animate={{ strokeDashoffset: 0 }}
-                    transition={{
-                      duration: nameAnimationDuration * 3 + 1,
-                      ease: "easeInOut",
-                      delay: 0,
-                    }}
-                  />
-                  <motion.circle
-                    cx="10"
-                    cy="10"
-                    r="7"
-                    fill="#22c55e"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: nameAnimationDuration + 0.1,
-                    }}
-                  />
-                </svg>
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center text-background"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.2,
-                    delay: nameAnimationDuration + 0.2,
-                  }}
-                >
-                  <IoMdCheckmark className="size-2.5" />
-                </motion.div>
-              </div>
+              <AnimatedCheckmarkCircle
+                circleLength={circleLength}
+                strokeDuration={nameAnimationDuration * 3 + 1}
+                strokeDelay={0}
+                fillDelay={nameAnimationDuration + 0.1}
+                checkmarkDelay={nameAnimationDuration + 0.2}
+              />
             </div>
 
-            <div className="flex items-center justify-between gap-8 rounded-md border bg-background bg-gradient-to-r from-neutral-50 to-neutral-100 p-2 dark:from-neutral-900 dark:to-neutral-950">
+            <div
+              className={cn(
+                "rounded-md border p-2",
+                "flex items-center justify-between gap-8",
+                "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+              )}
+            >
               <div className="font-mono text-xs">
                 {password.split("").map((char, index) => (
                   <motion.span
@@ -135,79 +141,115 @@ const Animatedform = ({ name }: { name: string }) => {
                 ))}
               </div>
 
-              <div className="relative">
-                <svg width="20" height="20" className="rotate-[-90deg]">
-                  <motion.circle
-                    cx="10"
-                    cy="10"
-                    r="7"
-                    stroke="#22c55e"
-                    strokeWidth="2"
-                    fill="transparent"
-                    strokeDasharray={circleLength}
-                    strokeDashoffset={circleLength}
-                    animate={{ strokeDashoffset: 0 }}
-                    transition={{
-                      duration: 7,
-                      ease: "easeInOut",
-                      delay: nameAnimationDuration + 0.5,
-                    }}
-                  />
-                  <motion.circle
-                    cx="10"
-                    cy="10"
-                    r="7"
-                    fill="#22c55e"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{
-                      duration: 0.2,
-                      delay:
-                        nameAnimationDuration + passwordAnimationDuration + 0.6,
-                    }}
-                  />
-                </svg>
-                <motion.div
-                  className="absolute inset-0 flex items-center justify-center text-background"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{
-                    duration: 0.2,
-                    delay:
-                      nameAnimationDuration + passwordAnimationDuration + 0.7,
-                  }}
-                >
-                  <IoMdCheckmark className="size-2.5" />
-                </motion.div>
-              </div>
+              <AnimatedCheckmarkCircle
+                circleLength={circleLength}
+                strokeDuration={7}
+                strokeDelay={nameAnimationDuration + 0.5}
+                fillDelay={
+                  nameAnimationDuration + passwordAnimationDuration + 0.6
+                }
+                checkmarkDelay={
+                  nameAnimationDuration + passwordAnimationDuration + 0.7
+                }
+              />
             </div>
-            <div className="h-[37.6px] rounded-md border bg-gradient-to-r from-neutral-50 to-neutral-100 opacity-40 dark:from-neutral-900 dark:to-neutral-950" />
+            <div
+              className={cn(
+                "h-[37.6px] rounded-md border opacity-40",
+                "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+              )}
+            />
           </div>
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 h-[40px] w-full [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
-      <div className="absolute bottom-0 left-0 h-[100px] w-[12px] [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
-      <div className="absolute bottom-0 right-0 h-[100px] w-[12px] [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
+      <ContainerMask />
       <div className="absolute bottom-0 left-0 flex h-[50px] w-full items-center justify-around px-6">
-        <div className="rounded-full bg-gradient-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900">
-          <FaGithub className="size-6 text-primary" />
-        </div>
-        <div className="rounded-full bg-gradient-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900">
-          <ShopifyIcon className="size-6" />
-        </div>
-        <div className="rounded-full bg-gradient-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900">
-          <TwitchIcon className="size-6" />
-        </div>
-
-        <div className="rounded-full bg-gradient-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900">
-          <YoutubeIcon className="size-6" />
-        </div>
+        {icons.map(({ icon, key }) => (
+          <div
+            key={key}
+            className="rounded-full bg-gradient-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900"
+          >
+            {icon}
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
-export const ShopifyIcon = (props: React.SVGProps<SVGSVGElement>) => (
+type AnimatedCheckmarkCircleProps = {
+  circleLength: number;
+  strokeDuration: number;
+  strokeDelay: number;
+  fillDelay: number;
+  checkmarkDelay: number;
+};
+
+export const AnimatedCheckmarkCircle = ({
+  circleLength,
+  strokeDuration,
+  strokeDelay,
+  fillDelay,
+  checkmarkDelay,
+}: AnimatedCheckmarkCircleProps) => {
+  return (
+    <div className="relative">
+      <svg width="20" height="20" className="rotate-[-90deg]">
+        <motion.circle
+          cx="10"
+          cy="10"
+          r="7"
+          stroke="#22c55e"
+          strokeWidth="2"
+          fill="transparent"
+          strokeDasharray={circleLength}
+          strokeDashoffset={circleLength}
+          animate={{ strokeDashoffset: 0 }}
+          transition={{
+            duration: strokeDuration,
+            ease: "easeInOut",
+            delay: strokeDelay,
+          }}
+        />
+        <motion.circle
+          cx="10"
+          cy="10"
+          r="7"
+          fill="#22c55e"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            duration: 0.2,
+            delay: fillDelay,
+          }}
+        />
+      </svg>
+      <motion.div
+        className="absolute inset-0 flex items-center justify-center text-background"
+        initial={{ opacity: 0, scale: 0 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.2,
+          delay: checkmarkDelay,
+        }}
+      >
+        <IoMdCheckmark className="size-2.5" />
+      </motion.div>
+    </div>
+  );
+};
+
+const ContainerMask = () => {
+  return (
+    <>
+      <div className="absolute bottom-0 left-0 h-[40px] w-full [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
+      <div className="absolute bottom-0 left-0 h-[100px] w-[12px] [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
+      <div className="absolute bottom-0 right-0 h-[100px] w-[12px] [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
+    </>
+  );
+};
+
+const ShopifyIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     width="256"
     height="292"
@@ -232,7 +274,7 @@ export const ShopifyIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const TwitchIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const TwitchIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 2400 2800"
@@ -248,7 +290,7 @@ export const TwitchIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-export const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const YoutubeIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     viewBox="0 0 256 180"
     width={256}
