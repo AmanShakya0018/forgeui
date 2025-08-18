@@ -78,7 +78,7 @@ const Footer = () => {
                 target="_blank"
               >
                 <p className="text-foreground/60 hover:text-foreground/80">
-                  LindedIn
+                  LinkedIn
                 </p>
               </Link>
             </div>
