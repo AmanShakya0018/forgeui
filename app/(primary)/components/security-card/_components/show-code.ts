@@ -112,7 +112,6 @@ export function ${title.replace(/\s+/g, "")}Example() {
 export const code = `"use client";
 import { cn } from "@/lib/utils";
 import React, { useEffect, useRef, useState } from "react";
-import "./security-card.css";
 import { IoMdCheckmark } from "react-icons/io";
 import { motion } from "motion/react";
 
