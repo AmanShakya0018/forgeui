@@ -15,7 +15,7 @@ export default function RootLayout({
       <Link
         href={"https://pro.forgeui.in/"}
         target="_blank"
-        className="top-0 flex h-12 w-full items-center justify-center bg-gradient-to-b from-blue-500 to-blue-600 font-semibold"
+        className="top-0 flex h-12 w-full items-center justify-center bg-gradient-to-b from-blue-500 to-blue-600 p-2 text-center text-sm font-semibold sm:text-[1rem]"
       >
         ForgeUI Pro is live - modern UI, powerful animations, zero hassle.
       </Link>
