@@ -2,8 +2,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
-import { Analytics } from "@vercel/analytics/react";
 import Provider from "@/provider/provider";
+import Script from "next/script";
 // import Script from "next/script";
 
 const geistSans = Geist({
@@ -98,6 +98,12 @@ export default function RootLayout({
         data-site="217027c0-3557-4a81-8f84-92043de74a6a"
         src="https://statsio.amanshakya.in/tracker.js"
       /> */}
+      <Script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        strategy="afterInteractive"
+      />
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -105,7 +111,6 @@ export default function RootLayout({
           {children}
           <Toaster />
         </Provider>
-        <Analytics />
       </body>
     </html>
   );

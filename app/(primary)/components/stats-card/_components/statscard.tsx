@@ -46,6 +46,7 @@ const StatsCard = ({
                 alt="avatar"
                 width={100}
                 height={100}
+                unoptimized
                 className="h-16 w-16 rounded-xl object-cover"
                 src={firstImage}
               />
@@ -68,6 +69,7 @@ const StatsCard = ({
                 alt="avatar"
                 width={100}
                 height={100}
+                unoptimized
                 className="h-16 w-16 rounded-xl object-cover"
                 src={secondImage}
               />
