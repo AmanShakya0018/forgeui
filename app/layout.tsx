@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import Provider from "@/provider/provider";
 import Script from "next/script";
+import GoogleAnalytics from "@/components/ui/google-analytics";
 // import Script from "next/script";
 
 const geistSans = Geist({
@@ -110,6 +111,7 @@ export default function RootLayout({
         <Provider>
           {children}
           <Toaster />
+          <GoogleAnalytics />
         </Provider>
       </body>
     </html>
