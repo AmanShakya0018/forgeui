@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { usePathname } from "next/navigation";
@@ -53,7 +54,7 @@ const PageContentSidebar = () => {
   }
 
   return (
-    <div className="h-full w-full overflow-y-auto py-6 pl-6 pr-2">
+    <div className="flex h-full w-full flex-col justify-between overflow-y-auto py-6 pl-6 pr-2">
       <div className="space-y-4">
         <div className="space-y-2">
           <p className="text-sm font-medium">On This Page</p>
@@ -97,6 +98,27 @@ const PageContentSidebar = () => {
             })}
           </div>
         </div>
+      </div>
+      <div className="relative w-fit">
+        <Link
+          href="https://www.nextjsshop.com/?ref=forgeui"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative"
+        >
+          <img
+            src="/nextjsshop-ad-banner.png"
+            alt="NextJsShop Ad Banner"
+            className="w-[200px] rounded-md border border-neutral-200 transition hover:opacity-90 dark:border-neutral-800"
+          />
+
+          <span className="group absolute bottom-0 left-0 rounded-bl-md bg-neutral-200 p-[2px] text-[0.7rem] font-semibold text-primary/80 dark:bg-neutral-800">
+            AD
+            <span className="absolute -top-7 left-[4px] hidden w-[100px] rounded-md bg-neutral-200 px-2 py-1 text-[0.7rem] text-primary/80 shadow-md transition-all duration-100 group-hover:block dark:bg-neutral-800">
+              Paid promotion
+            </span>
+          </span>
+        </Link>
       </div>
     </div>
   );
