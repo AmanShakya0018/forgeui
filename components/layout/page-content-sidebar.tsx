@@ -101,7 +101,7 @@ const PageContentSidebar = () => {
       </div>
       <div className="relative w-fit">
         <Link
-          href="https://www.nextjsshop.com/?ref=forgeui"
+          href="https://www.nextjsshop.com/?ref=forgeui&utm_source=forgeui"
           target="_blank"
           rel="noopener noreferrer"
           className="relative"
