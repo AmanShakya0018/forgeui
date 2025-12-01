@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { usePathname } from "next/navigation";
@@ -99,6 +98,7 @@ const PageContentSidebar = () => {
           </div>
         </div>
       </div>
+      {/*
       <div className="relative w-fit">
         <Link
           href="https://www.nextjsshop.com/?ref=forgeui&utm_source=forgeui"
@@ -120,6 +120,7 @@ const PageContentSidebar = () => {
           </span>
         </Link>
       </div>
+        */}
     </div>
   );
 };
