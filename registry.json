@@ -1,0 +1,187 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "ForgeUI",
+  "homepage": "https://forgeui.in",
+  "items": [
+    {
+      "name": "animated-form",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/animated-form.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Animated Form",
+      "description": "Animated form mimicking account creation with progressive name/password animation and completion checkmarks."
+    },
+    {
+      "name": "animated-tabs",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/animated-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Animated Tabs",
+      "description": "witch tabs smoothly with motion-based underline or highlight effects."
+    },
+    {
+      "name": "animated-otp",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/animated-otp.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Animated OTP",
+      "description": "Looping animated OTP input with glowing digit transitions to simulate secure, timed authentication flow."
+    },
+    {
+      "name": "bot-detection",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/bot-detection.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Bot Detection",
+      "description": "Animated radar-style component that simulates real-time bot detection using glowing pulses and scanning motion."
+    },
+    {
+      "name": "expandable-card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/expandable-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Expandable Card",
+      "description": "Interactive UI component to expand cards with smooth animations and detailed content using layout transitions."
+    },
+    {
+      "name": "framework-agnostic",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/framework-agnostic.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Framework Agnostic",
+      "description": "Visually demonstrates cross-framework adaptability using animated stack icons and a glowing pipeline effect."
+    },
+    {
+      "name": "fraud-card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/fraud-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Fraud Card",
+      "description": "A security alert card inspired by Clerk's landing page, showcasing blocked emails with smooth hover animations."
+    },
+    {
+      "name": "notification-center",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/notification-center.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Notification Center",
+      "description": "Beautifully animated mobile UI showcasing notifications with hover-triggered transitions and customizable content blocks."
+    },
+    {
+      "name": "onboard-card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/onboard-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Onboard Card",
+      "description": "Animated onboarding progress card showing three steps with visual loaders, transitions, and completion indicators."
+    },
+    {
+      "name": "security-card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/security-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Security Card",
+      "description": "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream."
+    },
+    {
+      "name": "social-card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/social-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Social Card",
+      "description": "An animated profile card showing name, avatar, and social links on hover."
+    },
+    {
+      "name": "stats-card",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/stats-card.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Stats Card",
+      "description": "A dynamic stats card comparing two individuals with avatars, data points, and animated background graph."
+    },
+    {
+      "name": "text-reveal",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/text-reveal.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Text Reveal",
+      "description": "A stylish effect that sequentially fades in text on page load, creating a dynamic reveal."
+    },
+    {
+      "name": "text-shimmer",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/text-shimmer.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Text Shimmer",
+      "description": "A React component that creates an animated text shimmer effect using Motion, customizable by tag, duration, spread, delay, and repeat delay."
+    },
+    {
+      "name": "vault-lock",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/vault-lock.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Vault Lock",
+      "description": "Animated vault showcasing secure password input with motion effects and interactive hover-based unlock behavior."
+    }
+  ]
+}

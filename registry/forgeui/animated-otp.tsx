@@ -1,70 +1,4 @@
-export const title = "Animated OTP";
-export const routepoint = "animated-otp";
-export const description = "Looping animated OTP input with glowing digit transitions to simulate secure, timed authentication flow.";
-
-export const cliscript = "add https://forgeui.in/r/animated-otp.json";
-
-export const commandMap = {
-  npm: `npx shadcn@latest ${cliscript}`,
-  pnpm: `pnpm dlx shadcn@latest ${cliscript}`,
-  yarn: `npx shadcn@latest ${cliscript}`,
-  bun: `bunx --bun shadcn@latest ${cliscript}`,
-};
-
-export const utilcode = `import { ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-`;
-
-const packagescript = "motion clsx tailwind-merge";
-
-export const packagesMap = {
-  npm: `npm i ${packagescript}`,
-  pnpm: `pnpm add ${packagescript}`,
-  yarn: `yarn add ${packagescript}`,
-  bun: `bun add ${packagescript}`,
-};
-
-export const animatedOTPProps = [
-  {
-    prop: "delay",
-    type: "number",
-    default: "3500",
-    description: "Time interval (in ms) after which the OTP animation resets.",
-  },
-  {
-    prop: "cardTitle",
-    type: "string",
-    default: `"Secure Access"`,
-    description: "Title displayed below the OTP input field.",
-  },
-  {
-    prop: "cardDescription",
-    type: "string",
-    default: `"Protect accounts with a one-time password, auto-applied during every user login for enhanced security."`,
-    description: "Descriptive text below the title, explaining the OTP feature.",
-  },
-];
-
-
-export const democode = `import AnimatedOTP from '@/components/forgeui/animated-otp';
-
-export function ${title.replace(/\s+/g, "")}Example() {
-
-  return (
-    <AnimatedOTP
-      delay={3500} // Time interval (in ms) after which the OTP animation resets.
-      cardTitle="Secure Access"
-      cardDescription="Protect accounts with a one-time password, auto-applied during every user login for enhanced security."
-    />
-  )
-}
-`;
-
-export const code = `"use client";
+"use client";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import React, { useEffect, useState } from "react";
@@ -223,4 +157,3 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
     </div>
   );
 };
-`;
