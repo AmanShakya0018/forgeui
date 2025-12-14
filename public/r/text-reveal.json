@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A stylish effect that sequentially fades in text on page load, creating a dynamic reveal.",
   "name": "text-reveal",
   "type": "registry:ui",
   "files": [

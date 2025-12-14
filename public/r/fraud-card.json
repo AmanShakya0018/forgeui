@@ -1,6 +1,8 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "fraud-card",
   "type": "registry:ui",
+  "description": "A security alert card inspired by Clerk's landing page, showcasing blocked emails with smooth hover animations.",
   "files": [
     {
       "path": "components/forgeui/fraud-card.tsx",

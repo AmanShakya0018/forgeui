@@ -2,7 +2,7 @@ export const title = "Security Card";
 export const routepoint = "security-card";
 export const description = "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream.";
 
-export const cliscript = "add https://forgeui.in/registry/security-card.json";
+export const cliscript = "add https://forgeui.in/r/security-card.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

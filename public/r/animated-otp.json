@@ -1,6 +1,10 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-otp",
   "type": "registry:ui",
+  "title": "Animated OTP",
+  "description": "Looping animated OTP input with glowing digit transitions to simulate secure, timed authentication flow.",
+  "author": "Aman Shakya <hi@amanshakya.in>",
   "files": [
     {
       "path": "components/forgeui/animated-otp.tsx",
@@ -8,7 +12,5 @@
       "type": "registry:ui",
       "target": "components/forgeui/animated-otp.tsx"
     }
-  ],
-  "author": "Aman Shakya <hi@amanshakya.in>",
-  "title": "Animated OTP"
+  ]
 }

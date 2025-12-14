@@ -1,6 +1,10 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-form",
   "type": "registry:ui",
+  "title": "Animated Form",
+  "description": "Animated form mimicking account creation with progressive name/password animation and completion checkmarks.",
+  "author": "Aman Shakya <hi@amanshakya.in>",
   "files": [
     {
       "path": "components/forgeui/animated-form.tsx",
@@ -8,7 +12,5 @@
       "type": "registry:ui",
       "target": "components/forgeui/animated-form.tsx"
     }
-  ],
-  "author": "Aman Shakya <hi@amanshakya.in>",
-  "title": "Animated Form"
+  ]
 }

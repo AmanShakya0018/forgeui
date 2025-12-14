@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A React component that creates an animated text shimmer effect using Motion, customizable by tag, duration, spread, delay, and repeat delay.",
   "name": "text-shimmer",
   "type": "registry:ui",
   "files": [

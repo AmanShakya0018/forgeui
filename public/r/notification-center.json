@@ -1,6 +1,8 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "notification-center",
   "type": "registry:ui",
+  "description": "Beautifully animated mobile UI showcasing notifications with hover-triggered transitions and customizable content blocks.",
   "files": [
     {
       "path": "components/forgeui/notification-center.tsx",

@@ -2,7 +2,7 @@ export const title = "Animated Form";
 export const routepoint = "animated-form";
 export const description = "Animated form mimicking account creation with progressive name/password animation and completion checkmarks.";
 
-export const cliscript = "add https://forgeui.in/registry/animated-form.json";
+export const cliscript = "add https://forgeui.in/r/animated-form.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

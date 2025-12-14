@@ -2,7 +2,7 @@ export const title = "Onboard Card";
 export const routepoint = "onboard-card";
 export const description = "Animated onboarding progress card showing three steps with visual loaders, transitions, and completion indicators.";
 
-export const cliscript = "add https://forgeui.in/registry/onboard-card.json";
+export const cliscript = "add https://forgeui.in/r/onboard-card.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

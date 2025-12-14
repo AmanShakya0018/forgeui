@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "Animated vault showcasing secure password input with motion effects and interactive hover-based unlock behavior.",
   "name": "vault-lock",
   "type": "registry:ui",
   "files": [

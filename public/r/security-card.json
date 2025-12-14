@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream.",
   "name": "security-card",
   "type": "registry:ui",
   "files": [

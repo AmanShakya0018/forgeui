@@ -1,6 +1,8 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "expandable-card",
   "type": "registry:ui",
+  "description": "Interactive UI component to expand cards with smooth animations and detailed content using layout transitions.",
   "files": [
     {
       "path": "components/forgeui/expandable-card.tsx",

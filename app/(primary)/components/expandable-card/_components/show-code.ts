@@ -2,7 +2,7 @@ export const title = "Expandable Card";
 export const routepoint = "expandable-card";
 export const description = "Interactive UI component to expand cards with smooth animations and detailed content using layout transitions.";
 
-export const cliscript = "add https://forgeui.in/registry/expandable-card.json";
+export const cliscript = "add https://forgeui.in/r/expandable-card.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

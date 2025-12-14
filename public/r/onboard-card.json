@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "Animated onboarding progress card showing three steps with visual loaders, transitions, and completion indicators.",
   "name": "onboard-card",
   "type": "registry:ui",
   "files": [

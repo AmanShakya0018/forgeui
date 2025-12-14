@@ -2,7 +2,7 @@ export const title = "Text Reveal";
 export const routepoint = "text-reveal";
 export const description = "A stylish effect that sequentially fades in text on page load, creating a dynamic reveal.";
 
-export const cliscript = "add https://forgeui.in/registry/text-reveal.json";
+export const cliscript = "add https://forgeui.in/r/text-reveal.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

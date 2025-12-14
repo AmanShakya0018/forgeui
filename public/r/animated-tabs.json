@@ -1,5 +1,7 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "animated-tabs",
+  "description": "Switch tabs smoothly with motion-based underline or highlight effects.",
   "type": "registry:ui",
   "files": [
     {

@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "A dynamic stats card comparing two individuals with avatars, data points, and animated background graph.",
   "name": "stats-card",
   "type": "registry:ui",
   "files": [

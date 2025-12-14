@@ -1,4 +1,6 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "description": "An animated profile card showing name, avatar, and social links on hover.",
   "name": "social-card",
   "type": "registry:ui",
   "files": [

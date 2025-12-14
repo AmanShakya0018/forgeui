@@ -1,6 +1,8 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "framework-agnostic",
   "type": "registry:ui",
+  "description": "Visually demonstrates cross-framework adaptability using animated stack icons and a glowing pipeline effect.",
   "files": [
     {
       "path": "components/forgeui/framework-agnostic.tsx",

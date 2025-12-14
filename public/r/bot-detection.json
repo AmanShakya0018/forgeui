@@ -1,5 +1,7 @@
 {
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "bot-detection",
+  "description": "Animated radar-style component that simulates real-time bot detection using glowing pulses and scanning motion.",
   "type": "registry:ui",
   "files": [
     {

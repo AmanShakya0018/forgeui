@@ -2,7 +2,7 @@ export const title = "Notification Center";
 export const routepoint = "notification-center";
 export const description = "Beautifully animated mobile UI showcasing notifications with hover-triggered transitions and customizable content blocks.";
 
-export const cliscript = "add https://forgeui.in/registry/notification-center.json";
+export const cliscript = "add https://forgeui.in/r/notification-center.json";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,
