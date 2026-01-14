@@ -2,7 +2,7 @@ export const title = "Stats Card";
 export const routepoint = "stats-card";
 export const description = "A dynamic stats card comparing two individuals with avatars, data points, and animated background graph.";
 
-export const cliscript = "add https://forgeui.in/r/stats-card.json";
+export const cliscript = "add @forgeui/stats-card";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

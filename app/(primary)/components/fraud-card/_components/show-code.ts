@@ -2,7 +2,7 @@ export const title = "Fraud Card";
 export const routepoint = "fraud-card";
 export const description = "A security alert card inspired by Clerk's landing page, showcasing blocked emails with smooth hover animations.";
 
-export const cliscript = "add https://forgeui.in/r/fraud-card.json";
+export const cliscript = "add @forgeui/fraud-card";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

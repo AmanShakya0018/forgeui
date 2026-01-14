@@ -2,7 +2,7 @@ export const title = "Animated OTP";
 export const routepoint = "animated-otp";
 export const description = "Looping animated OTP input with glowing digit transitions to simulate secure, timed authentication flow.";
 
-export const cliscript = "add https://forgeui.in/r/animated-otp.json";
+export const cliscript = "add @forgeui/animated-otp";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,

@@ -2,7 +2,7 @@ export const title = "Vault Lock";
 export const routepoint = "vault-lock";
 export const description = "Animated vault showcasing secure password input with motion effects and interactive hover-based unlock behavior.";
 
-export const cliscript = "add https://forgeui.in/r/vault-lock.json";
+export const cliscript = "add @forgeui/vault-lock";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,
