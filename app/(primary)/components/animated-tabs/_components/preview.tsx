@@ -24,6 +24,7 @@ import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import AnimatedTabs from "./animated-tabs";
 import PropsTable from "@/components/content/props-table";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const tabs = ["Home", "Components", "Docs", "Templates"];
 
@@ -95,3 +96,11 @@ const Animatedtabs = () => {
 };
 
 export default Animatedtabs;
+
+export const LivePreviewAnimatedTabs = () => {
+  return (
+    <LivePreviewComponent>
+      <AnimatedTabs tabs={tabs} />
+    </LivePreviewComponent>
+  );
+};

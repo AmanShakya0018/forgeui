@@ -24,6 +24,7 @@ import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import AnimatedForm from "./animated-form";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Animatedform = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -93,3 +94,11 @@ const Animatedform = () => {
 };
 
 export default Animatedform;
+
+export const LivePreviewAnimatedForm = () => {
+  return (
+    <LivePreviewComponent>
+      <AnimatedForm />
+    </LivePreviewComponent>
+  );
+};

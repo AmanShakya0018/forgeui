@@ -28,6 +28,7 @@ import StatsCard from "./statscard";
 import CliDependencies from "@/components/content/clidependencies";
 import ScreenNotice from "@/components/content/screen-notice";
 import { getNavigationItems } from "@/lib/getNavigationItems";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Statscard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -119,3 +120,20 @@ const Statscard = () => {
 };
 
 export default Statscard;
+
+export const LivePreviewStatsCard = () => {
+  return (
+    <LivePreviewComponent>
+      <StatsCard
+        gradientColor="#60A5FA"
+        statsType="PRs Merged"
+        firstPerson="Toji Fushiguro"
+        secondPerson="Gojo Satoru"
+        firstData={23}
+        secondData={18}
+        firstImage="/assets/toji.png"
+        secondImage="/assets/gojo.png"
+      />
+    </LivePreviewComponent>
+  );
+};

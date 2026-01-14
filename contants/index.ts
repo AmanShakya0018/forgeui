@@ -39,3 +39,13 @@ export const eliteItems = [
   { name: 'Vault Lock', href: '/components/vault-lock' },
   { name: 'Framework Agnostic', href: '/components/framework-agnostic' },
 ];
+
+
+export const templates = [
+  { name: 'Flowcore Template', href: '/template/flowcore-template' },
+  { name: 'Fluxstack Template', href: '/template/fluxstack-template' },
+  { name: 'Minimal Portfolio Template', href: '/template/minimal-portfolio-template' },
+  { name: 'Algoverse Template', href: '/template/algoverse-template' },
+  { name: 'Docs Template', href: '/template/docs-template' },
+];
+

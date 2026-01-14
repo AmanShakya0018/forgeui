@@ -26,6 +26,7 @@ import PropsTable from "@/components/content/props-table";
 import VaultLock from "./vault-lock";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import ScreenNotice from "@/components/content/screen-notice";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Vaultlock = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -96,3 +97,11 @@ const Vaultlock = () => {
 };
 
 export default Vaultlock;
+
+export const LivePreviewVaultLock = () => {
+  return (
+    <LivePreviewComponent className="bg-neutral-950">
+      <VaultLock />
+    </LivePreviewComponent>
+  );
+};

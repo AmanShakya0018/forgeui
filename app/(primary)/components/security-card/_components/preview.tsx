@@ -28,6 +28,7 @@ import PropsTable from "@/components/content/props-table";
 import SecurityCard from "./security-card";
 import ScreenNotice from "@/components/content/screen-notice";
 import CliDependencies from "@/components/content/clidependencies";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Securitycard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -110,3 +111,11 @@ const Securitycard = () => {
 };
 
 export default Securitycard;
+
+export const LivePreviewSecurityCard = () => {
+  return (
+    <LivePreviewComponent>
+      <SecurityCard />
+    </LivePreviewComponent>
+  );
+};

@@ -28,6 +28,7 @@ import PropsTable from "@/components/content/props-table";
 import FrameworkAgnostic from "./framework-agnostic";
 import ScreenNotice from "@/components/content/screen-notice";
 import CliDependencies from "@/components/content/clidependencies";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Frameworkagnostic = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -116,3 +117,14 @@ const Frameworkagnostic = () => {
 };
 
 export default Frameworkagnostic;
+
+export const LivePreviewFrameworkAgnostic = () => {
+  return (
+    <LivePreviewComponent className="bg-neutral-950">
+      <FrameworkAgnostic
+        cardTitle="Framework Agnostic"
+        cardDescription="Seamlessly integrate with any tech stack, whether it's Next.js,React, HTML, or anything else. Statsio works everywhere."
+      />
+    </LivePreviewComponent>
+  );
+};

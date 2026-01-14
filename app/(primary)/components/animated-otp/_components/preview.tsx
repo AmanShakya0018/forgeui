@@ -24,6 +24,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import AnimatedOTP from "./animated-otp";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Animatedotp = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -97,3 +98,15 @@ const Animatedotp = () => {
 };
 
 export default Animatedotp;
+
+export const LivePreviewAnimatedOTP = () => {
+  return (
+    <LivePreviewComponent>
+      <AnimatedOTP
+        delay={3500}
+        cardTitle="Secure Access"
+        cardDescription="Protect accounts with a one-time password, auto-applied during every user login for enhanced security."
+      />
+    </LivePreviewComponent>
+  );
+};

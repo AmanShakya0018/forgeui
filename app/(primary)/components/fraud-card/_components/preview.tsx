@@ -29,6 +29,7 @@ import FraudCard from "./fraud-card";
 import CliDependencies from "@/components/content/clidependencies";
 import ScreenNotice from "@/components/content/screen-notice";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const blockedEmails = [
   { email: "bad_actor+1@gamil.com", time: "Aug 9 at 14:09" },
@@ -125,3 +126,11 @@ const Fraudcard = () => {
 };
 
 export default Fraudcard;
+
+export const LivePreviewFraudCard = () => {
+  return (
+    <LivePreviewComponent>
+      <FraudCard blockedEmails={blockedEmails} />
+    </LivePreviewComponent>
+  );
+};

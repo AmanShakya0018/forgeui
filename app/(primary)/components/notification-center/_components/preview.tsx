@@ -27,6 +27,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import NotificationCenter from "./notification-center";
 import ScreenNotice from "@/components/content/screen-notice";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Notificationcenter = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -110,3 +111,17 @@ const Notificationcenter = () => {
 };
 
 export default Notificationcenter;
+
+export const LivePreviewNotificationCenter = () => {
+  return (
+    <LivePreviewComponent>
+      <NotificationCenter
+        cardTitle="Real-time payment alerts"
+        cardDescription="Get instant updates for every successful Stripe transaction processed through your app."
+        notificationTitle="Stripe"
+        notificationDescription="You received a payment of $99.00 USD"
+        notificationTime="2h ago"
+      />
+    </LivePreviewComponent>
+  );
+};

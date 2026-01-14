@@ -26,6 +26,7 @@ import PropsTable from "@/components/content/props-table";
 import BotDetection from "./bot-detection";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import ScreenNotice from "@/components/content/screen-notice";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Botdetection = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -99,3 +100,11 @@ const Botdetection = () => {
 };
 
 export default Botdetection;
+
+export const LivePreviewBotDetection = () => {
+  return (
+    <LivePreviewComponent className="bg-neutral-950">
+      <BotDetection />
+    </LivePreviewComponent>
+  );
+};

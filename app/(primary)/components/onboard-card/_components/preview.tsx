@@ -24,6 +24,7 @@ import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import OnboardCard from "./onboardcard";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Onboardcard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -98,3 +99,16 @@ const Onboardcard = () => {
 };
 
 export default Onboardcard;
+
+export const LivePreviewOnboardCard = () => {
+  return (
+    <LivePreviewComponent>
+      <OnboardCard
+        duration={3000}
+        step1="Welcome Aboard"
+        step2="Verifying Details"
+        step3="Account Created"
+      />
+    </LivePreviewComponent>
+  );
+};

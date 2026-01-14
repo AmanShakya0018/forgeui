@@ -24,6 +24,7 @@ import { CommandBlock } from "@/components/code/commmand-block";
 import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const Textshimmereffect = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -95,3 +96,13 @@ const Textshimmereffect = () => {
 };
 
 export default Textshimmereffect;
+
+export const LivePreviewTextShimmer = () => {
+  return (
+    <LivePreviewComponent>
+      <TextShimmer className="text-sm" duration={1.5} repeatDelay={0.5}>
+        Loading...
+      </TextShimmer>
+    </LivePreviewComponent>
+  );
+};

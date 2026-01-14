@@ -24,6 +24,7 @@ import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import TextReveal from "./text-reveal";
 import PropsTable from "@/components/content/props-table";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const text = `ForgeUI is a beautifully designed component library built with Tailwind CSS and Motion. It helps developers build modern, animated UIs faster, with consistent styling and production-ready components.`;
 
@@ -99,3 +100,15 @@ const Textrenderingeffect = () => {
 };
 
 export default Textrenderingeffect;
+
+export const LivePreviewTextReveal = () => {
+  return (
+    <LivePreviewComponent>
+      <TextReveal
+        staggerDelay={0.2}
+        text={text}
+        className="mx-auto max-w-3xl text-lg font-semibold"
+      />
+    </LivePreviewComponent>
+  );
+};

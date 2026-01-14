@@ -29,6 +29,7 @@ import ExpandableCard, {
   MetaMask,
   Upstash,
 } from "./expandable-card";
+import LivePreviewComponent from "@/components/layout/livepreview";
 
 const sampleItems: CardItem[] = [
   {
@@ -131,3 +132,11 @@ const Expandablecard = () => {
 };
 
 export default Expandablecard;
+
+export const LivePreviewExpandableCard = () => {
+  return (
+    <LivePreviewComponent>
+      <ExpandableCard items={sampleItems} />
+    </LivePreviewComponent>
+  );
+};
