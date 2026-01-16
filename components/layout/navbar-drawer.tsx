@@ -8,18 +8,14 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import {
-  eliteItems,
-  introItems,
-  primaryItems,
-  // templates
-} from "@/contants";
+import { eliteItems, introItems, primaryItems, templates } from "@/contants";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Link from "next/link";
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 import Anchor from "../ui/anchor-single";
 import { ScrollArea } from "../ui/scroll-area";
 import { MyIcon } from "../icons/logo";
+import AnchorTemplate from "../ui/anchor-template";
 
 const NavbarDrawer = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
@@ -59,19 +55,23 @@ const NavbarDrawer = () => {
                   ))}
                 </div>
               </div>
-              {/* <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1">
                 <div className="flex px-3 py-2 text-start text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
                   Templates
                 </div>
 
                 <div className="grid gap-1">
                   {templates.map((item) => (
-                    <Anchor key={item.name + item.href} href={item.href}>
+                    <AnchorTemplate
+                      key={item.name + item.href}
+                      href={item.href}
+                      target="_blank"
+                    >
                       {item.name}
-                    </Anchor>
+                    </AnchorTemplate>
                   ))}
                 </div>
-              </div> */}
+              </div>
               <div className="flex flex-col gap-1">
                 <div className="flex px-3 py-2 text-start text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
                   Featured Components

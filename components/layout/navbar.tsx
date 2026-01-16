@@ -24,6 +24,7 @@ const Navbar = () => {
                 <AnchorNav
                   key={item.name + item.href}
                   absolute
+                  newPage={item.newPage ?? false}
                   href={item.href}
                 >
                   {item.name}

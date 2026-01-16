@@ -1,13 +1,9 @@
 "use client";
 import React from "react";
-import {
-  eliteItems,
-  introItems,
-  primaryItems,
-  // templates
-} from "@/contants";
+import { eliteItems, introItems, primaryItems, templates } from "@/contants";
 import Anchor from "../ui/anchor-single";
 import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
+import AnchorTemplate from "../ui/anchor-template";
 
 const PrimaryItems = () => {
   const sortedPrimaryItems = [...primaryItems].sort((a, b) =>
@@ -32,23 +28,23 @@ const PrimaryItems = () => {
           ))}
         </div>
       </div>
-      {/* <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1">
         <div className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
           Templates
         </div>
 
         <div className="grid gap-1">
           {templates.map((item) => (
-            <Anchor
+            <AnchorTemplate
               target="_blank"
               key={item.name + item.href}
               href={item.href}
             >
               {item.name}
-            </Anchor>
+            </AnchorTemplate>
           ))}
         </div>
-      </div> */}
+      </div>
       <div className="flex flex-col gap-1">
         <div className="px-3 py-2 text-[0.8rem] font-normal uppercase tracking-widest text-muted-foreground/70">
           Featured Components

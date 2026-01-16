@@ -1,9 +1,18 @@
-
 export const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'Components', href: '/components/animated-form' },
-  { name: 'Docs', href: '/docs/introduction' },
+  { name: "Docs", href: "/docs/introduction" },
+  { name: "Components", href: "/components/animated-form" },
+  {
+    name: "Blocks",
+    href: "https://pro.forgeui.in/blocks/hero-section",
+    newPage: true,
+  },
+  {
+    name: "Templates",
+    href: "https://pro.forgeui.in/template",
+    newPage: true,
+  },
 ];
+
 
 export const introItems = [
   {
@@ -42,10 +51,10 @@ export const eliteItems = [
 
 
 export const templates = [
-  { name: 'Flowcore Template', href: '/template/flowcore-template' },
-  { name: 'Fluxstack Template', href: '/template/fluxstack-template' },
-  { name: 'Minimal Portfolio Template', href: '/template/minimal-portfolio-template' },
-  { name: 'Algoverse Template', href: '/template/algoverse-template' },
-  { name: 'Docs Template', href: '/template/docs-template' },
+  { name: 'Flowcore Template', href: 'https://pro.forgeui.in/template/flowcore-template' },
+  { name: 'Fluxstack Template', href: 'https://pro.forgeui.in/template/fluxstack-template' },
+  { name: 'Portfolio Template', href: 'https://pro.forgeui.in/template/minimal-portfolio-template' },
+  { name: 'Algoverse Template', href: 'https://pro.forgeui.in/template/algoverse-template' },
+  { name: 'Docs Template', href: 'https://pro.forgeui.in/template/docs-template' },
 ];
 

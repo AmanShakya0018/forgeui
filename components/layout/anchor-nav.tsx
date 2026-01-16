@@ -8,12 +8,14 @@ type AnchorProps = ComponentProps<typeof Link> & {
   absolute?: boolean;
   activeClassName?: string;
   disabled?: boolean;
+  newPage?: boolean;
 };
 
 export default function AnchorNav({
   absolute,
   className = "",
   disabled,
+  newPage,
   children,
   ...props
 }: AnchorProps) {
@@ -25,6 +27,20 @@ export default function AnchorNav({
   if (disabled)
     return (
       <div className={cn(className, "cursor-not-allowed")}>{children}</div>
+    );
+  if (newPage)
+    return (
+      <Link
+        target="_blank"
+        className={cn(
+          className,
+          "relative text-sm font-medium text-zinc-500 hover:text-foreground/80 dark:text-zinc-400",
+          isMatch && "font-semibold text-black dark:text-white",
+        )}
+        {...props}
+      >
+        {children}
+      </Link>
     );
   return (
     <Link
