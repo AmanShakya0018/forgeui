@@ -1,7 +1,14 @@
-Copyright (c) 2025 Aman Shakya  
-All rights reserved.  
+Copyright (c) 2025 Aman Shakya
+All rights reserved.
 
-This repository is publicly available for learning and portfolio purposes only.  
-You may not copy, modify, distribute, or use this code, in whole or in part,  
-for any purpose — commercial or non-commercial — without prior written consent  
-from the author.  
+Permission is granted to use, copy, and modify this code for personal and
+commercial projects, including client work and production applications.
+
+You may NOT:
+- Repackage, redistribute, or resell this code or any modified version of it
+  as a UI library, component collection, template, starter, or similar product.
+- Upload this code or derivatives to other repositories, marketplaces, or
+  platforms intended for distribution (free or paid).
+- Claim this code or derived components as your own work.
+
+This license grants usage rights, not redistribution rights.

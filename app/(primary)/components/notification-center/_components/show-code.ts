@@ -1,6 +1,6 @@
 export const title = "Notification Center";
 export const routepoint = "notification-center";
-export const description = "Beautifully animated mobile UI showcasing notifications with hover-triggered transitions and customizable content blocks.";
+export const description = "Beautifully animated mobile UI inspired by Clerk’s product design, showcasing notifications with hover-triggered transitions and customizable content blocks.";
 
 export const cliscript = "add @forgeui/notification-center";
 

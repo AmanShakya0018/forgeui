@@ -1,6 +1,8 @@
 export const title = "Animated OTP";
 export const routepoint = "animated-otp";
-export const description = "Looping animated OTP input with glowing digit transitions to simulate secure, timed authentication flow.";
+export const description =
+  "Animated OTP input with glowing digit transitions, inspired by Clerk’s authentication UI and rebuilt with custom behavior.";
+
 
 export const cliscript = "add @forgeui/animated-otp";
 

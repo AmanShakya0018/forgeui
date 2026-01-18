@@ -1,9 +1,10 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, Code2 } from "lucide-react";
+import { Code2 } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
 import React from "react";
+import { GoScreenFull } from "react-icons/go";
 
 interface ToggleButtonGroupProps {
   routepoint: string;
@@ -17,7 +18,7 @@ const ToggleButtonGroup = ({
   routepoint,
 }: ToggleButtonGroupProps) => {
   return (
-    <div className="mb-4 mt-12 flex flex-col gap-2 border-b border-zinc-200 dark:border-zinc-800 xs:flex-row xs:justify-between">
+    <div className="mb-4 mt-12 flex flex-row justify-between gap-2 border-b border-zinc-200 dark:border-zinc-800">
       <div className="relative flex flex-row gap-2">
         <button
           className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
@@ -86,20 +87,22 @@ const ToggleButtonGroup = ({
         target="_blank"
         rel="noreferrer"
         className={cn(
-          "hidden items-center gap-2 pb-2 pr-1 xs:flex",
-          "text-sm font-medium",
+          "flex items-center gap-1.5 pr-1",
+          "text-xs font-medium",
           "text-zinc-800 dark:text-zinc-200",
           "hover:text-zinc-600 dark:hover:text-zinc-400",
           "group no-underline transition-all duration-300",
         )}
       >
-        Live Preview
-        <ArrowUpRight
+        <GoScreenFull
           className={cn(
-            "h-4 w-4",
-            "transition-transform duration-200 group-hover:rotate-12",
+            "mt-0.75 h-3.5 w-3.5",
+            "transition-transform duration-200 group-hover:rotate-6",
           )}
         />
+        <span className="hidden [@media(min-width:310px)]:flex">
+          Full Screen
+        </span>
       </Link>
     </div>
   );

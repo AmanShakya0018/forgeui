@@ -1,6 +1,6 @@
 export const title = "Security Card";
 export const routepoint = "security-card";
-export const description = "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream.";
+export const description = "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream, inspired by Clerk’s product design.";
 
 export const cliscript = "add @forgeui/security-card";
 

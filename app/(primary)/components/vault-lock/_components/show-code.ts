@@ -1,6 +1,6 @@
 export const title = "Vault Lock";
 export const routepoint = "vault-lock";
-export const description = "Animated vault showcasing secure password input with motion effects and interactive hover-based unlock behavior.";
+export const description = "Animated vault showcasing secure password input with motion effects and interactive hover-based unlock behavior, inspired by Clerk’s product design.";
 
 export const cliscript = "add @forgeui/vault-lock";
 
