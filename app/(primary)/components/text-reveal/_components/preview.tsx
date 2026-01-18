@@ -25,6 +25,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import TextReveal from "./text-reveal";
 import PropsTable from "@/components/content/props-table";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const text = `ForgeUI is a beautifully designed component library built with Tailwind CSS and Motion. It helps developers build modern, animated UIs faster, with consistent styling and production-ready components.`;
 
@@ -94,6 +95,7 @@ const Textrenderingeffect = () => {
         </>
       )}
       <PropsTable propsData={textRevealProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

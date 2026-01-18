@@ -30,6 +30,7 @@ import CliDependencies from "@/components/content/clidependencies";
 import ScreenNotice from "@/components/content/screen-notice";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const blockedEmails = [
   { email: "bad_actor+1@gamil.com", time: "Aug 9 at 14:09" },
@@ -120,6 +121,7 @@ const Fraudcard = () => {
         </>
       )}
       <PropsTable propsData={fraudCardProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

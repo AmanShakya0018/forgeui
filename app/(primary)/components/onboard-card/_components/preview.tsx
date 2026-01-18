@@ -25,6 +25,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import OnboardCard from "./onboardcard";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Onboardcard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -93,6 +94,7 @@ const Onboardcard = () => {
         </>
       )}
       <PropsTable propsData={onboardCardProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

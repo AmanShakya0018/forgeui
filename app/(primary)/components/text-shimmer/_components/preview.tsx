@@ -25,6 +25,7 @@ import ToggleManualCli from "@/components/content/togglemanualcli";
 import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Textshimmereffect = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -90,6 +91,7 @@ const Textshimmereffect = () => {
         </>
       )}
       <PropsTable propsData={shimmerProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

@@ -25,6 +25,7 @@ import PropsTable from "@/components/content/props-table";
 import AnimatedOTP from "./animated-otp";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Animatedotp = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -92,6 +93,7 @@ const Animatedotp = () => {
         </>
       )}
       <PropsTable propsData={animatedOTPProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

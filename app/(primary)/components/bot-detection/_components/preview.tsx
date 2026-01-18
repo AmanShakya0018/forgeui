@@ -27,6 +27,7 @@ import BotDetection from "./bot-detection";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import ScreenNotice from "@/components/content/screen-notice";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Botdetection = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -94,6 +95,7 @@ const Botdetection = () => {
         </>
       )}
       <PropsTable propsData={botDetectionProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

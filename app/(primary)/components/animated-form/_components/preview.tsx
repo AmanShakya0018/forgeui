@@ -25,6 +25,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import PropsTable from "@/components/content/props-table";
 import AnimatedForm from "./animated-form";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Animatedform = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -88,6 +89,7 @@ const Animatedform = () => {
         </>
       )}
       <PropsTable propsData={animatedFormProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

@@ -25,6 +25,7 @@ import { CodeBlock } from "@/components/code/CodeBlock";
 import AnimatedTabs from "./animated-tabs";
 import PropsTable from "@/components/content/props-table";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const tabs = ["Home", "Components", "Docs", "Templates"];
 
@@ -90,6 +91,7 @@ const Animatedtabs = () => {
         </>
       )}
       <PropsTable propsData={animatedTabsProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

@@ -27,6 +27,7 @@ import { FaGithub, FaXTwitter } from "react-icons/fa6";
 import { GiStrikingDiamonds } from "react-icons/gi";
 import SocialCard from "./social-card";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Socialcard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -108,6 +109,7 @@ const Socialcard = () => {
         </>
       )}
       <PropsTable propsData={socialCardProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

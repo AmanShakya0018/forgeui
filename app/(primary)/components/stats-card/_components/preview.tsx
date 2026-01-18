@@ -29,6 +29,7 @@ import CliDependencies from "@/components/content/clidependencies";
 import ScreenNotice from "@/components/content/screen-notice";
 import { getNavigationItems } from "@/lib/getNavigationItems";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Statscard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -114,6 +115,7 @@ const Statscard = () => {
         </>
       )}
       <PropsTable propsData={statsCardProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

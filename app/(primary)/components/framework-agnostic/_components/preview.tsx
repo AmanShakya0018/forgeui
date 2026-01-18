@@ -29,6 +29,7 @@ import FrameworkAgnostic from "./framework-agnostic";
 import ScreenNotice from "@/components/content/screen-notice";
 import CliDependencies from "@/components/content/clidependencies";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Frameworkagnostic = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -111,6 +112,7 @@ const Frameworkagnostic = () => {
         </>
       )}
       <PropsTable propsData={frameworkAgnosticProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

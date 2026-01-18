@@ -28,6 +28,7 @@ import PropsTable from "@/components/content/props-table";
 import NotificationCenter from "./notification-center";
 import ScreenNotice from "@/components/content/screen-notice";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Notificationcenter = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -105,6 +106,7 @@ const Notificationcenter = () => {
         </>
       )}
       <PropsTable propsData={notificationCenterProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

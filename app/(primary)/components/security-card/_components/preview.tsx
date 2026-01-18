@@ -29,6 +29,7 @@ import SecurityCard from "./security-card";
 import ScreenNotice from "@/components/content/screen-notice";
 import CliDependencies from "@/components/content/clidependencies";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Securitycard = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -105,6 +106,7 @@ const Securitycard = () => {
         </>
       )}
       <PropsTable propsData={securityCardProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

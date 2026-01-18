@@ -27,6 +27,7 @@ import VaultLock from "./vault-lock";
 import { getNavigationFeaturedItems } from "@/lib/getNavigationFeaturedItems";
 import ScreenNotice from "@/components/content/screen-notice";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Vaultlock = () => {
   const [sourceCode, setSourceCode] = useState(false);
@@ -91,6 +92,7 @@ const Vaultlock = () => {
         </>
       )}
       <PropsTable propsData={vaultLockProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );

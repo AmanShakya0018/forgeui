@@ -30,6 +30,7 @@ import ExpandableCard, {
   Upstash,
 } from "./expandable-card";
 import LivePreviewComponent from "@/components/layout/livepreview";
+import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const sampleItems: CardItem[] = [
   {
@@ -126,6 +127,7 @@ const Expandablecard = () => {
         </>
       )}
       <PropsTable propsData={expandableCardProps} />
+      <ForgeUIProCTA />
       <ComponentNavigation previous={previous} next={next} />
     </MainContentContainer>
   );
