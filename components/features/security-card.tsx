@@ -34,8 +34,8 @@ const Securitycard = () => {
       )}
     >
       <InfiniteScrambler />
-      <div className="absolute left-0 top-0 h-full w-[80px] [background-image:linear-gradient(to_right,rgb(10,10,10)_20%,transparent_100%)]" />
-      <div className="absolute right-0 top-0 h-full w-[80px] [background-image:linear-gradient(to_left,rgb(10,10,10)_20%,transparent_100%)]" />
+      <div className="absolute top-0 left-0 h-full w-[80px] [background-image:linear-gradient(to_right,rgb(10,10,10)_20%,transparent_100%)]" />
+      <div className="absolute top-0 right-0 h-full w-[80px] [background-image:linear-gradient(to_left,rgb(10,10,10)_20%,transparent_100%)]" />
       <div
         className={cn(
           "absolute bottom-0 h-[51%] w-[150%] rounded-t-[60%]",
@@ -71,8 +71,8 @@ const Securitycard = () => {
           <FaceCard />
         </div>
       </div>
-      <div className="absolute left-0 top-0 h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(10,10,10)_30%,transparent_100%)]" />
-      <div className="absolute left-0 top-4 w-full px-3">
+      <div className="absolute top-0 left-0 h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(10,10,10)_30%,transparent_100%)]" />
+      <div className="absolute top-4 left-0 w-full px-3">
         <h3 className="text-sm font-semibold text-white">
           Smart Access Control
         </h3>
@@ -134,7 +134,7 @@ const CheckCircle = () => {
         />
       </svg>
       <motion.div
-        className="justify-centertext-black absolute left-[5px] top-[5px] flex items-center text-black"
+        className="justify-centertext-black absolute top-[5px] left-[5px] flex items-center text-black"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -172,7 +172,7 @@ const InfiniteScrambler = () => {
 
   return (
     <div className="absolute top-[15%] max-w-[322px]">
-      <p className="leading-2 whitespace-normal break-words font-mono text-[13px] text-neutral-500 opacity-35">
+      <p className="font-mono text-[13px] leading-4 break-words whitespace-normal text-neutral-500 opacity-35">
         {text}
       </p>
     </div>

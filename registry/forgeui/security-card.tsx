@@ -50,7 +50,7 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
         )}
       />
       <div className="absolute top-[70%] flex h-12 w-full flex-col items-center justify-center gap-1">
-        <div className="flex items-center justify-center text-xs text-primary">
+        <div className="text-primary flex items-center justify-center text-xs">
           <motion.p
             initial={{
               x: 8,
@@ -75,10 +75,10 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
           <FaceCard />
         </div>
       </div>
-      <div className="absolute left-0 top-0 hidden h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(23,23,23)_30%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(245,245,245)_30%,transparent_100%)] dark:hidden" />
-      <div className="absolute left-0 top-4 w-full px-3">
-        <h3 className="text-sm font-semibold text-primary">
+      <div className="absolute top-0 left-0 hidden h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(23,23,23)_30%,transparent_100%)] dark:block" />
+      <div className="absolute top-0 left-0 block h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(245,245,245)_30%,transparent_100%)] dark:hidden" />
+      <div className="absolute top-4 left-0 w-full px-3">
+        <h3 className="text-primary text-sm font-semibold">
           Smart Access Control
         </h3>
         <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
@@ -139,7 +139,7 @@ const CheckCircle = () => {
         />
       </svg>
       <motion.div
-        className="absolute left-[5px] top-[5px] flex items-center justify-center text-white dark:text-black"
+        className="absolute top-[5px] left-[5px] flex items-center justify-center text-white dark:text-black"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -177,7 +177,7 @@ const InfiniteScrambler = () => {
 
   return (
     <div className="absolute top-[15%] max-w-[322px]">
-      <p className="leading-2 whitespace-normal break-words font-mono text-[13px] text-neutral-500 opacity-35">
+      <p className="font-mono text-[13px] leading-4 wrap-break-word whitespace-normal text-neutral-500 opacity-35">
         {text}
       </p>
     </div>
@@ -187,10 +187,10 @@ const InfiniteScrambler = () => {
 const ContainerMask = () => {
   return (
     <>
-      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
-      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute top-0 left-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute top-0 left-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute top-0 right-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute top-0 right-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
     </>
   );
 };
