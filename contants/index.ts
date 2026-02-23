@@ -37,6 +37,7 @@ export const primaryItems = [
   { name: 'Onboard Card', href: '/components/onboard-card' },
   { name: 'Expandable Card', href: '/components/expandable-card' },
   { name: 'Stats Card', href: '/components/stats-card' },
+  { name: 'Stack Ripple', href: '/components/stack-ripple' },
 ];
 export const eliteItems = [
   { name: 'Fraud Card', href: '/components/fraud-card' },

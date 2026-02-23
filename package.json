@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "registry:build": "shadcn build"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.2",
@@ -41,6 +42,7 @@
     "react-icons": "^5.4.0",
     "react-intersection-observer": "^9.16.0",
     "react-syntax-highlighter": "^15.6.1",
+    "shadcn": "^3.8.5",
     "shiki": "^1.24.4",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",

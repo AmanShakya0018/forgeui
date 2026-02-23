@@ -9,6 +9,7 @@ import { LivePreviewNotificationCenter } from "@/app/(primary)/components/notifi
 import { LivePreviewOnboardCard } from "@/app/(primary)/components/onboard-card/_components/preview";
 import { LivePreviewSecurityCard } from "@/app/(primary)/components/security-card/_components/preview";
 import { LivePreviewSocialCard } from "@/app/(primary)/components/social-card/_components/preview";
+import { LivePreviewStackRipple } from "@/app/(primary)/components/stack-ripple/_components/preview";
 import { LivePreviewStatsCard } from "@/app/(primary)/components/stats-card/_components/preview";
 import { LivePreviewTextReveal } from "@/app/(primary)/components/text-reveal/_components/preview";
 import { LivePreviewTextShimmer } from "@/app/(primary)/components/text-shimmer/_components/preview";
@@ -30,4 +31,5 @@ export const previewMap = {
   "text-reveal": LivePreviewTextReveal,
   "text-shimmer": LivePreviewTextShimmer,
   "vault-lock": LivePreviewVaultLock,
+  "stack-ripple":  LivePreviewStackRipple,
 } as const;

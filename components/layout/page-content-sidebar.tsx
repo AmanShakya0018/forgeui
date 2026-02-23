@@ -141,7 +141,7 @@ const ForgeUIProPromo = () => {
           target="_blank"
           className={cn(
             "relative flex cursor-pointer items-center justify-center",
-            "rounded-sm bg-neutral-950 px-4 py-3 text-sm font-medium text-white",
+            "rounded-sm bg-neutral-950 px-4 py-3 text-xs font-medium text-white",
             "dark:bg-neutral-50 dark:text-neutral-900",
             "overflow-hidden hover:bg-black dark:hover:bg-white",
 
