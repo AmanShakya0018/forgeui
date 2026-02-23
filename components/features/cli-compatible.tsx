@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 const CliCompatible = () => {
   return (
     <FeaturesContainer>
-      <div className="mb-4 inline-flex items-center gap-2 text-sm font-medium">
+      <div className="mb-6 inline-flex items-center gap-2 text-sm font-medium">
         <Terminal className="h-4 w-4 text-white" />
         <p className="text-white">Forge/ui CLI</p>
       </div>
