@@ -160,6 +160,19 @@
       "description": "A dynamic stats card comparing two individuals with avatars, data points, and animated background graph."
     },
     {
+      "name": "spectrum-switcher",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/spectrum-switcher.tsx",
+          "target": "components/forgeui/spectrum-switcher.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Spectrum Switcher",
+      "description": "Interactive spectrum switcher with animated gradients, smooth dropdown transitions, and selectable themed color palettes."
+    },
+    {
       "name": "text-reveal",
       "type": "registry:ui",
       "files": [

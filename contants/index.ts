@@ -38,6 +38,7 @@ export const primaryItems = [
   { name: 'Expandable Card', href: '/components/expandable-card' },
   { name: 'Stats Card', href: '/components/stats-card' },
   { name: 'Stack Ripple', href: '/components/stack-ripple' },
+  { name: 'Spectrum Switcher', href: '/components/spectrum-switcher' },
 ];
 export const eliteItems = [
   { name: 'Fraud Card', href: '/components/fraud-card' },
