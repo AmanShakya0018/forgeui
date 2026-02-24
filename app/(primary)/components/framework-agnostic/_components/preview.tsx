@@ -33,7 +33,7 @@ import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Frameworkagnostic = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationFeaturedItems(title);
 
   return (
@@ -58,7 +58,7 @@ const Frameworkagnostic = () => {
         />
       )}
       <ScreenNotice
-        className="block text-primary/50 dark:hidden"
+        className="text-primary/50 block dark:hidden"
         text={screennotice}
       />
       <ToggleManualCli

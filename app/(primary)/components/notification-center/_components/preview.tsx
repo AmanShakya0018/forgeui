@@ -32,7 +32,7 @@ import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Notificationcenter = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationFeaturedItems(title);
 
   return (
@@ -60,11 +60,11 @@ const Notificationcenter = () => {
         />
       )}
       <ScreenNotice
-        className="block text-primary/50 sm:hidden"
+        className="text-primary/50 block sm:hidden"
         text={screennotice}
       />
       <ScreenNotice
-        className="hidden text-primary/50 sm:block"
+        className="text-primary/50 hidden sm:block"
         text={screennoticedesktop}
       />
       <ToggleManualCli

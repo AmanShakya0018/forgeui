@@ -33,7 +33,7 @@ import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Securitycard = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationFeaturedItems(title);
 
   return (
@@ -54,7 +54,7 @@ const Securitycard = () => {
           code={democode}
         />
       )}
-      <ScreenNotice className="block text-primary/50" text={screennotice} />
+      <ScreenNotice className="text-primary/50 block" text={screennotice} />
       <ToggleManualCli
         sourceManual={sourceManual}
         setSourceManual={setSourceManual}

@@ -29,7 +29,7 @@ import ForgeUIProCTA from "@/components/content/forgeuipro-cta";
 
 const Animatedform = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationFeaturedItems(title);
 
   return (

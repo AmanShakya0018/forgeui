@@ -31,7 +31,7 @@ const tabs = ["Home", "Components", "Docs", "Templates"];
 
 const Animatedtabs = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationItems(title);
 
   return (

@@ -67,7 +67,7 @@ const sampleItems: CardItem[] = [
 
 const Expandablecard = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationItems(title);
 
   return (

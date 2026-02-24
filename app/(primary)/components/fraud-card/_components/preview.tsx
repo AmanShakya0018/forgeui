@@ -41,7 +41,7 @@ const blockedEmails = [
 
 const Fraudcard = () => {
   const [sourceCode, setSourceCode] = useState(false);
-  const [sourceManual, setSourceManual] = useState(true);
+  const [sourceManual, setSourceManual] = useState(false);
   const { previous, next } = getNavigationFeaturedItems(title);
 
   return (
@@ -63,11 +63,11 @@ const Fraudcard = () => {
         />
       )}
       <ScreenNotice
-        className="block text-primary/50 sm:hidden"
+        className="text-primary/50 block sm:hidden"
         text={screennotice}
       />
       <ScreenNotice
-        className="hidden text-primary/50 sm:block"
+        className="text-primary/50 hidden sm:block"
         text={screennoticedesktop}
       />
       <ToggleManualCli
