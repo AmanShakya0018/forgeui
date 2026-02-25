@@ -6,6 +6,7 @@ import { LivePreviewExpandableCard } from "@/app/(primary)/components/expandable
 import { LivePreviewFrameworkAgnostic } from "@/app/(primary)/components/framework-agnostic/_components/preview";
 import { LivePreviewFraudCard } from "@/app/(primary)/components/fraud-card/_components/preview";
 import { LivePreviewNotificationCenter } from "@/app/(primary)/components/notification-center/_components/preview";
+import { LivePreviewNotificationPanel } from "@/app/(primary)/components/notification-panel/_components/preview";
 import { LivePreviewOnboardCard } from "@/app/(primary)/components/onboard-card/_components/preview";
 import { LivePreviewSecurityCard } from "@/app/(primary)/components/security-card/_components/preview";
 import { LivePreviewSocialCard } from "@/app/(primary)/components/social-card/_components/preview";
@@ -25,6 +26,7 @@ export const previewMap = {
   "framework-agnostic": LivePreviewFrameworkAgnostic,
   "fraud-card": LivePreviewFraudCard,
   "notification-center": LivePreviewNotificationCenter,
+  "notification-panel": LivePreviewNotificationPanel,
   "onboard-card": LivePreviewOnboardCard,
   "security-card": LivePreviewSecurityCard,
   "social-card": LivePreviewSocialCard,

@@ -39,6 +39,7 @@ export const primaryItems = [
   { name: 'Stats Card', href: '/components/stats-card' },
   { name: 'Stack Ripple', href: '/components/stack-ripple' },
   { name: 'Spectrum Switcher', href: '/components/spectrum-switcher' },
+  { name: 'Notification Panel', href: '/components/notification-panel' },
 ];
 export const eliteItems = [
   { name: 'Fraud Card', href: '/components/fraud-card' },

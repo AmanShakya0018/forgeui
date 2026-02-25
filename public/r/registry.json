@@ -108,6 +108,19 @@
       "description": "Beautifully animated mobile UI showcasing notifications with hover-triggered transitions and customizable content blocks."
     },
     {
+      "name": "notification-panel",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/notification-panel.tsx",
+          "target": "components/forgeui/notification-panel.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Notification Panel",
+      "description": "A collapsible notification panel displaying recent alerts with icons, timestamps, and smooth animated transitions."
+    },
+    {
       "name": "onboard-card",
       "type": "registry:ui",
       "files": [
