@@ -3,16 +3,16 @@ import type { Metadata } from "next";
 import Notificationpanel from "./_components/preview";
 
 export const metadata: Metadata = {
-  title: "Notification Panel | ForgeUI Pro",
+  title: "Notification Panel | ForgeUI",
   description:
-    "ForgeUI Pro's Notification Panel component provides smooth, animated notifications using Framer Motion. Built with React and Tailwind CSS, it’s ideal for dashboards, SaaS apps, and modern web interfaces, offering customizable and accessible alert designs.",
+    "ForgeUI Notification Panel component provides smooth, animated notifications using Framer Motion. Built with React and Tailwind CSS, it’s ideal for dashboards, SaaS apps, and modern web interfaces, offering customizable and accessible alert designs.",
   keywords: [
     "Notification Panel Component",
     "React Notification UI",
     "Framer Motion Notifications",
     "Animated Alert Component",
     "Tailwind CSS UI",
-    "ForgeUI Pro Components",
+    "ForgeUI Components",
     "Dashboard Notification UI",
     "React UI Kit",
     "Premium React Components",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Alert UI React",
     "Notification Toast React",
     "Interactive UI Elements",
-    "ForgeUI Pro by Aman Shakya",
+    "ForgeUI by Aman Shakya",
     "Reusable UI Components",
     "Motion UI React",
     "Animated Dashboard Alerts",
@@ -34,17 +34,17 @@ export const metadata: Metadata = {
   creator: "Aman Shakya",
   publisher: "Aman Shakya",
   openGraph: {
-    title: "Notification Panel | ForgeUI Pro",
+    title: "Notification Panel | ForgeUI",
     description:
-      "Deliver animated notifications and alerts with ForgeUI Pro's Notification Panel component. Built with React, Tailwind CSS, and Framer Motion for smooth UX.",
-    url: "https://pro.forgeui.in/components/notification-panel",
-    siteName: "ForgeUI Pro",
+      "Deliver animated notifications and alerts with ForgeUI's Notification Panel component. Built with React, Tailwind CSS, and Framer Motion for smooth UX.",
+    url: "https://forgeui.in/components/notification-panel",
+    siteName: "ForgeUI",
     images: [
       {
-        url: "https://pro.forgeui.in/forgeui-ogimage.png",
+        url: "https://forgeui.in/forgeui-ogimage-v2.png",
         width: 1200,
         height: 630,
-        alt: "ForgeUI Pro Notification Panel Open Graph Image",
+        alt: "ForgeUI Notification Panel Open Graph Image",
       },
     ],
     locale: "en_US",
@@ -52,10 +52,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Notification Panel | ForgeUI Pro",
+    title: "Notification Panel | ForgeUI",
     description:
       "ForgeUI Pro’s Notification Panel component delivers smooth, animated notifications with Framer Motion. Perfect for React & Tailwind CSS dashboards.",
-    images: ["https://pro.forgeui.in/forgeui-ogimage.png"],
+    images: ["https://forgeui.in/forgeui-ogimage-v2.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },
