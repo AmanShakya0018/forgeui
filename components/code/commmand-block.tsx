@@ -1,11 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { CopyCode } from "./CopyCode";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "./Tabs";
 import { cn } from "@/lib/utils";
-
-type PackageManager = "npm" | "pnpm" | "yarn" | "bun";
+import {
+  usePackageManagerStore,
+  type PackageManager,
+} from "@/stores/package-manager";
 
 type CommandBlockProps = {
   npmCommand?: string;
@@ -33,11 +35,15 @@ export function CommandBlock({
       string
     >;
   }, [npmCommand, pnpmCommand, yarnCommand, bunCommand]);
+  const { packageManager, setPackageManager } = usePackageManagerStore();
 
-  const firstKey = Object.keys(tabs)[0] as PackageManager;
-  const [packageManager, setPackageManager] =
-    useState<PackageManager>(firstKey);
-
+  const activeManager = useMemo(
+    () =>
+      tabs[packageManager]
+        ? packageManager
+        : (Object.keys(tabs)[0] as PackageManager),
+    [tabs, packageManager],
+  );
   return (
     <div
       className={cn(
@@ -46,7 +52,7 @@ export function CommandBlock({
       )}
     >
       <Tabs
-        value={packageManager}
+        value={activeManager}
         onValueChange={(value) => setPackageManager(value as PackageManager)}
       >
         <div className="flex items-center justify-between border-b border-neutral-300/50 bg-neutral-200/30 pr-2.5 dark:border-neutral-800/60 dark:bg-neutral-900/30">
@@ -61,14 +67,14 @@ export function CommandBlock({
               </TabsTrigger>
             ))}
           </TabsList>
-          <CopyCode code={tabs[packageManager]} />
+          <CopyCode code={tabs[activeManager]} />
         </div>
         <div className="relative overflow-x-auto">
           {Object.entries(tabs).map(([key, value]) => (
             <TabsContent key={key} value={key}>
               <pre className="px-4 pb-4">
                 <code
-                  className="relative font-mono text-sm leading-none !text-primary"
+                  className="text-primary! relative font-mono text-sm leading-none"
                   data-language="bash"
                 >
                   {value}

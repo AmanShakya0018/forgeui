@@ -51,7 +51,7 @@ const PageContentSidebar = () => {
   }
 
   return (
-    <div className="flex h-full w-full flex-col justify-start gap-6 overflow-y-auto pl-6 pr-2 pt-6">
+    <div className="flex h-full w-full flex-col justify-start gap-6 overflow-y-auto pt-6 pr-2 pl-6">
       <div className="space-y-4">
         <div className="space-y-2">
           <p className="text-sm font-medium">On This Page</p>
@@ -120,15 +120,15 @@ const ForgeUIProPromo = () => {
         {/* value list */}
         <ul className="space-y-2 text-xs text-neutral-600 dark:text-neutral-400">
           <li className="flex items-start gap-2">
-            <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+            <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
             5+ complete templates for real products
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+            <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
             80+ refined, production-ready components
           </li>
           <li className="flex items-start gap-2">
-            <span className="mt-[5px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
+            <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
             Copy, paste, and move on with your life
           </li>
         </ul>
@@ -143,7 +143,7 @@ const ForgeUIProPromo = () => {
             "overflow-hidden hover:bg-black dark:hover:bg-white",
 
             "after:pointer-events-none after:absolute after:bottom-0 after:left-0 after:h-[30%] after:w-full hover:after:h-[20%]",
-            "after:bg-gradient-to-t after:from-white/35 after:to-transparent dark:after:from-black/20",
+            "after:bg-linear-to-t after:from-white/35 after:to-transparent dark:after:from-black/20",
             "transition-all duration-300",
           )}
         >
