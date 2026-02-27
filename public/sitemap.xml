@@ -56,6 +56,16 @@
     <priority>1</priority>
   </url>
   <url>
+    <loc>https://forgeui.in/components/notification-panel</loc>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
+    <loc>https://forgeui.in/components/spectrum-switcher</loc>
+    <changefreq>daily</changefreq>
+    <priority>1</priority>
+  </url>
+  <url>
     <loc>https://forgeui.in/components/security-card</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>

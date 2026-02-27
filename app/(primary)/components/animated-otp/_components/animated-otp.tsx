@@ -62,19 +62,19 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
       className={cn(
         "relative",
         "flex items-center justify-center",
-        "h-[14rem] w-full max-w-[350px]",
+        "h-56 w-full max-w-87.5",
         "rounded-md border bg-neutral-50 dark:bg-neutral-900",
-        "shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
+        "shadow-md shadow-black/10",
       )}
     >
-      <div className="absolute left-1/2 top-[25%] -translate-x-1/2">
+      <div className="absolute top-[25%] left-1/2 -translate-x-1/2">
         <div className="flex w-full items-center justify-center gap-3">
           {digits.map((digit, idx) => (
             <div
               key={idx}
               className={cn(
-                "relative flex h-10 w-8 cursor-default items-center justify-center rounded-md bg-gradient-to-br from-neutral-100 to-neutral-50 text-primary dark:from-neutral-800 dark:to-neutral-800",
-                "shadow-[0_3px_10px_rgb(0,0,0,0.2)]",
+                "text-primary relative flex h-10 w-8 items-center justify-center rounded-md bg-linear-to-br from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-800",
+                "shadow-[0_2px_6px_rgb(0,0,0,0.15)]",
               )}
             >
               <motion.div
@@ -140,7 +140,7 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
                   ease: "easeInOut",
                   delay: fadeOut ? 0 : idx * 0.43,
                 }}
-                className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
               >
                 {digit}
               </motion.span>
@@ -149,7 +149,7 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
         </div>
       </div>
       <div className="absolute bottom-4 left-0 w-full px-3">
-        <h3 className="text-sm font-semibold text-primary">{cardTitle}</h3>
+        <h3 className="text-primary text-sm font-semibold">{cardTitle}</h3>
         <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
           {cardDescription}
         </p>
