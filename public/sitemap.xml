@@ -16,12 +16,7 @@
     <priority>1</priority>
   </url>
   <url>
-    <loc>https://forgeui.in/docs/install-nextjs</loc>
-    <changefreq>daily</changefreq>
-    <priority>1</priority>
-  </url>
-  <url>
-    <loc>https://forgeui.in/components/install-tailwindcss</loc>
+    <loc>https://forgeui.in/docs/installation</loc>
     <changefreq>daily</changefreq>
     <priority>1</priority>
   </url>

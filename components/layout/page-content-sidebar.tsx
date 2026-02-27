@@ -40,10 +40,7 @@ const PageContentSidebar = () => {
       { title: "Philosophy", href: "#philosophy" },
     ];
   }
-  if (
-    pathname === "/docs/install-nextjs" ||
-    pathname === "/docs/install-tailwindcss"
-  ) {
+  if (pathname === "/docs/installation") {
     navigationItems = [
       { title: "Installation", href: "#installation" },
       {

@@ -20,12 +20,8 @@ export const introItems = [
     href: "/docs/introduction",
   },
   {
-    name: "Install Next.js",
-    href: "/docs/install-nextjs",
-  },
-  {
-    name: "Install Tailwind CSS",
-    href: "/docs/install-tailwindcss",
+    name: "Installation",
+    href: "/docs/installation",
   },
 ]
 
@@ -60,4 +56,3 @@ export const templates = [
   { name: 'Algoverse Template', href: 'https://pro.forgeui.in/template/algoverse-template' },
   { name: 'Docs Template', href: 'https://pro.forgeui.in/template/docs-template' },
 ];
-

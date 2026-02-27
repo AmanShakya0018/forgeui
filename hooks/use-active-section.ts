@@ -17,7 +17,7 @@ export function useActiveSection(): string {
 
       if (pathname === "/docs/introduction") {
         selectors = ["#introduction", "#philosophy"];
-      } else if (pathname === "/docs/install-nextjs" || pathname === "/docs/install-tailwindcss") {
+      } else if (pathname === "/docs/installation") {
         selectors = ["#installation"];
       } else {
         selectors = ["#preview", "#installation", "#props"];
