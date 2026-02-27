@@ -34,7 +34,7 @@ export default function AnchorNav({
         target="_blank"
         className={cn(
           className,
-          "relative text-sm font-medium text-zinc-500 hover:text-foreground/80 dark:text-zinc-400",
+          "hover:text-foreground/80 relative text-sm font-medium text-zinc-500 transition-all duration-150 dark:text-zinc-400 dark:hover:text-neutral-200",
           isMatch && "font-semibold text-black dark:text-white",
         )}
         {...props}
@@ -46,7 +46,7 @@ export default function AnchorNav({
     <Link
       className={cn(
         className,
-        "relative text-sm font-medium text-zinc-500 hover:text-foreground/80 dark:text-zinc-400",
+        "hover:text-foreground/80 relative text-sm font-medium text-zinc-500 transition-all duration-150 dark:text-zinc-400 dark:hover:text-neutral-200",
         isMatch && "font-semibold text-black dark:text-white",
       )}
       {...props}
