@@ -101,14 +101,14 @@ const BotDetection = ({
     <div
       className={cn(
         "relative overflow-hidden",
-        "h-[30rem] w-full max-w-[350px]",
+        "h-120 w-full max-w-87.5",
         "rounded-md border border-neutral-800 bg-black",
       )}
     >
-      <div className="absolute left-1/2 h-full min-w-[300px] max-w-[300px] -translate-x-1/2">
+      <div className="absolute left-1/2 h-full max-w-75 min-w-75 -translate-x-1/2">
         <div className="relative h-[80%] w-full">
           <motion.div
-            className="pointer-events-none absolute bottom-[20px] left-[148px] h-[250px] w-[250px] origin-bottom-left"
+            className="pointer-events-none absolute bottom-5 left-37 h-62.5 w-62.5 origin-bottom-left"
             style={{
               background:
                 "radial-gradient(circle at 0% 100%, rgba(255, 255, 255, 0.3) 5%, transparent 60%)",
@@ -129,7 +129,7 @@ const BotDetection = ({
           <svg
             width="100%"
             height="100%"
-            className="pointer-events-none absolute left-0 top-0 animate-pulse"
+            className="pointer-events-none absolute top-0 left-0 animate-pulse"
           >
             {positions.map((pos, i) => (
               <g key={i}>
@@ -157,7 +157,7 @@ const BotDetection = ({
           >
             <motion.div
               key={\`pulse-\${currentIndex}\`}
-              className="absolute -left-1.5 -top-1.5 h-[300%] w-[270%] rounded-full border border-red-500"
+              className="absolute -top-1.5 -left-1.5 h-[300%] w-[270%] rounded-full border border-red-500"
               initial={{ scale: 1, opacity: 0.7 }}
               animate={{ scale: 1.7, opacity: [0.7, 1, 0] }}
               transition={{
@@ -179,7 +179,7 @@ const BotDetection = ({
                 ease: "easeInOut",
                 delay: 1.3,
               }}
-              className="absolute -left-1.5 -top-1.5 h-[300%] w-[270%] scale-[1.3] rounded-full border-[1px] border-red-500 shadow-[0_0_20px_4px_rgba(239,68,68,0.6)]"
+              className="absolute -top-1.5 -left-1.5 h-[300%] w-[270%] scale-[1.3] rounded-full border border-red-500 shadow-[0_0_20px_4px_rgba(239,68,68,0.6)]"
             />
           </motion.div>
           <div className="absolute bottom-2 left-1/2 h-28 w-28 -translate-x-1/2 rounded-full border border-neutral-800 bg-black" />
@@ -198,10 +198,10 @@ export default BotDetection;
 const ContainerMask = () => {
   return (
     <>
-      <div className="absolute left-1/2 top-[48px] h-full w-[130%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
-      <div className="absolute left-1/2 top-[100px] h-full w-[110%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
-      <div className="absolute left-1/2 top-[152px] h-full w-[100%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
-      <div className="absolute left-1/2 top-[204px] h-full w-[80%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute top-12 left-1/2 h-full w-[130%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute top-25 left-1/2 h-full w-[110%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute top-38 left-1/2 h-full w-full -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
+      <div className="absolute top-51 left-1/2 h-full w-[80%] -translate-x-1/2 rounded-full border-t border-dashed border-neutral-700/80" />
     </>
   );
 };
