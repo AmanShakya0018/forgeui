@@ -76,6 +76,11 @@ export const previewMap = {
       (m) => m.LivePreviewTextShimmer
     )
   ),
+  "text-morph": dynamic(() =>
+    import("@/app/(primary)/components/text-morph/_components/preview").then(
+      (m) => m.LivePreviewTextMorph
+    )
+  ),
   "vault-lock": dynamic(() =>
     import("@/app/(primary)/components/vault-lock/_components/preview").then(
       (m) => m.LivePreviewVaultLock

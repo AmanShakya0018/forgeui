@@ -199,6 +199,19 @@
       "description": "A stylish effect that sequentially fades in text on page load, creating a dynamic reveal."
     },
     {
+      "name": "text-morph",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/text-morph.tsx",
+          "target": "components/forgeui/text-morph.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Text Morph",
+      "description": "A React component that animates rotating text characters using Motion, customizable by words, interval, styling, and animation timing."
+    },
+    {
       "name": "text-shimmer",
       "type": "registry:ui",
       "files": [

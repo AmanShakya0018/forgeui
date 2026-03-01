@@ -1,0 +1,15 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-morph",
+  "title": "Text Morph",
+  "description": "A React component that animates rotating text characters using Motion, customizable by words, interval, styling, and animation timing.",
+  "files": [
+    {
+      "path": "registry/forgeui/text-morph.tsx",
+      "content": "\"use client\";\n\nimport { useEffect, useMemo, useState } from \"react\";\nimport { AnimatePresence, motion } from \"motion/react\";\n\ntype TextMorphProps = {\n  words?: string[];\n  interval?: number;\n  className?: string;\n  charClassName?: string;\n};\n\nconst defaultWords = [\"engineer\", \"developer\", \"designer\"];\n\nexport function TextMorph({\n  words = defaultWords,\n  interval = 2500,\n  className,\n  charClassName,\n}: TextMorphProps) {\n  const [index, setIndex] = useState(0);\n\n  useEffect(() => {\n    if (!words.length) return;\n\n    const timer = setInterval(() => {\n      setIndex((prev) => (prev + 1) % words.length);\n    }, interval);\n\n    return () => clearInterval(timer);\n  }, [words, interval]);\n\n  const chars = useMemo(() => {\n    return Array.from(words[index] ?? \"\");\n  }, [index, words]);\n\n  if (!words.length) return null;\n\n  return (\n    <AnimatePresence mode=\"popLayout\">\n      <motion.span\n        key={index}\n        className={`flex gap-[0.5px] overflow-hidden ${className ?? \"\"}`}\n        initial={{ opacity: 0, y: 5 }}\n        animate={{ opacity: 1, y: 0 }}\n        exit={{ opacity: 0, y: -5 }}\n        transition={{ duration: 0.4 }}\n      >\n        {chars.map((char, i) => (\n          <motion.span\n            key={i}\n            className={charClassName}\n            initial={{ opacity: 0, y: 5, filter: \"blur(5px)\" }}\n            animate={{ opacity: 1, y: 0, filter: \"blur(0px)\" }}\n            exit={{ opacity: 0, y: -5, filter: \"blur(5px)\" }}\n            transition={{\n              delay: i * 0.03,\n              duration: 0.3,\n            }}\n          >\n            {char}\n          </motion.span>\n        ))}\n      </motion.span>\n    </AnimatePresence>\n  );\n}\n",
+      "type": "registry:ui",
+      "target": "components/forgeui/text-morph.tsx"
+    }
+  ],
+  "type": "registry:ui"
+}

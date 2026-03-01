@@ -27,6 +27,7 @@ export const introItems = [
 
 export const primaryItems = [
   { name: 'Text Shimmer', href: '/components/text-shimmer' },
+  { name: 'Text Morph', href: '/components/text-morph' },
   { name: 'Text Reveal', href: '/components/text-reveal' },
   { name: 'Animated Tabs', href: '/components/animated-tabs' },
   { name: 'Social Card', href: '/components/social-card' },
