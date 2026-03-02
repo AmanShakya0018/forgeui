@@ -1,203 +1,267 @@
 "use client";
-
 import { cn } from "@/lib/utils";
-import { useState } from "react";
-import { PiBell } from "react-icons/pi";
-import { FiRefreshCcw } from "react-icons/fi";
-import { FaTools, FaUserFriends } from "react-icons/fa";
-import { MdKeyboardArrowDown, MdSecurity } from "react-icons/md";
-import { motion, AnimatePresence, type Variants } from "motion/react";
+import React, { useState } from "react";
+import { MdMarkunread } from "react-icons/md";
+import { RiNetflixFill } from "react-icons/ri";
+import { AiFillSpotify } from "react-icons/ai";
+import { motion, Variants } from "motion/react";
+import { FaHeadphones, FaXTwitter } from "react-icons/fa6";
+import { FaPhoneAlt, FaPinterest, FaSnapchatGhost } from "react-icons/fa";
 
-type Notification = {
-  id: string;
-  title: string;
-  description: string;
-  timestamp: string;
-  icon: React.ReactNode;
+type NotificationCardProps = {
+  cardTitle?: string;
+  cardDescription?: string;
+  notificationTitle?: string;
+  notificationDescription?: string;
+  notificationTime?: string;
 };
 
-type NotificationPanelProps = {
-  notifications?: Notification[];
-};
+const NotificationCenter = ({
+  cardTitle = "Real-time payment alerts",
+  cardDescription = "Get instant updates for every successful Stripe transaction processed through your app.",
+  notificationTitle = "Stripe",
+  notificationDescription = "You received a payment of $99.00",
+  notificationTime = "2h ago",
+}: NotificationCardProps) => {
+  const [isHovered, setIsHovered] = useState(false);
 
-const defaultNotifications: Notification[] = [
-  {
-    id: "maintenance",
-    title: "Scheduled Downtime",
-    description: "Servers will be offline tonight at 11 PM.",
-    timestamp: "5 min ago",
-    icon: <FaTools className="h-5 w-5" />,
-  },
-  {
-    id: "update",
-    title: "System Update",
-    description: "Your app was updated to v2.3.1.",
-    timestamp: "20 min ago",
-    icon: <FiRefreshCcw className="h-5 w-5" />,
-  },
-  {
-    id: "invite",
-    title: "New Invite!",
-    description: "You've been added to the Design Team.",
-    timestamp: "1 hour ago",
-    icon: <FaUserFriends className="h-5 w-5" />,
-  },
-  {
-    id: "alert",
-    title: "Security Alert",
-    description: "Unrecognized login attempt detected.",
-    timestamp: "6 hours ago",
-    icon: <MdSecurity className="h-5 w-5" />,
-  },
-];
-
-const NotificationPanel = ({
-  notifications = defaultNotifications,
-}: NotificationPanelProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const itemVariant: Variants = {
+  const phoneVariant: Variants = {
     open: {
-      opacity: 1,
-      y: 0,
-      filter: "blur(0px)",
+      transform: "translateY(-36px)",
       transition: {
-        duration: 0.4,
+        duration: 0.3,
         ease: "easeInOut",
       },
     },
     close: {
-      opacity: 0,
-      y: -5,
-      filter: "blur(5px)",
+      transform: "translateY(0px)",
       transition: {
-        duration: 0.4,
+        duration: 0.2,
         ease: "easeInOut",
       },
     },
   };
 
+  const notificationVariant: Variants = {
+    open: {
+      transform: "translateY(48px) scale(1)",
+      filter: "blur(0px)",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+        delay: 0.1,
+      },
+    },
+    close: {
+      transform: "translateY(-72px) scale(0.75)",
+      filter: "blur(10px)",
+      transition: {
+        duration: 0.3,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const lockVariant: Variants = {
+    open: {
+      backgroundColor: "#22d3ee",
+      transition: {
+        duration: 0.1,
+        ease: "easeInOut",
+      },
+    },
+    close: {
+      backgroundColor: "#262626",
+      transition: {
+        duration: 0.1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const lockLightVariant: Variants = {
+    open: {
+      backgroundColor: "#22d3ee",
+      transition: {
+        duration: 0.1,
+        ease: "easeInOut",
+      },
+    },
+    close: {
+      backgroundColor: "#d5d5d5",
+      transition: {
+        duration: 0.1,
+        ease: "easeInOut",
+      },
+    },
+  };
+
+  const parentvariant: Variants = {
+    open: {
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.15,
+      },
+    },
+    close: {
+      transition: {
+        staggerChildren: 0.075,
+        delayChildren: 0.15,
+      },
+    },
+  };
+
   return (
-    <div
+    <motion.div
+      onClick={() => setIsHovered((prev) => !prev)}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      initial="close"
+      animate={isHovered ? "open" : "close"}
+      variants={parentvariant}
       className={cn(
-        "mx-auto w-full max-w-105 rounded-lg p-1.5",
-        "border border-neutral-200/70 dark:border-neutral-900/70",
+        "relative",
+        "flex max-w-87.5 items-center justify-center",
+        "rounded-lg bg-neutral-100 p-6 ring-1 ring-neutral-200 dark:bg-neutral-950 dark:ring-neutral-800",
       )}
     >
-      <div
-        className={cn(
-          "divide-y divide-neutral-200/80 dark:divide-neutral-800/50",
-          "ring-1 ring-neutral-200 dark:ring-neutral-800/50",
-          "overflow-hidden rounded-[8px] shadow-[0_2px_2px_rgb(0,0,0,0.1)]",
-          "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
-        )}
+      <motion.div
+        variants={phoneVariant}
+        className="relative mx-auto h-67.5 w-66 rounded-[44px] bg-neutral-200 p-1.5 dark:bg-neutral-800"
       >
-        <motion.div
-          className={cn("flex min-h-16.75 items-center justify-between px-4")}
-        >
-          <div className="flex items-center gap-3">
-            <div
-              className={cn(
-                "flex h-10 w-10 items-center justify-center rounded-[6px]",
-                "border border-neutral-200/60 dark:border-neutral-800/60",
-                "bg-linear-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900",
-                "dark:bg-[radial-gradient(circle_at_top_center,rgba(255,255,255,0.1),transparent_70%)]",
-              )}
-            >
-              <PiBell className="h-5.5 w-5.5 text-neutral-400 dark:text-neutral-300" />
-            </div>
-
-            <div className="flex flex-col">
-              <p className="text-[0.9rem] font-semibold text-neutral-900 dark:text-neutral-100">
-                {notifications.length} New Notifications
-              </p>
-              <p className="text-xs text-neutral-500 dark:text-neutral-400">
-                Recent notifications
-              </p>
-            </div>
+        <div className="relative h-64.5 overflow-hidden rounded-[38px] bg-neutral-100 dark:bg-neutral-950/50">
+          <div className="absolute top-3.5 left-8 text-[9px] text-neutral-500">
+            {new Date().toLocaleTimeString([], {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false,
+            })}
           </div>
-
-          <div className="flex items-center gap-2">
-            <motion.button
-              onClick={() => setIsOpen((prev) => !prev)}
-              className={cn(
-                "flex items-center justify-center",
-                "h-7.5 w-7.5 rounded-full transition-all duration-300",
-                "bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 dark:hover:bg-neutral-800",
-              )}
-            >
-              <motion.span
-                animate={{ rotateX: isOpen ? 180 : 0 }}
-                transition={{
-                  duration: 0.3,
-                  delay: 0.1,
-                  ease: "easeInOut",
-                }}
-              >
-                <MdKeyboardArrowDown className="h-5 w-5 text-neutral-600 dark:text-neutral-300" />
-              </motion.span>
-            </motion.button>
-          </div>
-        </motion.div>
-
-        <AnimatePresence mode="wait">
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{
-                duration: 0.3,
-                ease: "easeInOut",
-              }}
-              className="overflow-hidden"
-            >
-              <div className="px-2 py-1">
-                {notifications.map((notification) => (
-                  <motion.div key={notification.id}>
-                    <motion.div className="cursor-pointer rounded-lg p-2 transition-all duration-100 hover:bg-neutral-200/50 dark:hover:bg-neutral-800/30">
-                      <div className="flex items-center gap-4">
-                        <motion.div
-                          className={cn(
-                            "flex h-10 w-10 items-center justify-center rounded-[6px]",
-                            "border border-neutral-200/60 dark:border-neutral-800/60",
-                            "bg-linear-to-br from-neutral-100 to-neutral-200 dark:from-neutral-800 dark:to-neutral-900",
-                            "text-neutral-400 dark:text-neutral-300",
-                          )}
-                        >
-                          {notification.icon}
-                        </motion.div>
-
-                        <motion.div
-                          variants={itemVariant}
-                          initial="close"
-                          animate="open"
-                          exit="close"
-                          className="flex flex-1 flex-col"
-                        >
-                          <div className="flex items-center justify-between">
-                            <span className="text-xs text-neutral-900 sm:text-[0.9rem] dark:text-neutral-100">
-                              {notification.title}
-                            </span>
-                            <span className="text-[10px] text-neutral-500 sm:text-xs dark:text-neutral-400">
-                              {notification.timestamp}
-                            </span>
-                          </div>
-                          <span className="text-[10px] text-neutral-600 sm:text-xs dark:text-neutral-400">
-                            {notification.description}
-                          </span>
-                        </motion.div>
-                      </div>
-                    </motion.div>
-                  </motion.div>
-                ))}
+          <motion.div
+            variants={lockVariant}
+            className="absolute top-2 left-28 hidden h-6 w-6 items-center justify-center rounded-full dark:flex"
+          >
+            <svg viewBox="0 0 16 16" className="h-4 w-4">
+              <g fill="#545454">
+                <path d="M3 8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"></path>
+                <path d="M8 3a2.5 2.5 0 0 0-2.5 2.5V9h-1V5.5a3.5 3.5 0 1 1 7 0V9h-1V5.5A2.5 2.5 0 0 0 8 3Z"></path>
+              </g>
+            </svg>
+          </motion.div>
+          <motion.div
+            variants={lockLightVariant}
+            className="absolute top-2 left-28 flex h-6 w-6 items-center justify-center rounded-full dark:hidden"
+          >
+            <svg viewBox="0 0 16 16" className="h-4 w-4">
+              <g fill="#747474">
+                <path d="M3 8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"></path>
+                <path d="M8 3a2.5 2.5 0 0 0-2.5 2.5V9h-1V5.5a3.5 3.5 0 1 1 7 0V9h-1V5.5A2.5 2.5 0 0 0 8 3Z"></path>
+              </g>
+            </svg>
+          </motion.div>
+          <motion.div
+            variants={notificationVariant}
+            className="absolute left-3.5 z-10 h-12 w-[90%] overflow-hidden rounded-md bg-neutral-200/70 ring-1 ring-neutral-300/70 backdrop-blur-md dark:bg-neutral-800 dark:ring-neutral-800"
+          >
+            <div className="flex h-full items-center gap-3 px-2">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100 ring-1 ring-neutral-300 dark:bg-neutral-700 dark:ring-neutral-800">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.274 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z"
+                    fill="#22d3ee"
+                  />
+                </svg>
               </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+
+              <div>
+                <div className="flex w-full flex-col overflow-hidden">
+                  <div className="flex w-full items-center justify-between">
+                    <p className="truncate text-xs font-medium text-neutral-900 dark:text-neutral-100">
+                      {notificationTitle}
+                    </p>
+                    <span className="text-[9px] text-neutral-500">
+                      {notificationTime}
+                    </span>
+                  </div>
+                  <p className="w-[95%] truncate text-start text-[10px] text-neutral-600 dark:text-neutral-400">
+                    {notificationDescription}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          <div className="absolute top-10 flex h-full w-full flex-col items-center gap-3 px-4 pt-4">
+            <div className="flex w-full items-center gap-5">
+              <IconWrapper>
+                <FaPhoneAlt className="size-5 text-neutral-500" />
+              </IconWrapper>
+              <IconWrapper>
+                <FaPinterest className="size-5 text-neutral-500" />
+              </IconWrapper>
+              <IconWrapper>
+                <AiFillSpotify className="size-5 text-neutral-500" />
+              </IconWrapper>
+              <IconWrapper>
+                <FaHeadphones className="size-5 text-neutral-500" />
+              </IconWrapper>
+            </div>
+            <div className="flex w-full items-center gap-5">
+              <IconWrapper>
+                <RiNetflixFill className="size-5 text-neutral-500" />
+              </IconWrapper>
+              <IconWrapper>
+                <MdMarkunread className="size-5 text-neutral-500" />
+                <motion.div
+                  variants={lockVariant}
+                  className="absolute -top-1 -left-1 hidden h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] text-neutral-500 dark:flex"
+                >
+                  1
+                </motion.div>
+                <motion.div
+                  variants={lockLightVariant}
+                  className="absolute -top-1 -left-1 flex h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] text-neutral-700 dark:hidden"
+                >
+                  1
+                </motion.div>
+              </IconWrapper>
+              <IconWrapper>
+                <FaXTwitter className="size-5 text-neutral-500" />
+              </IconWrapper>
+              <IconWrapper>
+                <FaSnapchatGhost className="size-5 text-neutral-500" />
+              </IconWrapper>
+            </div>
+            <div className="flex w-full items-center gap-5">
+              <IconWrapper />
+              <IconWrapper />
+              <IconWrapper />
+              <IconWrapper />
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+      <div className="absolute bottom-0 left-0 hidden h-47.5 w-full rounded-b-lg bg-[linear-gradient(to_top,#0a0a0a_60%,transparent_100%)] dark:block" />
+      <div className="absolute bottom-0 left-0 block h-47.5 w-full rounded-b-lg bg-[linear-gradient(to_top,#f5f5f5_60%,transparent_100%)] dark:hidden" />
+      <div className="absolute bottom-4 left-0 w-full px-6">
+        <h3 className="text-primary text-sm font-semibold">{cardTitle}</h3>
+        <p className="mt-1 text-xs text-neutral-500">{cardDescription}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
-export default NotificationPanel;
+export default NotificationCenter;
+
+const IconWrapper = ({ children }: { children?: React.ReactNode }) => {
+  return (
+    <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-neutral-300 to-neutral-200 dark:from-neutral-700 dark:to-neutral-900">
+      {children}
+    </div>
+  );
+};

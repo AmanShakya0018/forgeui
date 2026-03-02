@@ -49,7 +49,7 @@ const Notificationcenter = () => {
             cardTitle="Real-time payment alerts"
             cardDescription="Get instant updates for every successful Stripe transaction processed through your app."
             notificationTitle="Stripe"
-            notificationDescription="You received a payment of $99.00 USD"
+            notificationDescription="You received a payment of $99.00"
             notificationTime="2h ago"
           />
         </PreviewComponentContainer>
@@ -121,7 +121,7 @@ export const LivePreviewNotificationCenter = () => {
         cardTitle="Real-time payment alerts"
         cardDescription="Get instant updates for every successful Stripe transaction processed through your app."
         notificationTitle="Stripe"
-        notificationDescription="You received a payment of $99.00 USD"
+        notificationDescription="You received a payment of $99.00"
         notificationTime="2h ago"
       />
     </LivePreviewComponent>
