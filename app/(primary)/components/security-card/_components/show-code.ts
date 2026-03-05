@@ -1,6 +1,7 @@
 export const title = "Security Card";
 export const routepoint = "security-card";
-export const description = "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream, inspired by Clerk’s product design.";
+export const description =
+  "Dynamic security identity card with animated verification, glowing avatar outline, and infinite character scramble stream, inspired by Clerk’s product design.";
 
 export const cliscript = "add @forgeui/security-card";
 
@@ -59,10 +60,9 @@ export const csscode = `.animate-draw-outline {
     stroke-dashoffset: 0;
   }
 }
-`
+`;
 
-
-export const screennotice = "*Dark mode recommended"
+export const screennotice = "*Dark mode recommended";
 
 const packagescript = "motion react-icons clsx tailwind-merge";
 
@@ -78,7 +78,8 @@ export const securityCardProps = [
     prop: "delay",
     type: "number",
     default: "5000",
-    description: "Duration in milliseconds before the card resets its animation loop.",
+    description:
+      "Duration in milliseconds before the card resets and the animation loop restarts.",
   },
   {
     prop: "name",
@@ -92,8 +93,20 @@ export const securityCardProps = [
     default: `"liam.parker@example.com"`,
     description: "Email displayed below the verified user name on the card.",
   },
+  {
+    prop: "cardTitle",
+    type: "string",
+    default: `"Smart Access Control"`,
+    description: "Primary heading displayed at the top of the card.",
+  },
+  {
+    prop: "cardDescription",
+    type: "string",
+    default: `"Evaluate each login based on real-time signals like IP, device history, and context before allowing access intelligently."`,
+    description:
+      "Supporting text displayed below the card title explaining the feature.",
+  },
 ];
-
 
 export const democode = `import SecurityCard from '@/components/forgeui/security-card';
 
@@ -102,29 +115,36 @@ export function ${title.replace(/\s+/g, "")}Example() {
   return (
     <SecurityCard
       delay={5000} // 5sec to again start the animation
-      name="Liam Parker" // name to be displayed in the card
-      email="liam.parker@example.com" //email to be displayed in the card
+      name="Liam Parker" 
+      email="liam.parker@example.com" 
+      cardTitle = "Smart Access Control" 
+      cardDescription = "Evaluate each login based on real-time signals like IP, device history, and context before allowing access intelligently."
     />
   )
 }
 `;
 
 export const code = `"use client";
+
 import { cn } from "@/lib/utils";
-import React, { useEffect, useRef, useState } from "react";
-import { IoMdCheckmark } from "react-icons/io";
 import { motion } from "motion/react";
+import { IoMdCheckmark } from "react-icons/io";
+import React, { useEffect, useRef, useState } from "react";
 
 type SecurityCardProps = {
   delay?: number;
   name?: string;
   email?: string;
+  cardTitle?: string;
+  cardDescription?: string;
 };
 
 const SecurityCard = ({
   delay = 5000,
   name = "Liam Parker",
   email = "liam.parker@example.com",
+  cardTitle = "Smart Access Control",
+  cardDescription = "Evaluate each login based on real-time signals like IP, device history, and context before allowing access intelligently.",
 }: SecurityCardProps) => {
   const [animationKey, setAnimationKey] = useState(0);
   const delayTime = Math.max(delay, 5000);
@@ -136,18 +156,36 @@ const SecurityCard = ({
     return () => clearInterval(interval);
   }, [delayTime]);
 
-  return <Securitycard name={name} email={email} key={animationKey} />;
+  return (
+    <Securitycard
+      name={name}
+      email={email}
+      key={animationKey}
+      cardTitle={cardTitle}
+      cardDescription={cardDescription}
+    />
+  );
 };
 export default SecurityCard;
 
-const Securitycard = ({ name, email }: { name: string; email: string }) => {
+const Securitycard = ({
+  name,
+  email,
+  cardTitle,
+  cardDescription,
+}: {
+  name: string;
+  email: string;
+  cardTitle: string;
+  cardDescription: string;
+}) => {
   return (
     <div
       className={cn(
         "relative overflow-hidden",
-        "flex h-[27rem] w-full max-w-[350px] items-center justify-center",
+        "shadow-sm shadow-black/10",
+        "flex h-108 w-full max-w-87.5 items-center justify-center",
         "rounded-md border border-neutral-300 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900",
-        "shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]",
       )}
     >
       <InfiniteScrambler />
@@ -155,12 +193,12 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
       <div
         className={cn(
           "absolute bottom-0 h-1/2 w-[150%] rounded-t-[60%]",
-          "bg-gradient-to-b from-neutral-200 to-neutral-50 shadow-[0_0_900px_rgba(250,250,250,0.9)]",
+          "bg-linear-to-b from-neutral-200 to-neutral-50 shadow-[0_0_900px_rgba(250,250,250,0.9)]",
           "dark:from-neutral-800 dark:to-neutral-950 dark:shadow-[0_0_900px_rgba(10,10,10,0.9)]",
         )}
       />
       <div className="absolute top-[70%] flex h-12 w-full flex-col items-center justify-center gap-1">
-        <div className="flex items-center justify-center text-xs text-primary">
+        <div className="text-primary flex items-center justify-center text-xs">
           <motion.p
             initial={{
               x: 8,
@@ -180,20 +218,17 @@ const Securitycard = ({ name, email }: { name: string; email: string }) => {
         </div>
         <div className="no-ios-link text-[10px] text-neutral-500">{email}</div>
       </div>
-      <div className="relative rounded-[2px] bg-neutral-300/50 px-[3px] py-[3.2px] dark:bg-neutral-950/50">
-        <div className="relative h-32 w-24 rounded-[2px] bg-gradient-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800">
+      <div className="relative rounded-[2px] bg-neutral-300/50 px-0.75 py-[3.2px] dark:bg-neutral-950/50">
+        <div className="relative h-32 w-24 rounded-[2px] bg-linear-to-br from-neutral-100 to-neutral-200 dark:from-neutral-700 dark:to-neutral-800">
           <FaceCard />
         </div>
       </div>
-      <div className="absolute left-0 top-0 hidden h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(23,23,23)_30%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-[200px] w-full [background-image:linear-gradient(to_bottom,rgb(245,245,245)_30%,transparent_100%)] dark:hidden" />
-      <div className="absolute left-0 top-4 w-full px-3">
-        <h3 className="text-sm font-semibold text-primary">
-          Smart Access Control
-        </h3>
+      <div className="absolute top-0 left-0 hidden h-50 w-full bg-[linear-gradient(to_bottom,rgb(23,23,23)_30%,transparent_100%)] dark:block" />
+      <div className="absolute top-0 left-0 block h-50 w-full bg-[linear-gradient(to_bottom,rgb(245,245,245)_30%,transparent_100%)] dark:hidden" />
+      <div className="absolute top-3 left-0 w-full px-3">
+        <h3 className="text-primary text-sm font-semibold">{cardTitle}</h3>
         <p className="mt-2 text-xs text-neutral-600 dark:text-neutral-400">
-          Evaluate each login based on real-time signals like IP, device
-          history, and context before allowing access intelligently.
+          {cardDescription}
         </p>
       </div>
     </div>
@@ -220,11 +255,11 @@ const FaceCard = () => {
       />
       <path
         d="M26.22 78.25c2.679-3.522 1.485-17.776 1.485-17.776-1.084-2.098-1.918-4.288-2.123-5.619-3.573 0-3.7-8.05-3.827-9.937-.102-1.509 1.403-1.383 2.169-1.132-.298-1.3-.92-5.408-1.021-11.446C22.775 24.794 30.94 17.75 40 17.75h.005c9.059 0 17.225 7.044 17.097 14.59-.102 6.038-.723 10.147-1.021 11.446.765-.251 2.271-.377 2.169 1.132-.128 1.887-.254 9.937-3.827 9.937-.205 1.331-1.039 3.521-2.123 5.619 0 0-1.194 14.254 1.485 17.776"
-        className="animate-draw-outline stroke-[#06b6d4] [filter:drop-shadow(0_0_6px_#06b6d4)]"
+        className="animate-draw-outline stroke-[#06b6d4] filter-[drop-shadow(0_0_6px_#06b6d4)]"
       ></path>
       <path
         d="M27.705 60.474a26.884 26.884 0 0 0 1.577 2.682c1.786 2.642 5.36 6.792 10.718 6.792h.005c5.358 0 8.932-4.15 10.718-6.792a26.884 26.884 0 0 0 1.577-2.682"
-        className="animate-draw stroke-[#06b6d4] [filter:drop-shadow(0_0_6px_#06b6d4)]"
+        className="animate-draw stroke-[#06b6d4] filter-[drop-shadow(0_0_6px_#06b6d4)]"
       />
     </svg>
   );
@@ -239,7 +274,7 @@ const CheckCircle = () => {
           cy="9"
           r="6"
           fill="#06b6d4"
-          className="rounded-full [filter:drop-shadow(0_0_1px_#06b6d4)]"
+          className="rounded-full filter-[drop-shadow(0_0_1px_#06b6d4)]"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
@@ -249,7 +284,7 @@ const CheckCircle = () => {
         />
       </svg>
       <motion.div
-        className="absolute left-[5px] top-[5px] flex items-center justify-center text-white dark:text-black"
+        className="absolute top-1.25 left-1.25 flex items-center justify-center text-white dark:text-black"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -286,8 +321,8 @@ const InfiniteScrambler = () => {
   }, []);
 
   return (
-    <div className="absolute top-[15%] max-w-[322px]">
-      <p className="leading-2 whitespace-normal break-words font-mono text-[13px] text-neutral-500 opacity-35">
+    <div className="absolute top-[15%] max-w-80.5">
+      <p className="font-mono text-[13px] leading-4 wrap-break-word whitespace-normal text-neutral-500 opacity-35">
         {text}
       </p>
     </div>
@@ -297,10 +332,10 @@ const InfiniteScrambler = () => {
 const ContainerMask = () => {
   return (
     <>
-      <div className="absolute left-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute left-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
-      <div className="absolute right-0 top-0 hidden h-full w-[80px] [background-image:linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
-      <div className="absolute right-0 top-0 block h-full w-[80px] [background-image:linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute top-0 left-0 hidden h-full w-20 bg-[linear-gradient(to_right,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute top-0 left-0 block h-full w-20 bg-[linear-gradient(to_right,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
+      <div className="absolute top-0 right-0 hidden h-full w-20 bg-[linear-gradient(to_left,rgb(23,23,23)_20%,transparent_100%)] dark:block" />
+      <div className="absolute top-0 right-0 block h-full w-20 bg-[linear-gradient(to_left,rgb(245,245,245)_20%,transparent_100%)] dark:hidden" />
     </>
   );
 };
