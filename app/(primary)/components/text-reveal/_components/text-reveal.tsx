@@ -35,7 +35,7 @@ const TextReveal = ({
   }, [animate, duration, filter, staggerDelay]);
 
   return (
-    <div className={cn("leading-[1.5]", className)}>
+    <div className={cn("leading-normal", className)}>
       <motion.div ref={scope}>
         {textArray.map((word, idx) => {
           return (
