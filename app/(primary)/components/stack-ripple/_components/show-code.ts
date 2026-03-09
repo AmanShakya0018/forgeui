@@ -306,17 +306,15 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
       animate={isOpen ? "open" : "close"}
       className={cn(
         "relative",
-        "flex w-full max-w-[400px] flex-col justify-center",
-        "rounded-xl px-0.5 pb-0.5 pt-0.5",
+        "flex w-full max-w-100 flex-col justify-center",
+        "rounded-xl px-0.5 pt-0.5 pb-0.5",
       )}
     >
       <div
-        className={cn(
-          "flex min-h-[300px] w-full flex-col gap-1 overflow-hidden",
-        )}
+        className={cn("flex min-h-75 w-full flex-col gap-1 overflow-hidden")}
       >
-        <div className="relative mx-auto flex h-[300px] w-full max-w-[400px] items-center gap-1 px-1">
-          <div className="absolute left-0 top-0 h-full w-full p-2">
+        <div className="relative mx-auto flex h-75 w-full max-w-100 items-center gap-1 px-1">
+          <div className="absolute top-0 left-0 h-full w-full p-2">
             <div className="relative h-full w-full">
               <StackCard
                 top="top-[100px]"
@@ -348,17 +346,17 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
                 onClick={() => setIsOpen((prev) => !prev)}
                 variants={buttonVariant}
                 className={cn(
-                  "absolute inset-x-0 top-[168px] mx-auto",
-                  "flex h-[32px] w-full max-w-[100px] items-center justify-center gap-1 px-1",
+                  "absolute inset-x-0 top-42 mx-auto",
+                  "flex h-8 w-full max-w-25 items-center justify-center gap-1 px-1",
                   "[box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-                  "rounded-xl border bg-gradient-to-b from-white to-neutral-50",
+                  "rounded-xl border bg-linear-to-b from-white to-neutral-50",
                   "dark:from-neutral-800 dark:to-[#101010]",
                 )}
               >
                 <AnimatePresence mode="wait">
                   <motion.p
                     key={isOpen ? "hide" : "show"}
-                    className="text-xs text-primary/80"
+                    className="text-primary/80 text-xs"
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0.8 }}
                     transition={{ duration: 0.2 }}
@@ -404,8 +402,8 @@ function StackCard({
       className={cn(
         "absolute inset-x-0 mx-auto",
         top,
-        "flex h-[60px] w-full max-w-[320px] items-center justify-between",
-        "rounded-xl border bg-background px-2",
+        "flex h-15 w-full max-w-[320px] items-center justify-between",
+        "bg-background rounded-xl border px-2",
         "[box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
         "dark:[box-shadow:0_-20px_60px_-20px_#ffffff1f_inset]",
       )}
@@ -414,12 +412,12 @@ function StackCard({
         <span className="flex h-10 w-10 items-center justify-center rounded-xl">
           {icon}
         </span>
-        <div className="flex flex-col justify-center gap-[1px]">
-          <p className="text-xs font-medium text-primary/80">{title}</p>
-          <p className="text-[11px] text-primary/50">{description}</p>
+        <div className="flex flex-col justify-center gap-px">
+          <p className="text-primary/80 text-xs font-medium">{title}</p>
+          <p className="text-primary/50 text-[11px]">{description}</p>
         </div>
       </div>
-      <div className="text-[11px] text-primary/50">{time}</div>
+      <div className="text-primary/50 text-[11px]">{time}</div>
     </motion.div>
   );
 }

@@ -88,8 +88,8 @@ export function ${title.replace(/\s+/g, "")}Example() {
 export const code = `"use client";
 
 import { cn } from "@/lib/utils";
-import { useState, useEffect } from "react";
 import type { SVGProps } from "react";
+import { useState, useEffect } from "react";
 
 type FrameworkAgnosticProps = {
   cardTitle?: string;
@@ -105,7 +105,7 @@ const FrameworkAgnostic = ({
       className={cn(
         "relative",
         "flex flex-col justify-between",
-        "h-[20rem] space-y-4",
+        "h-80 space-y-4",
         "rounded-md border border-neutral-800/50 bg-neutral-950",
       )}
     >
@@ -163,7 +163,7 @@ const FrameworkCard = () => {
   }, []);
 
   const cardClasses =
-    "flex aspect-square items-center justify-center rounded-md border border-neutral-800 bg-gradient-to-b from-neutral-700 to-neutral-900 p-4 " +
+    "flex aspect-square items-center justify-center rounded-md border border-neutral-800 bg-linear-to-b from-neutral-700 to-neutral-900 p-4" +
     "[@media(min-width:320px)]:h-20 [@media(min-width:500px)]:h-36 " +
     "transition-transform duration-1000 ease-out will-change-transform";
 
@@ -171,13 +171,14 @@ const FrameworkCard = () => {
     <>
       <div
         className={cn(
+          "",
           "relative",
           "flex flex-col items-center justify-center gap-1",
-          "h-[14.5rem] w-full",
+          "h-58 w-full",
         )}
       >
         <div className="absolute flex h-full w-full items-center justify-center">
-          <div className="h-full w-[15rem]">
+          <div className="h-full w-60">
             <svg
               className="h-full w-full"
               width="100%"
@@ -216,7 +217,7 @@ const FrameworkCard = () => {
         <div
           className={cn(
             "flex items-center justify-center gap-4",
-            "[perspective:1000px] [transform-style:preserve-3d]",
+            "perspective-[1000px] transform-3d",
           )}
         >
           <div className={cardClasses} style={{ transform: reactTransform }}>
@@ -230,7 +231,7 @@ const FrameworkCard = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 h-3 w-full bg-gradient-to-t from-neutral-950 to-transparent" />
+        <div className="absolute bottom-0 left-0 h-3 w-full bg-linear-to-t from-neutral-950 to-transparent" />
       </div>
     </>
   );

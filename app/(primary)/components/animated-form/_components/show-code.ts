@@ -56,11 +56,11 @@ export function ${title.replace(/\s+/g, "")}Example() {
 
 export const code = `"use client";
 
-import { IoMdCheckmark } from "react-icons/io";
-import { FaGithub } from "react-icons/fa6";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { motion } from "motion/react";
+import { FaGithub } from "react-icons/fa6";
+import { useEffect, useState } from "react";
+import { IoMdCheckmark } from "react-icons/io";
 
 type AnimatedFormProps = {
   delay?: number;
@@ -99,7 +99,7 @@ const Animatedform = ({ name }: { name: string }) => {
 
   const icons = [
     {
-      icon: <FaGithub className="size-6 text-primary" />,
+      icon: <FaGithub className="text-primary size-6" />,
       key: "github",
     },
     {
@@ -117,7 +117,7 @@ const Animatedform = ({ name }: { name: string }) => {
   ];
 
   return (
-    <div className={cn("relative", "w-full max-w-[340px]")}>
+    <div className={cn("relative", "w-full max-w-85")}>
       <div className="w-full rounded-[12px] border border-neutral-200/60 p-1.5 dark:border-neutral-900/60">
         <div
           className={cn(
@@ -128,8 +128,8 @@ const Animatedform = ({ name }: { name: string }) => {
         >
           <div
             className={cn(
-              "px-3 pb-2 pt-3 text-[14px] leading-[1rem] tracking-wide text-transparent",
-              "bg-gradient-to-r from-neutral-700 to-neutral-300 bg-clip-text dark:from-neutral-400 dark:to-neutral-700",
+              "px-3 pt-3 pb-2 text-[14px] leading-4 tracking-wide text-transparent",
+              "bg-linear-to-r from-neutral-700 to-neutral-300 bg-clip-text dark:from-neutral-400 dark:to-neutral-700",
             )}
           >
             Create Account
@@ -139,7 +139,7 @@ const Animatedform = ({ name }: { name: string }) => {
               className={cn(
                 "w-full rounded-md border p-2",
                 "flex items-center justify-between gap-4",
-                "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+                "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
               )}
             >
               <div className="text-xs">
@@ -173,7 +173,7 @@ const Animatedform = ({ name }: { name: string }) => {
               className={cn(
                 "rounded-md border p-2",
                 "flex items-center justify-between gap-8",
-                "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+                "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
               )}
             >
               <div className="font-mono text-xs">
@@ -212,18 +212,18 @@ const Animatedform = ({ name }: { name: string }) => {
             <div
               className={cn(
                 "h-[37.6px] rounded-md border opacity-40",
-                "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+                "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
               )}
             />
           </div>
         </div>
       </div>
       <ContainerMask />
-      <div className="absolute bottom-0 left-0 flex h-[50px] w-full items-center justify-around px-6">
+      <div className="absolute bottom-0 left-0 flex h-12.5 w-full items-center justify-around px-6">
         {icons.map(({ icon, key }) => (
           <div
             key={key}
-            className="rounded-full bg-gradient-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900"
+            className="rounded-full bg-linear-to-b from-neutral-300 to-neutral-100 p-2 dark:from-neutral-700 dark:to-neutral-900"
           >
             {icon}
           </div>
@@ -250,7 +250,7 @@ export const AnimatedCheckmarkCircle = ({
 }: AnimatedCheckmarkCircleProps) => {
   return (
     <div className="relative">
-      <svg width="20" height="20" className="rotate-[-90deg]">
+      <svg width="20" height="20" className="-rotate-90">
         <motion.circle
           cx="10"
           cy="10"
@@ -281,7 +281,7 @@ export const AnimatedCheckmarkCircle = ({
         />
       </svg>
       <motion.div
-        className="absolute inset-0 flex items-center justify-center text-background"
+        className="text-background absolute inset-0 flex items-center justify-center"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{
@@ -298,9 +298,9 @@ export const AnimatedCheckmarkCircle = ({
 const ContainerMask = () => {
   return (
     <>
-      <div className="absolute bottom-0 left-0 h-[40px] w-full [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
-      <div className="absolute bottom-0 left-0 h-[100px] w-[12px] [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
-      <div className="absolute bottom-0 right-0 h-[100px] w-[12px] [background-image:linear-gradient(to_top,theme(colors.background)_60%,transparent_100%)]" />
+      <div className="absolute bottom-0 left-0 h-10 w-full bg-[linear-gradient(to_top,var(--color-background)_60%,transparent_100%)]" />
+      <div className="absolute bottom-0 left-0 h-25 w-3 bg-[linear-gradient(to_top,var(--color-background)_60%,transparent_100%)]" />
+      <div className="absolute right-0 bottom-0 h-25 w-3 bg-[linear-gradient(to_top,var(--color-background)_60%,transparent_100%)]" />
     </>
   );
 };

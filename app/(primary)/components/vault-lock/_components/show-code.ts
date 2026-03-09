@@ -60,8 +60,8 @@ export function ${title.replace(/\s+/g, "")}Example() {
 export const code = `"use client";
 
 import { cn } from "@/lib/utils";
-import { motion, Variants } from "motion/react";
 import React, { useState } from "react";
+import { motion, Variants } from "motion/react";
 
 type VaultLockProps = {
   cardTitle?: string;
@@ -177,7 +177,7 @@ const VaultLock = ({
       animate={isHovered ? "open" : "close"}
       className={cn(
         "group relative",
-        "h-[16rem] w-[400px]",
+        "h-64 w-100",
         "rounded-md border border-neutral-800 bg-neutral-900",
       )}
     >
@@ -185,8 +185,8 @@ const VaultLock = ({
         variants={vaultVariant}
         className={cn(
           "absolute inset-x-0 mx-auto",
-          "top-[80px] h-[8rem] w-[95%] max-w-[20rem] p-6",
-          "border-t border-neutral-700/70 bg-gradient-to-b from-neutral-800 to-neutral-900 text-white shadow-lg",
+          "top-20 h-32 w-[95%] max-w-[20rem] p-6",
+          "border-t border-neutral-700/70 bg-linear-to-b from-neutral-800 to-neutral-900 text-white shadow-lg",
         )}
         style={{
           clipPath:
@@ -197,18 +197,18 @@ const VaultLock = ({
         variants={vaultVariant}
         className={cn(
           "absolute inset-x-0 mx-auto",
-          "top-[40px] flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full bg-neutral-950 p-1",
+          "top-10 flex h-18 w-18 items-center justify-center overflow-hidden rounded-full bg-neutral-950 p-1",
         )}
       >
         <motion.div
           variants={shineVariant}
-          className="absolute left-1/2 top-0 h-full w-10 rounded-full bg-[linear-gradient(90deg,transparent,theme(colors.white/50%)_30%,white,theme(colors.white/50%)_70%,transparent)] opacity-30"
+          className="absolute top-0 left-1/2 h-full w-10 rounded-full bg-[linear-gradient(90deg,transparent,--theme(--color-white/50%)_30%,white,--theme(--color-white/50%)_70%,transparent)] opacity-30"
         />
         <motion.div
           variants={lockVariant}
           className="flex h-full w-full items-center justify-center rounded-full border border-neutral-800 bg-[repeating-radial-gradient(rgba(60,60,60,0.6)_0.15rem,rgba(40,40,40,0.5)_0.32rem)]"
         >
-          <div className="flex h-full w-[10px] items-center justify-center">
+          <div className="flex h-full w-2.5 items-center justify-center">
             <svg
               width="8"
               height="36"
@@ -224,23 +224,23 @@ const VaultLock = ({
             </svg>
           </div>
         </motion.div>
-        <div className="absolute inset-x-0 top-0 mx-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full border-[4px] border-neutral-950" />
+        <div className="absolute inset-x-0 top-0 mx-auto flex h-18 w-18 items-center justify-center overflow-hidden rounded-full border-4 border-neutral-950" />
       </motion.div>
       <motion.div
         variants={vaultVariant}
-        className="absolute inset-x-0 top-[40px] mx-auto flex h-[4.5rem] w-[4.5rem] items-center justify-center overflow-hidden rounded-full border-b-[3px] border-neutral-700/70"
+        className="absolute inset-x-0 top-10 mx-auto flex h-18 w-18 items-center justify-center overflow-hidden rounded-full border-b-[3px] border-neutral-700/70"
       />
       <motion.div
         variants={inputVariant}
         className={cn(
           "absolute inset-x-0 mx-auto",
-          "top-[135px] flex w-[95%] max-w-[240px] items-center justify-between",
+          "top-33.75 flex w-[95%] max-w-60 items-center justify-between",
           "rounded-md border border-neutral-900 bg-neutral-800/90 p-2",
           "drop-shadow-[0_2px_5px_rgba(15,15,15,0.50)] transition-all duration-300",
-          "group-hover:border-cyan-500 group-hover:[box-shadow:inset_0_0_5px_#06b6d4] group-hover:[filter:drop-shadow(0_0_2px_#06b6d4)]",
+          "group-hover:border-cyan-500 group-hover:[box-shadow:inset_0_0_5px_#06b6d4] group-hover:filter-[drop-shadow(0_0_2px_#06b6d4)]",
         )}
       >
-        <div className="ml-2 text-xs text-cyan-500 group-hover:[filter:drop-shadow(0_0_4px_#000)]">
+        <div className="ml-2 text-xs text-cyan-500 group-hover:filter-[drop-shadow(0_0_4px_#000)]">
           {"••••••••••".split("").map((char, index) => (
             <motion.span
               key={\`char-\${index}\`}

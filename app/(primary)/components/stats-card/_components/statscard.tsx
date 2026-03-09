@@ -1,9 +1,10 @@
 "use client";
+
 import "./statscard.css";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { TrendingUp } from "lucide-react";
 import Image from "next/image";
+import { HiTrendingUp } from "react-icons/hi";
 
 type StatsCardProps = {
   gradientColor?: string;
@@ -29,19 +30,19 @@ const StatsCard = ({
   return (
     <div
       className={cn(
-        "group w-full max-w-[350px] rounded-xl border border-border bg-background p-8",
+        "group border-border bg-background w-full max-w-87.5 rounded-xl border p-8",
         "shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
       )}
     >
       <div
         className={cn(
-          "z-40 h-[20rem] rounded-xl bg-background",
-          "[mask-image:radial-gradient(50%_90%_at_50%_50%,white_30%,transparent_100%)]",
+          "bg-background z-40 h-80 rounded-xl",
+          "mask-[radial-gradient(50%_90%_at_50%_50%,white_30%,transparent_100%)]",
         )}
       >
         <div className="relative flex h-full items-start justify-center overflow-hidden p-8">
           <div className="absolute inset-0 flex flex-col items-center justify-center transition duration-200 group-hover:-translate-y-80">
-            <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-neutral-200/50 bg-gradient-to-br from-neutral-50 to-neutral-100 shadow-[0px_0px_12px_0px_rgba(0,0,0,0.15)_inset,0px_4px_8px_-2px_rgba(0,0,0,0.1)] dark:border-neutral-700/50 dark:from-neutral-800 dark:to-neutral-900">
+            <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-neutral-200/50 bg-linear-to-br from-neutral-50 to-neutral-100 shadow-[0px_0px_12px_0px_rgba(0,0,0,0.15)_inset,0px_4px_8px_-2px_rgba(0,0,0,0.1)] dark:border-neutral-700/50 dark:from-neutral-800 dark:to-neutral-900">
               <Image
                 alt="avatar"
                 width={100}
@@ -52,19 +53,19 @@ const StatsCard = ({
               />
             </div>
             <div className="mt-4 flex items-center gap-2">
-              <p className="text-sm font-bold text-foreground">{firstPerson}</p>
+              <p className="text-foreground text-sm font-bold">{firstPerson}</p>
             </div>
             <div className="mt-3 flex items-center gap-2 rounded-full bg-neutral-100/40 px-3 py-1 text-xs dark:bg-neutral-800/40">
-              <TrendingUp className="h-3 w-3 text-green-500" />
+              <HiTrendingUp className="h-3 w-3 text-green-500" />
               <span className="text-muted-foreground">{statsType}</span>
-              <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-              <span className="font-semibold text-foreground">{firstData}</span>
+              <div className="bg-muted-foreground h-1 w-1 rounded-full" />
+              <span className="text-foreground font-semibold">{firstData}</span>
             </div>
             <Graph gradientColor={gradientColor} />
           </div>
 
           <div className="absolute inset-0 flex translate-y-80 flex-col items-center justify-center transition duration-200 group-hover:translate-y-0">
-            <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-neutral-200/50 bg-gradient-to-br from-neutral-50 to-neutral-100 shadow-[0px_0px_12px_0px_rgba(0,0,0,0.15)_inset,0px_4px_8px_-2px_rgba(0,0,0,0.1)] dark:border-neutral-700/50 dark:from-neutral-800 dark:to-neutral-900">
+            <div className="flex h-20 w-20 items-center justify-center rounded-2xl border border-neutral-200/50 bg-linear-to-br from-neutral-50 to-neutral-100 shadow-[0px_0px_12px_0px_rgba(0,0,0,0.15)_inset,0px_4px_8px_-2px_rgba(0,0,0,0.1)] dark:border-neutral-700/50 dark:from-neutral-800 dark:to-neutral-900">
               <Image
                 alt="avatar"
                 width={100}
@@ -75,15 +76,15 @@ const StatsCard = ({
               />
             </div>
             <div className="mt-4 flex items-center gap-2">
-              <p className="text-sm font-bold text-foreground">
+              <p className="text-foreground text-sm font-bold">
                 {secondPerson}
               </p>
             </div>
             <div className="mt-3 flex items-center gap-2 rounded-full bg-neutral-100/40 px-3 py-1 text-xs dark:bg-neutral-800/40">
-              <TrendingUp className="h-3 w-3 text-red-500" />
+              <HiTrendingUp className="h-3 w-3 text-red-500" />
               <span className="text-muted-foreground">{statsType}</span>
-              <div className="h-1 w-1 rounded-full bg-muted-foreground" />
-              <span className="font-semibold text-foreground">
+              <div className="bg-muted-foreground h-1 w-1 rounded-full" />
+              <span className="text-foreground font-semibold">
                 {secondData}
               </span>
             </div>
@@ -91,7 +92,7 @@ const StatsCard = ({
           </div>
         </div>
       </div>
-      <h3 className="py-2 text-[16px] font-semibold text-foreground">
+      <h3 className="text-foreground py-2 text-[16px] font-semibold">
         Top performer of the week
       </h3>
       <p className="max-w-sm text-xs font-normal text-neutral-600 dark:text-neutral-400">

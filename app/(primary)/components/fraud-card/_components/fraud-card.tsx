@@ -1,11 +1,12 @@
 "use client";
+
 import "./fraudcard.css";
 import { cn } from "@/lib/utils";
-import { TbCircleDotted } from "react-icons/tb";
+import { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
 import { GoDotFill } from "react-icons/go";
+import { TbCircleDotted } from "react-icons/tb";
 import { motion, Variants } from "motion/react";
-import { useState } from "react";
 
 type BlockedEmail = {
   email: string;
@@ -105,14 +106,14 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
       animate={hovered ? "open" : "close"}
       initial="close"
       className={cn(
-        "h-[34rem] min-h-[34rem] w-[350px] max-w-[350px]",
+        "h-136 min-h-136 w-87.5 max-w-87.5",
         "group overflow-hidden border shadow-md",
         "clbeam-container relative flex flex-col items-center",
         "rounded-md bg-neutral-50 text-white dark:bg-neutral-900",
       )}
     >
       <div className={cn("flex flex-col gap-2 px-4 pt-4")}>
-        <h2 className="text-[14px] font-bold text-primary">
+        <h2 className="text-primary text-[14px] font-bold">
           Email Security Enhancements
         </h2>
         <p className="text-[11px] text-neutral-500 sm:text-xs">
@@ -121,13 +122,13 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
           used.
         </p>
       </div>
-      <div className="relative flex h-full w-[300px] flex-col">
+      <div className="relative flex h-full w-75 flex-col">
         <div className="mt-8 py-3">
-          <div className="relative z-[10] flex items-center justify-center gap-2 rounded-[6px] bg-neutral-50 p-0.5 shadow-md dark:bg-black">
+          <div className="relative z-10 flex items-center justify-center gap-2 rounded-[6px] bg-neutral-50 p-0.5 shadow-md dark:bg-black">
             <div className="flex h-full w-full items-center justify-between gap-3 rounded-[4px] bg-neutral-100 p-3 dark:bg-neutral-800">
               <div className="flex items-center justify-center gap-4">
                 <motion.div variants={circlevariant} className="h-4 w-4">
-                  <TbCircleDotted className="h-full w-full text-primary" />
+                  <TbCircleDotted className="text-primary h-full w-full" />
                 </motion.div>
                 <p className="font-mono text-[10px] text-neutral-600 transition-all duration-300 group-hover:text-neutral-900 dark:text-neutral-400 dark:group-hover:text-neutral-100">
                   Malicious email activity flagged
@@ -179,11 +180,11 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
             </defs>
           </svg>
         </div>
-        <div className="absolute inset-x-12 top-[130px] flex w-fit flex-col items-center justify-center">
+        <div className="absolute inset-x-12 top-32.5 flex w-fit flex-col items-center justify-center">
           <div className="flex h-full w-full flex-col items-center justify-center gap-9">
             {blockedEmails.map(({ email, time }) => (
               <div key={email} className="flex h-full w-full justify-start">
-                <div className="relative mr-2 mt-1.5 h-6 w-6">
+                <div className="relative mt-1.5 mr-2 h-6 w-6">
                   <div className="absolute inset-0 flex items-center justify-center rounded-full bg-black/10 dark:bg-white/10">
                     <GoDotFill className="h-2.5 w-2.5 text-neutral-400 dark:text-neutral-500" />
                   </div>
@@ -197,7 +198,7 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
                 <div className="flex flex-col items-start justify-center gap-1 p-1">
                   <motion.h2
                     variants={emailvariant}
-                    className="text-[10px] font-semibold text-neutral-800 dark:text-neutral-200 sm:text-xs"
+                    className="text-[10px] font-semibold text-neutral-800 sm:text-xs dark:text-neutral-200"
                   >
                     {email}
                   </motion.h2>

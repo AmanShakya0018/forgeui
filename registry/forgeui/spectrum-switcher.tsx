@@ -2,9 +2,9 @@
 
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import { motion, AnimatePresence, type Variants } from "motion/react";
-import { MdKeyboardArrowDown } from "react-icons/md";
 import { GiFairyWand } from "react-icons/gi";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { motion, AnimatePresence, type Variants } from "motion/react";
 
 type Spectrum = {
   id: string;
@@ -87,7 +87,7 @@ const SpectrumSwitcher = ({
   return (
     <div
       className={cn(
-        "mx-auto w-full max-w-[420px] rounded-lg p-1.5",
+        "mx-auto w-full max-w-105 rounded-lg p-1.5",
         "border border-neutral-200/70 dark:border-neutral-900/70",
       )}
     >
@@ -95,11 +95,11 @@ const SpectrumSwitcher = ({
         className={cn(
           "ring-1 ring-neutral-200 dark:ring-neutral-800",
           "overflow-hidden rounded-[8px] shadow-[0_2px_4px_rgb(0,0,0,0.1)]",
-          "bg-gradient-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
+          "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
         )}
       >
         <motion.div
-          className={cn("flex min-h-[67px] items-center justify-between px-4")}
+          className={cn("flex min-h-16.75 items-center justify-between px-4")}
         >
           <div className="flex items-center gap-3">
             <div
@@ -111,7 +111,7 @@ const SpectrumSwitcher = ({
                 "dark:bg-[radial-gradient(circle_at_top_center,rgba(255,255,255,0.2),transparent_70%)]",
               )}
             >
-              <GiFairyWand className="h-[22px] w-[22px] text-neutral-600 dark:text-neutral-200" />
+              <GiFairyWand className="h-5.5 w-5.5 text-neutral-600 dark:text-neutral-200" />
             </div>
 
             <div>
@@ -161,7 +161,7 @@ const SpectrumSwitcher = ({
               onClick={() => setIsOpen((prev) => !prev)}
               className={cn(
                 "flex items-center justify-center",
-                "h-[30px] w-[30px] rounded-md transition-all duration-300",
+                "h-7.5 w-7.5 rounded-md transition-all duration-300",
                 "bg-neutral-200 hover:bg-neutral-300 dark:bg-neutral-900 dark:hover:bg-neutral-800",
               )}
             >
@@ -203,7 +203,7 @@ const SpectrumSwitcher = ({
                         initial="close"
                         animate="open"
                         exit="close"
-                        className="mx-4 h-[1px] bg-gradient-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700"
+                        className="mx-4 h-px bg-linear-to-r from-transparent via-neutral-300 to-transparent dark:via-neutral-700"
                       />
                     )}
 
@@ -218,7 +218,7 @@ const SpectrumSwitcher = ({
                         <motion.div
                           layoutId={spectrum.layoutId}
                           className={cn(
-                            "h-12 w-12 flex-shrink-0 rounded-md",
+                            "h-12 w-12 shrink-0 rounded-md",
                             spectrum.color,
                             spectrum.darkColor,
                           )}

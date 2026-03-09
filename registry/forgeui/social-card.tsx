@@ -1,10 +1,10 @@
 "use client";
 
-import type * as React from "react";
-import { motion } from "motion/react";
+import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
-import Link from "next/link";
+import type * as React from "react";
+import { motion } from "motion/react";
 import { LuArrowUpRight } from "react-icons/lu";
 
 interface SocialCardProps {
@@ -35,7 +35,7 @@ const SocialCard = ({
   return (
     <motion.div
       className={cn(
-        "group relative h-[350px] w-[280px] overflow-hidden rounded-2xl p-0 md:w-[300px]",
+        "group relative h-87.5 w-70 overflow-hidden rounded-2xl p-0 md:w-75",
         "border border-neutral-200/60 bg-white/50 backdrop-blur-sm hover:cursor-pointer",
         "dark:border-neutral-800/60 dark:bg-neutral-950/50",
         "shadow-sm transition-shadow duration-300 hover:shadow-lg",
@@ -54,12 +54,12 @@ const SocialCard = ({
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-neutral-100 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
                 {icon}
               </div>
-              <div className="h-px flex-1 bg-gradient-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
+              <div className="h-px flex-1 bg-linear-to-r from-neutral-200 to-transparent dark:from-neutral-800"></div>
             </div>
             <h3 className="text-xl font-semibold tracking-tight text-neutral-900 dark:text-neutral-100">
               {title}
             </h3>
-            <div className="mt-1 h-0.5 w-12 bg-gradient-to-r from-neutral-400 to-neutral-200 dark:from-neutral-600 dark:to-neutral-800"></div>
+            <div className="mt-1 h-0.5 w-12 bg-linear-to-r from-neutral-400 to-neutral-200 dark:from-neutral-600 dark:to-neutral-800"></div>
           </div>
         </div>
 
@@ -68,7 +68,7 @@ const SocialCard = ({
             <motion.img
               src={image}
               alt={title}
-              className="absolute right-4 top-6 h-[72px] w-[72px] rounded-sm shadow-lg ring-2 ring-white dark:ring-neutral-900"
+              className="absolute top-6 right-4 h-18 w-18 rounded-sm shadow-lg ring-2 ring-white dark:ring-neutral-900"
               width={500}
               height={500}
               layoutId="card-image"
@@ -76,7 +76,7 @@ const SocialCard = ({
             />
 
             <motion.div
-              className="absolute right-[14px] top-[21px] h-[78px] w-[77px] rounded-sm border border-dashed border-neutral-400/80 bg-transparent dark:border-neutral-600/80"
+              className="absolute top-5.25 right-3.5 h-19.5 w-19.25 rounded-sm border border-dashed border-neutral-400/80 bg-transparent dark:border-neutral-600/80"
               initial={{ opacity: 0, scale: 1.6, filter: "blur(4px)" }}
               animate={{
                 opacity: 1,
@@ -95,7 +95,7 @@ const SocialCard = ({
             <motion.img
               src={image}
               alt={title}
-              className="h-[130px] w-[130px] rounded-2xl border-4 border-white shadow-xl ring-1 ring-neutral-200/50 dark:border-neutral-900 dark:ring-neutral-800/50"
+              className="h-32.5 w-32.5 rounded-2xl border-4 border-white shadow-xl ring-1 ring-neutral-200/50 dark:border-neutral-900 dark:ring-neutral-800/50"
               width={500}
               height={500}
               layoutId="card-image"
@@ -111,7 +111,7 @@ const SocialCard = ({
       </div>
 
       <motion.div
-        className="absolute bottom-0 left-0 right-0 rounded-t-2xl border-t border-neutral-200/80 bg-white/95 px-6 pb-5 pt-3 backdrop-blur-sm dark:border-neutral-800/80 dark:bg-neutral-950/95"
+        className="absolute right-0 bottom-0 left-0 rounded-t-2xl border-t border-neutral-200/80 bg-white/95 px-6 pt-3 pb-5 backdrop-blur-sm dark:border-neutral-800/80 dark:bg-neutral-950/95"
         initial={{ y: "100%" }}
         animate={{
           y: isHovered ? 0 : "calc(100% - 43px)",
@@ -125,7 +125,7 @@ const SocialCard = ({
               <LuArrowUpRight />
             </span>
           </div>
-          <p className="mb-4 text-xs font-medium leading-relaxed text-neutral-600 dark:text-neutral-400">
+          <p className="mb-4 text-xs leading-relaxed font-medium text-neutral-600 dark:text-neutral-400">
             {pitch}
           </p>
 

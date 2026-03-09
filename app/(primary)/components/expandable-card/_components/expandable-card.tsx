@@ -1,10 +1,10 @@
 "use client";
 
 import type React from "react";
+import { cn } from "@/lib/utils";
+import type { SVGProps } from "react";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import type { SVGProps } from "react";
-import { cn } from "@/lib/utils";
 
 export interface CardItem {
   id: string;
@@ -36,7 +36,7 @@ export default function ExpandableCard({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="pointer-events-none absolute inset-0 z-10 bg-background/50 bg-opacity-10 backdrop-blur-xl"
+            className="bg-background/50 bg-opacity-10 pointer-events-none absolute inset-0 z-10 backdrop-blur-xl"
           />
         ) : null}
       </AnimatePresence>
@@ -46,7 +46,7 @@ export default function ExpandableCard({
           <>
             <div className="absolute inset-0 z-10 grid place-items-center">
               <motion.div
-                className="flex h-fit w-full max-w-xl cursor-pointer flex-col items-start gap-4 overflow-hidden rounded-md border bg-background p-4"
+                className="bg-background flex h-fit w-full max-w-xl cursor-pointer flex-col items-start gap-4 overflow-hidden rounded-md border p-4"
                 ref={ref}
                 layoutId={`cardItem-${current.id}`}
               >
@@ -58,7 +58,7 @@ export default function ExpandableCard({
                     <div className="flex w-full flex-col gap-0.5">
                       <div className="flex w-full flex-row justify-between gap-0.5">
                         <motion.div
-                          className="text-sm font-medium text-primary"
+                          className="text-primary text-sm font-medium"
                           layoutId={`cardItemTitle-${current.id}`}
                         >
                           {current.title}
@@ -66,12 +66,12 @@ export default function ExpandableCard({
                       </div>
                       <motion.p
                         layoutId={`cardItemSubtitle-${current.id}`}
-                        className="text-sm text-primary/70"
+                        className="text-primary/70 text-sm"
                       >
                         {current.subtitle} / {current.description}
                       </motion.p>
                       <motion.div
-                        className="flex flex-row gap-2 text-xs text-primary/70"
+                        className="text-primary/70 flex flex-row gap-2 text-xs"
                         layoutId={`cardItemMetadata-${current.id}`}
                       >
                         {current.metadata}
@@ -92,7 +92,7 @@ export default function ExpandableCard({
                     transition: { duration: 0.1 },
                     filter: "blur(3px)",
                   }}
-                  className="w-full text-sm text-primary/70"
+                  className="text-primary/70 w-full text-sm"
                 >
                   {current.details}
                 </motion.div>
@@ -110,7 +110,7 @@ export default function ExpandableCard({
               key={item.id}
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.02 }}
-              className="flex w-full cursor-pointer flex-row items-center gap-4 rounded-md border bg-background p-2 shadow-md md:p-4"
+              className="bg-background flex w-full cursor-pointer flex-row items-center gap-4 rounded-md border p-2 shadow-md md:p-4"
               onClick={() => {
                 setCurrent(item);
               }}
@@ -120,19 +120,19 @@ export default function ExpandableCard({
               </motion.div>
               <div className="flex w-full flex-col items-start justify-between gap-0.5">
                 <motion.div
-                  className="font-medium text-primary"
+                  className="text-primary font-medium"
                   layoutId={`cardItemTitle-${item.id}`}
                 >
                   {item.title}
                 </motion.div>
                 <motion.div
-                  className="text-xs text-primary/70"
+                  className="text-primary/70 text-xs"
                   layoutId={`cardItemSubtitle-${item.id}`}
                 >
                   {item.subtitle} / {item.description}
                 </motion.div>
                 <motion.div
-                  className="flex flex-row gap-2 text-xs text-primary/70"
+                  className="text-primary/70 flex flex-row gap-2 text-xs"
                   layoutId={`cardItemMetadata-${item.id}`}
                 >
                   {item.metadata}
