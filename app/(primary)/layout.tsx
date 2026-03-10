@@ -15,21 +15,21 @@ export default function RootLayout({
       <Link
         href={"https://pro.forgeui.in/"}
         target="_blank"
-        className="top-0 flex h-12 w-full items-center justify-center bg-gradient-to-b from-blue-500 to-blue-600 p-2 text-center text-sm font-semibold text-white sm:text-[1rem]"
+        className="top-0 flex h-12 w-full items-center justify-center bg-linear-to-b from-blue-500 to-blue-600 p-2 text-center text-sm font-semibold text-white sm:text-[1rem]"
       >
         ForgeUI Pro is live - modern UI, powerful animations, zero hassle.
       </Link>
       <Navbar />
-      <div className="mx-auto max-w-[95.8rem] items-start gap-3 border-x px-2 md:px-6 lg:flex lg:px-8">
-        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-r pb-3 lg:sticky lg:block lg:w-[240px] lg:overflow-hidden">
-          <ScrollArea className="h-full w-full pb-2 pt-8">
+      <div className="mx-auto max-w-[95.8rem] items-start gap-3 border-x px-2 md:px-6 lg:flex lg:pr-0 lg:pl-8">
+        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-r pb-3 lg:sticky lg:block lg:w-60 lg:overflow-hidden">
+          <ScrollArea className="h-full w-full pt-8 pb-2">
             <PrimaryItems />
           </ScrollArea>
         </aside>
-        <main className="flex-1 overflow-y-auto px-2 pb-8 pt-4 lg:pr-6 xl:pr-10">
+        <main className="flex-1 overflow-y-auto px-2 pt-4 pb-8 lg:pr-6 xl:pr-10">
           {children}
         </main>
-        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-l pb-3 lg:sticky lg:w-[240px] lg:overflow-hidden xl:block">
+        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-l pb-3 lg:sticky lg:w-60 lg:overflow-hidden xl:block">
           <PageContentSidebar />
         </aside>
       </div>
