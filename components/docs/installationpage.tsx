@@ -6,10 +6,9 @@ import { CodeBlock } from "../code/CodeBlock";
 import { ComponentSource } from "../code/componentsource";
 
 const InstallationPage = () => {
-  const title = "Install Next.js and Tailwind CSS";
+  const title = "Install ForgeUI";
   const description =
-    "Create a Next.js app, set up Tailwind CSS, and add global styles in one flow.";
-
+    "Create a Next.js project, install ForgeUI dependencies, and configure Tailwind CSS v4.";
   const createAppMap = {
     npm: "npx create-next-app@latest",
     pnpm: "pnpm dlx create-next-app@latest",
@@ -25,11 +24,28 @@ const InstallationPage = () => {
   };
 
   const tailwindSetupMap = {
-    npm: "npm install -D tailwindcss postcss autoprefixer && npx tailwindcss init -p",
-    pnpm: "pnpm add -D tailwindcss postcss autoprefixer && pnpm dlx tailwindcss init -p",
-    yarn: "yarn add -D tailwindcss postcss autoprefixer && npx tailwindcss init -p",
-    bun: "bun add -d tailwindcss postcss autoprefixer && bunx tailwindcss init -p",
+    npm: "npm install tailwindcss @tailwindcss/postcss",
+    pnpm: "pnpm add tailwindcss @tailwindcss/postcss",
+    yarn: "yarn add tailwindcss @tailwindcss/postcss",
+    bun: "bun add tailwindcss @tailwindcss/postcss",
   };
+
+  const installDepsMap = {
+    npm: "npm install motion react-icons tw-animate-css",
+    pnpm: "pnpm add motion react-icons tw-animate-css",
+    yarn: "yarn add motion react-icons tw-animate-css",
+    bun: "bun add motion react-icons tw-animate-css",
+  };
+
+  const code = `What is your project named? my-app
+Would you like to use TypeScript? Yes
+Would you like to use ESLint? Yes
+Would you like to use Tailwind CSS? Yes
+Would you like to use \`src/\` directory? Yes
+Would you like to use App Router? (recommended) Yes
+Would you like to customize the default import alias (@/*)? Yes
+What import alias would you like configured? @/*
+`;
 
   const registryAddMap = {
     npm: "npx shadcn@latest registry add @forgeui",
@@ -38,36 +54,8 @@ const InstallationPage = () => {
     bun: "bunx --bun shadcn@latest registry add @forgeui",
   };
 
-  const code = `What is your project named? my-app
-Would you like to use TypeScript? No / Yes
-Would you like to use ESLint? No / Yes
-Would you like to use Tailwind CSS? No / Yes
-Would you like to use \`src/\` directory? No / Yes
-Would you like to use App Router? (recommended) No / Yes
-Would you like to customize the default import alias (@/*)? No / Yes
-What import alias would you like configured? @/*
-`;
-
-  const tailwindConfigCode = `/** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-
-    // Or if using \`src\` directory:
-    "./src/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
-`;
-
   const globalsCssCode = `@import "tailwindcss";
-
-@plugin "tailwindcss-animate";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -198,9 +186,10 @@ module.exports = {
       <h1 id="installation" className="mb-4 text-3xl font-bold sm:text-4xl">
         {title}
       </h1>
+
       <p className="mb-8 text-neutral-500 dark:text-zinc-400">{description}</p>
 
-      <Dependencies step={1} title="Create a new project">
+      <Dependencies step={1} title="Create a new Next.js project">
         <CommandBlock
           npmCommand={createAppMap.npm}
           pnpmCommand={createAppMap.pnpm}
@@ -208,13 +197,12 @@ module.exports = {
           bunCommand={createAppMap.bun}
         />
       </Dependencies>
-      <Dependencies
-        step={2}
-        title="As you install, the following prompts will appear:"
-      >
+
+      <Dependencies step={2} title="Use the recommended setup options">
         <CodeBlock code={code} />
       </Dependencies>
-      <Dependencies step={3} title="Install Tailwind CSS">
+
+      <Dependencies step={3} title="Install Tailwind CSS v4">
         <CommandBlock
           npmCommand={tailwindSetupMap.npm}
           pnpmCommand={tailwindSetupMap.pnpm}
@@ -222,14 +210,37 @@ module.exports = {
           bunCommand={tailwindSetupMap.bun}
         />
       </Dependencies>
-      <Dependencies step={4} title="Configure your template paths">
-        <CodeBlock fileName="tailwind.config.ts" code={tailwindConfigCode} />
+
+      <Dependencies step={4} title="Add PostCSS configuration">
+        <CodeBlock
+          fileName="postcss.config.mjs"
+          code={`/** @type {import('postcss-load-config').Config} */
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+`}
+        />
       </Dependencies>
-      <Dependencies step={5} title="Add the global styles to globals.css">
+
+      <Dependencies step={4} title="Install ForgeUI dependencies">
+        <CommandBlock
+          npmCommand={installDepsMap.npm}
+          pnpmCommand={installDepsMap.pnpm}
+          yarnCommand={installDepsMap.yarn}
+          bunCommand={installDepsMap.bun}
+        />
+      </Dependencies>
+
+      <Dependencies step={5} title="Add ForgeUI global styles">
         <ComponentSource>
           <CodeBlock fileName="app/globals.css" code={globalsCssCode} />
         </ComponentSource>
       </Dependencies>
+
       <Dependencies step={6} title="Add Registry">
         <CommandBlock
           npmCommand={registryAddMap.npm}
@@ -238,6 +249,7 @@ module.exports = {
           bunCommand={registryAddMap.bun}
         />
       </Dependencies>
+
       <Dependencies step={7} title="Start the development server">
         <CommandBlock
           npmCommand={serverStartMap.npm}
@@ -246,13 +258,13 @@ module.exports = {
           bunCommand={serverStartMap.bun}
         />
       </Dependencies>
-      <Dependencies step={8} title="Start using Tailwind">
+
+      <Dependencies step={8} title="Start building with ForgeUI">
         <CodeBlock
           fileName="app/page.tsx"
           code={`export default function Home() {
-  return <h1 className="text-4xl font-extrabold">Hello world!</h1>;
-}
-`}
+  return <h1 className="text-4xl font-bold">ForgeUI is ready</h1>;
+}`}
         />
       </Dependencies>
     </article>
