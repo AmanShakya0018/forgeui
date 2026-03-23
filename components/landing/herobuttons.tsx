@@ -15,9 +15,9 @@ const Herobuttons = () => {
         href="/docs/introduction"
         className="group flex items-center gap-1.5 text-[0.75rem] text-white md:gap-2 md:text-[1rem]"
       >
-        <BookOpen className="h-3.5 w-3.5 translate-y-[1px] md:h-4 md:w-4" />
+        <BookOpen className="h-3.5 w-3.5 translate-y-px md:h-4 md:w-4" />
         Documentation
-        <ChevronRight className="mt-0.5 h-3.5 w-3.5 transition-all duration-200 ease-in-out group-hover:translate-x-2 md:h-4 md:w-4 md:group-hover:translate-x-3" />
+        <ChevronRight className="mt-0.75 h-3.5 w-3.5 transition-all duration-200 ease-in-out group-hover:translate-x-2 md:h-4 md:w-4 md:group-hover:translate-x-3" />
       </Link>
     </div>
   );

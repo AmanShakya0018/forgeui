@@ -129,7 +129,7 @@ const ForgeUIProPromo = () => {
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-            80+ refined, production-ready components
+            90+ refined, production-ready components
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />

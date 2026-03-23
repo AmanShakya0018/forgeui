@@ -50,7 +50,7 @@ const ForgeUIProCTA = () => {
 
             <div className="text-center">
               <p className="text-lg font-bold text-neutral-900 sm:text-xl dark:text-neutral-50">
-                80+
+                90+
               </p>
               <p className="text-[10px] text-neutral-600 dark:text-neutral-400">
                 Reusable UI components
