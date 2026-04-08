@@ -4,6 +4,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import PageContentSidebar from "@/components/layout/page-content-sidebar";
 import PrimaryItems from "@/components/landing/primaryitems";
 import Link from "next/link";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 export default function RootLayout({
   children,
@@ -13,11 +14,19 @@ export default function RootLayout({
   return (
     <section>
       <Link
-        href={"https://pro.forgeui.in/"}
+        href="https://pro.forgeui.in/"
         target="_blank"
-        className="top-0 flex h-12 w-full items-center justify-center bg-linear-to-b from-blue-500 to-blue-600 p-2 text-center text-sm font-semibold text-white sm:text-[1rem]"
+        className="group top-0 flex h-12 w-full items-center justify-center gap-1 bg-linear-to-b from-blue-500 to-blue-600 p-2 text-center text-sm font-semibold text-white sm:text-[1rem]"
       >
-        ForgeUI Pro is live - modern UI, powerful animations, zero hassle.
+        <span>
+          ✨ Introducing ForgeUI Pro - Ship faster with 100+ premium blocks,
+          components & templates
+        </span>
+
+        <MdKeyboardArrowRight
+          className="mt-0.5 hidden transition-transform duration-300 group-hover:translate-x-1 sm:inline"
+          size={20}
+        />
       </Link>
       <Navbar />
       <div className="mx-auto max-w-[95.8rem] items-start gap-3 border-x px-2 md:px-6 lg:flex lg:pr-0 lg:pl-8">

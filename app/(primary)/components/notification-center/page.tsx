@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "ForgeUI",
     images: [
       {
-        url: "https://forgeui.in/forgeui-ogimage-v2.png",
+        url: "https://forgeui.in/ogimage-forgeui.png",
         width: 1200,
         height: 630,
         alt: "ForgeUI Open Graph Image",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Notification Center Component for React — Real-time Alerts & Updates UI | ForgeUI",
     description:
       "ForgeUI's Notification Center component enables developers to create real-time, accessible, and customizable notification panels in React apps.",
-    images: ["https://forgeui.in/forgeui-ogimage-v2.png"],
+    images: ["https://forgeui.in/ogimage-forgeui.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },

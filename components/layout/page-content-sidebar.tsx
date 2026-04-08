@@ -111,7 +111,7 @@ export default PageContentSidebar;
 
 const ForgeUIProPromo = () => {
   return (
-    <div className="group relative overflow-hidden rounded-lg bg-neutral-50 ring-1 ring-neutral-100 dark:bg-neutral-900 dark:ring-neutral-800/70">
+    <div className="group relative overflow-hidden rounded-lg bg-neutral-100 ring-1 ring-neutral-100 dark:bg-neutral-900 dark:ring-neutral-800/70">
       <div className="relative space-y-4 p-4">
         <div className="space-y-1">
           <p className="text-xl font-medium tracking-tight text-neutral-900 dark:text-white">
@@ -122,14 +122,14 @@ const ForgeUIProPromo = () => {
           </p>
         </div>
 
-        <ul className="space-y-2 text-xs text-neutral-600 dark:text-neutral-400">
+        <ul className="space-y-2 text-[13px] text-neutral-900 dark:text-neutral-100">
           <li className="flex items-start gap-2">
             <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-            5+ complete templates for real products
+            7+ complete templates for real products
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-            90+ refined, production-ready components
+            100+ refined, production-ready components
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-1.25 h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
@@ -154,7 +154,7 @@ const ForgeUIProPromo = () => {
           Unlock lifetime access
         </Link>
 
-        <p className="text-xs leading-relaxed text-neutral-400 dark:text-neutral-500">
+        <p className="text-xs leading-relaxed text-neutral-600 dark:text-neutral-400">
           For developers who care about speed, polish, and taste.
         </p>
       </div>

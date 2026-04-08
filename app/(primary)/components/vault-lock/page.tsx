@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "ForgeUI",
     images: [
       {
-        url: "https://forgeui.in/forgeui-ogimage-v2.png",
+        url: "https://forgeui.in/ogimage-forgeui.png",
         width: 1200,
         height: 630,
         alt: "ForgeUI Open Graph Image",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Vault Lock Component for React — Secure Access & Encryption UI | ForgeUI",
     description:
       "ForgeUI's Vault Lock component helps developers build secure access UI visuals in React apps using TailwindCSS & Framer Motion.",
-    images: ["https://forgeui.in/forgeui-ogimage-v2.png"],
+    images: ["https://forgeui.in/ogimage-forgeui.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },

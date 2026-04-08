@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: "ForgeUI",
     images: [
       {
-        url: "https://forgeui.in/forgeui-ogimage-v2.png",
+        url: "https://forgeui.in/ogimage-forgeui.png",
         width: 1200,
         height: 630,
         alt: "ForgeUI Open Graph Image",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
       "Fraud Detection Card Component for React — Visual Risk Alerts UI | ForgeUI",
     description:
       "ForgeUI's Fraud Detection Card component helps developers build interactive fraud alerts and risk analysis UI in React apps with TailwindCSS & Framer Motion.",
-    images: ["https://forgeui.in/forgeui-ogimage-v2.png"],
+    images: ["https://forgeui.in/ogimage-forgeui.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },

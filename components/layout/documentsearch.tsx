@@ -10,7 +10,7 @@ import {
   CommandList,
   CommandSeparator,
 } from "@/components/ui/command";
-import { primaryItems } from "@/contants";
+import { primaryItems, templates } from "@/contants";
 import { eliteItems } from "@/contants";
 
 const DocumentSearch = () => {
@@ -66,7 +66,16 @@ const DocumentSearch = () => {
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading="Featured Components" className="mt-2 mb-5">
+          <CommandGroup heading="Templates" className="mt-2">
+            <CommandSeparator />
+            {templates.map((item) => (
+              <a href={item.href} key={item.name}>
+                <CommandItem>{item.name}</CommandItem>
+              </a>
+            ))}
+          </CommandGroup>
+          <CommandSeparator />
+          <CommandGroup heading="Featured Components" className="mt-5 mb-5">
             <CommandSeparator />
             {sortedEliteItems.map((item) => (
               <a href={item.href} key={item.name}>

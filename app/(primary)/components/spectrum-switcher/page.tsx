@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     siteName: "ForgeUI ",
     images: [
       {
-        url: "https://forgeui.in/forgeui-ogimage-v2.png",
+        url: "https://forgeui.in/ogimage-forgeui.png",
         width: 1200,
         height: 630,
         alt: "ForgeUI Spectrum Switcher Open Graph Image",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     title: "Spectrum Switcher | ForgeUI",
     description:
       "ForgeUI's Spectrum Switcher component delivers smooth Framer Motion animations for color/spectrum transitions in React & Tailwind CSS apps.",
-    images: ["https://forgeui.in/forgeui-ogimage-v2.png"],
+    images: ["https://forgeui.in/ogimage-forgeui.png"],
     site: "@amanshakya0018",
     creator: "@amanshakya0018",
   },

@@ -40,7 +40,7 @@ const ForgeUIProCTA = () => {
           <div className="flex justify-center gap-2 pt-4 sm:gap-6">
             <div className="text-center">
               <p className="text-lg font-bold text-neutral-900 sm:text-xl dark:text-neutral-50">
-                5+
+                7+
               </p>
               <p className="text-[10px] text-neutral-600 dark:text-neutral-400">
                 Full-page templates
@@ -50,7 +50,7 @@ const ForgeUIProCTA = () => {
 
             <div className="text-center">
               <p className="text-lg font-bold text-neutral-900 sm:text-xl dark:text-neutral-50">
-                90+
+                100+
               </p>
               <p className="text-[10px] text-neutral-600 dark:text-neutral-400">
                 Reusable UI components
