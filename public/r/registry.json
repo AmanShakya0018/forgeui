@@ -249,6 +249,19 @@
       ],
       "title": "Vault Lock",
       "description": "Animated vault showcasing secure password input with motion effects and interactive hover-based unlock behavior."
+    },
+    {
+      "name": "cloudscape",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/cloudscape.tsx",
+          "target": "components/forgeui/cloudscape.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Cloudscape",
+      "description": "A WebGL-powered animated cloud gradient that creates a soft, flowing sky-like background using layered noise and color blending."
     }
   ]
 }

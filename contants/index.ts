@@ -46,6 +46,7 @@ export const eliteItems = [
   { name: "Bot Detection", href: "/components/bot-detection" },
   { name: "Vault Lock", href: "/components/vault-lock" },
   { name: "Framework Agnostic", href: "/components/framework-agnostic" },
+  { name: "Cloudscape", href: "/components/cloudscape" },
 ];
 
 export const templates = [
