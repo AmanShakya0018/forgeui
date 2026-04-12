@@ -111,7 +111,7 @@ export default CloudscapePage;
 
 export const LivePreviewCloudscapePage = () => {
   return (
-    <LivePreviewComponent>
+    <LivePreviewComponent className="px-0">
       <Cloudscape />
     </LivePreviewComponent>
   );
