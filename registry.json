@@ -262,6 +262,19 @@
       ],
       "title": "Cloudscape",
       "description": "A WebGL-powered animated cloud gradient that creates a soft, flowing sky-like background using layered noise and color blending."
+    },
+    {
+      "name": "lumadrift",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/lumadrift.tsx",
+          "target": "components/forgeui/lumadrift.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Lumadrift",
+      "description": "A WebGL-powered animated gradient that produces smooth, flowing light patterns using procedural noise and color blending."
     }
   ]
 }

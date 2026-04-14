@@ -47,6 +47,7 @@ export const eliteItems = [
   { name: "Vault Lock", href: "/components/vault-lock" },
   { name: "Framework Agnostic", href: "/components/framework-agnostic" },
   { name: "Cloudscape", href: "/components/cloudscape" },
+  { name: "Luma Drift", href: "/components/lumadrift" },
 ];
 
 export const templates = [
@@ -79,4 +80,3 @@ export const templates = [
     href: "https://pro.forgeui.in/template/dashboard-second",
   },
 ];
-
