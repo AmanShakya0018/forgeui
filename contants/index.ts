@@ -79,3 +79,4 @@ export const templates = [
     href: "https://pro.forgeui.in/template/dashboard-second",
   },
 ];
+
