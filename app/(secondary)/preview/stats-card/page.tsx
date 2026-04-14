@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewStatsCard } from "@/app/(primary)/components/stats-card/_components/preview";
 
 export const metadata: Metadata = {
@@ -54,11 +53,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewStatsCard />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewStatsCard />;
 };
 
 export default Preview;

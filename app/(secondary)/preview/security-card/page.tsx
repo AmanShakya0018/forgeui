@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewSecurityCard } from "@/app/(primary)/components/security-card/_components/preview";
 
 export const metadata: Metadata = {
@@ -53,11 +52,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewSecurityCard />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewSecurityCard />;
 };
 
 export default Preview;

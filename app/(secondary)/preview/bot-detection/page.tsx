@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewBotDetection } from "@/app/(primary)/components/bot-detection/_components/preview";
 
 export const metadata: Metadata = {
@@ -53,11 +52,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewBotDetection />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewBotDetection />;
 };
 
 export default Preview;

@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewStackRipple } from "@/app/(primary)/components/stack-ripple/_components/preview";
 
 export const metadata: Metadata = {
@@ -53,11 +52,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewStackRipple />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewStackRipple />;
 };
 
 export default Preview;

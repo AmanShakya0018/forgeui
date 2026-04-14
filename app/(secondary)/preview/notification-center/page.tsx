@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewNotificationCenter } from "@/app/(primary)/components/notification-center/_components/preview";
 
 export const metadata: Metadata = {
@@ -53,11 +52,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewNotificationCenter />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewNotificationCenter />;
 };
 
 export default Preview;

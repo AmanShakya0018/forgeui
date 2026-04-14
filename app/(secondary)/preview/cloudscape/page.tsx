@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewCloudscapePage } from "@/app/(primary)/components/cloudscape/_components/preview";
 
 export const metadata: Metadata = {
@@ -53,11 +52,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewCloudscapePage />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewCloudscapePage />;
 };
 
 export default Preview;

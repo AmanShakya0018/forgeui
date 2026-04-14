@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import LivePreviewComponent from "@/components/layout/livepreview";
 import { LivePreviewAnimatedTabs } from "@/app/(primary)/components/animated-tabs/_components/preview";
 
 export const metadata: Metadata = {
@@ -53,11 +52,7 @@ export const metadata: Metadata = {
 };
 
 const Preview = () => {
-  return (
-    <LivePreviewComponent>
-      <LivePreviewAnimatedTabs />
-    </LivePreviewComponent>
-  );
+  return <LivePreviewAnimatedTabs />;
 };
 
 export default Preview;
