@@ -48,6 +48,7 @@ export const eliteItems = [
   { name: "Framework Agnostic", href: "/components/framework-agnostic" },
   { name: "Cloudscape", href: "/components/cloudscape" },
   { name: "Luma Drift", href: "/components/lumadrift" },
+  { name: "Cosmic Rift", href: "/components/cosmicrift" },
 ];
 
 export const templates = [

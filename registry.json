@@ -275,6 +275,19 @@
       ],
       "title": "Lumadrift",
       "description": "A WebGL-powered animated gradient that produces smooth, flowing light patterns using procedural noise and color blending."
+    },
+    {
+      "name": "cosmicrift",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/cosmicrift.tsx",
+          "target": "components/forgeui/cosmicrift.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Cosmicrift",
+      "description": "A WebGL-powered animated cosmic background featuring a procedural starfield with twinkling effects and flowing nebula-like wave distortions, rendered in real time using shaders."
     }
   ]
 }
