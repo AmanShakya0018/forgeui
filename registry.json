@@ -301,6 +301,19 @@
       ],
       "title": "Chromatic Fluid",
       "description": "A WebGL-powered animated fluid effect featuring procedural noise, chromatic glint highlights, and dynamic lighting with film grain."
+    },
+    {
+      "name": "velora",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/velora.tsx",
+          "target": "components/forgeui/velora.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Velora",
+      "description": "A WebGL-powered animated radial light effect featuring swirling color streaks, 3D noise-based flow, and dynamic color transitions with film grain."
     }
   ]
 }

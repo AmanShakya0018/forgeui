@@ -50,6 +50,7 @@ export const eliteItems = [
   { name: "Luma Drift", href: "/components/lumadrift" },
   { name: "Cosmic Rift", href: "/components/cosmicrift" },
   { name: "Chromatic Fluid", href: "/components/chromatic-fluid" },
+  { name: "Velora", href: "/components/velora" },
 ];
 
 export const templates = [
