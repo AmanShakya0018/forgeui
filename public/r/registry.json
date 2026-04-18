@@ -288,6 +288,19 @@
       ],
       "title": "Cosmicrift",
       "description": "A WebGL-powered animated cosmic background featuring a procedural starfield with twinkling effects and flowing nebula-like wave distortions, rendered in real time using shaders."
+    },
+    {
+      "name": "chromatic-fluid",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/chromatic-fluid.tsx",
+          "target": "components/forgeui/chromatic-fluid.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Chromatic Fluid",
+      "description": "A WebGL-powered animated fluid effect featuring procedural noise, chromatic glint highlights, and dynamic lighting with film grain."
     }
   ]
 }
