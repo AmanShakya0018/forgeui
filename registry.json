@@ -327,6 +327,19 @@
       ],
       "title": "Velaris",
       "description": "A WebGL-powered animated background featuring layered simplex noise, multi-color blending, vignette glow, and subtle film grain effects."
+    },
+    {
+      "name": "auralis",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/auralis.tsx",
+          "target": "components/forgeui/auralis.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Auralis",
+      "description": "A WebGL-powered animated background featuring layered simplex noise, glowing light effects, vignette, and subtle film grain for a dramatic ambiance."
     }
   ]
 }

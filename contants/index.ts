@@ -52,6 +52,7 @@ export const eliteItems = [
   { name: "Chromatic Fluid", href: "/components/chromatic-fluid" },
   { name: "Velora", href: "/components/velora" },
   { name: "Velaris", href: "/components/velaris" },
+  { name: "Auralis", href: "/components/auralis" },
 ];
 
 export const templates = [
