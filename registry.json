@@ -314,6 +314,19 @@
       ],
       "title": "Velora",
       "description": "A WebGL-powered animated radial light effect featuring swirling color streaks, 3D noise-based flow, and dynamic color transitions with film grain."
+    },
+    {
+      "name": "velaris",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/velaris.tsx",
+          "target": "components/forgeui/velaris.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Velaris",
+      "description": "A WebGL-powered animated background featuring layered simplex noise, multi-color blending, vignette glow, and subtle film grain effects."
     }
   ]
 }
