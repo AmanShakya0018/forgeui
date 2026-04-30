@@ -17,6 +17,7 @@ import {
 } from "@/contants";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import Link from "next/link";
+import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 import Anchor from "../ui/anchor-single";
 import { ScrollArea } from "../ui/scroll-area";
 import { MyIcon } from "../icons/logo";
@@ -30,6 +31,7 @@ const NavbarDrawer = () => {
   const sortedEliteItems = [...eliteItems].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
+
   const sortedBackgroundItems = [...backgroundItems].sort((a, b) =>
     a.name.localeCompare(b.name),
   );
@@ -52,7 +54,7 @@ const NavbarDrawer = () => {
           <ScrollArea className="flex h-[calc(100vh-10rem)] w-full flex-col gap-4 py-2">
             <div className="flex flex-col gap-6 pr-6">
               <div className="flex flex-col gap-1">
-                <div className="text-muted-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
+                <div className="text-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
                   Getting Started
                 </div>
                 <div className="grid gap-1">
@@ -64,10 +66,9 @@ const NavbarDrawer = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <div className="text-muted-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
+                <div className="text-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
                   Templates
                 </div>
-
                 <div className="grid gap-1">
                   {templates.map((item) => (
                     <AnchorTemplate
@@ -81,10 +82,9 @@ const NavbarDrawer = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <div className="text-muted-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
+                <div className="text-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
                   Featured Components
                 </div>
-
                 <div className="grid gap-1">
                   {sortedEliteItems.map((item) => (
                     <Anchor key={item.name + item.href} href={item.href}>
@@ -94,10 +94,9 @@ const NavbarDrawer = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <div className="text-muted-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
+                <div className="text-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
                   Backgrounds
                 </div>
-
                 <div className="grid gap-1">
                   {sortedBackgroundItems.map((item) => (
                     <Anchor key={item.name + item.href} href={item.href}>
@@ -107,10 +106,9 @@ const NavbarDrawer = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-1">
-                <div className="text-muted-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
+                <div className="text-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
                   Basic Components
                 </div>
-
                 <div className="grid gap-1">
                   {sortedPrimaryItems.map((item) => (
                     <Anchor key={item.name + item.href} href={item.href}>
@@ -119,27 +117,13 @@ const NavbarDrawer = () => {
                   ))}
                 </div>
               </div>
-
-              <div className="grid gap-1">
-                {sortedEliteItems.map((item) => (
-                  <Anchor key={item.name + item.href} href={item.href}>
-                    {item.name}
-                  </Anchor>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col gap-1">
-              <div className="text-muted-foreground/70 flex px-3 py-2 text-start text-[0.8rem] font-normal tracking-widest uppercase">
-                Basic Components
-              </div>
-
-              <div className="grid gap-1">
-                {sortedPrimaryItems.map((item) => (
-                  <Anchor key={item.name + item.href} href={item.href}>
-                    {item.name}
-                  </Anchor>
-                ))}
-              </div>
+              <TextShimmer
+                className="mt-4 cursor-default pl-3 text-xs"
+                repeatDelay={0.5}
+                delay={1.5}
+              >
+                New drops incoming...
+              </TextShimmer>
             </div>
           </ScrollArea>
         </SheetHeader>

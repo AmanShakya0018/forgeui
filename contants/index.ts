@@ -46,6 +46,9 @@ export const eliteItems = [
   { name: "Bot Detection", href: "/components/bot-detection" },
   { name: "Vault Lock", href: "/components/vault-lock" },
   { name: "Framework Agnostic", href: "/components/framework-agnostic" },
+];
+
+export const backgroundItems = [
   { name: "Cloudscape", href: "/components/cloudscape" },
   { name: "Luma Drift", href: "/components/lumadrift" },
   { name: "Cosmic Rift", href: "/components/cosmicrift" },
