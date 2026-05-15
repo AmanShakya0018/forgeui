@@ -6,8 +6,8 @@ import { motion } from "motion/react";
 
 const HeroSection = () => {
   return (
-    <div className="flex min-h-[100vh] flex-col items-center justify-center">
-      <div className="z-[3] flex flex-col items-center justify-center gap-20 text-center">
+    <div className="flex min-h-screen flex-col items-center justify-center">
+      <div className="z-3 flex flex-col items-center justify-center gap-20 text-center">
         <div className="flex flex-col items-center justify-center gap-5">
           <div className="space-y-6">
             <motion.h1
@@ -27,7 +27,7 @@ const HeroSection = () => {
                 ease: "easeInOut",
               }}
               viewport={{ once: true }}
-              className="bg-gradient-stop mx-auto max-w-3xl text-balance bg-gradient-to-br from-neutral-100 via-neutral-100 via-50% to-neutral-100/30 bg-clip-text py-2 text-5xl font-medium leading-[1.1] tracking-tighter text-transparent md:text-6xl lg:text-7xl"
+              className="bg-gradient-stop mx-auto max-w-3xl bg-linear-to-br from-neutral-100 via-neutral-100 via-50% to-neutral-100/30 bg-clip-text py-2 text-5xl leading-[1.1] font-medium tracking-tighter text-balance text-transparent md:text-6xl lg:text-7xl"
             >
               Build Beautiful UI Faster
             </motion.h1>
@@ -45,11 +45,11 @@ const HeroSection = () => {
             }}
             transition={{
               duration: 0.4,
-              delay: 0.3,
+              delay: 0.2,
               ease: "easeInOut",
             }}
             viewport={{ once: true }}
-            className="mb-6 max-w-sm text-balance bg-gradient-to-br from-white/70 via-white/70 to-white/30 bg-clip-text text-center text-[0.87rem] text-transparent sm:max-w-[32rem] md:text-[1.15rem]"
+            className="mb-6 max-w-sm bg-linear-to-br from-white/70 via-white/70 to-white/30 bg-clip-text text-center text-[0.87rem] text-balance text-transparent sm:max-w-lg md:text-[1.15rem]"
           >
             Launch sleek, responsive UIs in minutes using
             ready&#8209;to&#8209;use components built for speed, simplicity, and

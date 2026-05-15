@@ -18,10 +18,10 @@ const ToggleButtonGroup = ({
   routepoint,
 }: ToggleButtonGroupProps) => {
   return (
-    <div className="mb-4 mt-12 flex flex-row justify-between gap-2 border-b border-zinc-200 dark:border-zinc-800">
+    <div className="mt-12 mb-4 flex flex-row justify-between gap-2 border-b border-zinc-200 dark:border-zinc-800">
       <div className="relative flex flex-row gap-2">
         <button
-          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
+          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pt-2 pb-3 text-sm font-medium transition-colors ${
             !sourceCode
               ? "text-zinc-950 duration-300 dark:text-white"
               : "text-neutral-500 dark:text-neutral-400"
@@ -31,7 +31,7 @@ const ToggleButtonGroup = ({
           {!sourceCode && (
             <motion.div
               layoutId="preview-code-underline"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+              className="bg-primary absolute right-0 bottom-0 left-0 h-0.5"
               initial={false}
               transition={{
                 type: "spring",
@@ -59,7 +59,7 @@ const ToggleButtonGroup = ({
           <span>Preview</span>
         </button>
         <button
-          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pb-3 pt-2 text-sm font-medium transition-colors ${
+          className={`relative inline-flex h-9 items-center justify-center gap-1.5 rounded-none px-4 pt-2 pb-3 text-sm font-medium transition-colors ${
             sourceCode
               ? "text-zinc-950 duration-300 dark:text-white"
               : "text-neutral-500 dark:text-neutral-400"
@@ -69,7 +69,7 @@ const ToggleButtonGroup = ({
           {sourceCode && (
             <motion.div
               layoutId="preview-code-underline"
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+              className="bg-primary absolute right-0 bottom-0 left-0 h-0.5"
               initial={false}
               transition={{
                 type: "spring",

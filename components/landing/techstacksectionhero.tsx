@@ -29,7 +29,7 @@ export default function Techstacksectionhero() {
           viewport={{ once: true }}
           transition={{
             duration: 0.3,
-            delay: 0.1,
+            delay: 0.5,
             ease: [0.23, 1, 0.32, 1],
           }}
           className={cn(
@@ -47,7 +47,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs"
+            className="mt-1 text-center text-xs whitespace-nowrap"
           >
             Next.js
           </motion.span>
@@ -77,7 +77,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs text-white"
+            className="mt-1 text-center text-xs whitespace-nowrap text-white"
           >
             TailwindCSS
           </motion.span>
@@ -107,7 +107,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs text-white"
+            className="mt-1 text-center text-xs whitespace-nowrap text-white"
           >
             Motion
           </motion.span>
@@ -135,7 +135,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs"
+            className="mt-1 text-center text-xs whitespace-nowrap"
           >
             shadcn/ui
           </motion.span>
@@ -165,7 +165,7 @@ export default function Techstacksectionhero() {
               duration: 0.2,
               ease: "easeInOut",
             }}
-            className="mt-1 whitespace-nowrap text-center text-xs"
+            className="mt-1 text-center text-xs whitespace-nowrap"
           >
             React
           </motion.span>
