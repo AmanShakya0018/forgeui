@@ -1,7 +1,7 @@
 export const title = "Spectrum Switcher";
 export const routepoint = "spectrum-switcher";
-export const description = "Interactive spectrum switcher with animated gradients, smooth dropdown transitions, and selectable themed color palettes.";
-
+export const description =
+  "Interactive spectrum switcher with animated gradients, smooth dropdown transitions, and selectable themed color palettes.";
 
 export const utilcode = `import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -34,47 +34,48 @@ export const spectrumSwitcherProps = [
     prop: "spectrums",
     type: "Spectrum[]",
     default: "defaultSpectrums",
-    description: "Array of spectrum objects. Each object in the array must include the following fields:",
+    description:
+      "Array of spectrum objects. Each object in the array must include the following fields:",
   },
   {
     prop: "spectrums[].id",
     type: "string",
-    default: "\"sunset\"",
-    description: "Unique identifier for the spectrum (used internally and as a key).",
+    default: '"sunset"',
+    description:
+      "Unique identifier for the spectrum (used internally and as a key).",
   },
   {
     prop: "spectrums[].name",
     type: "string",
-    default: "\"Sunset Glow\"",
+    default: '"Sunset Glow"',
     description: "Human-readable name displayed in the UI.",
   },
   {
     prop: "spectrums[].description",
     type: "string",
-    default: "\"Warm and bold ambience\"",
+    default: '"Warm and bold ambience"',
     description: "Short description giving context about the spectrum.",
   },
   {
     prop: "spectrums[].color",
     type: "string (Tailwind classes)",
-    default: "\"bg-gradient-to-br from-rose-400 via-orange-300 to-yellow-200\"",
+    default: '"bg-gradient-to-br from-rose-400 via-orange-300 to-yellow-200"',
     description: "Gradient background classes applied in light mode.",
   },
   {
     prop: "spectrums[].darkColor",
     type: "string (Tailwind classes)",
-    default: "\"dark:from-rose-600 dark:via-orange-500 dark:to-yellow-400\"",
+    default: '"dark:from-rose-600 dark:via-orange-500 dark:to-yellow-400"',
     description: "Gradient background classes applied in dark mode.",
   },
   {
     prop: "spectrums[].layoutId",
     type: "string",
-    default: "\"spectrum-sunset\"",
-    description: "Unique layoutId used by Framer Motion for smooth layout animations.",
+    default: '"spectrum-sunset"',
+    description:
+      "Unique layoutId used by Framer Motion for smooth layout animations.",
   },
 ];
-
-
 
 export const democode = `import SpectrumSwitcher from '@/components/forgeui/spectrum-switcher';
 
@@ -104,7 +105,6 @@ export function ${title.replace(/\s+/g, "")}Example() {
   )
 }
 `;
-
 
 export const code = `"use client";
 
@@ -201,8 +201,8 @@ const SpectrumSwitcher = ({
     >
       <div
         className={cn(
-          "ring-1 ring-neutral-200 dark:ring-neutral-800",
-          "overflow-hidden rounded-[8px] shadow-[0_2px_4px_rgb(0,0,0,0.1)]",
+          "ring-1 ring-black/10 dark:ring-neutral-800/60",
+          "overflow-hidden rounded-[8px] shadow-sm shadow-black/10",
           "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
         )}
       >
@@ -215,7 +215,7 @@ const SpectrumSwitcher = ({
                 "flex h-10 w-10 items-center justify-center rounded-[6px]",
                 "ring-1 ring-neutral-300/60 dark:ring-neutral-700/40",
                 "bg-white/70 dark:bg-neutral-900/60",
-                "shadow-[0_2px_5px_rgb(0,0,0,0.1)]",
+                "shadow-[0_1px_3px_rgb(0,0,0,0.1)]",
                 "dark:bg-[radial-gradient(circle_at_top_center,rgba(255,255,255,0.2),transparent_70%)]",
               )}
             >
@@ -367,4 +367,4 @@ const SpectrumSwitcher = ({
 };
 
 export default SpectrumSwitcher;
-`
+`;

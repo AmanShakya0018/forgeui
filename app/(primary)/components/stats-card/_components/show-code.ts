@@ -1,6 +1,7 @@
 export const title = "Stats Card";
 export const routepoint = "stats-card";
-export const description = "A dynamic stats card comparing two individuals with avatars, data points, and animated background graph.";
+export const description =
+  "A dynamic stats card comparing two individuals with avatars, data points, and animated background graph.";
 
 export const cliscript = "add @forgeui/stats-card";
 
@@ -19,7 +20,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 `;
 
-export const screennoticedesktop = "*Hover to animate"
+export const screennoticedesktop = "*Hover to animate";
 
 const packagescript = "lucide-react clsx tailwind-merge";
 
@@ -35,13 +36,15 @@ export const statsCardProps = [
     prop: "gradientColor",
     type: "string",
     default: "#60A5FA",
-    description: "Hex color used to define the animated gradient inside the graph component.",
+    description:
+      "Hex color used to define the animated gradient inside the graph component.",
   },
   {
     prop: "statsType",
     type: "string",
     default: "PRs Merged",
-    description: "Label representing the type of statistic being shown (e.g., PRs Merged, Commits, etc.).",
+    description:
+      "Label representing the type of statistic being shown (e.g., PRs Merged, Commits, etc.).",
   },
   {
     prop: "firstPerson",
@@ -78,10 +81,8 @@ export const statsCardProps = [
     type: "string",
     default: "/assets/gojo.png",
     description: "URL path of the avatar image for the second person.",
-  }
+  },
 ];
-
-
 
 export const democode = `import StatsCard from '@/components/forgeui/stats-card';
 
@@ -131,10 +132,9 @@ const StatsCard = ({
   secondImage = "/assets/gojo.png",
 }: StatsCardProps) => {
   return (
-    <div
+   <div
       className={cn(
-        "group border-border bg-background w-full max-w-87.5 rounded-xl border p-8",
-        "shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
+        "group bg-background w-full max-w-87.5 rounded-xl p-8 shadow-sm ring-1 shadow-black/10 ring-black/10 dark:ring-neutral-800/60",
       )}
     >
       <div
@@ -272,4 +272,4 @@ export const csscode = `.graph {
     offset-distance: 100%;
   }
 }
-`
+`;

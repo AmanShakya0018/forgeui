@@ -1,7 +1,7 @@
 export const title = "Notification Panel";
 export const routepoint = "notification-panel";
-export const description = "A collapsible notification panel displaying recent alerts with icons, timestamps, and smooth animated transitions.";
-
+export const description =
+  "A collapsible notification panel displaying recent alerts with icons, timestamps, and smooth animated transitions.";
 
 export const utilcode = `import { ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -11,7 +11,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 `;
 
-export const cliscript = "add @forgeui/notification-panel"
+export const cliscript = "add @forgeui/notification-panel";
 
 export const commandMap = {
   npm: `npx shadcn@latest ${cliscript}`,
@@ -19,7 +19,6 @@ export const commandMap = {
   yarn: `npx shadcn@latest ${cliscript}`,
   bun: `bunx --bun shadcn@latest ${cliscript}`,
 };
-
 
 const packagescript = "motion react-icons clsx tailwind-merge";
 
@@ -41,7 +40,7 @@ export const notificationPanelProps = [
   {
     prop: "notifications[].id",
     type: "string",
-    default: "\"maintenance\"",
+    default: '"maintenance"',
     description: "Unique identifier for the notification (used as key).",
   },
   {
@@ -53,25 +52,23 @@ export const notificationPanelProps = [
   {
     prop: "notifications[].title",
     type: "string",
-    default: "\"Scheduled Downtime\"",
+    default: '"Scheduled Downtime"',
     description: "Title displayed as the main label of the notification.",
   },
   {
     prop: "notifications[].description",
     type: "string",
-    default: "\"Servers will be offline tonight at 11 PM.\"",
+    default: '"Servers will be offline tonight at 11 PM."',
     description: "Short description or message displayed under the title.",
   },
   {
     prop: "notifications[].timestamp",
     type: "string",
-    default: "\"5 min ago\"",
+    default: '"5 min ago"',
     description:
       "Relative time or timestamp displayed on the right side of the notification.",
   },
 ];
-
-
 
 export const democode = `import { MdSecurity } from "react-icons/md";
 import { FiRefreshCcw } from "react-icons/fi";
@@ -117,7 +114,6 @@ export function ${title.replace(/\s+/g, "")}Example() {
   )
 }
 `;
-
 
 export const code = `"use client";
 
@@ -208,8 +204,8 @@ const NotificationPanel = ({
       <div
         className={cn(
           "divide-y divide-neutral-200/80 dark:divide-neutral-800/50",
-          "ring-1 ring-neutral-200 dark:ring-neutral-800/50",
-          "overflow-hidden rounded-[8px] shadow-[0_2px_2px_rgb(0,0,0,0.1)]",
+          "ring-1 ring-black/10 dark:ring-neutral-800/60",
+          "overflow-hidden rounded-[8px] shadow-sm shadow-black/8",
           "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
         )}
       >
@@ -322,4 +318,4 @@ const NotificationPanel = ({
 };
 
 export default NotificationPanel;
-`
+`;

@@ -60,7 +60,7 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
 
   const popup1Variant: Variants = {
     open: {
-      transform: "translateY(-55px)",
+      y: -55,
       transition: {
         type: "spring",
         damping: 15,
@@ -71,7 +71,7 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
       },
     },
     close: {
-      transform: "translateY(0px)",
+      y: 0,
       transition: {
         type: "spring",
         damping: 15,
@@ -84,7 +84,7 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
   };
   const popup2Variant: Variants = {
     open: {
-      transform: "translateY(0px) scale(1)",
+      scale: 1,
       transition: {
         type: "spring",
         damping: 15,
@@ -95,7 +95,7 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
       },
     },
     close: {
-      transform: "translateY(0px) scale(0.95)",
+      scale: 0.95,
       transition: {
         type: "spring",
         damping: 15,
@@ -108,7 +108,8 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
   };
   const popup3Variant: Variants = {
     open: {
-      transform: "translateY(55px) scale(1)",
+      y: 55,
+      scale: 1,
       transition: {
         type: "spring",
         damping: 15,
@@ -119,7 +120,8 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
       },
     },
     close: {
-      transform: "translateY(0px) scale(0.9)",
+      y: 0,
+      scale: 0.9,
       transition: {
         type: "spring",
         damping: 15,
@@ -227,8 +229,7 @@ const StackRipple = ({ stackCardItems = stackItems }: StackRippleProps) => {
                 className={cn(
                   "absolute inset-x-0 top-42 mx-auto",
                   "flex h-8 w-full max-w-25 items-center justify-center gap-1 px-1",
-                  "[box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
-                  "rounded-xl border bg-linear-to-b from-white to-neutral-50",
+                  "rounded-xl bg-linear-to-b from-white to-neutral-50 shadow-sm ring-1 shadow-black/8 ring-black/10",
                   "dark:from-neutral-800 dark:to-[#101010]",
                 )}
               >
@@ -282,8 +283,7 @@ function StackCard({
         "absolute inset-x-0 mx-auto",
         top,
         "flex h-15 w-full max-w-[320px] items-center justify-between",
-        "bg-background rounded-xl border px-2",
-        "[box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)]",
+        "bg-background rounded-xl px-2 shadow-sm ring-1 shadow-black/6 ring-black/10 dark:ring-neutral-800/60",
         "dark:[box-shadow:0_-20px_60px_-20px_#ffffff1f_inset]",
       )}
     >

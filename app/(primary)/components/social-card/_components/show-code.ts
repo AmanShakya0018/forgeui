@@ -1,6 +1,7 @@
 export const title = "Social Card";
 export const routepoint = "social-card";
-export const description = "An animated profile card showing name, avatar, and social links on hover.";
+export const description =
+  "An animated profile card showing name, avatar, and social links on hover.";
 
 export const cliscript = "add @forgeui/social-card";
 
@@ -30,49 +31,49 @@ export const packagesMap = {
 
 export const socialCardProps = [
   {
-    "prop": "image",
-    "type": "string",
-    "default": "-",
-    "description": "The image URL to be shown in the card."
+    prop: "image",
+    type: "string",
+    default: "-",
+    description: "The image URL to be shown in the card.",
   },
   {
-    "prop": "title",
-    "type": "string",
-    "default": "-",
-    "description": "Title or label shown near the top with the icon."
+    prop: "title",
+    type: "string",
+    default: "-",
+    description: "Title or label shown near the top with the icon.",
   },
   {
-    "prop": "name",
-    "type": "string",
-    "default": "-",
-    "description": "Name displayed below the image (when not hovered)."
+    prop: "name",
+    type: "string",
+    default: "-",
+    description: "Name displayed below the image (when not hovered).",
   },
   {
-    "prop": "pitch",
-    "type": "string",
-    "default": "-",
-    "description": "Pitch or short description shown in the bottom section."
+    prop: "pitch",
+    type: "string",
+    default: "-",
+    description: "Pitch or short description shown in the bottom section.",
   },
   {
-    "prop": "icon",
-    "type": "React.ReactNode",
-    "default": "-",
-    "description": "Icon shown in the top-left. Optional."
+    prop: "icon",
+    type: "React.ReactNode",
+    default: "-",
+    description: "Icon shown in the top-left. Optional.",
   },
   {
-    "prop": "buttons",
-    "type": "Array<{ label: string; icon?: React.ReactNode; link?: string }>",
-    "default": "[]",
-    "description": "Array of buttons shown at the bottom with label, optional icon, and optional link."
+    prop: "buttons",
+    type: "Array<{ label: string; icon?: React.ReactNode; link?: string }>",
+    default: "[]",
+    description:
+      "Array of buttons shown at the bottom with label, optional icon, and optional link.",
   },
   {
-    "prop": "className",
-    "type": "string",
-    "default": "-",
-    "description": "Additional className to style the outer card container."
-  }
+    prop: "className",
+    type: "string",
+    default: "-",
+    description: "Additional className to style the outer card container.",
+  },
 ];
-
 
 export const democode = `import SocialCard from '@/components/forgeui/social-card';
 import { FaGithub, FaXTwitter } from "react-icons/fa6";
@@ -142,9 +143,8 @@ const SocialCard = ({
     <motion.div
       className={cn(
         "group relative h-87.5 w-70 overflow-hidden rounded-2xl p-0 md:w-75",
-        "border border-neutral-200/60 bg-white/50 backdrop-blur-sm hover:cursor-pointer",
-        "dark:border-neutral-800/60 dark:bg-neutral-950/50",
-        "shadow-sm transition-shadow duration-300 hover:shadow-lg",
+        "bg-white/50 dark:bg-neutral-950/50",
+        "shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-900 dark:ring-neutral-800",
         className,
       )}
       initial={{ y: 20, opacity: 0 }}
@@ -217,7 +217,7 @@ const SocialCard = ({
       </div>
 
       <motion.div
-        className="absolute right-0 bottom-0 left-0 rounded-t-2xl border-t border-neutral-200/80 bg-white/95 px-6 pt-3 pb-5 backdrop-blur-sm dark:border-neutral-800/80 dark:bg-neutral-950/95"
+        className="absolute right-0 bottom-0 left-0 rounded-t-2xl border-t border-neutral-200/80 bg-white/95 px-6 pt-3 pb-5 dark:border-neutral-800/80 dark:bg-neutral-950/95"
         initial={{ y: "100%" }}
         animate={{
           y: isHovered ? 0 : "calc(100% - 43px)",

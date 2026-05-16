@@ -93,8 +93,8 @@ const SpectrumSwitcher = ({
     >
       <div
         className={cn(
-          "ring-1 ring-neutral-200 dark:ring-neutral-800",
-          "overflow-hidden rounded-[8px] shadow-[0_2px_4px_rgb(0,0,0,0.1)]",
+          "ring-1 ring-black/10 dark:ring-neutral-800/60",
+          "overflow-hidden rounded-[8px] shadow-sm shadow-black/10",
           "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
         )}
       >
@@ -107,7 +107,7 @@ const SpectrumSwitcher = ({
                 "flex h-10 w-10 items-center justify-center rounded-[6px]",
                 "ring-1 ring-neutral-300/60 dark:ring-neutral-700/40",
                 "bg-white/70 dark:bg-neutral-900/60",
-                "shadow-[0_2px_5px_rgb(0,0,0,0.1)]",
+                "shadow-[0_1px_3px_rgb(0,0,0,0.1)]",
                 "dark:bg-[radial-gradient(circle_at_top_center,rgba(255,255,255,0.2),transparent_70%)]",
               )}
             >

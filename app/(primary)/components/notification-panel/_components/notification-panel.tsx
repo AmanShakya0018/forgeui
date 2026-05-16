@@ -87,8 +87,8 @@ const NotificationPanel = ({
       <div
         className={cn(
           "divide-y divide-neutral-200/80 dark:divide-neutral-800/50",
-          "ring-1 ring-neutral-200 dark:ring-neutral-800/50",
-          "overflow-hidden rounded-[8px] shadow-[0_2px_2px_rgb(0,0,0,0.1)]",
+          "ring-1 ring-black/10 dark:ring-neutral-800/60",
+          "overflow-hidden rounded-[8px] shadow-sm shadow-black/8",
           "bg-linear-to-r from-neutral-50 to-neutral-100 dark:from-neutral-900 dark:to-neutral-950",
         )}
       >

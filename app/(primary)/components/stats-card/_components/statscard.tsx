@@ -30,8 +30,7 @@ const StatsCard = ({
   return (
     <div
       className={cn(
-        "group border-border bg-background w-full max-w-87.5 rounded-xl border p-8",
-        "shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]",
+        "group bg-background w-full max-w-87.5 rounded-xl p-8 shadow-sm ring-1 shadow-black/10 ring-black/10 dark:ring-neutral-800/60",
       )}
     >
       <div
