@@ -27,14 +27,14 @@ const NotificationCenter = ({
 
   const phoneVariant: Variants = {
     open: {
-      transform: "translateY(-36px)",
+      y: -36,
       transition: {
         duration: 0.3,
         ease: "easeInOut",
       },
     },
     close: {
-      transform: "translateY(0px)",
+      y: 0,
       transition: {
         duration: 0.2,
         ease: "easeInOut",
@@ -44,7 +44,8 @@ const NotificationCenter = ({
 
   const notificationVariant: Variants = {
     open: {
-      transform: "translateY(48px) scale(1)",
+      y: 48,
+      scale: 1,
       filter: "blur(0px)",
       transition: {
         duration: 0.3,
@@ -53,7 +54,8 @@ const NotificationCenter = ({
       },
     },
     close: {
-      transform: "translateY(-72px) scale(0.75)",
+      y: -72,
+      scale: 0.75,
       filter: "blur(10px)",
       transition: {
         duration: 0.3,
@@ -96,7 +98,7 @@ const NotificationCenter = ({
     },
   };
 
-  const parentvariant: Variants = {
+  const parentVariant: Variants = {
     open: {
       transition: {
         staggerChildren: 0.08,
@@ -110,7 +112,6 @@ const NotificationCenter = ({
       },
     },
   };
-
   return (
     <motion.div
       onClick={() => setIsHovered((prev) => !prev)}
@@ -118,11 +119,11 @@ const NotificationCenter = ({
       onMouseLeave={() => setIsHovered(false)}
       initial="close"
       animate={isHovered ? "open" : "close"}
-      variants={parentvariant}
+      variants={parentVariant}
       className={cn(
         "relative",
-        "flex max-w-87.5 items-center justify-center",
-        "rounded-lg bg-neutral-100 p-6 ring-1 ring-neutral-200 dark:bg-neutral-950 dark:ring-neutral-800",
+        "flex max-w-87.5 items-center justify-center shadow-sm shadow-black/10",
+        "rounded-lg bg-neutral-100 p-6 ring-1 ring-black/10 dark:bg-neutral-950 dark:ring-neutral-800/60",
       )}
     >
       <motion.div

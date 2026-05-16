@@ -29,7 +29,7 @@ export default function ExpandableCard({
   const ref = useOutsideClick(() => setCurrent(null));
 
   return (
-    <div className="">
+    <div>
       <AnimatePresence>
         {current ? (
           <motion.div
@@ -110,7 +110,11 @@ export default function ExpandableCard({
               key={item.id}
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-background flex w-full cursor-pointer flex-row items-center gap-4 rounded-md border p-2 shadow-md md:p-4"
+              transition={{
+                duration: 0.15,
+                ease: "easeOut",
+              }}
+              className="bg-background flex w-full cursor-pointer flex-row items-center gap-4 rounded-sm p-2 shadow-sm ring-1 shadow-black/10 ring-black/10 md:p-4 dark:ring-neutral-800/60"
               onClick={() => {
                 setCurrent(item);
               }}

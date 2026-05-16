@@ -1,6 +1,7 @@
 export const title = "Expandable Card";
 export const routepoint = "expandable-card";
-export const description = "Interactive UI component to expand cards with smooth animations and detailed content using layout transitions.";
+export const description =
+  "Interactive UI component to expand cards with smooth animations and detailed content using layout transitions.";
 
 export const cliscript = "add @forgeui/expandable-card";
 
@@ -39,7 +40,8 @@ export const expandableCardProps = [
     prop: "items",
     type: "CardItem[]",
     default: "[]",
-    description: "An array of card objects to display in the expandable layout.",
+    description:
+      "An array of card objects to display in the expandable layout.",
   },
   {
     prop: "title",
@@ -78,7 +80,6 @@ export const expandableCardProps = [
     description: "Additional info like location, job type, or contract type.",
   },
 ];
-
 
 export const democode = `import ExpandableCard, { CardItem, Firebase, MetaMask, Upstash} from '@/components/forgeui/expandable-card';
 
@@ -153,7 +154,7 @@ export default function ExpandableCard({
   const ref = useOutsideClick(() => setCurrent(null));
 
   return (
-    <div className="">
+    <div>
       <AnimatePresence>
         {current ? (
           <motion.div
@@ -234,7 +235,11 @@ export default function ExpandableCard({
               key={item.id}
               initial={{ scale: 1 }}
               whileHover={{ scale: 1.02 }}
-              className="bg-background flex w-full cursor-pointer flex-row items-center gap-4 rounded-md border p-2 shadow-md md:p-4"
+              transition={{
+                duration: 0.15,
+                ease: "easeOut",
+              }}
+              className="bg-background flex w-full cursor-pointer flex-row items-center gap-4 rounded-sm p-2 shadow-sm ring-1 shadow-black/10 ring-black/10 md:p-4 dark:ring-neutral-800/60"
               onClick={() => {
                 setCurrent(item);
               }}

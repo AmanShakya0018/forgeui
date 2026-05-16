@@ -1,12 +1,12 @@
 "use client";
-import { motion, Variants } from "motion/react";
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
-import { AiFillSpotify } from "react-icons/ai";
-import { FaHeadphones, FaXTwitter } from "react-icons/fa6";
-import { FaPhoneAlt, FaPinterest, FaSnapchatGhost } from "react-icons/fa";
 import { MdMarkunread } from "react-icons/md";
 import { RiNetflixFill } from "react-icons/ri";
-import { cn } from "@/lib/utils";
+import { AiFillSpotify } from "react-icons/ai";
+import { motion, Variants } from "motion/react";
+import { FaHeadphones, FaXTwitter } from "react-icons/fa6";
+import { FaPhoneAlt, FaPinterest, FaSnapchatGhost } from "react-icons/fa";
 
 type NotificationCardProps = {
   cardTitle?: string;
@@ -20,21 +20,21 @@ const NotificationCenter = ({
   cardTitle = "Real-time payment alerts",
   cardDescription = "Get instant updates for every successful Stripe transaction processed through your app.",
   notificationTitle = "Stripe",
-  notificationDescription = "You received a payment of $99.00 USD",
+  notificationDescription = "You received a payment of $99.00",
   notificationTime = "2h ago",
 }: NotificationCardProps) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const phoneVariant: Variants = {
     open: {
-      transform: "translateY(-36px)",
+      y: -36,
       transition: {
         duration: 0.3,
         ease: "easeInOut",
       },
     },
     close: {
-      transform: "translateY(0px)",
+      y: 0,
       transition: {
         duration: 0.2,
         ease: "easeInOut",
@@ -44,7 +44,8 @@ const NotificationCenter = ({
 
   const notificationVariant: Variants = {
     open: {
-      transform: "translateY(48px) scale(1)",
+      y: 48,
+      scale: 1,
       filter: "blur(0px)",
       transition: {
         duration: 0.3,
@@ -53,7 +54,8 @@ const NotificationCenter = ({
       },
     },
     close: {
-      transform: "translateY(-72px) scale(0.75)",
+      y: -72,
+      scale: 0.75,
       filter: "blur(10px)",
       transition: {
         duration: 0.3,
@@ -88,7 +90,7 @@ const NotificationCenter = ({
       },
     },
     close: {
-      backgroundColor: "#a3a3a3",
+      backgroundColor: "#d5d5d5",
       transition: {
         duration: 0.1,
         ease: "easeInOut",
@@ -96,7 +98,7 @@ const NotificationCenter = ({
     },
   };
 
-  const parentvariant: Variants = {
+  const parentVariant: Variants = {
     open: {
       transition: {
         staggerChildren: 0.08,
@@ -110,7 +112,6 @@ const NotificationCenter = ({
       },
     },
   };
-
   return (
     <motion.div
       onClick={() => setIsHovered((prev) => !prev)}
@@ -118,19 +119,19 @@ const NotificationCenter = ({
       onMouseLeave={() => setIsHovered(false)}
       initial="close"
       animate={isHovered ? "open" : "close"}
-      variants={parentvariant}
+      variants={parentVariant}
       className={cn(
         "relative",
-        "flex max-w-[350px] items-center justify-center",
-        "rounded-lg border border-primary/5 bg-neutral-100 p-6 dark:bg-neutral-950",
+        "flex max-w-87.5 items-center justify-center shadow-sm shadow-black/10",
+        "rounded-lg bg-neutral-100 p-6 ring-1 ring-black/10 dark:bg-neutral-950 dark:ring-neutral-800/60",
       )}
     >
       <motion.div
         variants={phoneVariant}
-        className="relative mx-auto h-[270px] w-[264px] rounded-[44px] bg-neutral-300 p-1.5 dark:bg-neutral-800"
+        className="relative mx-auto h-67.5 w-66 rounded-[44px] bg-neutral-200 p-1.5 dark:bg-neutral-800"
       >
-        <div className="relative h-[258px] overflow-hidden rounded-[38px] bg-neutral-200 dark:bg-neutral-950/50">
-          <div className="absolute left-8 top-3.5 text-[9px] text-neutral-500">
+        <div className="relative h-64.5 overflow-hidden rounded-[38px] bg-neutral-100 dark:bg-neutral-950/50">
+          <div className="absolute top-3.5 left-8 text-[9px] text-neutral-500">
             {new Date().toLocaleTimeString([], {
               hour: "2-digit",
               minute: "2-digit",
@@ -139,7 +140,7 @@ const NotificationCenter = ({
           </div>
           <motion.div
             variants={lockVariant}
-            className="absolute left-[112px] top-2 hidden h-6 w-6 items-center justify-center rounded-full dark:flex"
+            className="absolute top-2 left-28 hidden h-6 w-6 items-center justify-center rounded-full dark:flex"
           >
             <svg viewBox="0 0 16 16" className="h-4 w-4">
               <g fill="#545454">
@@ -150,10 +151,10 @@ const NotificationCenter = ({
           </motion.div>
           <motion.div
             variants={lockLightVariant}
-            className="absolute left-[112px] top-2 flex h-6 w-6 items-center justify-center rounded-full dark:hidden"
+            className="absolute top-2 left-28 flex h-6 w-6 items-center justify-center rounded-full dark:hidden"
           >
             <svg viewBox="0 0 16 16" className="h-4 w-4">
-              <g fill="#404040">
+              <g fill="#747474">
                 <path d="M3 8a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"></path>
                 <path d="M8 3a2.5 2.5 0 0 0-2.5 2.5V9h-1V5.5a3.5 3.5 0 1 1 7 0V9h-1V5.5A2.5 2.5 0 0 0 8 3Z"></path>
               </g>
@@ -161,10 +162,10 @@ const NotificationCenter = ({
           </motion.div>
           <motion.div
             variants={notificationVariant}
-            className="absolute left-3.5 z-10 h-12 w-[90%] overflow-hidden rounded-md bg-neutral-300 shadow-lg dark:bg-neutral-800"
+            className="absolute left-3.5 z-10 h-12 w-[90%] overflow-hidden rounded-md bg-neutral-200/70 ring-1 ring-neutral-300/70 backdrop-blur-md dark:bg-neutral-800 dark:ring-neutral-800"
           >
             <div className="flex h-full items-center gap-3 px-2">
-              <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-neutral-200 shadow-lg dark:bg-neutral-700">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-neutral-100 ring-1 ring-neutral-300 dark:bg-neutral-700 dark:ring-neutral-800">
                 <svg
                   width="16"
                   height="16"
@@ -178,14 +179,13 @@ const NotificationCenter = ({
                 </svg>
               </div>
 
-              {/* Content */}
-              <div className="">
+              <div>
                 <div className="flex w-full flex-col overflow-hidden">
                   <div className="flex w-full items-center justify-between">
                     <p className="truncate text-xs font-medium text-neutral-900 dark:text-neutral-100">
                       {notificationTitle}
                     </p>
-                    <span className="pr-6 text-[9px] text-neutral-500 sm:pr-2">
+                    <span className="text-[9px] text-neutral-500">
                       {notificationTime}
                     </span>
                   </div>
@@ -219,13 +219,13 @@ const NotificationCenter = ({
                 <MdMarkunread className="size-5 text-neutral-500" />
                 <motion.div
                   variants={lockVariant}
-                  className="absolute -left-1 -top-1 hidden h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] text-neutral-500 dark:flex"
+                  className="absolute -top-1 -left-1 hidden h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] text-neutral-500 dark:flex"
                 >
                   1
                 </motion.div>
                 <motion.div
                   variants={lockLightVariant}
-                  className="absolute -left-1 -top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] text-neutral-700 dark:hidden"
+                  className="absolute -top-1 -left-1 flex h-3.5 w-3.5 items-center justify-center rounded-full text-[9px] text-neutral-700 dark:hidden"
                 >
                   1
                 </motion.div>
@@ -247,10 +247,10 @@ const NotificationCenter = ({
         </div>
       </motion.div>
 
-      <div className="absolute bottom-0 left-0 hidden h-[190px] w-full rounded-b-lg [background-image:linear-gradient(to_top,#0a0a0a_60%,transparent_100%)] dark:block" />
-      <div className="absolute bottom-0 left-0 block h-[190px] w-full rounded-b-lg [background-image:linear-gradient(to_top,#f5f5f5_60%,transparent_100%)] dark:hidden" />
+      <div className="absolute bottom-0 left-0 hidden h-47.5 w-full rounded-b-lg bg-[linear-gradient(to_top,#0a0a0a_60%,transparent_100%)] dark:block" />
+      <div className="absolute bottom-0 left-0 block h-47.5 w-full rounded-b-lg bg-[linear-gradient(to_top,#f5f5f5_60%,transparent_100%)] dark:hidden" />
       <div className="absolute bottom-4 left-0 w-full px-6">
-        <h3 className="text-sm font-semibold text-primary">{cardTitle}</h3>
+        <h3 className="text-primary text-sm font-semibold">{cardTitle}</h3>
         <p className="mt-1 text-xs text-neutral-500">{cardDescription}</p>
       </div>
     </motion.div>
@@ -261,7 +261,7 @@ export default NotificationCenter;
 
 const IconWrapper = ({ children }: { children?: React.ReactNode }) => {
   return (
-    <div className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-neutral-300 to-neutral-200 dark:from-neutral-700 dark:to-neutral-900">
+    <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-linear-to-br from-neutral-300 to-neutral-200 dark:from-neutral-700 dark:to-neutral-900">
       {children}
     </div>
   );

@@ -185,7 +185,7 @@ const Securitycard = ({
         "relative overflow-hidden",
         "shadow-sm shadow-black/10",
         "flex h-108 w-full max-w-87.5 items-center justify-center",
-        "rounded-md border border-neutral-300 bg-neutral-100 dark:border-neutral-800 dark:bg-neutral-900",
+        "rounded-md bg-neutral-100 shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-900 dark:ring-neutral-800",
       )}
     >
       <InfiniteScrambler />
