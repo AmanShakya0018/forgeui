@@ -30,7 +30,7 @@ export default function RootLayout({
       </Link>
       <Navbar />
       <div className="items-start gap-3 px-2 md:px-6 lg:flex lg:pr-0 lg:pl-8">
-        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-r pb-3 lg:sticky lg:block lg:w-60 lg:overflow-hidden">
+        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-r border-neutral-200/60 pb-3 lg:sticky lg:block lg:w-60 lg:overflow-hidden dark:border-neutral-800/60">
           <ScrollArea className="h-full w-full pt-8 pb-2">
             <PrimaryItems />
           </ScrollArea>
@@ -38,7 +38,7 @@ export default function RootLayout({
         <main className="flex-1 overflow-y-auto px-2 pt-4 pb-8 lg:pr-6 xl:pr-10">
           {children}
         </main>
-        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-l pb-3 lg:sticky lg:w-60 lg:overflow-hidden xl:block">
+        <aside className="top-14 hidden h-[calc(100vh-3.5rem)] shrink-0 border-l border-neutral-200/60 pb-3 lg:sticky lg:w-60 lg:overflow-hidden xl:block dark:border-neutral-800/60">
           <PageContentSidebar />
         </aside>
       </div>

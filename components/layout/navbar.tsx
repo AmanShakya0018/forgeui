@@ -10,7 +10,7 @@ import { MyIcon } from "../icons/logo";
 
 const Navbar = () => {
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-white/5 backdrop-blur-lg dark:bg-neutral-800/5">
+    <nav className="sticky top-0 z-50 w-full border-b border-neutral-200/60 bg-white/5 backdrop-blur-lg dark:border-neutral-800/60 dark:bg-neutral-800/5">
       <div className="px-2 md:pr-5 md:pl-8">
         <div className="flex h-14 items-center justify-between">
           <div className="flex items-center space-x-12">

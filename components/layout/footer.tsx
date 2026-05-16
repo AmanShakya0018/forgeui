@@ -78,24 +78,6 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="mt-4 hidden w-full items-center justify-center md:flex">
-          <h1 className="bg-gradient-to-b from-neutral-200 to-neutral-400 bg-clip-text text-center text-3xl font-bold text-transparent select-none md:text-7xl lg:text-[10rem] dark:from-neutral-700 dark:to-neutral-900">
-            FORGE UI
-          </h1>
-        </div>
-        <p className="mt-12 -mb-6 w-full text-center text-sm text-zinc-600 dark:text-zinc-400">
-          Made with{" "}
-          <CiHeart className="text-foreground inline-block h-5 w-5 pb-0.5 align-middle" />{" "}
-          by{" "}
-          <a
-            href="https://amanshakya.in"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-zinc-500 hover:underline"
-          >
-            this guy
-          </a>
-        </p>
       </div>
     </div>
   );

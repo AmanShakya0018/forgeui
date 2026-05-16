@@ -8,7 +8,6 @@ import {
   backgroundItems,
 } from "@/contants";
 import Anchor from "../ui/anchor-single";
-import TextShimmer from "@/app/(primary)/components/text-shimmer/_components/text-shimmer";
 import AnchorTemplate from "../ui/anchor-template";
 
 const PrimaryItems = () => {
@@ -92,15 +91,6 @@ const PrimaryItems = () => {
               {item.name}
             </Anchor>
           ))}
-          <div>
-            <TextShimmer
-              className="mt-4 cursor-default pl-3 text-xs"
-              repeatDelay={0.5}
-              delay={1.5}
-            >
-              New drops incoming...
-            </TextShimmer>
-          </div>
         </div>
       </div>
     </div>
