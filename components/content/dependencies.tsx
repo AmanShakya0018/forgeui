@@ -10,8 +10,8 @@ interface SectionProps {
 const Dependencies = ({ step, title, children }: SectionProps) => {
   return (
     <div className="flex flex-col gap-5">
-      <div className="absolute flex h-9 w-9 select-none items-center justify-center rounded-full border-[3px] border-background bg-neutral-300 dark:bg-neutral-800">
-        <span className="font-semibold text-primary">{step}</span>
+      <div className="border-background absolute flex h-9 w-9 items-center justify-center rounded-full border-[3px] bg-neutral-200 select-none dark:bg-neutral-800">
+        <span className="text-primary font-semibold">{step}</span>
       </div>
       <div
         className={cn(
@@ -19,8 +19,8 @@ const Dependencies = ({ step, title, children }: SectionProps) => {
           children && "border-l border-neutral-200 dark:border-neutral-900",
         )}
       >
-        <div className="space-y-4 pb-8 pl-8 pt-1">
-          <h2 className="font-medium text-primary/90">{title}</h2>
+        <div className="space-y-4 pt-1 pb-8 pl-8">
+          <h2 className="text-primary/90 font-medium">{title}</h2>
           <span className="pl-7">{children}</span>
         </div>
       </div>
