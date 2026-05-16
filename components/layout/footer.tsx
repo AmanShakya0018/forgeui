@@ -1,13 +1,12 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { CiHeart } from "react-icons/ci";
 import { MyIcon } from "../icons/logo";
 
 const Footer = () => {
   return (
     <div className="border-t">
-      <div className="mx-auto max-w-[95.8rem] border-x px-4 py-12">
+      <div className="px-4 py-12">
         <div className="mx-auto flex max-w-full flex-col items-start justify-between pr-8 pl-4 text-sm text-zinc-500 sm:flex-row dark:text-zinc-400">
           <div>
             <div className="mb-4 flex">
