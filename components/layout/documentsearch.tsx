@@ -115,7 +115,7 @@ const DocumentSearch = () => {
           "disabled:pointer-events-none disabled:opacity-50",
           "border-input/50 hover:border-input hover:bg-accent/50 border",
           "bg-muted/30 relative h-9 w-full justify-start rounded-lg px-3 py-2",
-          "text-muted-foreground text-sm font-normal sm:pr-12 md:w-40 lg:w-56",
+          "text-muted-foreground text-sm font-normal sm:pr-12 md:w-32 lg:w-36",
         )}
       >
         <Search className="h-4 w-4 opacity-50 transition-opacity group-hover:opacity-70" />
