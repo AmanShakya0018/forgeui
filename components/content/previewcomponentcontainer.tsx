@@ -13,7 +13,8 @@ const PreviewComponentContainer = ({
   return (
     <div
       className={cn(
-        "mt-0.5 flex min-h-88 flex-wrap items-center justify-center space-x-2 overflow-hidden rounded-md border border-neutral-200 bg-transparent px-2 py-6 shadow-xs shadow-black/10 sm:px-10 sm:py-12 dark:border-neutral-800",
+        "mt-0.5 flex min-h-88 flex-wrap items-center justify-center space-x-2 overflow-hidden rounded-xl bg-transparent px-2 py-6 sm:px-10 sm:py-12",
+        "shadow-sm ring-1 shadow-black/8 ring-black/8 dark:shadow-none dark:ring-neutral-800/60",
         className,
       )}
     >

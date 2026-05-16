@@ -20,17 +20,17 @@ const PropsTable = ({ propsData }: PropsTableProps) => {
       >
         Props
       </h2>
-      <div className="overflow-x-auto rounded-md border border-neutral-200 dark:border-neutral-900">
+      <div className="overflow-x-auto rounded-xl border border-neutral-200 dark:border-neutral-900">
         <table className="min-w-full table-auto text-left text-sm">
           <thead className="text-primary/90">
             <tr>
-              <th className="border-b border-neutral-200 px-4 py-2 dark:border-neutral-900">
+              <th className="border-r border-b border-neutral-200 px-4 py-3 dark:border-neutral-900">
                 Prop
               </th>
-              <th className="border-b border-neutral-200 px-4 py-2 dark:border-neutral-900">
+              <th className="border-r border-b border-neutral-200 px-4 py-3 dark:border-neutral-900">
                 Type
               </th>
-              <th className="border-b border-neutral-200 px-4 py-2 dark:border-neutral-900">
+              <th className="border-r border-b border-neutral-200 px-4 py-3 dark:border-neutral-900">
                 Default
               </th>
               <th className="border-b border-neutral-200 px-4 py-2 dark:border-neutral-900">
@@ -39,18 +39,22 @@ const PropsTable = ({ propsData }: PropsTableProps) => {
             </tr>
           </thead>
           <tbody className="text-primary/70">
-            {propsData.map((item) => (
+            {propsData.map((item, index) => (
               <tr
                 key={item.prop}
-                className="border-t border-neutral-200 dark:border-neutral-900"
+                className={`border-t border-neutral-200 dark:border-neutral-900 ${
+                  index % 2 === 0
+                    ? "bg-neutral-100 dark:bg-neutral-900"
+                    : "bg-white dark:bg-neutral-950"
+                }`}
               >
-                <td className="px-4 py-2 font-mono text-[11px] sm:text-[13px]">
+                <td className="border-r border-neutral-200 px-4 py-2 font-mono text-[11px] sm:text-[13px] dark:border-neutral-900">
                   {item.prop}
                 </td>
-                <td className="px-4 py-2 font-mono text-[11px] sm:text-[13px]">
+                <td className="border-r border-neutral-200 px-4 py-2 font-mono text-[11px] sm:text-[13px] dark:border-neutral-900">
                   {item.type}
                 </td>
-                <td className="px-4 py-2 text-[11px] sm:text-[13px]">
+                <td className="border-r border-neutral-200 px-4 py-2 text-[11px] sm:text-[13px] dark:border-neutral-900">
                   {item.default}
                 </td>
                 <td className="px-4 py-2 text-[10px] sm:text-[13px]">

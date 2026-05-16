@@ -4,7 +4,7 @@ import Link from "next/link";
 const ForgeUIProCTA = () => {
   return (
     <section className="py-4">
-      <div className="mx-auto max-w-5xl rounded-xl bg-white px-2 py-6 shadow-md ring-1 shadow-black/10 ring-neutral-200 sm:px-6 dark:bg-neutral-950 dark:bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.04),transparent_70%)] dark:ring-neutral-800/70">
+      <div className="s mx-auto max-w-6xl rounded-xl bg-white px-2 py-6 shadow-sm ring-1 shadow-black/8 ring-black/8 sm:px-6 dark:bg-neutral-950 dark:shadow-none dark:ring-neutral-800/60">
         <div className="space-y-5 text-center">
           <div className="space-y-3">
             <h2 className="text-4xl font-semibold tracking-tight text-balance text-neutral-900 dark:text-neutral-50">
