@@ -19,7 +19,7 @@ const FrameworkAgnostic = ({
         "relative",
         "flex flex-col justify-between",
         "h-80 space-y-4",
-        "rounded-md border border-neutral-800/50 bg-neutral-950",
+        "rounded-md border border-neutral-800/80 bg-neutral-950",
       )}
     >
       <FrameworkCard />

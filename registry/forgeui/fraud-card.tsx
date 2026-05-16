@@ -106,7 +106,7 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
       initial="close"
       className={cn(
         "h-136 min-h-136 w-87.5 max-w-87.5",
-        "group overflow-hidden border shadow-md",
+        "group overflow-hidden shadow-sm ring-1 shadow-black/10 ring-black/10 dark:bg-neutral-900 dark:ring-neutral-800",
         "clbeam-container relative flex flex-col items-center",
         "rounded-md bg-neutral-50 text-white dark:bg-neutral-900",
       )}

@@ -62,9 +62,9 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
       className={cn(
         "relative",
         "flex items-center justify-center",
-        "h-56 w-full max-w-87.5",
-        "rounded-md border bg-neutral-50 dark:bg-neutral-900",
-        "shadow-md shadow-black/10",
+        "h-56 w-full max-w-87.5 rounded-md",
+        "bg-neutral-50 ring-1 ring-black/10 dark:bg-neutral-900 dark:ring-neutral-800",
+        "shadow-sm shadow-black/10",
       )}
     >
       <div className="absolute top-[25%] left-1/2 -translate-x-1/2">
@@ -73,8 +73,8 @@ const OTPinput = ({ cardTitle, cardDescription }: AnimatedOTPProps) => {
             <div
               key={idx}
               className={cn(
-                "text-primary relative flex h-10 w-8 items-center justify-center rounded-md bg-linear-to-br from-neutral-100 to-neutral-50 dark:from-neutral-800 dark:to-neutral-800",
-                "shadow-[0_2px_6px_rgb(0,0,0,0.15)]",
+                "text-primary relative flex h-10 w-8 items-center justify-center rounded-md border border-neutral-200 bg-linear-to-br from-neutral-50 to-white dark:border-none dark:from-neutral-800 dark:to-neutral-800",
+                "shadow-[0_1px_2px_rgb(0,0,0,0.1)]",
               )}
             >
               <motion.div

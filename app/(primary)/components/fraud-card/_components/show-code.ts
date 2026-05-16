@@ -1,6 +1,7 @@
 export const title = "Fraud Card";
 export const routepoint = "fraud-card";
-export const description = "A security alert card inspired by Clerk's landing page, showcasing blocked emails with smooth hover animations.";
+export const description =
+  "A security alert card inspired by Clerk's landing page, showcasing blocked emails with smooth hover animations.";
 
 export const cliscript = "add @forgeui/fraud-card";
 
@@ -47,7 +48,7 @@ export const csscode = `.clbeam {
     offset-distance: 100%;
   }
 }
-`
+`;
 
 const packagescript = "motion react-icons clsx tailwind-merge";
 
@@ -64,12 +65,12 @@ export const fraudCardProps = [
     type: "BlockedEmail[]",
     default: "[]",
     description:
-      "An array of objects containing blocked email addresses and the time they were flagged."
-  }
+      "An array of objects containing blocked email addresses and the time they were flagged.",
+  },
 ];
 
-export const screennotice = "*Tap to animate - full experience on desktop."
-export const screennoticedesktop = "*Hover to animate"
+export const screennotice = "*Tap to animate - full experience on desktop.";
+export const screennoticedesktop = "*Hover to animate";
 
 export const democode = `import FraudCard from '@/components/forgeui/fraud-card';
 
@@ -196,7 +197,7 @@ const FraudCard = ({ blockedEmails }: FraudCardProps) => {
       initial="close"
       className={cn(
         "h-136 min-h-136 w-87.5 max-w-87.5",
-        "group overflow-hidden border shadow-md",
+        "group overflow-hidden shadow-sm shadow-black/10 ring-1 ring-black/10 dark:bg-neutral-900 dark:ring-neutral-800",
         "clbeam-container relative flex flex-col items-center",
         "rounded-md bg-neutral-50 text-white dark:bg-neutral-900",
       )}

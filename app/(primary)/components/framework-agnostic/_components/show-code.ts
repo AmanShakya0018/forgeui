@@ -1,6 +1,7 @@
 export const title = "Framework Agnostic";
 export const routepoint = "framework-agnostic";
-export const description = "Visually demonstrates cross-framework adaptability using animated stack icons and a glowing pipeline effect.";
+export const description =
+  "Visually demonstrates cross-framework adaptability using animated stack icons and a glowing pipeline effect.";
 
 export const cliscript = "add @forgeui/framework-agnostic";
 
@@ -33,17 +34,19 @@ export const frameworkAgnosticProps = [
     prop: "cardTitle",
     type: "string",
     default: `"Framework Agnostic"`,
-    description: "The title displayed at the bottom of the framework agnostic card.",
+    description:
+      "The title displayed at the bottom of the framework agnostic card.",
   },
   {
     prop: "cardDescription",
     type: "string",
     default: `"Seamlessly integrate with any tech stack, whether it's Next.js,React, HTML, or anything else. Statsio works everywhere."`,
-    description: "A short description displayed below the title inside the card.",
+    description:
+      "A short description displayed below the title inside the card.",
   },
 ];
 
-export const screennotice = "*Currently available in dark mode only."
+export const screennotice = "*Currently available in dark mode only.";
 
 export const csscode = `.frameworkline {
   offset-anchor: 10px 0px;
@@ -70,7 +73,7 @@ export const csscode = `.frameworkline {
     offset-distance: 100%;
   }
 }
-`
+`;
 
 export const democode = `import FrameworkAgnostic from '@/components/forgeui/framework-agnostic';
 
@@ -106,7 +109,7 @@ const FrameworkAgnostic = ({
         "relative",
         "flex flex-col justify-between",
         "h-80 space-y-4",
-        "rounded-md border border-neutral-800/50 bg-neutral-950",
+        "rounded-md border border-neutral-800/80 bg-neutral-950",
       )}
     >
       <FrameworkCard />
