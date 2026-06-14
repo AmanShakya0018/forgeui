@@ -51,6 +51,7 @@ export const eliteItems = [
 export const backgroundItems = [
   { name: "Cloudscape", href: "/components/cloudscape" },
   { name: "Luma Drift", href: "/components/lumadrift" },
+  { name: "Nebulore", href: "/components/nebulore" },
   { name: "Cosmic Rift", href: "/components/cosmicrift" },
   { name: "Chromatic Fluid", href: "/components/chromatic-fluid" },
   { name: "Velora", href: "/components/velora" },

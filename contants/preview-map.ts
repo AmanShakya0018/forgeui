@@ -101,4 +101,9 @@ export const previewMap = {
       (m) => m.LivePreviewCloudscapePage,
     ),
   ),
+  nebulore: dynamic(() =>
+    import("@/app/(primary)/components/nebulore/_components/preview").then(
+      (m) => m.LivePreviewNebulorePage,
+    ),
+  ),
 } as const;
