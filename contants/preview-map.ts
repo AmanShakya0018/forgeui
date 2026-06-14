@@ -101,4 +101,14 @@ export const previewMap = {
       (m) => m.LivePreviewCloudscapePage,
     ),
   ),
+  nebulore: dynamic(() =>
+    import("@/app/(primary)/components/nebulore/_components/preview").then(
+      (m) => m.LivePreviewNebulorePage,
+    ),
+  ),
+  noctylis: dynamic(() =>
+    import("@/app/(primary)/components/noctylis/_components/preview").then(
+      (m) => m.LivePreviewNoctylisPage,
+    ),
+  ),
 } as const;
