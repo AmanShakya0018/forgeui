@@ -353,6 +353,19 @@
       ],
       "title": "Nebulore",
       "description": "A WebGL-powered animated nebula background featuring flowing aurora ribbons, domain-warped simplex noise, and customizable color glow with film grain."
+    },
+    {
+      "name": "noctylis",
+      "type": "registry:ui",
+      "files": [
+        {
+          "path": "registry/forgeui/noctylis.tsx",
+          "target": "components/forgeui/noctylis.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "title": "Noctylis",
+      "description": "A WebGL-powered nocturnal glow background featuring chained simplex noise layers, soft violet light blooms, vignette, and film grain."
     }
   ]
 }

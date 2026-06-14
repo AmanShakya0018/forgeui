@@ -106,4 +106,9 @@ export const previewMap = {
       (m) => m.LivePreviewNebulorePage,
     ),
   ),
+  noctylis: dynamic(() =>
+    import("@/app/(primary)/components/noctylis/_components/preview").then(
+      (m) => m.LivePreviewNoctylisPage,
+    ),
+  ),
 } as const;
